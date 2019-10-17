@@ -15,8 +15,12 @@ public class BlockFallingBase extends BlockFalling
     
     public BlockFallingBase(String name, MaterialColor color, SoundType sound)
     {
-        super(Properties.create(Material.SAND, color).hardnessAndResistance(BlockValues.SAND_HARDNESS, BlockValues.SAND_RESISTANCE).sound(sound));
-        setRegistryName(name);
+        this(name, Properties.create(Material.SAND, color).hardnessAndResistance(BlockValues.SAND_HARDNESS, BlockValues.SAND_RESISTANCE).sound(sound));
     }
     
+    public BlockFallingBase(String name, Properties properties)
+    {
+        super(properties);
+        setRegistryName(name);
+    }
 }

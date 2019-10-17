@@ -16,6 +16,9 @@ import phrille.minecraftboom.MinecraftBoom;
 
 public class CreativeTabs
 {
+    public static List<Item> tabList = new ArrayList();
+    private static Comparator<ItemStack> tabSorter;
+    
     public static final ItemGroup MINECRAFTBOOM_TAB = new ItemGroup(MinecraftBoom.MOD_ID + "_tab")
     {
         @Override
@@ -29,6 +32,9 @@ public class CreativeTabs
         public void fill(NonNullList<ItemStack> list)
         {
             super.fill(list);
+            
+            tabSorter = Ordering.explicit(tabList).onResultOf(ItemStack::getItem);
+            list.sort(tabSorter);
         }
     };
 }

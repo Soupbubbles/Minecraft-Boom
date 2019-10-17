@@ -56,13 +56,13 @@ public class Names
     public static final String BLOCK_POLISHED_NETHERRACK = "polished_netherrack";
     
     //Pillar
-    public static final String BLOCK_PILLAR_GRANITE = "pillar_granite";
-    public static final String BLOCK_PILLAR_DIORITE = "pillar_diorite";
-    public static final String BLOCK_PILLAR_ANDESITE = "pillar_andesite";
-    public static final String BLOCK_PILLAR_PRISMARINE = "pillar_prismarine";
-    public static final String BLOCK_PILLAR_DARK_PRISMARINE = "pillar_dark_prismarine";
-    public static final String BLOCK_PILLAR_END_STONE = "pillar_end_stone";
-    public static final String BLOCK_PILLAR_NETHERRACK = "pillar_netherrack";
+    public static final String BLOCK_GRANITE_PILLAR = "granite_pillar";
+    public static final String BLOCK_DIORITE_PILLAR = "diorite_pillar";
+    public static final String BLOCK_ANDESITE_PILLAR = "andesite_pillar";
+    public static final String BLOCK_PRISMARINE_PILLAR = "prismarine_pillar";
+    public static final String BLOCK_DARK_PRISMARINE_PILLAR = "dark_prismarine_pillar";
+    public static final String BLOCK_END_STONE_PILLAR = "end_stone_pillar";
+    public static final String BLOCK_NETHERRACK_PILLAR = "netherrack_pillar";
     
     //Storage
     public static final String BLOCK_CHARCOAL = "charcoal_block";
@@ -72,7 +72,8 @@ public class Names
     public static final String BLOCK_BLAZE_POWDER = "blaze_powder_block";
     public static final String BLOCK_MAGMA_CREAM = "magma_cream_block";
     public static final String BLOCK_PRISMARINE_CRYSTAL = "prismarine_crystal_block";
-    public static final String BLOCK_CHARRED_BONE = "charred_bone_block";
+    public static final String BLOCK_WITHER_BONE = "wither_bone_block";
+    
     public static final String BLOCK_WHITE_DYE_BLOCK = "white_dye_block";
     public static final String BLOCK_ORANGE_DYE_BLOCK = "orange_dye_block";
     public static final String BLOCK_MAGENTA_DYE_BLOCK = "magenta_dye_block";
@@ -111,4 +112,15 @@ public class Names
     public static final String BLOCK_BLACK_DYE_BLOCK = "black_dye_block";
     
     public static final String ITEM_MAGMA_BRICK = "magma_brick";
+    public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
+    public static final String ITEM_PINECONE = "pinecone";
+    public static final String ITEM_WITHER_BONE = "wither_bone";
+    public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
+    public static final String ITEM_POLAR_BEAR_FUR = "polar_bear_fur";
+    public static final String ITEM_PRISMARINE_ARROW = "prismarine_arrow";
+    public static final String ITEM_WHEAT_ON_A_STICK = "wheat_on_a_stick";
+    public static final String ITEM_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
+    public static final String ITEM_TELESCOPE = "telescope";
+    public static final String ITEM_LEVITATION_DUST = "levitation_dust";
+    public static final String ITEM_COOKED_EGG = "cooked_egg";
 }

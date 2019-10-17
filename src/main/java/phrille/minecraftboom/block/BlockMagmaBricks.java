@@ -16,7 +16,7 @@ public class BlockMagmaBricks extends BlockBase
 {
     public BlockMagmaBricks()
     {
-        super(Names.BLOCK_MAGMA_BRICKS, Material.ROCK, MaterialColor.NETHERRACK, BlockValues.STONE_HARDNESS, BlockValues.STONE_RESISTANCE, 3);
+        super(Names.BLOCK_MAGMA_BRICKS, Properties.create(Material.ROCK, MaterialColor.NETHERRACK).hardnessAndResistance(BlockValues.STONE_HARDNESS, BlockValues.STONE_RESISTANCE).lightValue(3));
     }
 
     @OnlyIn(Dist.CLIENT)

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "minecraftboom:block/end_stone_pillar" },
+        "axis=z":   { "model": "minecraftboom:block/end_stone_pillar", "x": 90 },
+        "axis=x":   { "model": "minecraftboom:block/end_stone_pillar", "x": 90, "y": 90 }
+    }
+}

@@ -64,4 +64,7 @@ public class BlockValues
     
     public static final float BONE_BLOCK_HARDNESS = 1.8F;
     public static final float BONE_BLOCK_RESISTANCE = 3.33F;
+    
+    public static final float COAL_BLOCK_HARDNESS = 5.0F;
+    public static final float COAL_BLOCK_RESISTANCE = 10.0F;
 }

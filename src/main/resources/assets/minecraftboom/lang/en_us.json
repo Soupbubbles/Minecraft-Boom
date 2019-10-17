@@ -37,6 +37,24 @@
     "block.minecraftboom.polished_end_stone": "Polished End Stone",
     "block.minecraftboom.polished_netherrack": "Polished Netherrack",
     
+    "block.minecraftboom.granite_pillar": "Granite Pillar",
+    "block.minecraftboom.diorite_pillar": "Diorite Pillar",
+    "block.minecraftboom.andesite_pillar": "Andesite Pillar",
+    "block.minecraftboom.prismarine_pillar": "Prismarine Pillar",
+    "block.minecraftboom.dark_prismarine_pillar": "Dark Prismarine Pillar",
+    "block.minecraftboom.netherrack_pillar": "Netherrack Pillar",
+    "block.minecraftboom.end_stone_pillar": "End Stone Pillar",
     
-    "item.minecraftboom.magma_brick": "Magma Brick"
+    "block.minecraftboom.charcoal_block": "Charcoal Block",
+    "block.minecraftboom.sugar_block": "Sugar Block",
+    "block.minecraftboom.sugar_cane_block": "Sugar Cane Block",
+    "block.minecraftboom.gunpowder_block": "Gunpowder Block",
+    "block.minecraftboom.blaze_powder_block": "Blaze Powder Block",
+    "block.minecraftboom.magma_cream_block": "Magma Cream Block",
+    "block.minecraftboom.prismarine_crystal_block": "Prismarine Crystal Block",
+    "block.minecraftboom.wither_bone_block": "Wither Bone Block",
+    
+    "item.minecraftboom.magma_brick": "Magma Brick",
+    "item.minecraftboom.wither_bone": "Wither Bone"
+    
 }
