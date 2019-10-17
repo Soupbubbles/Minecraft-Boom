@@ -1,0 +1,42 @@
+{
+	"language.name": "English",
+	"language.region": "United States",
+	"language.code": "en_us",
+	
+	"itemGroup.minecraftboom_tab": "Minecraft Boom",
+	
+	"block.minecraftboom.cobblestone_bricks": "Cobblestone Bricks",
+    "block.minecraftboom.mossy_cobblestone_bricks": "Mossy Cobblestone Bricks",
+    "block.minecraftboom.magma_bricks": "Magma Bricks",
+    "block.minecraftboom.obsidian_bricks": "Obsidian Bricks",
+    "block.minecraftboom.terracotta_bricks": "Terracotta Bricks",
+    "block.minecraftboom.white_terracotta_bricks": "White Terracotta Bricks",
+    "block.minecraftboom.orange_terracotta_bricks": "Orange Terracotta Bricks",
+    "block.minecraftboom.magenta_terracotta_bricks": "Magenta Terracotta Bricks",
+    "block.minecraftboom.light_blue_terracotta_bricks": "Light Blue Terracotta Bricks",
+    "block.minecraftboom.yellow_terracotta_bricks": "Yellow Terracotta Bricks",
+    "block.minecraftboom.lime_terracotta_bricks": "Lime Terracotta Bricks",
+    "block.minecraftboom.pink_terracotta_bricks": "Pink Terracotta Bricks",
+    "block.minecraftboom.gray_terracotta_bricks": "Gray Terracotta Bricks",
+    "block.minecraftboom.light_gray_terracotta_bricks": "Light Gray Terracotta Bricks",
+    "block.minecraftboom.cyan_terracotta_bricks": "Cyan Terracotta Bricks",
+    "block.minecraftboom.purple_terracotta_bricks": "Purple Terracotta Bricks",
+    "block.minecraftboom.blue_terracotta_bricks": "Blue Terracotta Bricks",
+    "block.minecraftboom.brown_terracotta_bricks": "Brown Terracotta Bricks",
+    "block.minecraftboom.green_terracotta_bricks": "Green Terracotta Bricks",
+    "block.minecraftboom.red_terracotta_bricks": "Red Terracotta Bricks",
+    "block.minecraftboom.black_terracotta_bricks": "Black Terracotta Bricks",
+    
+    "block.minecraftboom.fine_gravel": "Fine Gravel",
+    "block.minecraftboom.gravel_stone": "Gravel Stone",
+    "block.minecraftboom.fine_gravel_stone": "Fine Gravel Stone",
+    "block.minecraftboom.gravel_bricks": "Gravel Bricks",
+    
+    "block.minecraftboom.polished_prismarine": "Polished Prismarine",
+    "block.minecraftboom.polished_dark_prismarine": "Polished Dark Prismarine",
+    "block.minecraftboom.polished_end_stone": "Polished End Stone",
+    "block.minecraftboom.polished_netherrack": "Polished Netherrack",
+    
+    
+    "item.minecraftboom.magma_brick": "Magma Brick"
+}
