@@ -83,6 +83,21 @@ public class ModBlocks
     public static final Block BLOCK_MAGMA_CREAM;
     public static final Block BLOCK_PRISMARINE_CRYSTAL;
     public static final Block BLOCK_WITHER_BONE;
+    public static final Block BLOCK_WHITE_DYE;
+    public static final Block BLOCK_ORANGE_DYE;
+    public static final Block BLOCK_MAGENTA_DYE;
+    public static final Block BLOCK_LIGHT_BLUE_DYE;
+    public static final Block BLOCK_YELLOW_DYE;
+    public static final Block BLOCK_LIME_DYE;
+    public static final Block BLOCK_PINK_DYE;
+    public static final Block BLOCK_GRAY_DYE;
+    public static final Block BLOCK_LIGHT_GRAY_DYE;
+    public static final Block BLOCK_CYAN_DYE;
+    public static final Block BLOCK_PURPLE_DYE;
+    public static final Block BLOCK_BROWN_DYE;
+    public static final Block BLOCK_GREEN_DYE;
+    public static final Block BLOCK_RED_DYE;
+    public static final Block BLOCK_BLACK_DYE;
 
     static
     {
@@ -130,10 +145,25 @@ public class ModBlocks
         BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR, MaterialColor.SNOW, SoundType.SAND));
         BLOCK_SUGAR_CANE = registerBlock(new BlockPillarBase( Names.BLOCK_SUGAR_CANE, Material.LEAVES, MaterialColor.GRASS, BlockValues.PLANKS_HARDNESS, BlockValues.PLANT_BLOCK_RESISTANCE, SoundType.PLANT));
         BLOCK_GUNPOWDER = registerBlock(new BlockGunpowder());
-        BLOCK_BLAZE_POWDER = registerBlock(new BlockFallingBase(Names.BLOCK_BLAZE_POWDER, MaterialColor.RED, SoundType.SNOW));
+        BLOCK_BLAZE_POWDER = registerBlock(new BlockFallingBase(Names.BLOCK_BLAZE_POWDER, MaterialColor.ADOBE, SoundType.SNOW));
         BLOCK_MAGMA_CREAM = registerBlock(new BlockMagmaCream());
         BLOCK_PRISMARINE_CRYSTAL = registerBlock(new BlockBase(Names.BLOCK_PRISMARINE_CRYSTAL, Block.Properties.create(Material.GLASS, MaterialColor.CYAN).hardnessAndResistance(BlockValues.GLASS_HARDNESS, BlockValues.GLASS_RESISTANCE).sound(SoundType.GLASS).lightValue(5)));
         BLOCK_WITHER_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_WITHER_BONE, Material.ROCK, MaterialColor.BLACK, BlockValues.BONE_BLOCK_HARDNESS, BlockValues.BONE_BLOCK_RESISTANCE, SoundType.STONE));
+        BLOCK_WHITE_DYE = registerBlock(new BlockBase(Names.BLOCK_WHITE_DYE, MaterialColor.WOOL, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_ORANGE_DYE = registerBlock(new BlockBase(Names.BLOCK_ORANGE_DYE, MaterialColor.ADOBE, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_MAGENTA_DYE = registerBlock(new BlockBase(Names.BLOCK_MAGENTA_DYE, MaterialColor.MAGENTA, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_LIGHT_BLUE_DYE = registerBlock(new BlockBase(Names.BLOCK_LIGHT_BLUE_DYE, MaterialColor.LIGHT_BLUE, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_YELLOW_DYE = registerBlock(new BlockBase(Names.BLOCK_YELLOW_DYE, MaterialColor.YELLOW, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_LIME_DYE = registerBlock(new BlockBase(Names.BLOCK_LIME_DYE, MaterialColor.LIME, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_PINK_DYE = registerBlock(new BlockBase(Names.BLOCK_PINK_DYE, MaterialColor.PINK, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_GRAY_DYE = registerBlock(new BlockBase(Names.BLOCK_GRAY_DYE, MaterialColor.GRAY, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_LIGHT_GRAY_DYE = registerBlock(new BlockBase(Names.BLOCK_LIGHT_GRAY_DYE, MaterialColor.LIGHT_GRAY, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_CYAN_DYE = registerBlock(new BlockBase(Names.BLOCK_CYAN_DYE, MaterialColor.CYAN, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_PURPLE_DYE = registerBlock(new BlockBase(Names.BLOCK_PURPLE_DYE, MaterialColor.PURPLE, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_BROWN_DYE = registerBlock(new BlockBase(Names.BLOCK_BROWN_DYE, MaterialColor.BROWN, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_GREEN_DYE = registerBlock(new BlockBase(Names.BLOCK_GREEN_DYE, MaterialColor.GREEN, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_RED_DYE = registerBlock(new BlockBase(Names.BLOCK_RED_DYE, MaterialColor.RED, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+        BLOCK_BLACK_DYE = registerBlock(new BlockBase(Names.BLOCK_BLACK_DYE, MaterialColor.BLACK, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
     }
 
     private static Block registerBlock(Block block)

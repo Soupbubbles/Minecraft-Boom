@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "": { "model": "minecraftboom:block/yellow_dye_block" }
+    }
+}

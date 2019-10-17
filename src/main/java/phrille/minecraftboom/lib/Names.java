@@ -74,21 +74,22 @@ public class Names
     public static final String BLOCK_PRISMARINE_CRYSTAL = "prismarine_crystal_block";
     public static final String BLOCK_WITHER_BONE = "wither_bone_block";
     
-    public static final String BLOCK_WHITE_DYE_BLOCK = "white_dye_block";
-    public static final String BLOCK_ORANGE_DYE_BLOCK = "orange_dye_block";
-    public static final String BLOCK_MAGENTA_DYE_BLOCK = "magenta_dye_block";
-    public static final String BLOCK_LIGHT_BLUE_DYE_BLOCK = "light_blue_dye_block";
-    public static final String BLOCK_YELLOW_DYE_BLOCK = "yellow_dye_block";
-    public static final String BLOCK_LIME_DYE_BLOCK = "lime_dye_block";
-    public static final String BLOCK_PINK_DYE_BLOCK = "pink_dye_block";
-    public static final String BLOCK_GRAY_DYE_BLOCK = "gray_dye_block";
-    public static final String BLOCK_SILVER_DYE_BLOCK = "silver_dye_block";
-    public static final String BLOCK_CYAN_DYE_BLOCK = "cyan_dye_block";
-    public static final String BLOCK_PURPLE_DYE_BLOCK = "purple_dye_block";
-    public static final String BLOCK_BROWN_DYE_BLOCK = "brown_dye_block";
-    public static final String BLOCK_GREEN_DYE_BLOCK = "green_dye_block";
-    public static final String BLOCK_RED_DYE_BLOCK = "red_dye_block";
-    
+    public static final String BLOCK_WHITE_DYE = "white_dye_block";
+    public static final String BLOCK_ORANGE_DYE = "orange_dye_block";
+    public static final String BLOCK_MAGENTA_DYE = "magenta_dye_block";
+    public static final String BLOCK_LIGHT_BLUE_DYE = "light_blue_dye_block";
+    public static final String BLOCK_YELLOW_DYE = "yellow_dye_block";
+    public static final String BLOCK_LIME_DYE = "lime_dye_block";
+    public static final String BLOCK_PINK_DYE = "pink_dye_block";
+    public static final String BLOCK_GRAY_DYE = "gray_dye_block";
+    public static final String BLOCK_LIGHT_GRAY_DYE = "light_gray_dye_block";
+    public static final String BLOCK_CYAN_DYE = "cyan_dye_block";
+    public static final String BLOCK_PURPLE_DYE = "purple_dye_block";
+    public static final String BLOCK_BROWN_DYE = "brown_dye_block";
+    public static final String BLOCK_GREEN_DYE = "green_dye_block";
+    public static final String BLOCK_RED_DYE = "red_dye_block";
+    public static final String BLOCK_BLACK_DYE = "black_dye_block";
+
     //Soul Glass
     public static final String BLOCK_SOUL_GLASS = "soul_glass";
     public static final String BLOCK_WHITE_STAINED_SOUL_GLASS = "white_stained_soul_glass";
@@ -109,7 +110,6 @@ public class Names
     public static final String BLOCK_BLACK_STAINED_SOUL_GLASS = "black_stained_soul_glass";
     public static final String BLOCK_SOUL_GLASS_PANE = "soul_glass_pane";
     public static final String BLOCK_STAINED_SOUL_GLASS_PANE = "stained_soul_glass_pane";
-    public static final String BLOCK_BLACK_DYE_BLOCK = "black_dye_block";
     
     public static final String ITEM_MAGMA_BRICK = "magma_brick";
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";

@@ -53,8 +53,22 @@
     "block.minecraftboom.magma_cream_block": "Magma Cream Block",
     "block.minecraftboom.prismarine_crystal_block": "Prismarine Crystal Block",
     "block.minecraftboom.wither_bone_block": "Wither Bone Block",
+    "block.minecraftboom.white_dye_block": "White Dye Block",
+    "block.minecraftboom.orange_dye_block": "Orange Dye Block",
+    "block.minecraftboom.magenta_dye_block": "Magenta Dye Block",
+    "block.minecraftboom.light_blue_dye_block": "Light Blue Dye Block",
+    "block.minecraftboom.yellow_dye_block": "Yellow Dye Block",
+    "block.minecraftboom.lime_dye_block": "Lime Dye Block",
+    "block.minecraftboom.pink_dye_block": "Pink Dye Block",
+    "block.minecraftboom.gray_dye_block": "Gray Dye Block",
+    "block.minecraftboom.light_gray_dye_block": "Light Gray Dye Block",
+    "block.minecraftboom.cyan_dye_block": "Cyan Dye Block",
+    "block.minecraftboom.purple_dye_block": "Purple Dye Block",
+    "block.minecraftboom.brown_dye_block": "Brown Dye Block",
+    "block.minecraftboom.green_dye_block": "Green Dye Block",
+    "block.minecraftboom.red_dye_block": "Red Dye Block",
+    "block.minecraftboom.black_dye_block": "Black Dye Block",
     
     "item.minecraftboom.magma_brick": "Magma Brick",
     "item.minecraftboom.wither_bone": "Wither Bone"
-    
 }
