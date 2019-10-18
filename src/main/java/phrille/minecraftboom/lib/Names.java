@@ -73,7 +73,6 @@ public class Names
     public static final String BLOCK_MAGMA_CREAM = "magma_cream_block";
     public static final String BLOCK_PRISMARINE_CRYSTAL = "prismarine_crystal_block";
     public static final String BLOCK_WITHER_BONE = "wither_bone_block";
-    
     public static final String BLOCK_WHITE_DYE = "white_dye_block";
     public static final String BLOCK_ORANGE_DYE = "orange_dye_block";
     public static final String BLOCK_MAGENTA_DYE = "magenta_dye_block";
@@ -111,12 +110,20 @@ public class Names
     public static final String BLOCK_SOUL_GLASS_PANE = "soul_glass_pane";
     public static final String BLOCK_STAINED_SOUL_GLASS_PANE = "stained_soul_glass_pane";
     
+    public static final String BLOCK_GOLDEN_BARS = "golden_bars";
+    public static final String BLOCK_RED_NETHER_FENCE = "red_nether_brick_fence";
+    public static final String BLOCK_NETHER_FENCE_GATE = "nether_brick_fence_gate";
+    public static final String BLOCK_RED_NETHER_FENCE_GATE = "red_nether_brick_fence_gate";
+    public static final String BLOCK_ROSE = "rose";
+    
     public static final String ITEM_MAGMA_BRICK = "magma_brick";
     public static final String ITEM_ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
     public static final String ITEM_PINECONE = "pinecone";
     public static final String ITEM_WITHER_BONE = "wither_bone";
     public static final String ITEM_PUMPKIN_SLICE = "pumpkin_slice";
     public static final String ITEM_POLAR_BEAR_FUR = "polar_bear_fur";
+    public static final String ITEM_RAW_POLAR_BEAR_MEAT = "raw_polar_bear_meat";
+    public static final String ITEM_POLAR_BEAR_STEAK = "polar_bear_steak";
     public static final String ITEM_PRISMARINE_ARROW = "prismarine_arrow";
     public static final String ITEM_WHEAT_ON_A_STICK = "wheat_on_a_stick";
     public static final String ITEM_POPPED_CHORUS_GRENADE = "popped_chorus_grenade";

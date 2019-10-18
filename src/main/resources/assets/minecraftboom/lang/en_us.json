@@ -69,6 +69,14 @@
     "block.minecraftboom.red_dye_block": "Red Dye Block",
     "block.minecraftboom.black_dye_block": "Black Dye Block",
     
+    "block.minecraftboom.rose": "Rose",
+    
     "item.minecraftboom.magma_brick": "Magma Brick",
-    "item.minecraftboom.wither_bone": "Wither Bone"
+    "item.minecraftboom.wither_bone": "Wither Bone",
+    "item.minecraftboom.pinecone": "Pinecone",
+    "item.minecraftboom.polar_bear_fur": "Polar Bear Fur",
+    "item.minecraftboom.raw_polar_bear_meat": "Raw Polar Bear Meat",
+    "item.minecraftboom.polar_bear_steak": "Polar Bear Steak",
+    "item.minecraftboom.pumpkin_slice": "Pumpkin Slice",
+    "item.minecraftboom.cooked_egg": "Cooked Egg"
 }

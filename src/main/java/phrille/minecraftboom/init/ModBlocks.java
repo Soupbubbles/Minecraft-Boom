@@ -20,10 +20,13 @@ import phrille.minecraftboom.MinecraftBoom;
 import phrille.minecraftboom.block.BlockGunpowder;
 import phrille.minecraftboom.block.BlockMagmaBricks;
 import phrille.minecraftboom.block.BlockMagmaCream;
+import phrille.minecraftboom.block.BlockRose;
 import phrille.minecraftboom.block.base.BlockBase;
 import phrille.minecraftboom.block.base.BlockFallingBase;
 import phrille.minecraftboom.block.base.BlockPillarBase;
+import phrille.minecraftboom.item.ItemBlockBase;
 import phrille.minecraftboom.lib.BlockValues;
+import phrille.minecraftboom.lib.FuelValues;
 import phrille.minecraftboom.lib.Names;
 
 public class ModBlocks
@@ -64,7 +67,7 @@ public class ModBlocks
     public static final Block BLOCK_POLISHED_DARK_PRISMARINE;
     public static final Block BLOCK_POLISHED_END_STONE;
     public static final Block BLOCK_POLISHED_NETHERRACK;
-    
+
     //Pillars
     public static final Block BLOCK_GRANITE_PILLAR;
     public static final Block BLOCK_DIORITE_PILLAR;
@@ -73,7 +76,7 @@ public class ModBlocks
     public static final Block BLOCK_DARK_PRISMARINE_PILLAR;
     public static final Block BLOCK_END_STONE_PILLAR;
     public static final Block BLOCK_NETHERRACK_PILLAR;
-    
+
     //Storage
     public static final Block BLOCK_CHARCOAL;
     public static final Block BLOCK_SUGAR;
@@ -98,6 +101,8 @@ public class ModBlocks
     public static final Block BLOCK_GREEN_DYE;
     public static final Block BLOCK_RED_DYE;
     public static final Block BLOCK_BLACK_DYE;
+
+    public static final Block BLOCK_ROSE;
 
     static
     {
@@ -132,7 +137,7 @@ public class ModBlocks
         BLOCK_POLISHED_DARK_PRISMARINE = registerBlock(new BlockBase(Names.BLOCK_POLISHED_DARK_PRISMARINE, MaterialColor.DIAMOND));
         BLOCK_POLISHED_END_STONE = registerBlock(new BlockBase(Names.BLOCK_POLISHED_END_STONE, MaterialColor.SAND));
         BLOCK_POLISHED_NETHERRACK = registerBlock(new BlockBase(Names.BLOCK_POLISHED_NETHERRACK, MaterialColor.NETHERRACK));
-        
+
         BLOCK_GRANITE_PILLAR = registerBlock(new BlockPillarBase(Names.BLOCK_GRANITE_PILLAR, Material.ROCK, MaterialColor.DIRT, BlockValues.STONE_HARDNESS, BlockValues.STONE_RESISTANCE, SoundType.STONE));
         BLOCK_DIORITE_PILLAR = registerBlock(new BlockPillarBase(Names.BLOCK_DIORITE_PILLAR, Material.ROCK, MaterialColor.QUARTZ, BlockValues.STONE_HARDNESS, BlockValues.STONE_RESISTANCE, SoundType.STONE));
         BLOCK_ANDESITE_PILLAR = registerBlock(new BlockPillarBase(Names.BLOCK_ANDESITE_PILLAR, Material.ROCK, MaterialColor.STONE, BlockValues.STONE_HARDNESS, BlockValues.STONE_RESISTANCE, SoundType.STONE));
@@ -140,15 +145,15 @@ public class ModBlocks
         BLOCK_DARK_PRISMARINE_PILLAR = registerBlock(new BlockPillarBase(Names.BLOCK_DARK_PRISMARINE_PILLAR, Material.ROCK, MaterialColor.DIAMOND, BlockValues.STONE_HARDNESS, BlockValues.STONE_RESISTANCE, SoundType.STONE));
         BLOCK_END_STONE_PILLAR = registerBlock(new BlockPillarBase(Names.BLOCK_END_STONE_PILLAR, Material.ROCK, MaterialColor.SAND, BlockValues.END_STONE_HARDNESS, BlockValues.END_STONE_RESISTANCE, SoundType.STONE));
         BLOCK_NETHERRACK_PILLAR = registerBlock(new BlockPillarBase(Names.BLOCK_NETHERRACK_PILLAR, Material.ROCK, MaterialColor.NETHERRACK, BlockValues.NETHER_BRICKS_HARDNESS, BlockValues.NETHERRACK_RESISTANCE, SoundType.STONE));
-        
-        BLOCK_CHARCOAL = registerBlock(new BlockBase(Names.BLOCK_CHARCOAL, Material.ROCK, MaterialColor.BLACK, BlockValues.COAL_BLOCK_HARDNESS, BlockValues.COAL_BLOCK_RESISTANCE, SoundType.STONE));
+
+        BLOCK_CHARCOAL = registerBlock(new BlockBase(Names.BLOCK_CHARCOAL, Material.ROCK, MaterialColor.BLACK, BlockValues.COAL_BLOCK_HARDNESS, BlockValues.COAL_BLOCK_RESISTANCE, SoundType.STONE).setBurnTime(FuelValues.BLOCK_CHARCOAL));
         BLOCK_SUGAR = registerBlock(new BlockFallingBase(Names.BLOCK_SUGAR, MaterialColor.SNOW, SoundType.SAND));
-        BLOCK_SUGAR_CANE = registerBlock(new BlockPillarBase( Names.BLOCK_SUGAR_CANE, Material.LEAVES, MaterialColor.GRASS, BlockValues.PLANKS_HARDNESS, BlockValues.PLANT_BLOCK_RESISTANCE, SoundType.PLANT));
+        BLOCK_SUGAR_CANE = registerBlock(new BlockPillarBase(Names.BLOCK_SUGAR_CANE, Material.LEAVES, MaterialColor.GRASS, BlockValues.PLANKS_HARDNESS, BlockValues.PLANT_BLOCK_RESISTANCE, SoundType.PLANT));
         BLOCK_GUNPOWDER = registerBlock(new BlockGunpowder());
-        BLOCK_BLAZE_POWDER = registerBlock(new BlockFallingBase(Names.BLOCK_BLAZE_POWDER, MaterialColor.ADOBE, SoundType.SNOW));
+        BLOCK_BLAZE_POWDER = registerBlock(new BlockFallingBase(Names.BLOCK_BLAZE_POWDER, MaterialColor.ADOBE, SoundType.SNOW).setBurnTime(FuelValues.BLOCK_BLAZE_POWDER));
         BLOCK_MAGMA_CREAM = registerBlock(new BlockMagmaCream());
         BLOCK_PRISMARINE_CRYSTAL = registerBlock(new BlockBase(Names.BLOCK_PRISMARINE_CRYSTAL, Block.Properties.create(Material.GLASS, MaterialColor.CYAN).hardnessAndResistance(BlockValues.GLASS_HARDNESS, BlockValues.GLASS_RESISTANCE).sound(SoundType.GLASS).lightValue(5)));
-        BLOCK_WITHER_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_WITHER_BONE, Material.ROCK, MaterialColor.BLACK, BlockValues.BONE_BLOCK_HARDNESS, BlockValues.BONE_BLOCK_RESISTANCE, SoundType.STONE));
+        BLOCK_WITHER_BONE = registerBlock(new BlockPillarBase(Names.BLOCK_WITHER_BONE, Material.ROCK, MaterialColor.BLACK, BlockValues.BONE_BLOCK_HARDNESS, BlockValues.BONE_BLOCK_RESISTANCE, SoundType.STONE).setBurnTime(FuelValues.BLOCK_CHARCOAL));
         BLOCK_WHITE_DYE = registerBlock(new BlockBase(Names.BLOCK_WHITE_DYE, MaterialColor.WOOL, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
         BLOCK_ORANGE_DYE = registerBlock(new BlockBase(Names.BLOCK_ORANGE_DYE, MaterialColor.ADOBE, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
         BLOCK_MAGENTA_DYE = registerBlock(new BlockBase(Names.BLOCK_MAGENTA_DYE, MaterialColor.MAGENTA, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
@@ -164,6 +169,8 @@ public class ModBlocks
         BLOCK_GREEN_DYE = registerBlock(new BlockBase(Names.BLOCK_GREEN_DYE, MaterialColor.GREEN, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
         BLOCK_RED_DYE = registerBlock(new BlockBase(Names.BLOCK_RED_DYE, MaterialColor.RED, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
         BLOCK_BLACK_DYE = registerBlock(new BlockBase(Names.BLOCK_BLACK_DYE, MaterialColor.BLACK, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
+
+        BLOCK_ROSE = registerBlock(new BlockRose());
     }
 
     private static Block registerBlock(Block block)
@@ -189,7 +196,7 @@ public class ModBlocks
         {
             for (Block block : BLOCKS)
             {
-                ItemBlock itemBlock = new ItemBlock(block, new Properties().group(CreativeTabs.MINECRAFTBOOM_TAB));
+                ItemBlock itemBlock = new ItemBlockBase(block, new Properties().group(CreativeTabs.MINECRAFTBOOM_TAB));
                 ResourceLocation registryName = Preconditions.checkNotNull(block.getRegistryName(), "Block %s has a null registry name", block);
                 event.getRegistry().register(itemBlock.setRegistryName(registryName));
                 CreativeTabs.tabList.add(itemBlock);

@@ -5,10 +5,11 @@ import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import phrille.minecraftboom.lib.BlockValues;
+import phrille.minecraftboom.util.IFuelBlock;
 
-public class BlockBase extends Block
+public class BlockBase extends Block implements IFuelBlock
 {
-    private int harvestLevel;
+    private int burnTime;
 
     public BlockBase(String name)
     {
@@ -19,7 +20,7 @@ public class BlockBase extends Block
     {
         this(name, color, BlockValues.STONE_HARDNESS, BlockValues.STONE_RESISTANCE);
     }
-    
+
     public BlockBase(String name, MaterialColor color, float hardness, float resistance)
     {
         this(name, Material.ROCK, color, hardness, resistance, SoundType.STONE);
@@ -34,5 +35,19 @@ public class BlockBase extends Block
     {
         super(properties);
         setRegistryName(name);
+        burnTime = -1;
+    }
+
+    @Override
+    public Block setBurnTime(int burn)
+    {
+        burnTime = burn;
+        return this;
+    }
+
+    @Override
+    public int getBurnTime()
+    {
+        return burnTime;
     }
 }
