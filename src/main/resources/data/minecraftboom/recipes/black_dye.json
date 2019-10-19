@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraftboom:black_dye_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:ink_sac",
+    "count": 9
+  }
+}

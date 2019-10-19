@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraftboom:yellow_dye_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:dandelion_yellow",
+    "count": 9
+  }
+}

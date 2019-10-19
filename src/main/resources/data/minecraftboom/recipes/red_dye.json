@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraftboom:red_dye_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:rose_red",
+    "count": 9
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraftboom:wither_bone_block"
+    }
+  ],
+  "result": {
+    "item": "minecraftboom:wither_bone",
+    "count": 9
+  }
+}

@@ -3,7 +3,9 @@ package phrille.minecraftboom.init;
 import java.util.ArrayList;
 import java.util.List;
 
+import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
+import net.minecraft.potion.PotionEffect;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -23,9 +25,10 @@ public class ModItems
     public static final Item ITEM_POLAR_BEAR_FUR;
     public static final Item ITEM_RAW_POLAR_BEAR_MEAT;
     public static final Item ITEM_POLAR_BEAR_STEAK;
-
     public static final Item ITEM_PUMPKIN_SLICE;
     public static final Item ITEM_COOKED_EGG;
+    public static final Item ITEM_DROWNED_FLESH;
+
 
     static
     {
@@ -37,6 +40,7 @@ public class ModItems
         ITEM_POLAR_BEAR_STEAK = registerItem(new ItemFoodBase(Names.ITEM_POLAR_BEAR_STEAK, 8, 12.8F, false));
         ITEM_PUMPKIN_SLICE = registerItem(new ItemFoodBase(Names.ITEM_PUMPKIN_SLICE, 2, 1.2F, false));
         ITEM_COOKED_EGG = registerItem(new ItemFoodBase(Names.ITEM_COOKED_EGG, 6, 2.8F, false));
+        ITEM_DROWNED_FLESH = registerItem(new ItemFoodBase(Names.ITEM_DROWNED_FLESH, 4, 0.1F, true).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 600, 0), 0.8F).setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 600, 0), 0.5F));
     }
 
     private static Item registerItem(Item item)

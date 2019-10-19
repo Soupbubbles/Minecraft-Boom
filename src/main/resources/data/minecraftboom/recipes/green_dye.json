@@ -1,0 +1,12 @@
+{
+  "type": "crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "minecraftboom:green_dye_block"
+    }
+  ],
+  "result": {
+    "item": "minecraft:cactus_green",
+    "count": 9
+  }
+}

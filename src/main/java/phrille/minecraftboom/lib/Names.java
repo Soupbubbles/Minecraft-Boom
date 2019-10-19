@@ -11,7 +11,7 @@ public class Names
     public static final String LIME = "lime";
     public static final String PINK = "pink";
     public static final String GRAY = "gray";
-    public static final String SILVER = "silver";
+    public static final String LIGHT_GRAY = "light_gray";
     public static final String CYAN = "cyan";
     public static final String PURPLE = "purple";
     public static final String BLUE = "blue";
@@ -99,7 +99,7 @@ public class Names
     public static final String BLOCK_LIME_STAINED_SOUL_GLASS = "lime_stained_soul_glass";
     public static final String BLOCK_PINK_STAINED_SOUL_GLASS = "pink_stained_soul_glass";
     public static final String BLOCK_GRAY_STAINED_SOUL_GLASS = "gray_stained_soul_glass";
-    public static final String BLOCK_SILVER_STAINED_SOUL_GLASS = "silver_stained_soul_glass";
+    public static final String BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS = "light_gray_stained_soul_glass";
     public static final String BLOCK_CYAN_STAINED_SOUL_GLASS = "cyan_stained_soul_glass";
     public static final String BLOCK_PURPLE_STAINED_SOUL_GLASS = "purple_stained_soul_glass";
     public static final String BLOCK_BLUE_STAINED_SOUL_GLASS = "blue_stained_soul_glass";
@@ -130,4 +130,5 @@ public class Names
     public static final String ITEM_TELESCOPE = "telescope";
     public static final String ITEM_LEVITATION_DUST = "levitation_dust";
     public static final String ITEM_COOKED_EGG = "cooked_egg";
+    public static final String ITEM_DROWNED_FLESH = "drowned_flesh";
 }
