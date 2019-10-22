@@ -29,7 +29,6 @@ public class ModItems
     public static final Item ITEM_COOKED_EGG;
     public static final Item ITEM_DROWNED_FLESH;
 
-
     static
     {
         ITEM_MAGMA_BRICK = registerItem(new ItemBase(Names.ITEM_MAGMA_BRICK));
@@ -48,7 +47,7 @@ public class ModItems
         ITEMS.add(item);
         return item;
     }
-    
+
     @Mod.EventBusSubscriber(modid = MinecraftBoom.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
     public static class Register
     {
@@ -58,7 +57,7 @@ public class ModItems
             for (Item item : ITEMS)
             {
                 event.getRegistry().register(item);
-                CreativeTabs.tabList.add(item);
+                CreativeTabs.MINECRAFTBOOM_TAB.getList().add(item);
             }
         }
     }

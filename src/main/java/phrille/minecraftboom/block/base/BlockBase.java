@@ -4,12 +4,20 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import phrille.minecraftboom.init.ModBlocks;
 import phrille.minecraftboom.lib.BlockValues;
 import phrille.minecraftboom.util.IFuelBlock;
+import phrille.minecraftboom.util.IJsonGenerator;
+import phrille.minecraftboom.util.IStairSlab;
 
-public class BlockBase extends Block implements IFuelBlock
+public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGenerator
 {
     private int burnTime;
+    protected Properties properties;
+    private String registryName;
+
+    private boolean hasStairSlab;
+    private BlockStairBase stair;
 
     public BlockBase(String name)
     {
@@ -31,11 +39,13 @@ public class BlockBase extends Block implements IFuelBlock
         this(name, Properties.create(material, mapColor).hardnessAndResistance(hardness, resistance).sound(sound));
     }
 
-    public BlockBase(String name, Properties properties)
+    public BlockBase(String name, Properties builder)
     {
-        super(properties);
+        super(builder);
         setRegistryName(name);
         burnTime = -1;
+        properties = builder;
+        registryName = name;
     }
 
     @Override
@@ -49,5 +59,49 @@ public class BlockBase extends Block implements IFuelBlock
     public int getBurnTime()
     {
         return burnTime;
+    }
+
+    @Override
+    public Block getParentBlock()
+    {
+        return this;
+    }
+
+    @Override
+    public Block addStairSlab()
+    {
+        ModBlocks.STAIR_SLAB_LIST.add(this);
+        hasStairSlab = true;
+        return getParentBlock();
+    }
+
+    @Override
+    public boolean hasStairSlab()
+    {
+        return hasStairSlab;
+    }
+
+    @Override
+    public BlockStairBase setStair(BlockStairBase stair)
+    {
+        return this.stair = stair;
+    }
+
+    @Override
+    public BlockStairBase getStair()
+    {
+        return stair;
+    }
+
+    @Override
+    public Properties getProperties()
+    {
+        return properties;
+    }
+
+    @Override
+    public String getName()
+    {
+        return registryName;
     }
 }

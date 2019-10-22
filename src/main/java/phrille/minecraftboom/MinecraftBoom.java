@@ -1,5 +1,8 @@
 package phrille.minecraftboom;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -10,11 +13,13 @@ import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import phrille.minecraftboom.handler.BlockEventHandler;
+import phrille.minecraftboom.util.JsonGenerator;
 
 @Mod(MinecraftBoom.MOD_ID)
 public class MinecraftBoom
 {
     public static final String MOD_ID = "minecraftboom";
+    public static final Logger LOGGER = LogManager.getLogger();
     
     public MinecraftBoom() 
     {
@@ -29,6 +34,7 @@ public class MinecraftBoom
     public void setup(FMLCommonSetupEvent event) 
     {
         MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
+        JsonGenerator.init();
     }
     
     private void clientSetup(FMLClientSetupEvent event)
