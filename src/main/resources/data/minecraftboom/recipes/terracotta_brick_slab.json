@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraftboom:terracotta_brick_slab",
+    "count": 6
+  },
+  "pattern": [
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:terracotta_bricks"
+    }
+  }
+}

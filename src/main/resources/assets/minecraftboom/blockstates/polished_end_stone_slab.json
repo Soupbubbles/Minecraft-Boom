@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "minecraftboom:block/polished_end_stone_slab"
+    },
+    "type=top": {
+      "model": "minecraftboom:block/polished_end_stone_slab_top"
+    },
+    "type=double": {
+      "model": "minecraftboom:block/polished_end_stone"
+    }
+  }
+}

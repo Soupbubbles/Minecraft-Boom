@@ -18,6 +18,7 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
 
     private boolean hasStairSlab;
     private BlockStairBase stair;
+    private BlockSlabBase slab;
 
     public BlockBase(String name)
     {
@@ -61,8 +62,7 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
         return burnTime;
     }
 
-    @Override
-    public Block getParentBlock()
+    public Block getBlock()
     {
         return this;
     }
@@ -72,7 +72,7 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
     {
         ModBlocks.STAIR_SLAB_LIST.add(this);
         hasStairSlab = true;
-        return getParentBlock();
+        return getBlock();
     }
 
     @Override
@@ -100,8 +100,14 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
     }
 
     @Override
-    public String getName()
+    public BlockSlabBase setSlab(BlockSlabBase slab)
     {
-        return registryName;
+        return this.slab = slab;
+    }
+
+    @Override
+    public BlockSlabBase getSlab()
+    {
+        return slab;
     }
 }

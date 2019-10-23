@@ -2,11 +2,12 @@ package phrille.minecraftboom.util;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Properties;
+import phrille.minecraftboom.block.base.BlockSlabBase;
 import phrille.minecraftboom.block.base.BlockStairBase;
 
 public interface IStairSlab
 {
-    public Block getParentBlock();
+    public Block getBlock();
     
     public Block addStairSlab();
 
@@ -15,8 +16,10 @@ public interface IStairSlab
     public BlockStairBase setStair(BlockStairBase stair);
 
     public BlockStairBase getStair();
+    
+    public BlockSlabBase setSlab(BlockSlabBase slab);
+
+    public BlockSlabBase getSlab();
 
     public Properties getProperties();
-    
-    public String getName();
 }

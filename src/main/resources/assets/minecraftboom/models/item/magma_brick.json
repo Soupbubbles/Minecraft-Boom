@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
-    "textures": {
-        "layer0": "minecraftboom:item/magma_brick"
-    }
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "minecraftboom:item/magma_brick"
+  }
 }

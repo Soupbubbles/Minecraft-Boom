@@ -14,6 +14,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import phrille.minecraftboom.MinecraftBoom;
+import phrille.minecraftboom.block.base.BlockSlabBase;
 import phrille.minecraftboom.block.base.BlockStairBase;
 import phrille.minecraftboom.util.IStairSlab;
 
@@ -23,7 +24,7 @@ public class CreativeTabs
 
     public static ItemGroupBase getTab(Block block)
     {
-        if (block instanceof BlockStairBase)
+        if (block instanceof BlockStairBase || block instanceof BlockSlabBase)
         {
             return STAIRS_AND_SLABS_TAB;
         }
@@ -49,7 +50,6 @@ public class CreativeTabs
 
             tabSorter = Ordering.explicit(minecraftBoomList).onResultOf(ItemStack::getItem);
             list.sort(tabSorter);
-
         }
 
         @Override

@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "minecraftboom:block/cobblestone_brick_slab" },
+        "type=top": { "model": "minecraftboom:block/cobblestone_brick_slab_top" },
+        "type=double": { "model": "minecraftboom:block/cobblestone_bricks" }
+    }
+}

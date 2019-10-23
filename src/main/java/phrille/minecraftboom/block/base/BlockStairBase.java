@@ -3,6 +3,7 @@ package phrille.minecraftboom.block.base;
 import net.minecraft.block.BlockStairs;
 import phrille.minecraftboom.util.IJsonGenerator;
 import phrille.minecraftboom.util.IStairSlab;
+import phrille.minecraftboom.util.Utils;
 
 public class BlockStairBase extends BlockStairs implements IJsonGenerator
 {
@@ -11,8 +12,8 @@ public class BlockStairBase extends BlockStairs implements IJsonGenerator
 
     public BlockStairBase(IStairSlab block)
     {
-        super(block.getParentBlock().getDefaultState(), block.getProperties());
-        stairName = block.getName().replace("bricks", "brick") + "_stairs";
+        super(block.getBlock().getDefaultState(), block.getProperties());
+        stairName = Utils.getNameFromRegistry(block.getBlock()).replace("bricks", "brick") + "_stairs";
         setRegistryName(stairName);
         parent = block;
     }
@@ -21,8 +22,8 @@ public class BlockStairBase extends BlockStairs implements IJsonGenerator
     {
         return stairName;
     }
-    
-    public IStairSlab getParent() 
+
+    public IStairSlab getParent()
     {
         return parent;
     }

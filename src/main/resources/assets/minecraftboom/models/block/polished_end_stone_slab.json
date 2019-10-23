@@ -1,0 +1,8 @@
+{
+  "parent": "block/slab",
+  "textures": {
+    "bottom": "minecraftboom:block/polished_end_stone",
+    "top": "minecraftboom:block/polished_end_stone",
+    "side": "minecraftboom:block/polished_end_stone"
+  }
+}

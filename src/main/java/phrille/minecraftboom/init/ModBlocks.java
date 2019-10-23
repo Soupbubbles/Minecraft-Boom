@@ -20,6 +20,7 @@ import phrille.minecraftboom.block.BlockRose;
 import phrille.minecraftboom.block.base.BlockBase;
 import phrille.minecraftboom.block.base.BlockFallingBase;
 import phrille.minecraftboom.block.base.BlockPillarBase;
+import phrille.minecraftboom.block.base.BlockSlabBase;
 import phrille.minecraftboom.block.base.BlockStairBase;
 import phrille.minecraftboom.item.ItemBlockBase;
 import phrille.minecraftboom.lib.BlockValues;
@@ -171,11 +172,14 @@ public class ModBlocks
 
         BLOCK_ROSE = registerBlock(new BlockRose());
 
-        for (Block block : STAIR_SLAB_LIST) 
+        for (Block block : STAIR_SLAB_LIST)
         {
             IStairSlab blockBase = (IStairSlab) block;
+            
             BlockStairBase stair = blockBase.setStair(new BlockStairBase(blockBase));
             registerBlock(stair);
+            BlockSlabBase slab = blockBase.setSlab(new BlockSlabBase(blockBase));
+            registerBlock(slab);
         }
     }
 
