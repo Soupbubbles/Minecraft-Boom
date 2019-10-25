@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "minecraftboom:block/polished_netherrack",
     "top": "minecraftboom:block/polished_netherrack",
-    "side": "minecraftboom:block/polished_netherrack"
+    "side": "minecraftboom:block/polished_netherrack_slab_side"
   }
 }

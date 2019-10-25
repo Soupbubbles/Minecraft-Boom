@@ -7,7 +7,7 @@
       "model": "minecraftboom:block/polished_end_stone_slab_top"
     },
     "type=double": {
-      "model": "minecraftboom:block/polished_end_stone"
+      "model": "minecraftboom:block/polished_end_stone_slab_double"
     }
   }
 }

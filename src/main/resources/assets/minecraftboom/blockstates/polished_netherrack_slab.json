@@ -7,7 +7,7 @@
       "model": "minecraftboom:block/polished_netherrack_slab_top"
     },
     "type=double": {
-      "model": "minecraftboom:block/polished_netherrack"
+      "model": "minecraftboom:block/polished_netherrack_slab_double"
     }
   }
 }

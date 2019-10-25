@@ -108,7 +108,22 @@ public class Names
     public static final String BLOCK_RED_STAINED_SOUL_GLASS = "red_stained_soul_glass";
     public static final String BLOCK_BLACK_STAINED_SOUL_GLASS = "black_stained_soul_glass";
     public static final String BLOCK_SOUL_GLASS_PANE = "soul_glass_pane";
-    public static final String BLOCK_STAINED_SOUL_GLASS_PANE = "stained_soul_glass_pane";
+    public static final String BLOCK_WHITE_STAINED_SOUL_GLASS_PANE = "white_stained_soul_glass_pane";
+    public static final String BLOCK_ORANGE_STAINED_SOUL_GLASS_PANE = "orange_stained_soul_glass_pane";
+    public static final String BLOCK_MAGENTA_STAINED_SOUL_GLASS_PANE = "magenta_stained_soul_glass_pane";
+    public static final String BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS_PANE = "light_blue_stained_soul_glass_pane";
+    public static final String BLOCK_YELLOW_STAINED_SOUL_GLASS_PANE = "yellow_stained_soul_glass_pane";
+    public static final String BLOCK_LIME_STAINED_SOUL_GLASS_PANE = "lime_stained_soul_glass_pane";
+    public static final String BLOCK_PINK_STAINED_SOUL_GLASS_PANE = "pink_stained_soul_glass_pane";
+    public static final String BLOCK_GRAY_STAINED_SOUL_GLASS_PANE = "gray_stained_soul_glass_pane";
+    public static final String BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS_PANE = "light_gray_stained_soul_glass_pane";
+    public static final String BLOCK_CYAN_STAINED_SOUL_GLASS_PANE = "cyan_stained_soul_glass_pane";
+    public static final String BLOCK_PURPLE_STAINED_SOUL_GLASS_PANE = "purple_stained_soul_glass_pane";
+    public static final String BLOCK_BLUE_STAINED_SOUL_GLASS_PANE = "blue_stained_soul_glass_pane";
+    public static final String BLOCK_BROWN_STAINED_SOUL_GLASS_PANE = "brown_stained_soul_glass_pane";
+    public static final String BLOCK_GREEN_STAINED_SOUL_GLASS_PANE = "green_stained_soul_glass_pane";
+    public static final String BLOCK_RED_STAINED_SOUL_GLASS_PANE = "red_stained_soul_glass_pane";
+    public static final String BLOCK_BLACK_STAINED_SOUL_GLASS_PANE = "black_stained_soul_glass_pane";
     
     public static final String BLOCK_GOLDEN_BARS = "golden_bars";
     public static final String BLOCK_RED_NETHER_FENCE = "red_nether_brick_fence";

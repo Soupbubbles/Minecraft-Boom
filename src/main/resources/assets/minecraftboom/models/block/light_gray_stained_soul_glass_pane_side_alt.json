@@ -1,0 +1,7 @@
+{
+  "parent": "block/template_glass_pane_side_alt",
+  "textures": {
+    "edge": "minecraftboom:block/light_gray_stained_soul_glass_pane_top",
+    "pane": "minecraftboom:block/light_gray_stained_soul_glass"
+  }
+}

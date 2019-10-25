@@ -7,7 +7,7 @@
       "model": "minecraftboom:block/polished_prismarine_slab_top"
     },
     "type=double": {
-      "model": "minecraftboom:block/polished_prismarine"
+      "model": "minecraftboom:block/polished_prismarine_slab_double"
     }
   }
 }

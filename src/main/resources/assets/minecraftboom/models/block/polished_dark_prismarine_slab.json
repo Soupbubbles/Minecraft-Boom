@@ -3,6 +3,6 @@
   "textures": {
     "bottom": "minecraftboom:block/polished_dark_prismarine",
     "top": "minecraftboom:block/polished_dark_prismarine",
-    "side": "minecraftboom:block/polished_dark_prismarine"
+    "side": "minecraftboom:block/polished_dark_prismarine_slab_side"
   }
 }

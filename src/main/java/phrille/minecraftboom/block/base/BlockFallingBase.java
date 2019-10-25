@@ -22,9 +22,9 @@ public class BlockFallingBase extends BlockFalling implements IFuelBlock
         this(name, Properties.create(Material.SAND, color).hardnessAndResistance(BlockValues.SAND_HARDNESS, BlockValues.SAND_RESISTANCE).sound(sound));
     }
 
-    public BlockFallingBase(String name, Properties properties)
+    public BlockFallingBase(String name, Properties builder)
     {
-        super(properties);
+        super(builder);
         setRegistryName(name);
     }
 

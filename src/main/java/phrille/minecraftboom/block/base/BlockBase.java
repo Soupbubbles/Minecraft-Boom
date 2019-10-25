@@ -14,7 +14,6 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
 {
     private int burnTime;
     protected Properties properties;
-    private String registryName;
 
     private boolean hasStairSlab;
     private BlockStairBase stair;
@@ -46,7 +45,6 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
         setRegistryName(name);
         burnTime = -1;
         properties = builder;
-        registryName = name;
     }
 
     @Override

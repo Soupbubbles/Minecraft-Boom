@@ -39,7 +39,7 @@ public class CreativeTabs
         @Override
         public ItemStack createIcon()
         {
-            return new ItemStack(ModBlocks.BLOCK_COBBLESTONE_BRICKS);
+            return new ItemStack(ModBlocks.BLOCK_MOSSY_COBBLESTONE_BRICKS);
         }
 
         @OnlyIn(Dist.CLIENT)
@@ -67,7 +67,7 @@ public class CreativeTabs
         @Override
         public ItemStack createIcon()
         {
-            return new ItemStack(((IStairSlab) ModBlocks.BLOCK_COBBLESTONE_BRICKS).getStair());
+            return new ItemStack(((IStairSlab) ModBlocks.BLOCK_MAGMA_BRICKS).getStair());
         }
 
         @OnlyIn(Dist.CLIENT)

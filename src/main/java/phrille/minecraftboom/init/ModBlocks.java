@@ -17,8 +17,10 @@ import phrille.minecraftboom.block.BlockGunpowder;
 import phrille.minecraftboom.block.BlockMagmaBricks;
 import phrille.minecraftboom.block.BlockMagmaCream;
 import phrille.minecraftboom.block.BlockRose;
+import phrille.minecraftboom.block.BlockSoulGlass;
 import phrille.minecraftboom.block.base.BlockBase;
 import phrille.minecraftboom.block.base.BlockFallingBase;
+import phrille.minecraftboom.block.base.BlockPaneBase;
 import phrille.minecraftboom.block.base.BlockPillarBase;
 import phrille.minecraftboom.block.base.BlockSlabBase;
 import phrille.minecraftboom.block.base.BlockStairBase;
@@ -102,6 +104,42 @@ public class ModBlocks
     public static final Block BLOCK_RED_DYE;
     public static final Block BLOCK_BLACK_DYE;
 
+    //Glass
+    public static final Block BLOCK_SOUL_GLASS;
+    public static final Block BLOCK_WHITE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_ORANGE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_MAGENTA_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_YELLOW_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_LIME_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_PINK_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_GRAY_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_CYAN_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_PURPLE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_BLUE_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_BROWN_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_GREEN_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_RED_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_BLACK_STAINED_SOUL_GLASS;
+    public static final Block BLOCK_SOUL_GLASS_PANE;
+    public static final Block BLOCK_WHITE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_ORANGE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_MAGENTA_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_YELLOW_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_LIME_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_PINK_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_GRAY_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_CYAN_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_PURPLE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_BLUE_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_BROWN_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_GREEN_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_RED_STAINED_SOUL_GLASS_PANE;
+    public static final Block BLOCK_BLACK_STAINED_SOUL_GLASS_PANE;
+
     public static final Block BLOCK_ROSE;
 
     static
@@ -170,12 +208,47 @@ public class ModBlocks
         BLOCK_RED_DYE = registerBlock(new BlockBase(Names.BLOCK_RED_DYE, MaterialColor.RED, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
         BLOCK_BLACK_DYE = registerBlock(new BlockBase(Names.BLOCK_BLACK_DYE, MaterialColor.BLACK, BlockValues.DYE_BLOCK_HARDNESS, BlockValues.DYE_BLOCK_RESISTANCE));
 
+        BLOCK_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_SOUL_GLASS));
+        BLOCK_WHITE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_WHITE_STAINED_SOUL_GLASS));
+        BLOCK_ORANGE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_ORANGE_STAINED_SOUL_GLASS));
+        BLOCK_MAGENTA_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_MAGENTA_STAINED_SOUL_GLASS));
+        BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS));
+        BLOCK_YELLOW_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_YELLOW_STAINED_SOUL_GLASS));
+        BLOCK_LIME_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_LIME_STAINED_SOUL_GLASS));
+        BLOCK_PINK_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_PINK_STAINED_SOUL_GLASS));
+        BLOCK_GRAY_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_GRAY_STAINED_SOUL_GLASS));
+        BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS));
+        BLOCK_CYAN_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_CYAN_STAINED_SOUL_GLASS));
+        BLOCK_PURPLE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_PURPLE_STAINED_SOUL_GLASS));
+        BLOCK_BLUE_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_BLUE_STAINED_SOUL_GLASS));
+        BLOCK_BROWN_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_BROWN_STAINED_SOUL_GLASS));
+        BLOCK_GREEN_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_GREEN_STAINED_SOUL_GLASS));
+        BLOCK_RED_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_RED_STAINED_SOUL_GLASS));
+        BLOCK_BLACK_STAINED_SOUL_GLASS = registerBlock(new BlockSoulGlass(Names.BLOCK_BLACK_STAINED_SOUL_GLASS));
+        BLOCK_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_SOUL_GLASS_PANE, BLOCK_SOUL_GLASS));
+        BLOCK_WHITE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_WHITE_STAINED_SOUL_GLASS_PANE, BLOCK_WHITE_STAINED_SOUL_GLASS));
+        BLOCK_ORANGE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_ORANGE_STAINED_SOUL_GLASS_PANE, BLOCK_ORANGE_STAINED_SOUL_GLASS));
+        BLOCK_MAGENTA_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_MAGENTA_STAINED_SOUL_GLASS_PANE, BLOCK_ORANGE_STAINED_SOUL_GLASS));
+        BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS_PANE, BLOCK_MAGENTA_STAINED_SOUL_GLASS));
+        BLOCK_YELLOW_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_YELLOW_STAINED_SOUL_GLASS_PANE, BLOCK_LIGHT_BLUE_STAINED_SOUL_GLASS));
+        BLOCK_LIME_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_LIME_STAINED_SOUL_GLASS_PANE, BLOCK_YELLOW_STAINED_SOUL_GLASS));
+        BLOCK_PINK_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_PINK_STAINED_SOUL_GLASS_PANE, BLOCK_LIME_STAINED_SOUL_GLASS));
+        BLOCK_GRAY_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_GRAY_STAINED_SOUL_GLASS_PANE, BLOCK_PINK_STAINED_SOUL_GLASS));
+        BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS_PANE, BLOCK_GRAY_STAINED_SOUL_GLASS));
+        BLOCK_CYAN_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_CYAN_STAINED_SOUL_GLASS_PANE, BLOCK_LIGHT_GRAY_STAINED_SOUL_GLASS));
+        BLOCK_PURPLE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_PURPLE_STAINED_SOUL_GLASS_PANE, BLOCK_CYAN_STAINED_SOUL_GLASS));
+        BLOCK_BLUE_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_BLUE_STAINED_SOUL_GLASS_PANE, BLOCK_PURPLE_STAINED_SOUL_GLASS));
+        BLOCK_BROWN_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_BROWN_STAINED_SOUL_GLASS_PANE, BLOCK_BLUE_STAINED_SOUL_GLASS));
+        BLOCK_GREEN_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_GREEN_STAINED_SOUL_GLASS_PANE, BLOCK_BROWN_STAINED_SOUL_GLASS));
+        BLOCK_RED_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_RED_STAINED_SOUL_GLASS_PANE, BLOCK_GREEN_STAINED_SOUL_GLASS));
+        BLOCK_BLACK_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_BLACK_STAINED_SOUL_GLASS_PANE, BLOCK_RED_STAINED_SOUL_GLASS));
+        
         BLOCK_ROSE = registerBlock(new BlockRose());
 
         for (Block block : STAIR_SLAB_LIST)
         {
             IStairSlab blockBase = (IStairSlab) block;
-            
+
             BlockStairBase stair = blockBase.setStair(new BlockStairBase(blockBase));
             registerBlock(stair);
             BlockSlabBase slab = blockBase.setSlab(new BlockSlabBase(blockBase));
