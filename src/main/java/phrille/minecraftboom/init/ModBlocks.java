@@ -7,6 +7,7 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
@@ -33,7 +34,8 @@ import phrille.minecraftboom.util.IStairSlab;
 public class ModBlocks
 {
     public static final List<Block> BLOCKS = new ArrayList<>();
-    public static final List<Block> STAIR_SLAB_LIST = new ArrayList<>();
+    public static final List<Block> VANILLA_STAIRS_SLABS = new ArrayList<>();
+    public static final List<IStairSlab> STAIR_SLAB_LIST = new ArrayList<>();
 
     //Bricks
     public static final Block BLOCK_COBBLESTONE_BRICKS;
@@ -141,6 +143,8 @@ public class ModBlocks
     public static final Block BLOCK_BLACK_STAINED_SOUL_GLASS_PANE;
 
     public static final Block BLOCK_ROSE;
+    
+    public static final Block BLOCK_SMOOTH_STONE_STAIRS;
 
     static
     {
@@ -242,18 +246,92 @@ public class ModBlocks
         BLOCK_GREEN_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_GREEN_STAINED_SOUL_GLASS_PANE, BLOCK_BROWN_STAINED_SOUL_GLASS));
         BLOCK_RED_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_RED_STAINED_SOUL_GLASS_PANE, BLOCK_GREEN_STAINED_SOUL_GLASS));
         BLOCK_BLACK_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_BLACK_STAINED_SOUL_GLASS_PANE, BLOCK_RED_STAINED_SOUL_GLASS));
-        
+
         BLOCK_ROSE = registerBlock(new BlockRose());
 
-        for (Block block : STAIR_SLAB_LIST)
-        {
-            IStairSlab blockBase = (IStairSlab) block;
+        VANILLA_STAIRS_SLABS.add(Blocks.STONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.GRANITE);
+        VANILLA_STAIRS_SLABS.add(Blocks.POLISHED_GRANITE);
+        VANILLA_STAIRS_SLABS.add(Blocks.DIORITE);
+        VANILLA_STAIRS_SLABS.add(Blocks.POLISHED_DIORITE);
+        VANILLA_STAIRS_SLABS.add(Blocks.ANDESITE);
+        VANILLA_STAIRS_SLABS.add(Blocks.POLISHED_ANDESITE);
+        VANILLA_STAIRS_SLABS.add(Blocks.MOSSY_COBBLESTONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.MOSSY_STONE_BRICKS);
+        VANILLA_STAIRS_SLABS.add(Blocks.CRACKED_STONE_BRICKS);
+        VANILLA_STAIRS_SLABS.add(Blocks.CHISELED_STONE_BRICKS);
+        VANILLA_STAIRS_SLABS.add(Blocks.CUT_SANDSTONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.CHISELED_SANDSTONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.SMOOTH_SANDSTONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.CUT_RED_SANDSTONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.CHISELED_RED_SANDSTONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.SMOOTH_RED_SANDSTONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.OAK_WOOD);
+        VANILLA_STAIRS_SLABS.add(Blocks.SPRUCE_WOOD);
+        VANILLA_STAIRS_SLABS.add(Blocks.BIRCH_WOOD);
+        VANILLA_STAIRS_SLABS.add(Blocks.JUNGLE_WOOD);
+        VANILLA_STAIRS_SLABS.add(Blocks.ACACIA_WOOD);
+        VANILLA_STAIRS_SLABS.add(Blocks.DARK_OAK_WOOD);
+        VANILLA_STAIRS_SLABS.add(Blocks.IRON_BLOCK);
+        VANILLA_STAIRS_SLABS.add(Blocks.GOLD_BLOCK);
+        VANILLA_STAIRS_SLABS.add(Blocks.OBSIDIAN);
+        VANILLA_STAIRS_SLABS.add(Blocks.NETHERRACK);
+        VANILLA_STAIRS_SLABS.add(Blocks.RED_NETHER_BRICKS);
+        VANILLA_STAIRS_SLABS.add(Blocks.END_STONE);
+        VANILLA_STAIRS_SLABS.add(Blocks.END_STONE_BRICKS);
+        VANILLA_STAIRS_SLABS.add(Blocks.CHISELED_QUARTZ_BLOCK);
+        VANILLA_STAIRS_SLABS.add(Blocks.TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.WHITE_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.ORANGE_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.MAGENTA_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.LIGHT_BLUE_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.YELLOW_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.LIME_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.PINK_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.GRAY_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.LIGHT_GRAY_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.CYAN_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.PURPLE_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.BLUE_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.BROWN_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.GREEN_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.RED_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.BLACK_TERRACOTTA);
+        VANILLA_STAIRS_SLABS.add(Blocks.WHITE_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.ORANGE_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.MAGENTA_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.LIGHT_BLUE_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.YELLOW_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.LIME_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.PINK_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.GRAY_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.LIGHT_GRAY_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.CYAN_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.PURPLE_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.BLUE_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.BROWN_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.GREEN_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.RED_CONCRETE);
+        VANILLA_STAIRS_SLABS.add(Blocks.BLACK_CONCRETE);
 
-            BlockStairBase stair = blockBase.setStair(new BlockStairBase(blockBase));
+        for (IStairSlab block : STAIR_SLAB_LIST)
+        {
+            BlockStairBase stair = block.setStair(new BlockStairBase(block));
             registerBlock(stair);
-            BlockSlabBase slab = blockBase.setSlab(new BlockSlabBase(blockBase));
+            BlockSlabBase slab = block.setSlab(new BlockSlabBase(block));
             registerBlock(slab);
         }
+
+        for (Block block : VANILLA_STAIRS_SLABS)
+        {
+            BlockStairBase stair = new BlockStairBase(block, true);
+            registerBlock(stair);
+            BlockSlabBase slab = new BlockSlabBase(block, true);
+            registerBlock(slab);
+        }
+        
+        BLOCK_SMOOTH_STONE_STAIRS = new BlockStairBase(Blocks.SMOOTH_STONE, true);
+        registerBlock(BLOCK_SMOOTH_STONE_STAIRS);
     }
 
     private static Block registerBlock(Block block)

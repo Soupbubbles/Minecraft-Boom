@@ -66,7 +66,7 @@ public class BlockGunpowder extends BlockFallingBase
             flag = true;
         }
 
-        if (flag && rand.nextFloat() > 0.5)
+        if (flag && rand.nextFloat() > 0.9)
         {
             explode(world, pos, null);
         }

@@ -8,7 +8,7 @@ public class Utils
 {
     public static final String getNameFromRegistry(Block block) 
     {
-        return block.getRegistryName().toString().replace(MinecraftBoom.MOD_ID + ":", "");
+        return block.getRegistryName().toString().replace(MinecraftBoom.MOD_ID + ":", "").replace("minecraft:", "");
     }
     
     public static final String getNameFromRegistry(Item item) 

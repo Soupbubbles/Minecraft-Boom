@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "minecraftboom:block/jungle_wood_slab"
+    },
+    "type=top": {
+      "model": "minecraftboom:block/jungle_wood_slab_top"
+    },
+    "type=double": {
+      "model": "minecraft:block/jungle_wood"
+    }
+  }
+}

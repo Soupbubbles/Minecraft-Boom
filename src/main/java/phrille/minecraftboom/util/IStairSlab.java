@@ -8,7 +8,7 @@ import phrille.minecraftboom.block.base.BlockStairBase;
 public interface IStairSlab
 {
     public Block getBlock();
-    
+
     public Block addStairSlab();
 
     public boolean hasStairSlab();
@@ -20,6 +20,4 @@ public interface IStairSlab
     public BlockSlabBase setSlab(BlockSlabBase slab);
 
     public BlockSlabBase getSlab();
-
-    public Properties getProperties();
 }

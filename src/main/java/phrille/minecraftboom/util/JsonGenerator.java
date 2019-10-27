@@ -189,7 +189,8 @@ public class JsonGenerator
 
             for (int k = 0; k < STAIR_SIDE.length; k++)
             {
-                textures.put(STAIR_SIDE[k], getFormattedName(block.getParent().getBlock()));
+                String textureName = block.isVanilla() ? getFormattedName(block.getParent().getBlock()).replace("boom", "") : getFormattedName(block.getParent().getBlock());
+                textures.put(STAIR_SIDE[k], textureName);
             }
 
             json.put("textures", textures);
@@ -215,7 +216,14 @@ public class JsonGenerator
         {
             Map<String, Object> model = new HashMap();
             String name = i == 2 ? Utils.getNameFromRegistry(block.getParent().getBlock()) : block.getSlabName() + SLAB_SUFFIX[i];
-            model.put("model", MinecraftBoom.MOD_ID + ":block/" + name);
+            String prefix =  MinecraftBoom.MOD_ID + ":block/";
+            
+            if (block.isVanilla() && i == 2) 
+            {
+                prefix = prefix.replace("boom", "");
+            }
+            
+            model.put("model", prefix + name);
             type.put("type=" + SLAB_TYPE[i], model);
         }
 
@@ -233,7 +241,8 @@ public class JsonGenerator
 
             for (int j = 0; j < STAIR_SIDE.length; j++)
             {
-                textures.put(STAIR_SIDE[j], getFormattedName(block.getParent().getBlock()));
+                String textureName = block.isVanilla() ? getFormattedName(block.getParent().getBlock()).replace("boom", "") : getFormattedName(block.getParent().getBlock());
+                textures.put(STAIR_SIDE[j], textureName);
             }
 
             json.put("textures", textures);

@@ -13,7 +13,6 @@ import phrille.minecraftboom.util.IStairSlab;
 public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGenerator
 {
     private int burnTime;
-    protected Properties properties;
 
     private boolean hasStairSlab;
     private BlockStairBase stair;
@@ -44,7 +43,6 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
         super(builder);
         setRegistryName(name);
         burnTime = -1;
-        properties = builder;
     }
 
     @Override
@@ -60,11 +58,12 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
         return burnTime;
     }
 
+    @Override
     public Block getBlock()
     {
         return this;
     }
-
+    
     @Override
     public Block addStairSlab()
     {
@@ -89,12 +88,6 @@ public class BlockBase extends Block implements IFuelBlock, IStairSlab, IJsonGen
     public BlockStairBase getStair()
     {
         return stair;
-    }
-
-    @Override
-    public Properties getProperties()
-    {
-        return properties;
     }
 
     @Override
