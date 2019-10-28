@@ -125,7 +125,7 @@ public class Names
     public static final String BLOCK_RED_STAINED_SOUL_GLASS_PANE = "red_stained_soul_glass_pane";
     public static final String BLOCK_BLACK_STAINED_SOUL_GLASS_PANE = "black_stained_soul_glass_pane";
     
-    public static final String BLOCK_GOLDEN_BARS = "golden_bars";
+    public static final String BLOCK_GOLD_BARS = "gold_bars";
     public static final String BLOCK_RED_NETHER_FENCE = "red_nether_brick_fence";
     public static final String BLOCK_NETHER_FENCE_GATE = "nether_brick_fence_gate";
     public static final String BLOCK_RED_NETHER_FENCE_GATE = "red_nether_brick_fence_gate";

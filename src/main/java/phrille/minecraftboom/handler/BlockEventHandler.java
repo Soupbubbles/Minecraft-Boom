@@ -12,7 +12,6 @@ import phrille.minecraftboom.init.ModItems;
 @Mod.EventBusSubscriber
 public class BlockEventHandler
 {
-
     @SubscribeEvent
     public void onBlockDropItems(BlockEvent.HarvestDropsEvent event)
     {

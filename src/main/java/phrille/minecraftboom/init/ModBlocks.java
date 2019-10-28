@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockStairs;
+import net.minecraft.block.Block.Properties;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
@@ -142,6 +144,7 @@ public class ModBlocks
     public static final Block BLOCK_RED_STAINED_SOUL_GLASS_PANE;
     public static final Block BLOCK_BLACK_STAINED_SOUL_GLASS_PANE;
 
+    public static final Block BLOCK_GOLD_BARS;
     public static final Block BLOCK_ROSE;
     
     public static final Block BLOCK_SMOOTH_STONE_STAIRS;
@@ -247,6 +250,7 @@ public class ModBlocks
         BLOCK_RED_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_RED_STAINED_SOUL_GLASS_PANE, BLOCK_GREEN_STAINED_SOUL_GLASS));
         BLOCK_BLACK_STAINED_SOUL_GLASS_PANE = registerBlock(new BlockPaneBase(Names.BLOCK_BLACK_STAINED_SOUL_GLASS_PANE, BLOCK_RED_STAINED_SOUL_GLASS));
 
+        BLOCK_GOLD_BARS = registerBlock(new BlockPaneBase(Names.BLOCK_GOLD_BARS, Properties.from(Blocks.IRON_BARS), Blocks.GOLD_BLOCK));
         BLOCK_ROSE = registerBlock(new BlockRose());
 
         VANILLA_STAIRS_SLABS.add(Blocks.STONE);

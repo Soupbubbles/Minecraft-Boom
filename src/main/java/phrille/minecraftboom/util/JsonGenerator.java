@@ -23,8 +23,13 @@ import phrille.minecraftboom.block.base.BlockStairBase;
 import phrille.minecraftboom.init.ModBlocks;
 import phrille.minecraftboom.init.ModItems;
 
+/**
+ * @author: All blockstate and model code written by @phrille. Recipes uses a
+ * modified version of @williewillus code.
+ */
 public class JsonGenerator
 {
+    //File Paths
     private static final String RESOURCE_DIR = "F:\\Programming\\Minecraft\\1.13.2\\Minecraft-Boom\\src\\main\\resources\\";
     private static final String ASSETS_DIR = RESOURCE_DIR + "assets\\minecraftboom\\";
     private static final String DATA_DIR = RESOURCE_DIR + "data\\minecraftboom\\";
@@ -67,7 +72,7 @@ public class JsonGenerator
                 {
                     addStairFiles((BlockStairBase) block);
                 }
-                else if (block instanceof BlockSlabBase)
+                else if (block instanceof BlockSlabBase && block != ModBlocks.BLOCK_GOLD_BARS)
                 {
                     addSlabFiles((BlockSlabBase) block);
                 }
@@ -216,13 +221,13 @@ public class JsonGenerator
         {
             Map<String, Object> model = new HashMap();
             String name = i == 2 ? Utils.getNameFromRegistry(block.getParent().getBlock()) : block.getSlabName() + SLAB_SUFFIX[i];
-            String prefix =  MinecraftBoom.MOD_ID + ":block/";
-            
-            if (block.isVanilla() && i == 2) 
+            String prefix = MinecraftBoom.MOD_ID + ":block/";
+
+            if (block.isVanilla() && i == 2)
             {
                 prefix = prefix.replace("boom", "");
             }
-            
+
             model.put("model", prefix + name);
             type.put("type=" + SLAB_TYPE[i], model);
         }
