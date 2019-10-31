@@ -38,7 +38,7 @@ public class PlayerEventHandler
             return;
         }
 
-        if (stack != null)
+        if (!stack.isEmpty())
         {
             if (stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART)
             {

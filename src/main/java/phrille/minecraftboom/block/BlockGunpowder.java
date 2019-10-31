@@ -2,14 +2,14 @@ package phrille.minecraftboom.block;
 
 import java.util.Random;
 
+import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockFire;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.Material;
-import net.minecraft.block.material.MaterialColor;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.projectile.EntityArrow;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemFlintAndSteel;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumFacing;
@@ -17,15 +17,12 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.Explosion;
 import net.minecraft.world.World;
-import phrille.minecraftboom.block.base.BlockFallingBase;
-import phrille.minecraftboom.lib.BlockValues;
-import phrille.minecraftboom.lib.Names;
 
-public class BlockGunpowder extends BlockFallingBase
+public class BlockGunpowder extends BlockFalling
 {
     public BlockGunpowder()
     {
-        super(Names.BLOCK_GUNPOWDER, Properties.create(Material.SAND, MaterialColor.GRAY).hardnessAndResistance(BlockValues.SAND_HARDNESS, BlockValues.SAND_RESISTANCE).sound(SoundType.SAND).needsRandomTick());
+        super(Properties.from(Blocks.GRAVEL).sound(SoundType.SAND).needsRandomTick());
     }
 
     @Override
@@ -33,7 +30,7 @@ public class BlockGunpowder extends BlockFallingBase
     {
         ItemStack stack = player.getHeldItem(hand);
 
-        if (stack != null && stack.getItem() instanceof ItemFlintAndSteel)
+        if (!stack.isEmpty() && stack.getItem() instanceof ItemFlintAndSteel)
         {
             explode(world, pos, player);
             stack.damageItem(1, player);

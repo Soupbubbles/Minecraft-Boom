@@ -1,5 +1,7 @@
 package phrille.minecraftboom.util;
 
+import javax.annotation.Nonnull;
+
 import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
@@ -10,14 +12,20 @@ import phrille.minecraftboom.MinecraftBoom;
 
 public class Utils
 {
-    public static final String getNameFromRegistry(Block block) 
+    @Nonnull
+    public static <T> T _null()
     {
-        return block.getRegistryName().toString().replace(MinecraftBoom.MOD_ID + ":", "").replace("minecraft:", "");
+        return null;
     }
     
-    public static final String getNameFromRegistry(Item item) 
+    public static final String getStairName(String name) 
     {
-        return item.getRegistryName().toString().replace(MinecraftBoom.MOD_ID + ":", "");
+        return name.replace("bricks", "brick") + "_stairs";
+    }
+    
+    public static final String getSlabName(String name) 
+    {
+        return name.replace("bricks", "brick") + "_slab";
     }
     
     public static void spawnEntityItem(World world, BlockPos pos, Item item)

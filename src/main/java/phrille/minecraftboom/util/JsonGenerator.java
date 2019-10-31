@@ -13,19 +13,15 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.BlockSlab;
+import net.minecraft.block.BlockStairs;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import phrille.minecraftboom.MinecraftBoom;
-import phrille.minecraftboom.block.base.BlockBase;
-import phrille.minecraftboom.block.base.BlockPaneBase;
-import phrille.minecraftboom.block.base.BlockSlabBase;
-import phrille.minecraftboom.block.base.BlockStairBase;
-import phrille.minecraftboom.init.ModBlocks;
-import phrille.minecraftboom.init.ModItems;
 
 /**
  * @author: All blockstate and model code written by @phrille. Recipes uses a
- * modified version of @williewillus code.
+ *          modified version of @williewillus code.
  */
 public class JsonGenerator
 {
@@ -58,60 +54,33 @@ public class JsonGenerator
     private static final String[] PANE_MODEL = {"post", "side", "side", "side_alt", "side_alt", "noside", "noside_alt", "noside_alt", "noside"};
     private static final String[] PANE_SUFFIX = {"_post", "_side", "_side_alt", "_noside", "_noside_alt"};
 
-    public static void init()
-    {
-        for (Block block : ModBlocks.BLOCKS)
-        {
-            if (block instanceof IJsonGenerator)
-            {
-                if (block instanceof BlockBase)
-                {
-                    addBasicBlockFiles((BlockBase) block);
-                }
-                else if (block instanceof BlockStairBase)
-                {
-                    addStairFiles((BlockStairBase) block);
-                }
-                else if (block instanceof BlockSlabBase && block != ModBlocks.BLOCK_GOLD_BARS)
-                {
-                    addSlabFiles((BlockSlabBase) block);
-                }
-            }
-        }
-
-        for (Item item : ModItems.ITEMS)
-        {
-            basicItemModel(item);
-        }
-    }
-
     //Basic Block
-    private static void addBasicBlockFiles(Block block)
+    public static void addBasicBlockFiles(String name)
     {
-        basicBlockState(block);
-        basicBlockModel(block);
-        basicItemBlockModel(Utils.getNameFromRegistry(block));
+        basicBlockState(name);
+        basicBlockModel(name);
+        basicItemBlockModel(name);
     }
 
-    private static void basicBlockState(Block block)
+    private static void basicBlockState(String name)
     {
         Map<String, Object> json = new HashMap();
         Map<String, Object> normal = new HashMap();
         Map<String, Object> model = new HashMap();
-        model.put("model", getFormattedName(block));
+        model.put("model", MinecraftBoom.MOD_ID + ":block/" + name);
         normal.put("", model);
         json.put("variants", normal);
-        writeFile(json, BLOCKSTATE_DIR, Utils.getNameFromRegistry(block));
+        writeFile(json, BLOCKSTATE_DIR, name);
     }
 
-    private static void basicBlockModel(Block block)
+    private static void basicBlockModel(String name)
     {
         Map<String, Object> json = new HashMap();
         Map<String, Object> textures = new HashMap();
         json.put("parent", "block/cube_all");
-        textures.put("all", getFormattedName(block));
+        textures.put("all", MinecraftBoom.MOD_ID + ":block/" + name);
         json.put("textures", textures);
-        writeFile(json, BLOCK_MODEL_DIR, Utils.getNameFromRegistry(block));
+        writeFile(json, BLOCK_MODEL_DIR, name);
     }
 
     private static void basicItemBlockModel(String name)
@@ -122,12 +91,7 @@ public class JsonGenerator
     }
 
     //Basic Item
-    private static void basicItemModel(Item item)
-    {
-        basicItemModel(Utils.getNameFromRegistry(item), "item/" + Utils.getNameFromRegistry(item));
-    }
-
-    private static void basicItemModel(String name, String textureName)
+    public static void basicItemModel(String name, String textureName)
     {
         Map<String, Object> json = new HashMap();
         Map<String, Object> textures = new HashMap();
@@ -138,15 +102,15 @@ public class JsonGenerator
     }
 
     //Stairs
-    private static void addStairFiles(BlockStairBase block)
+    public static void addStairFiles(BlockStairs block, Block parent, String name, String parentName)
     {
-        stairBlockState(block);
-        stairBlockModel(block);
-        basicItemBlockModel(block.getStairName());
-        addShapedRecipe(new ItemStack(block, 4), "x  ", "xx ", "xxx", 'x', block.getParent().getBlock());
+        stairBlockState(name);
+        stairBlockModel(name, parentName);
+        basicItemBlockModel(name);
+//        addShapedRecipe(name, new ItemStack(block, 4), "x  ", "xx ", "xxx", 'x', parent);
     }
 
-    private static void stairBlockState(BlockStairBase block)
+    private static void stairBlockState(String name)
     {
         Map<String, Object> json = new HashMap();
         Map<String, Object> facing = new LinkedHashMap();
@@ -157,7 +121,7 @@ public class JsonGenerator
             int j = i - ((i / 4) * 4);
             int k = (i / 4) - (flag ? 0 : 5);
             Map<String, Object> model = new LinkedHashMap();
-            model.put("model", MinecraftBoom.MOD_ID + ":block/" + block.getStairName() + STAIR_MODEL[k]);
+            model.put("model", MinecraftBoom.MOD_ID + ":block/" + name + STAIR_MODEL[k]);
 
             if (STAIR_ROTATIONS[i] > 0)
             {
@@ -179,10 +143,10 @@ public class JsonGenerator
         }
 
         json.put("variants", facing);
-        writeFile(json, BLOCKSTATE_DIR, block.getStairName());
+        writeFile(json, BLOCKSTATE_DIR, name);
     }
 
-    private static void stairBlockModel(BlockStairBase block)
+    private static void stairBlockModel(String name, String parentName)
     {
         for (int i = 0; i < 3; i++)
         {
@@ -194,25 +158,24 @@ public class JsonGenerator
 
             for (int k = 0; k < STAIR_SIDE.length; k++)
             {
-                String textureName = block.isVanilla() ? getFormattedName(block.getParent().getBlock()).replace("boom", "") : getFormattedName(block.getParent().getBlock());
-                textures.put(STAIR_SIDE[k], textureName);
+                textures.put(STAIR_SIDE[k], parentName);
             }
 
             json.put("textures", textures);
-            writeFile(json, BLOCK_MODEL_DIR, block.getStairName() + STAIR_MODEL[j]);
+            writeFile(json, BLOCK_MODEL_DIR, name + STAIR_MODEL[j]);
         }
     }
 
     //Slabs
-    private static void addSlabFiles(BlockSlabBase block)
+    public static void addSlabFiles(BlockSlab block, Block parent, String name, String parentName)
     {
-        slabBlockState(block);
-        slabBlockModel(block);
-        basicItemBlockModel(block.getSlabName());
-        addShapedRecipe(new ItemStack(block, 6), "xxx", 'x', block.getParent().getBlock());
+        slabBlockState(name, parentName);
+        slabBlockModel(name, parentName);
+        basicItemBlockModel(name);
+        addShapedRecipe(name, new ItemStack(block, 6), "xxx", 'x', parent);
     }
 
-    private static void slabBlockState(BlockSlabBase block)
+    private static void slabBlockState(String name, String parentName)
     {
         Map<String, Object> json = new HashMap();
         Map<String, Object> type = new LinkedHashMap();
@@ -220,23 +183,16 @@ public class JsonGenerator
         for (int i = 0; i < SLAB_TYPE.length; i++)
         {
             Map<String, Object> model = new HashMap();
-            String name = i == 2 ? Utils.getNameFromRegistry(block.getParent().getBlock()) : block.getSlabName() + SLAB_SUFFIX[i];
-            String prefix = MinecraftBoom.MOD_ID + ":block/";
-
-            if (block.isVanilla() && i == 2)
-            {
-                prefix = prefix.replace("boom", "");
-            }
-
-            model.put("model", prefix + name);
+            String name2 = i == 2 ? parentName : name + SLAB_SUFFIX[i];
+            model.put("model", MinecraftBoom.MOD_ID + ":block/" + name2);
             type.put("type=" + SLAB_TYPE[i], model);
         }
 
         json.put("variants", type);
-        writeFile(json, BLOCKSTATE_DIR, block.getSlabName());
+        writeFile(json, BLOCKSTATE_DIR, name);
     }
 
-    private static void slabBlockModel(BlockSlabBase block)
+    private static void slabBlockModel(String name, String parentName)
     {
         for (int i = 0; i < SLAB_SUFFIX.length; i++)
         {
@@ -246,29 +202,24 @@ public class JsonGenerator
 
             for (int j = 0; j < STAIR_SIDE.length; j++)
             {
-                String textureName = block.isVanilla() ? getFormattedName(block.getParent().getBlock()).replace("boom", "") : getFormattedName(block.getParent().getBlock());
-                textures.put(STAIR_SIDE[j], textureName);
+                textures.put(STAIR_SIDE[j], parentName);
             }
 
             json.put("textures", textures);
-            writeFile(json, BLOCK_MODEL_DIR, block.getSlabName() + SLAB_SUFFIX[i]);
+            writeFile(json, BLOCK_MODEL_DIR, name + SLAB_SUFFIX[i]);
         }
     }
 
     //Panes
-    private static void addPaneFiles(BlockPaneBase block)
+    private static void addPaneFiles(Block block, Block parent, String name, String parentName)
     {
-        paneBlockState(block);
-        paneBlockModel(block);
-        basicItemModel(Utils.getNameFromRegistry(block), "block/" + Utils.getNameFromRegistry(block).replace("_pane", ""));
-
-        if (block.getParentBlock() != null)
-        {
-            addShapedRecipe(new ItemStack(block, 16), "xxx", "xxx", 'x', block.getParentBlock());
-        }
+        paneBlockState(name);
+        paneBlockModel(name);
+        basicItemModel(name, "block/" + name.replace("_pane", ""));
+        addShapedRecipe(name, new ItemStack(block, 16), "xxx", "xxx", 'x', parent);
     }
 
-    private static void paneBlockState(BlockPaneBase block)
+    private static void paneBlockState(String name)
     {
         Map<String, Object> json = new HashMap();
         List<Map> multipart = new ArrayList<>();
@@ -277,7 +228,7 @@ public class JsonGenerator
         {
             Map<String, Object> map = new HashMap();
             Map<String, Object> model = new HashMap();
-            model.put("model", getFormattedName(block) + "_" + PANE_MODEL[i]);
+            model.put("model", MinecraftBoom.MOD_ID + ":block/" + name + "_" + PANE_MODEL[i]);
 
             if (PANE_ROTATIONS[i] != 0)
             {
@@ -296,10 +247,10 @@ public class JsonGenerator
         }
 
         json.put("multipart", multipart);
-        writeFile(json, BLOCKSTATE_DIR, Utils.getNameFromRegistry(block));
+        writeFile(json, BLOCKSTATE_DIR, name);
     }
 
-    private static void paneBlockModel(BlockPaneBase block)
+    private static void paneBlockModel(String name)
     {
         for (int i = 0; i < PANE_SUFFIX.length; i++)
         {
@@ -309,17 +260,17 @@ public class JsonGenerator
 
             if (i < 3)
             {
-                textures.put("edge", getFormattedName(block) + "_top");
+                textures.put("edge", MinecraftBoom.MOD_ID + ":block/" + name + "_top");
             }
 
-            textures.put("pane", getFormattedName(block).replace("_pane", ""));
+            textures.put("pane", name.replace("_pane", ""));
             json.put("textures", textures);
-            writeFile(json, BLOCK_MODEL_DIR, Utils.getNameFromRegistry(block) + PANE_SUFFIX[i]);
+            writeFile(json, BLOCK_MODEL_DIR, name + PANE_SUFFIX[i]);
         }
     }
 
     //Recipes
-    private static void addShapedRecipe(ItemStack result, Object... components)
+    private static void addShapedRecipe(String fileName, ItemStack result, Object... components)
     {
         Map<String, Object> json = new HashMap<>();
         List<String> pattern = new ArrayList<>();
@@ -364,7 +315,7 @@ public class JsonGenerator
         json.put("key", key);
         json.put("type", "minecraft:crafting_shaped");
         json.put("result", serializeItem(result));
-        writeFile(json, RECIPES_DIR, Utils.getNameFromRegistry(result.getItem()));
+        writeFile(json, RECIPES_DIR, fileName);
     }
 
     private static Map<String, Object> serializeItem(Object obj)
@@ -424,10 +375,5 @@ public class JsonGenerator
         {
             e.printStackTrace();
         }
-    }
-
-    private static String getFormattedName(Block block)
-    {
-        return block.getRegistryName().toString().replace(":", ":block/");
     }
 }

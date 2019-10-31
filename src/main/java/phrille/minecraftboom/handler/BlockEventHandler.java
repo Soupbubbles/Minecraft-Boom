@@ -28,13 +28,13 @@ public class BlockEventHandler
 
             if (rand.nextFloat() < 0.02)
             {
-                event.getDrops().add(new ItemStack(ModItems.ITEM_PINECONE));
+                event.getDrops().add(new ItemStack(ModItems.PINECONE));
             }
         }
         else if (event.getState().getBlock() == Blocks.PUMPKIN)
         {
             event.getDrops().clear();
-            event.getDrops().add(new ItemStack(ModItems.ITEM_PUMPKIN_SLICE, Math.min(9, (3 + rand.nextInt(5)) + rand.nextInt(1 + event.getFortuneLevel()))));
+            event.getDrops().add(new ItemStack(ModItems.PUMPKIN_SLICE, Math.min(9, (3 + rand.nextInt(5)) + rand.nextInt(1 + event.getFortuneLevel()))));
         }
     }
 }
