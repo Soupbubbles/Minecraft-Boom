@@ -28,8 +28,6 @@ public class MinecraftBoom
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
-
-        MinecraftForge.EVENT_BUS.register(this);
     }
 
     public void setup(FMLCommonSetupEvent event)

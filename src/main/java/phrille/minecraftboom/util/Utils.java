@@ -2,13 +2,11 @@ package phrille.minecraftboom.util;
 
 import javax.annotation.Nonnull;
 
-import net.minecraft.block.Block;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import phrille.minecraftboom.MinecraftBoom;
 
 public class Utils
 {
