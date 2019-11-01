@@ -46,6 +46,12 @@
     "block.minecraftboom.netherrack_pillar": "Netherrack Pillar",
     "block.minecraftboom.end_stone_pillar": "End Stone Pillar",
     
+    "block.minecraftboom.spruce_bookshelf": "Spruce Bookshelf",
+    "block.minecraftboom.birch_bookshelf": "Birch Bookshelf",
+    "block.minecraftboom.jungle_bookshelf": "Jungle Bookshelf",
+    "block.minecraftboom.acacia_bookshelf": "Acacia Bookshelf",
+    "block.minecraftboom.dark_oak_bookshelf": "Dark Oak Bookshelf",
+        
     "block.minecraftboom.charcoal_block": "Charcoal Block",
     "block.minecraftboom.sugar_block": "Sugar Block",
     "block.minecraftboom.sugar_cane_block": "Sugar Cane Block",

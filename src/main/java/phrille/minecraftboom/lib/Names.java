@@ -46,6 +46,13 @@ public class Names
     public static final String END_STONE_PILLAR = "end_stone_pillar";
     public static final String NETHERRACK_PILLAR = "netherrack_pillar";
     
+    //Wood Variations
+    public static final String SPRUCE_BOOKSHELF = "spruce_bookshelf";
+    public static final String BIRCH_BOOKSHELF = "birch_bookshelf";
+    public static final String JUNGLE_BOOKSHELF = "jungle_bookshelf";
+    public static final String ACACIA_BOOKSHELF = "acacia_bookshelf";
+    public static final String DARK_OAK_BOOKSHELF = "dark_oak_bookshelf";
+    
     //Storage
     public static final String CHARCOAL_BLOCK = "charcoal_block";
     public static final String SUGAR_BLOCK = "sugar_block";

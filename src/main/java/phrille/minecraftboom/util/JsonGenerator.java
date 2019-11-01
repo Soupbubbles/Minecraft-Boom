@@ -15,9 +15,13 @@ import com.google.gson.GsonBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockSlab;
 import net.minecraft.block.BlockStairs;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import phrille.minecraftboom.MinecraftBoom;
+import phrille.minecraftboom.init.ModBlocks;
+import phrille.minecraftboom.lib.Names;
 
 /**
  * @author: All blockstate and model code written by @phrille. Recipes uses a
@@ -54,6 +58,10 @@ public class JsonGenerator
     private static final String[] PANE_MODEL = {"post", "side", "side", "side_alt", "side_alt", "noside", "noside_alt", "noside_alt", "noside"};
     private static final String[] PANE_SUFFIX = {"_post", "_side", "_side_alt", "_noside", "_noside_alt"};
 
+    public static void init() 
+    {
+    }
+    
     //Basic Block
     public static void addBasicBlockFiles(String name)
     {

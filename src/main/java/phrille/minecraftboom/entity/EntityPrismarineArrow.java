@@ -12,19 +12,19 @@ import phrille.minecraftboom.init.ModItems;
 
 public class EntityPrismarineArrow extends EntityTippedArrow
 {
-    public EntityPrismarineArrow(World worldIn)
+    public EntityPrismarineArrow(World world)
     {
-        super(worldIn);
+        super(world);
     }
 
-    public EntityPrismarineArrow(World worldIn, double x, double y, double z)
+    public EntityPrismarineArrow(World world, double x, double y, double z)
     {
-        super(worldIn, x, y, z);
+        super(world, x, y, z);
     }
 
-    public EntityPrismarineArrow(World worldIn, EntityLivingBase shooter)
+    public EntityPrismarineArrow(World world, EntityLivingBase shooter)
     {
-        super(worldIn, shooter);
+        super(world, shooter);
     }
 
     @Override

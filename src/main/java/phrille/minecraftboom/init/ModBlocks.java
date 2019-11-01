@@ -2,6 +2,7 @@ package phrille.minecraftboom.init;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Properties;
+import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockMagma;
@@ -76,6 +77,13 @@ public class ModBlocks
     public static final Block DARK_PRISMARINE_PILLAR = Utils._null();
     public static final Block END_STONE_PILLAR = Utils._null();
     public static final Block NETHERRACK_PILLAR = Utils._null();
+    
+    //Wood Variations
+    public static final Block SPRUCE_BOOKSHELF = Utils._null();
+    public static final Block BIRCH_BOOKSHELF = Utils._null();
+    public static final Block JUNGLE_BOOKSHELF = Utils._null();
+    public static final Block ACACIA_BOOKSHELF = Utils._null();
+    public static final Block DARK_OAK_BOOKSHELF = Utils._null();
 
     //Storage
     public static final Block CHARCOAL_BLOCK = Utils._null();
@@ -386,6 +394,13 @@ public class ModBlocks
             registry.register(setup(new BlockRotatedPillar(Properties.from(Blocks.DARK_PRISMARINE)), Names.DARK_PRISMARINE_PILLAR));
             registry.register(setup(new BlockRotatedPillar(Properties.from(Blocks.END_STONE)), Names.END_STONE_PILLAR));
             registry.register(setup(new BlockRotatedPillar(Properties.from(Blocks.NETHERRACK)), Names.NETHERRACK_PILLAR));
+
+            //Wood Variations
+            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.SPRUCE_BOOKSHELF));
+            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.BIRCH_BOOKSHELF));
+            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.JUNGLE_BOOKSHELF));
+            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.ACACIA_BOOKSHELF));
+            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.DARK_OAK_BOOKSHELF));
 
             //Storage Blocks
             registry.register(setup(new Block(Properties.from(Blocks.COAL_BLOCK)), Names.CHARCOAL_BLOCK));
