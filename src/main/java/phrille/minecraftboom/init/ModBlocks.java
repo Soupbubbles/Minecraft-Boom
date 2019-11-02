@@ -2,8 +2,9 @@ package phrille.minecraftboom.init;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.Block.Properties;
-import net.minecraft.block.BlockBookshelf;
 import net.minecraft.block.BlockFalling;
+import net.minecraft.block.BlockFence;
+import net.minecraft.block.BlockFenceGate;
 import net.minecraft.block.BlockFlower;
 import net.minecraft.block.BlockMagma;
 import net.minecraft.block.BlockRotatedPillar;
@@ -25,8 +26,11 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.minecraftboom.MinecraftBoom;
+import phrille.minecraftboom.block.BlockBookShelfBase;
 import phrille.minecraftboom.block.BlockGoldBars;
 import phrille.minecraftboom.block.BlockGunpowder;
+import phrille.minecraftboom.block.BlockLadderBase;
+import phrille.minecraftboom.block.BlockMagmaBrickSlab;
 import phrille.minecraftboom.block.BlockStairBase;
 import phrille.minecraftboom.lib.Names;
 import phrille.minecraftboom.util.Utils;
@@ -77,13 +81,18 @@ public class ModBlocks
     public static final Block DARK_PRISMARINE_PILLAR = Utils._null();
     public static final Block END_STONE_PILLAR = Utils._null();
     public static final Block NETHERRACK_PILLAR = Utils._null();
-    
+
     //Wood Variations
     public static final Block SPRUCE_BOOKSHELF = Utils._null();
     public static final Block BIRCH_BOOKSHELF = Utils._null();
     public static final Block JUNGLE_BOOKSHELF = Utils._null();
     public static final Block ACACIA_BOOKSHELF = Utils._null();
     public static final Block DARK_OAK_BOOKSHELF = Utils._null();
+    public static final Block SPRUCE_LADDER = Utils._null();
+    public static final Block BIRCH_LADDER = Utils._null();
+    public static final Block JUNGLE_LADDER = Utils._null();
+    public static final Block ACACIA_LADDER = Utils._null();
+    public static final Block DARK_OAK_LADDER = Utils._null();
 
     //Storage
     public static final Block CHARCOAL_BLOCK = Utils._null();
@@ -148,6 +157,9 @@ public class ModBlocks
 
     //Misc
     public static final Block GOLD_BARS = Utils._null();
+    public static final Block RED_NETHER_BRICK_FENCE = Utils._null();
+    public static final Block NETHER_BRICK_FENCE_GATE = Utils._null();
+    public static final Block RED_NETHER_BRICK_FENCE_GATE = Utils._null();
     public static final Block ROSE = Utils._null();
 
     //MinecraftBoom Stairs
@@ -354,7 +366,7 @@ public class ModBlocks
             //Bricks
             createSpecialBlock(registry, Properties.from(Blocks.COBBLESTONE), Names.COBBLESTONE_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.MOSSY_COBBLESTONE), Names.MOSSY_COBBLESTONE_BRICKS);
-            createSpecialBlock(registry, new BlockMagma(Properties.from(Blocks.MAGMA_BLOCK)), Names.MAGMA_BRICKS, false);
+            createSpecialBlock(registry, new BlockMagma(Properties.from(Blocks.MAGMA_BLOCK)), Names.MAGMA_BRICKS, false, new BlockMagmaBrickSlab(Properties.from(Blocks.MAGMA_BLOCK)));
             createSpecialBlock(registry, Properties.from(Blocks.OBSIDIAN), Names.OBSIDIAN_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.TERRACOTTA), Names.TERRACOTTA_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.WHITE_TERRACOTTA), Names.WHITE_TERRACOTTA_BRICKS);
@@ -396,11 +408,11 @@ public class ModBlocks
             registry.register(setup(new BlockRotatedPillar(Properties.from(Blocks.NETHERRACK)), Names.NETHERRACK_PILLAR));
 
             //Wood Variations
-            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.SPRUCE_BOOKSHELF));
-            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.BIRCH_BOOKSHELF));
-            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.JUNGLE_BOOKSHELF));
-            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.ACACIA_BOOKSHELF));
-            registry.register(setup(new BlockBookshelf(Properties.from(Blocks.BOOKSHELF)), Names.DARK_OAK_BOOKSHELF));
+            registry.register(setup(new BlockBookShelfBase(Properties.from(Blocks.BOOKSHELF)), Names.SPRUCE_BOOKSHELF));
+            registry.register(setup(new BlockBookShelfBase(Properties.from(Blocks.BOOKSHELF)), Names.BIRCH_BOOKSHELF));
+            registry.register(setup(new BlockBookShelfBase(Properties.from(Blocks.BOOKSHELF)), Names.JUNGLE_BOOKSHELF));
+            registry.register(setup(new BlockBookShelfBase(Properties.from(Blocks.BOOKSHELF)), Names.ACACIA_BOOKSHELF));
+            registry.register(setup(new BlockBookShelfBase(Properties.from(Blocks.BOOKSHELF)), Names.DARK_OAK_BOOKSHELF));
 
             //Storage Blocks
             registry.register(setup(new Block(Properties.from(Blocks.COAL_BLOCK)), Names.CHARCOAL_BLOCK));
@@ -465,7 +477,15 @@ public class ModBlocks
 
             //Misc
             registry.register(setup(new BlockGoldBars(), Names.GOLD_BARS));
-            registry.register(setup(new BlockFlower(Properties.create(Material.PLANTS, MaterialColor.GRASS).hardnessAndResistance(0.0F).doesNotBlockMovement().sound(SoundType.PLANT)), Names.ROSE));
+            registry.register(setup(new BlockLadderBase(Properties.from(Blocks.LADDER)), Names.SPRUCE_LADDER));
+            registry.register(setup(new BlockLadderBase(Properties.from(Blocks.LADDER)), Names.BIRCH_LADDER));
+            registry.register(setup(new BlockLadderBase(Properties.from(Blocks.LADDER)), Names.JUNGLE_LADDER));
+            registry.register(setup(new BlockLadderBase(Properties.from(Blocks.LADDER)), Names.ACACIA_LADDER));
+            registry.register(setup(new BlockLadderBase(Properties.from(Blocks.LADDER)), Names.DARK_OAK_LADDER));
+            registry.register(setup(new BlockFence(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.RED_NETHER_BRICK_FENCE));
+            registry.register(setup(new BlockFenceGate(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.NETHER_BRICK_FENCE_GATE));
+            registry.register(setup(new BlockFenceGate(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.RED_NETHER_BRICK_FENCE_GATE));
+            registry.register(setup(new BlockFlower(Properties.from(Blocks.POPPY)), Names.ROSE));
 
             //Vanilla Stairs and Slabs
             createSpecialBlock(registry, Blocks.STONE, "stone", true);
@@ -535,12 +555,17 @@ public class ModBlocks
             registry.register(setup(new BlockStairBase(Blocks.SMOOTH_STONE), "smooth_stone_stairs"));
         }
 
-        private static void createSpecialBlock(IForgeRegistry<Block> registry, Properties builder, String name)
+        private static void createSpecialBlock(IForgeRegistry<Block> registry, Block block, String string, boolean vanilla)
         {
-            createSpecialBlock(registry, new Block(builder), name, false);
+            createSpecialBlock(registry, block, string, vanilla, null);
         }
 
-        private static void createSpecialBlock(IForgeRegistry<Block> registry, Block block, String name, boolean vanilla)
+        private static void createSpecialBlock(IForgeRegistry<Block> registry, Properties builder, String name)
+        {
+            createSpecialBlock(registry, new Block(builder), name, false, null);
+        }
+
+        private static void createSpecialBlock(IForgeRegistry<Block> registry, Block block, String name, boolean vanilla, BlockSlab slab)
         {
             if (!vanilla)
             {
@@ -548,7 +573,7 @@ public class ModBlocks
             }
 
             registry.register(setup(new BlockStairBase(block), Utils.getStairName(name)));
-            registry.register(setup(new BlockSlab(Properties.from(block)), Utils.getSlabName(name)));
+            registry.register(setup(slab != null ? slab : new BlockSlab(Properties.from(block)), Utils.getSlabName(name)));
         }
 
         public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name)

@@ -52,6 +52,11 @@ public class Names
     public static final String JUNGLE_BOOKSHELF = "jungle_bookshelf";
     public static final String ACACIA_BOOKSHELF = "acacia_bookshelf";
     public static final String DARK_OAK_BOOKSHELF = "dark_oak_bookshelf";
+    public static final String SPRUCE_LADDER = "spruce_ladder";
+    public static final String BIRCH_LADDER = "birch_ladder";
+    public static final String JUNGLE_LADDER = "jungle_ladder";
+    public static final String ACACIA_LADDER = "acacia_ladder";
+    public static final String DARK_OAK_LADDER = "dark_oak_ladder";
     
     //Storage
     public static final String CHARCOAL_BLOCK = "charcoal_block";
@@ -115,9 +120,9 @@ public class Names
     public static final String BLACK_STAINED_SOUL_GLASS_PANE = "black_stained_soul_glass_pane";
     
     public static final String GOLD_BARS = "gold_bars";
-    public static final String RED_NETHER_FENCE = "red_nether_brick_fence";
-    public static final String NETHER_FENCE_GATE = "nether_brick_fence_gate";
-    public static final String RED_NETHER_FENCE_GATE = "red_nether_brick_fence_gate";
+    public static final String RED_NETHER_BRICK_FENCE = "red_nether_brick_fence";
+    public static final String NETHER_BRICK_FENCE_GATE = "nether_brick_fence_gate";
+    public static final String RED_NETHER_BRICK_FENCE_GATE = "red_nether_brick_fence_gate";
     public static final String ROSE = "rose";
     
     public static final String MAGMA_BRICK = "magma_brick";

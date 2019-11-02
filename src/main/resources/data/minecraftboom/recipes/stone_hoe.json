@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "minecraft:stone_hoe"
+  },
+  "pattern": [
+    " xx",
+    " y ",
+    " y "
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraft:stone"
+    },
+    "y": {
+      "item": "minecraft:stick"
+    }
+  }
+}
