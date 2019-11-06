@@ -2,7 +2,7 @@ package phrille.minecraftboom.util;
 
 import javax.annotation.Nonnull;
 
-import net.minecraft.entity.item.EntityItem;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.math.BlockPos;
@@ -15,17 +15,17 @@ public class Utils
     {
         return null;
     }
-    
-    public static final String getStairName(String name) 
+
+    public static final String getStairName(String name)
     {
         return name.replace("bricks", "brick") + "_stairs";
     }
-    
-    public static final String getSlabName(String name) 
+
+    public static final String getSlabName(String name)
     {
         return name.replace("bricks", "brick") + "_slab";
     }
-    
+
     public static void spawnEntityItem(World world, BlockPos pos, Item item)
     {
         spawnEntityItem(world, pos, new ItemStack(item));
@@ -35,7 +35,7 @@ public class Utils
     {
         if (!world.isRemote)
         {
-            world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY(), pos.getZ(), stack));
+            world.addEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack));
         }
     }
 }

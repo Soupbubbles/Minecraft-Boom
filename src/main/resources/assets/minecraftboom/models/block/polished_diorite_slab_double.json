@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "side": "minecraftboom:block/polished_diorite_slab_side",
-        "end": "minecraft:block/polished_diorite"
-    }
-}

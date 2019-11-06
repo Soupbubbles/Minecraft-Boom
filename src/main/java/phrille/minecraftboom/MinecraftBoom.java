@@ -12,7 +12,6 @@ import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import phrille.minecraftboom.handler.BlockEventHandler;
 import phrille.minecraftboom.handler.FurnaceFuelEventHandler;
 import phrille.minecraftboom.handler.PlayerEventHandler;
 import phrille.minecraftboom.util.JsonGenerator;
@@ -34,8 +33,7 @@ public class MinecraftBoom
     public void setup(FMLCommonSetupEvent event)
     {
         JsonGenerator.init();
-        
-        MinecraftForge.EVENT_BUS.register(new BlockEventHandler());
+
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
         MinecraftForge.EVENT_BUS.register(new FurnaceFuelEventHandler());
     }

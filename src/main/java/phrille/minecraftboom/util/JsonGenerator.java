@@ -13,15 +13,11 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.block.BlockStairs;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import phrille.minecraftboom.MinecraftBoom;
-import phrille.minecraftboom.init.ModBlocks;
-import phrille.minecraftboom.lib.Names;
 
 /**
  * @author: All blockstate and model code written by @phrille. Recipes uses a
@@ -30,9 +26,9 @@ import phrille.minecraftboom.lib.Names;
 public class JsonGenerator
 {
     //File Paths
-    private static final String RESOURCE_DIR = "F:\\Programming\\Minecraft\\1.13.2\\Minecraft-Boom\\src\\main\\resources\\";
-    private static final String ASSETS_DIR = RESOURCE_DIR + "assets\\minecraftboom\\";
-    private static final String DATA_DIR = RESOURCE_DIR + "data\\minecraftboom\\";
+    private static final String RESOURCE_DIR = "F:\\Programming\\Minecraft\\1.14.4\\Minecraft-Boom\\src\\main\\resources\\";
+    public static final String ASSETS_DIR = RESOURCE_DIR + "assets\\minecraftboom\\";
+    public static final String DATA_DIR = RESOURCE_DIR + "data\\minecraftboom\\";
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
     //Directories
@@ -110,12 +106,12 @@ public class JsonGenerator
     }
 
     //Stairs
-    public static void addStairFiles(BlockStairs block, Block parent, String name, String parentName)
+    public static void addStairFiles(StairsBlock block, Block parent, String name, String parentName)
     {
         stairBlockState(name);
         stairBlockModel(name, parentName);
         basicItemBlockModel(name);
-//        addShapedRecipe(name, new ItemStack(block, 4), "x  ", "xx ", "xxx", 'x', parent);
+        addShapedRecipe(name, new ItemStack(block, 4), "x  ", "xx ", "xxx", 'x', parent);
     }
 
     private static void stairBlockState(String name)
@@ -175,7 +171,7 @@ public class JsonGenerator
     }
 
     //Slabs
-    public static void addSlabFiles(BlockSlab block, Block parent, String name, String parentName)
+    public static void addSlabFiles(SlabBlock block, Block parent, String name, String parentName)
     {
         slabBlockState(name, parentName);
         slabBlockModel(name, parentName);
@@ -365,7 +361,7 @@ public class JsonGenerator
     }
 
     //Utils
-    private static void writeFile(Map map, File dir, String name)
+    public static void writeFile(Map map, File dir, String name)
     {
         File f = new File(dir, name + ".json");
 

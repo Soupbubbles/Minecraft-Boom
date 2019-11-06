@@ -78,6 +78,7 @@ public class Names
     public static final String LIGHT_GRAY_DYE_BLOCK = "light_gray_dye_block";
     public static final String CYAN_DYE_BLOCK = "cyan_dye_block";
     public static final String PURPLE_DYE_BLOCK = "purple_dye_block";
+    public static final String BLUE_DYE_BLOCK = "blue_dye_block";
     public static final String BROWN_DYE_BLOCK = "brown_dye_block";
     public static final String GREEN_DYE_BLOCK = "green_dye_block";
     public static final String RED_DYE_BLOCK = "red_dye_block";

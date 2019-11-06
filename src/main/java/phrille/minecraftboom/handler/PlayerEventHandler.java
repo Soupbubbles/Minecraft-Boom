@@ -1,18 +1,19 @@
 package phrille.minecraftboom.handler;
 
-import net.minecraft.block.BlockDirectional;
-import net.minecraft.block.BlockNetherWart;
-import net.minecraft.block.BlockPistonBase;
-import net.minecraft.block.BlockPistonExtension;
-import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.init.Items;
-import net.minecraft.init.Particles;
-import net.minecraft.item.ItemSpade;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.DirectionalBlock;
+import net.minecraft.block.NetherWartBlock;
+import net.minecraft.block.PistonBlock;
+import net.minecraft.block.PistonHeadBlock;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
+import net.minecraft.item.ShovelItem;
+import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.properties.PistonType;
-import net.minecraft.util.EnumFacing;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
@@ -30,7 +31,7 @@ public class PlayerEventHandler
     {
         World world = event.getWorld();
         BlockPos pos = event.getPos();
-        IBlockState state = world.getBlockState(pos);
+        BlockState state = world.getBlockState(pos);
         ItemStack stack = event.getItemStack();
 
         if (event.isCanceled())
@@ -42,11 +43,11 @@ public class PlayerEventHandler
         {
             if (stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART)
             {
-                int i = state.get(BlockNetherWart.AGE).intValue();
+                int i = state.get(NetherWartBlock.AGE).intValue();
 
                 if (i < 3)
                 {
-                    state = state.with(BlockNetherWart.AGE, Integer.valueOf(i + 1));
+                    state = state.with(NetherWartBlock.AGE, Integer.valueOf(i + 1));
                     world.setBlockState(pos, state, 2);
                     spawnGrowParticles(world, pos, 10);
 
@@ -56,44 +57,47 @@ public class PlayerEventHandler
                     }
                 }
             }
-            else if (stack.getItem() instanceof ItemSpade && event.getEntityPlayer().isSneaking())
+            else if (stack.getItem() instanceof ShovelItem && event.getEntityPlayer().isSneaking())
             {
                 if (state.getBlock() == Blocks.STICKY_PISTON)
                 {
-                    Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, state, stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
+                    Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, state, stack, event.getEntityPlayer(), event.getHand()).getDirectionVec()), Items.SLIME_BALL);
                 }
                 else if (state.getBlock() == Blocks.PISTON_HEAD)
                 {
-                    EnumFacing facing = (EnumFacing) state.get(BlockDirectional.FACING);
-                    PistonType type = (PistonType) state.get(BlockPistonExtension.TYPE);
+                    Direction facing = (Direction) state.get(DirectionalBlock.FACING);
+                    PistonType type = (PistonType) state.get(PistonHeadBlock.TYPE);
                     pos = pos.add(facing.getOpposite().getDirectionVec());
 
                     if (type == PistonType.STICKY)
                     {
-                        Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, world.getBlockState(pos), stack, event.getEntityPlayer()).getDirectionVec()), Items.SLIME_BALL);
+                        Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, world.getBlockState(pos), stack, event.getEntityPlayer(), event.getHand()).getDirectionVec()), Items.SLIME_BALL);
                     }
                 }
             }
         }
     }
 
-    private static EnumFacing updatePiston(World world, BlockPos pos, IBlockState state, ItemStack stack, EntityPlayer player)
+    private static Direction updatePiston(World world, BlockPos pos, BlockState state, ItemStack stack, PlayerEntity player, Hand hand)
     {
         if (state.getBlock() == Blocks.STICKY_PISTON)
         {
-            EnumFacing facing = (EnumFacing) state.get(BlockDirectional.FACING);
-            Boolean extended = (Boolean) state.get(BlockPistonBase.EXTENDED);
+            Direction facing = (Direction) state.get(DirectionalBlock.FACING);
+            Boolean extended = (Boolean) state.get(PistonBlock.EXTENDED);
 
-            world.setBlockState(pos, Blocks.PISTON.getDefaultState().with(BlockDirectional.FACING, facing).with(BlockPistonBase.EXTENDED, extended));
+            world.setBlockState(pos, Blocks.PISTON.getDefaultState().with(DirectionalBlock.FACING, facing).with(PistonBlock.EXTENDED, extended));
 
             if (extended)
             {
-                world.setBlockState(pos.add(facing.getDirectionVec()), Blocks.PISTON_HEAD.getDefaultState().with(BlockDirectional.FACING, (EnumFacing) state.get(BlockDirectional.FACING)).with(BlockPistonExtension.SHORT, (Boolean) false).with(BlockPistonExtension.TYPE, PistonType.DEFAULT));
+                world.setBlockState(pos.add(facing.getDirectionVec()), Blocks.PISTON_HEAD.getDefaultState().with(DirectionalBlock.FACING, (Direction) state.get(DirectionalBlock.FACING)).with(PistonHeadBlock.SHORT, (Boolean) false).with(PistonHeadBlock.TYPE, PistonType.DEFAULT));
             }
 
             if (!player.abilities.isCreativeMode)
             {
-                stack.damageItem(1, player);
+                stack.damageItem(1, player, (entity) ->
+                {
+                    entity.sendBreakAnimation(hand);
+                });
             }
 
             return facing;
@@ -110,8 +114,8 @@ public class PlayerEventHandler
             amount = 15;
         }
 
-        IBlockState state = world.getBlockState(pos);
-        double height = state.isAir(world, pos) ? 1.0f : state.getShape(world, pos).getEnd(EnumFacing.Axis.Y);
+        BlockState state = world.getBlockState(pos);
+        double height = state.isAir(world, pos) ? 1.0f : state.getShape(world, pos).getEnd(Direction.Axis.Y);
 
         if (!state.isAir())
         {
@@ -120,7 +124,7 @@ public class PlayerEventHandler
                 double d0 = world.rand.nextGaussian() * 0.02D;
                 double d1 = world.rand.nextGaussian() * 0.02D;
                 double d2 = world.rand.nextGaussian() * 0.02D;
-                world.spawnParticle(Particles.FLAME, (double) ((float) pos.getX() + world.rand.nextFloat()), (double) pos.getY() + (double) world.rand.nextFloat() * height, (double) ((float) pos.getZ() + world.rand.nextFloat()), d0, d1, d2);
+                world.addParticle(ParticleTypes.FLAME, (double) ((float) pos.getX() + world.rand.nextFloat()), (double) pos.getY() + (double) world.rand.nextFloat() * height, (double) ((float) pos.getZ() + world.rand.nextFloat()), d0, d1, d2);
             }
         }
     }

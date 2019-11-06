@@ -8,7 +8,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import phrille.minecraftboom.MinecraftBoom;
-import phrille.minecraftboom.entity.EntityPrismarineArrow;
+import phrille.minecraftboom.entity.PrismarineArrowEntity;
 
 @Mod.EventBusSubscriber(modid = MinecraftBoom.MOD_ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ModRenderers
@@ -16,6 +16,6 @@ public class ModRenderers
     @SubscribeEvent
     public static void register(FMLClientSetupEvent event)
     {
-        RenderingRegistry.registerEntityRenderingHandler(EntityPrismarineArrow.class, renderManager -> new RenderPrismarineArrow(renderManager, new ResourceLocation(MinecraftBoom.MOD_ID, "textures/entity/prismarine_arrow.png")));
+        RenderingRegistry.registerEntityRenderingHandler(PrismarineArrowEntity.class, renderManager -> new PrismarineArrowRenderer(renderManager, new ResourceLocation(MinecraftBoom.MOD_ID, "textures/entity/prismarine_arrow.png")));
     }
 }

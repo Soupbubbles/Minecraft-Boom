@@ -1,13 +1,13 @@
 package phrille.minecraftboom.init;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockSlab;
-import net.minecraft.block.BlockStairs;
-import net.minecraft.init.MobEffects;
+import net.minecraft.block.SlabBlock;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Food;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemFood;
-import net.minecraft.potion.PotionEffect;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -18,7 +18,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.minecraftboom.MinecraftBoom;
-import phrille.minecraftboom.item.ItemPrismarineArrow;
+import phrille.minecraftboom.item.PrismarineArrowItem;
 import phrille.minecraftboom.lib.Names;
 import phrille.minecraftboom.util.Utils;
 
@@ -47,14 +47,14 @@ public class ModItems
 
             registerItem(registry, setup(new Item(new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.MAGMA_BRICK));
             registerItem(registry, setup(new Item(new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.WITHER_BONE));
-            registerItem(registry, setup(new ItemFood(3, 2.4F, false, new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.PINECONE));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.PINECONE));
             registerItem(registry, setup(new Item(new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.POLAR_BEAR_FUR));
-            registerItem(registry, setup(new ItemFood(3, 1.8F, true, new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.RAW_POLAR_BEAR_MEAT));
-            registerItem(registry, setup(new ItemFood(8, 12.8F, false, new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.POLAR_BEAR_STEAK));
-            registerItem(registry, setup(new ItemFood(2, 1.2F, false, new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.PUMPKIN_SLICE));
-            registerItem(registry, setup(new ItemFood(6, 2.8F, false, new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.COOKED_EGG));
-            registerItem(registry, setup(new ItemFood(4, 0.1F, true, new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)).setPotionEffect(new PotionEffect(MobEffects.HUNGER, 600, 0), 0.8F).setPotionEffect(new PotionEffect(MobEffects.WATER_BREATHING, 600, 0), 0.5F), Names.DROWNED_FLESH));
-            registerItem(registry, setup(new ItemPrismarineArrow(), Names.PRISMARINE_ARROW));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.RAW_POLAR_BEAR_MEAT).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.RAW_POLAR_BEAR_MEAT));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.POLAR_BEAR_STEAK));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PUMPKIN_SLICE).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.PUMPKIN_SLICE));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EGG).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.COOKED_EGG));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.DROWNED_FLESH));
+            registerItem(registry, setup(new PrismarineArrowItem(), Names.PRISMARINE_ARROW));
         }
 
         private static void registerItem(IForgeRegistry<Item> registry, Item item)
@@ -87,9 +87,9 @@ public class ModItems
                     continue;
                 }
 
-                boolean stairSlab = (block instanceof BlockSlab || block instanceof BlockStairs);
+                boolean stairSlab = (block instanceof SlabBlock || block instanceof StairsBlock);
                 Item.Properties properties = new Item.Properties().group(stairSlab ? MinecraftBoomTab.MINECRAFTBOOM_STAIRS_AND_SLAB_TAB : MinecraftBoomTab.MINECRAFTBOOM_TAB);
-                ItemBlock blockItem = new ItemBlock(block, properties);
+                BlockItem blockItem = new BlockItem(block, properties);
                 registerItem(registry, setup(blockItem, blockRegistryName), stairSlab);
             }
         }
@@ -104,5 +104,15 @@ public class ModItems
             entry.setRegistryName(registryName);
             return entry;
         }
+    }
+    
+    public static class ModFoods
+    {
+        public static final Food PINECONE = (new Food.Builder()).hunger(3).saturation(0.5F).build();
+        public static final Food RAW_POLAR_BEAR_MEAT = (new Food.Builder()).hunger(3).saturation(1.8F).meat().build();
+        public static final Food POLAR_BEAR_STEAK = (new Food.Builder()).hunger(8).saturation(12.8F).meat().build();
+        public static final Food PUMPKIN_SLICE = (new Food.Builder()).hunger(2).saturation(1.2F).build();
+        public static final Food COOKED_EGG = (new Food.Builder()).hunger(6).saturation(2.8F).build();
+        public static final Food DROWNED_FLESH = (new Food.Builder()).hunger(4).saturation(0.1F).effect(new EffectInstance(Effects.HUNGER, 600, 0), 0.8F).effect(new EffectInstance(Effects.WATER_BREATHING, 600, 0), 0.5F).meat().build();
     }
 }

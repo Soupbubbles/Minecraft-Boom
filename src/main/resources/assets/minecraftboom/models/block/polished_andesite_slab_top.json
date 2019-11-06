@@ -1,8 +1,0 @@
-{
-  "parent": "block/slab_top",
-  "textures": {
-    "bottom": "minecraft:block/polished_andesite",
-    "top": "minecraft:block/polished_andesite",
-    "side": "minecraftboom:block/polished_andesite_slab_side"
-  }
-}
