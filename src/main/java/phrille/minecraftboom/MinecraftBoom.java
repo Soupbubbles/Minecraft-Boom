@@ -16,6 +16,7 @@ import phrille.minecraftboom.handler.FurnaceFuelEventHandler;
 import phrille.minecraftboom.handler.PlayerEventHandler;
 import phrille.minecraftboom.init.ModBlocks;
 import phrille.minecraftboom.init.ModItems;
+import phrille.minecraftboom.util.JsonAssetsGenerator;
 import phrille.minecraftboom.util.JsonDataGenerator;
 import phrille.minecraftboom.util.Utils;
 
@@ -35,6 +36,7 @@ public class MinecraftBoom
 
     public void setup(FMLCommonSetupEvent event)
     {
+        JsonAssetsGenerator.init();
         JsonDataGenerator.init();
 
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());

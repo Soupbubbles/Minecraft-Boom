@@ -29,6 +29,11 @@ public class Utils
     {
         return name.replace("bricks", "brick") + "_slab";
     }
+    
+    public static final String getWallName(String name)
+    {
+        return name.replace("bricks", "brick") + "_wall";
+    }
 
     public static void spawnEntityItem(World world, BlockPos pos, Item item)
     {
@@ -65,6 +70,7 @@ public class Utils
         catch (Throwable e)
         {
             MinecraftBoom.LOGGER.error("Could not add " + item.asItem().getRegistryName().toString() + " to registerCompostable");
+            e.printStackTrace();
         }
     }
 }

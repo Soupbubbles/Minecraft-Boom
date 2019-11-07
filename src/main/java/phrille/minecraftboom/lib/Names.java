@@ -7,6 +7,7 @@ public class Names
     public static final String MOSSY_COBBLESTONE_BRICKS = "mossy_cobblestone_bricks";
     public static final String MAGMA_BRICKS = "magma_bricks";
     public static final String OBSIDIAN_BRICKS = "obsidian_bricks";
+    public static final String SNOW_BRICKS = "snow_bricks";
     public static final String TERRACOTTA_BRICKS = "terracotta_bricks";
     public static final String WHITE_TERRACOTTA_BRICKS = "white_terracotta_bricks";
     public static final String ORANGE_TERRACOTTA_BRICKS = "orange_terracotta_bricks";

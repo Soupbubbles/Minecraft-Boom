@@ -9,11 +9,11 @@ import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerBlock;
 import net.minecraft.block.MagmaBlock;
 import net.minecraft.block.RotatedPillarBlock;
-import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SlimeBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StainedGlassBlock;
 import net.minecraft.block.StainedGlassPaneBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
@@ -30,8 +30,8 @@ import phrille.minecraftboom.MinecraftBoom;
 import phrille.minecraftboom.block.BookshelfBlock;
 import phrille.minecraftboom.block.GoldBarBlock;
 import phrille.minecraftboom.block.GunpowderBlock;
-import phrille.minecraftboom.block.MagmaBrickSlabBlock;
-import phrille.minecraftboom.block.StairBlock;
+import phrille.minecraftboom.block.ModSlabBlock;
+import phrille.minecraftboom.block.ModStairBlock;
 import phrille.minecraftboom.block.WoodenLadderBlock;
 import phrille.minecraftboom.lib.Names;
 import phrille.minecraftboom.util.Utils;
@@ -44,6 +44,7 @@ public class ModBlocks
     public static final Block MOSSY_COBBLESTONE_BRICKS = Utils._null();
     public static final Block MAGMA_BRICKS = Utils._null();
     public static final Block OBSIDIAN_BRICKS = Utils._null();
+    public static final Block SNOW_BRICKS = Utils._null();
     public static final Block TERRACOTTA_BRICKS = Utils._null();
     public static final Block WHITE_TERRACOTTA_BRICKS = Utils._null();
     public static final Block ORANGE_TERRACOTTA_BRICKS = Utils._null();
@@ -169,6 +170,7 @@ public class ModBlocks
     public static final Block MOSSY_COBBLESTONE_BRICK_STAIRS = Utils._null();
     public static final Block MAGMA_BRICK_STAIRS = Utils._null();
     public static final Block OBSIDIAN_BRICK_STAIRS = Utils._null();
+    public static final Block SNOW_BRICK_STAIRS = Utils._null();
     public static final Block TERRACOTTA_BRICK_STAIRS = Utils._null();
     public static final Block WHITE_TERRACOTTA_BRICK_STAIRS = Utils._null();
     public static final Block ORANGE_TERRACOTTA_BRICK_STAIRS = Utils._null();
@@ -197,9 +199,7 @@ public class ModBlocks
     //Vanilla Stairs
     public static final Block CRACKED_STONE_BRICK_STAIRS = Utils._null();
     public static final Block CHISELED_STONE_BRICK_STAIRS = Utils._null();
-    public static final Block CUT_SANDSTONE_STAIRS = Utils._null();
     public static final Block CHISELED_SANDSTONE_STAIRS = Utils._null();
-    public static final Block CUT_RED_SANDSTONE_STAIRS = Utils._null();
     public static final Block CHISELED_RED_SANDSTONE_STAIRS = Utils._null();
     public static final Block OAK_WOOD_STAIRS = Utils._null();
     public static final Block SPRUCE_WOOD_STAIRS = Utils._null();
@@ -246,6 +246,8 @@ public class ModBlocks
     public static final Block GREEN_CONCRETE_STAIRS = Utils._null();
     public static final Block RED_CONCRETE_STAIRS = Utils._null();
     public static final Block BLACK_CONCRETE_STAIRS = Utils._null();
+    public static final Block CUT_SANDSTONE_STAIRS = Utils._null();
+    public static final Block CUT_RED_SANDSTONE_STAIRS = Utils._null();
     public static final Block SMOOTH_STONE_STAIRS = Utils._null();
 
     //MinecraftBoom Slabs
@@ -253,6 +255,7 @@ public class ModBlocks
     public static final Block MOSSY_COBBLESTONE_BRICK_SLAB = Utils._null();
     public static final Block MAGMA_BRICK_SLAB = Utils._null();
     public static final Block OBSIDIAN_BRICK_SLAB = Utils._null();
+    public static final Block SNOW_BRICK_SLAB = Utils._null();
     public static final Block TERRACOTTA_BRICK_SLAB = Utils._null();
     public static final Block WHITE_TERRACOTTA_BRICK_SLAB = Utils._null();
     public static final Block ORANGE_TERRACOTTA_BRICK_SLAB = Utils._null();
@@ -281,9 +284,7 @@ public class ModBlocks
     //Vanilla Slabs
     public static final Block CRACKED_STONE_BRICK_SLAB = Utils._null();
     public static final Block CHISELED_STONE_BRICK_SLAB = Utils._null();
-    public static final Block CUT_SANDSTONE_SLAB = Utils._null();
     public static final Block CHISELED_SANDSTONE_SLAB = Utils._null();
-    public static final Block CUT_RED_SANDSTONE_SLAB = Utils._null();
     public static final Block CHISELED_RED_SANDSTONE_SLAB = Utils._null();
     public static final Block OAK_WOOD_SLAB = Utils._null();
     public static final Block SPRUCE_WOOD_SLAB = Utils._null();
@@ -331,6 +332,9 @@ public class ModBlocks
     public static final Block RED_CONCRETE_SLAB = Utils._null();
     public static final Block BLACK_CONCRETE_SLAB = Utils._null();
 
+    //MinecraftBoom Walls
+    public static final Block COBBLESTONE_BRICK_WALL = Utils._null();
+
     @Mod.EventBusSubscriber(modid = MinecraftBoom.MOD_ID, bus = Bus.MOD)
     public static class RegistrationHandler
     {
@@ -341,9 +345,13 @@ public class ModBlocks
 
             //Bricks
             createSpecialBlock(registry, Properties.from(Blocks.COBBLESTONE), Names.COBBLESTONE_BRICKS);
+
+            registry.register(setup(new WallBlock((Properties.from(Blocks.COBBLESTONE))), Utils.getWallName(Names.COBBLESTONE_BRICKS)));
+
             createSpecialBlock(registry, Properties.from(Blocks.MOSSY_COBBLESTONE), Names.MOSSY_COBBLESTONE_BRICKS);
-            createSpecialBlock(registry, new MagmaBlock(Properties.from(Blocks.MAGMA_BLOCK)), Names.MAGMA_BRICKS, false, new MagmaBrickSlabBlock(Properties.from(Blocks.MAGMA_BLOCK)));
+            createSpecialBlock(registry, new MagmaBlock(Properties.from(Blocks.MAGMA_BLOCK)), Names.MAGMA_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.OBSIDIAN), Names.OBSIDIAN_BRICKS);
+            createSpecialBlock(registry, Properties.from(Blocks.SNOW_BLOCK), Names.SNOW_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.TERRACOTTA), Names.TERRACOTTA_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.WHITE_TERRACOTTA), Names.WHITE_TERRACOTTA_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.ORANGE_TERRACOTTA), Names.ORANGE_TERRACOTTA_BRICKS);
@@ -465,79 +473,83 @@ public class ModBlocks
             registry.register(setup(new FlowerBlock(Effects.REGENERATION, 5, Properties.from(Blocks.POPPY)), Names.ROSE));
 
             //Vanilla Stairs and Slabs
-            createSpecialBlock(registry, Blocks.CRACKED_STONE_BRICKS, "cracked_stone_bricks", true);
-            createSpecialBlock(registry, Blocks.CHISELED_STONE_BRICKS, "chiseled_stone_bricks", true);
-            createSpecialBlock(registry, Blocks.CUT_SANDSTONE, "cut_sandstone", true);
-            createSpecialBlock(registry, Blocks.CHISELED_SANDSTONE, "chiseled_sandstone", true);
-            createSpecialBlock(registry, Blocks.CUT_RED_SANDSTONE, "cut_red_sandstone", true);
-            createSpecialBlock(registry, Blocks.CHISELED_RED_SANDSTONE, "chiseled_red_sandstone", true);
-            createSpecialBlock(registry, Blocks.OAK_WOOD, "oak_wood", true);
-            createSpecialBlock(registry, Blocks.SPRUCE_WOOD, "spruce_wood", true);
-            createSpecialBlock(registry, Blocks.BIRCH_WOOD, "birch_wood", true);
-            createSpecialBlock(registry, Blocks.JUNGLE_WOOD, "jungle_wood", true);
-            createSpecialBlock(registry, Blocks.ACACIA_WOOD, "acacia_wood", true);
-            createSpecialBlock(registry, Blocks.DARK_OAK_WOOD, "dark_oak_wood", true);
-            createSpecialBlock(registry, Blocks.IRON_BLOCK, "iron_block", true);
-            createSpecialBlock(registry, Blocks.GOLD_BLOCK, "gold_block", true);
-            createSpecialBlock(registry, Blocks.OBSIDIAN, "obsidian", true);
-            createSpecialBlock(registry, Blocks.NETHERRACK, "netherrack", true);
-            createSpecialBlock(registry, Blocks.END_STONE, "end_stone", true);
-            createSpecialBlock(registry, Blocks.CHISELED_QUARTZ_BLOCK, "chiseled_quartz_block", true);
-            createSpecialBlock(registry, Blocks.TERRACOTTA, "terracotta", true);
-            createSpecialBlock(registry, Blocks.WHITE_TERRACOTTA, "white_terracotta", true);
-            createSpecialBlock(registry, Blocks.ORANGE_TERRACOTTA, "orange_terracotta", true);
-            createSpecialBlock(registry, Blocks.MAGENTA_TERRACOTTA, "magenta_terracotta", true);
-            createSpecialBlock(registry, Blocks.LIGHT_BLUE_TERRACOTTA, "light_blue_terracotta", true);
-            createSpecialBlock(registry, Blocks.YELLOW_TERRACOTTA, "yellow_terracotta", true);
-            createSpecialBlock(registry, Blocks.LIME_TERRACOTTA, "lime_terracotta", true);
-            createSpecialBlock(registry, Blocks.PINK_TERRACOTTA, "pink_terracotta", true);
-            createSpecialBlock(registry, Blocks.GRAY_TERRACOTTA, "gray_terracotta", true);
-            createSpecialBlock(registry, Blocks.LIGHT_GRAY_TERRACOTTA, "light_gray_terracotta", true);
-            createSpecialBlock(registry, Blocks.CYAN_TERRACOTTA, "cyan_terracotta", true);
-            createSpecialBlock(registry, Blocks.PURPLE_TERRACOTTA, "purple_terracotta", true);
-            createSpecialBlock(registry, Blocks.BLUE_TERRACOTTA, "blue_terracotta", true);
-            createSpecialBlock(registry, Blocks.BROWN_TERRACOTTA, "brown_terracotta", true);
-            createSpecialBlock(registry, Blocks.GREEN_TERRACOTTA, "green_terracotta", true);
-            createSpecialBlock(registry, Blocks.RED_TERRACOTTA, "red_terracotta", true);
-            createSpecialBlock(registry, Blocks.BLACK_TERRACOTTA, "black_terracotta", true);
-            createSpecialBlock(registry, Blocks.WHITE_CONCRETE, "white_concrete", true);
-            createSpecialBlock(registry, Blocks.ORANGE_CONCRETE, "orange_concrete", true);
-            createSpecialBlock(registry, Blocks.MAGENTA_CONCRETE, "magenta_concrete", true);
-            createSpecialBlock(registry, Blocks.LIGHT_BLUE_CONCRETE, "light_blue_concrete", true);
-            createSpecialBlock(registry, Blocks.YELLOW_CONCRETE, "yellow_concrete", true);
-            createSpecialBlock(registry, Blocks.LIME_CONCRETE, "lime_concrete", true);
-            createSpecialBlock(registry, Blocks.PINK_CONCRETE, "pink_concrete", true);
-            createSpecialBlock(registry, Blocks.GRAY_CONCRETE, "gray_concrete", true);
-            createSpecialBlock(registry, Blocks.LIGHT_GRAY_CONCRETE, "light_gray_concrete", true);
-            createSpecialBlock(registry, Blocks.CYAN_CONCRETE, "cyan_concrete", true);
-            createSpecialBlock(registry, Blocks.PURPLE_CONCRETE, "purple_concrete", true);
-            createSpecialBlock(registry, Blocks.BLUE_CONCRETE, "blue_concrete", true);
-            createSpecialBlock(registry, Blocks.BROWN_CONCRETE, "brown_concrete", true);
-            createSpecialBlock(registry, Blocks.GREEN_CONCRETE, "green_concrete", true);
-            createSpecialBlock(registry, Blocks.RED_CONCRETE, "red_concrete", true);
-            createSpecialBlock(registry, Blocks.BLACK_CONCRETE, "black_concrete", true);
-            registry.register(setup(new StairBlock((Blocks.SMOOTH_STONE)), "smooth_stone_stairs"));
+            addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_STONE_BRICKS, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_SANDSTONE, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_RED_SANDSTONE, true, true);
+            addVanillaVariants(registry, Blocks.OAK_WOOD, true, true);
+            addVanillaVariants(registry, Blocks.SPRUCE_WOOD, true, true);
+            addVanillaVariants(registry, Blocks.BIRCH_WOOD, true, true);
+            addVanillaVariants(registry, Blocks.JUNGLE_WOOD, true, true);
+            addVanillaVariants(registry, Blocks.ACACIA_WOOD, true, true);
+            addVanillaVariants(registry, Blocks.DARK_OAK_WOOD, true, true);
+            addVanillaVariants(registry, Blocks.IRON_BLOCK, true, true);
+            addVanillaVariants(registry, Blocks.GOLD_BLOCK, true, true);
+            addVanillaVariants(registry, Blocks.OBSIDIAN, true, true);
+            addVanillaVariants(registry, Blocks.NETHERRACK, true, true);
+            addVanillaVariants(registry, Blocks.END_STONE, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_QUARTZ_BLOCK, true, true);
+            addVanillaVariants(registry, Blocks.TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.WHITE_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.ORANGE_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.MAGENTA_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.LIGHT_BLUE_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.YELLOW_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.LIME_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.PINK_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.GRAY_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.LIGHT_GRAY_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.CYAN_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.PURPLE_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.BLUE_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.BROWN_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.GREEN_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.RED_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.BLACK_TERRACOTTA, true, true);
+            addVanillaVariants(registry, Blocks.WHITE_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.ORANGE_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.MAGENTA_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.LIGHT_BLUE_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.YELLOW_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.LIME_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.PINK_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.GRAY_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.LIGHT_GRAY_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.CYAN_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.PURPLE_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.BLUE_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.BROWN_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.GREEN_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.RED_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.BLACK_CONCRETE, true, true);
+            addVanillaVariants(registry, Blocks.CUT_SANDSTONE, true, false);
+            addVanillaVariants(registry, Blocks.CUT_RED_SANDSTONE, true, false);
+            addVanillaVariants(registry, Blocks.SMOOTH_STONE, true, false);
         }
 
-        private static void createSpecialBlock(IForgeRegistry<Block> registry, Block block, String string, boolean vanilla)
+        private static void addVanillaVariants(IForgeRegistry<Block> registry, Block block, boolean addStair, boolean addSlab)
         {
-            createSpecialBlock(registry, block, string, vanilla, null);
+            if (addStair)
+            {
+                registry.register(setup(new ModStairBlock((block)), Utils.getStairName(block.getRegistryName().getPath())));
+            }
+
+            if (addSlab)
+            {
+                registry.register(setup(new ModSlabBlock((block)), Utils.getSlabName(block.getRegistryName().getPath())));
+            }
         }
 
         private static void createSpecialBlock(IForgeRegistry<Block> registry, Properties builder, String name)
         {
-            createSpecialBlock(registry, new Block(builder), name, false, null);
+            createSpecialBlock(registry, new Block(builder), name);
         }
 
-        private static void createSpecialBlock(IForgeRegistry<Block> registry, Block block, String name, boolean vanilla, SlabBlock slab)
+        private static void createSpecialBlock(IForgeRegistry<Block> registry, Block block, String name)
         {
-            if (!vanilla)
-            {
-                registry.register(setup(block, name));
-            }
-
-            registry.register(setup(new StairBlock((block)), Utils.getStairName(name)));
-            registry.register(setup(slab != null ? slab : new SlabBlock(Properties.from(block)), Utils.getSlabName(name)));
+            registry.register(setup(block, name));
+            registry.register(setup(new ModStairBlock(block), Utils.getStairName(name)));
+            registry.register(setup(new ModSlabBlock(block), Utils.getSlabName(name)));
         }
 
         public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name)

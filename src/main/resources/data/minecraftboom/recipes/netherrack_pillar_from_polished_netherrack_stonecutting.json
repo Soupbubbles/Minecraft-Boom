@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraftboom:polished_netherrack"
+  },
+  "result": "minecraftboom:netherrack_pillar",
+  "count": 1
+}
