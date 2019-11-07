@@ -1,12 +1,16 @@
 package phrille.minecraftboom.util;
 
+import java.lang.reflect.Method;
+
 import javax.annotation.Nonnull;
 
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import phrille.minecraftboom.MinecraftBoom;
 
 public class Utils
 {
@@ -36,6 +40,31 @@ public class Utils
         if (!world.isRemote)
         {
             world.addEntity(new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack));
+        }
+    }
+
+    /**
+     * Method for adding items to be used in the Minecraft Composter
+     * Uses reflection to get access to registerCompostable
+     */
+    public static void addCompostMaterial(float chance, IItemProvider item)
+    {
+        try 
+        {
+            Class clazz = Class.forName("net.minecraft.block.ComposterBlock");
+            Class partypes[] = new Class[2];
+            partypes[0] = Float.TYPE;
+            partypes[1] = IItemProvider.class;
+            Method method = clazz.getDeclaredMethod("registerCompostable", partypes);
+            method.setAccessible(true);
+            Object arglist[] = new Object[2];
+            arglist[0] = chance;
+            arglist[1] = item;
+            Object retobj = method.invoke(null, arglist);
+        }
+        catch (Throwable e)
+        {
+            MinecraftBoom.LOGGER.error("Could not add " + item.asItem().getRegistryName().toString() + " to registerCompostable");
         }
     }
 }

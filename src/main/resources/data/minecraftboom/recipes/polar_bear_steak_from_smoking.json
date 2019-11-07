@@ -1,0 +1,9 @@
+{
+  "type": "smoking",
+  "ingredient": {
+    "item": "minecraftboom:raw_polar_bear_meat"
+  },
+  "result": "minecraftboom:polar_bear_steak",
+  "experience": 0.35,
+  "cookingtime": 100
+}

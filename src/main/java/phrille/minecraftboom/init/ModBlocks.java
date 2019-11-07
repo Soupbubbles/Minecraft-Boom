@@ -14,7 +14,6 @@ import net.minecraft.block.SlimeBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StainedGlassBlock;
 import net.minecraft.block.StainedGlassPaneBlock;
-import net.minecraft.block.StairsBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
@@ -35,7 +34,6 @@ import phrille.minecraftboom.block.MagmaBrickSlabBlock;
 import phrille.minecraftboom.block.StairBlock;
 import phrille.minecraftboom.block.WoodenLadderBlock;
 import phrille.minecraftboom.lib.Names;
-import phrille.minecraftboom.util.Json;
 import phrille.minecraftboom.util.Utils;
 
 @ObjectHolder(MinecraftBoom.MOD_ID)
@@ -248,7 +246,7 @@ public class ModBlocks
     public static final Block GREEN_CONCRETE_STAIRS = Utils._null();
     public static final Block RED_CONCRETE_STAIRS = Utils._null();
     public static final Block BLACK_CONCRETE_STAIRS = Utils._null();
-    public static final Block BLOCK_SMOOTH_STONE_STAIRS = Utils._null();
+    public static final Block SMOOTH_STONE_STAIRS = Utils._null();
 
     //MinecraftBoom Slabs
     public static final Block COBBLESTONE_BRICK_SLAB = Utils._null();

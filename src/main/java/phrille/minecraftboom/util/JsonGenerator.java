@@ -28,14 +28,12 @@ public class JsonGenerator
     //File Paths
     private static final String RESOURCE_DIR = "F:\\Programming\\Minecraft\\1.14.4\\Minecraft-Boom\\src\\main\\resources\\";
     public static final String ASSETS_DIR = RESOURCE_DIR + "assets\\minecraftboom\\";
-    public static final String DATA_DIR = RESOURCE_DIR + "data\\minecraftboom\\";
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
     //Directories
     private static final File BLOCKSTATE_DIR = new File(ASSETS_DIR + "blockstates");
     private static final File BLOCK_MODEL_DIR = new File(ASSETS_DIR + "models/block");
     private static final File ITEM_MODEL_DIR = new File(ASSETS_DIR + "models/item");
-    private static final File RECIPES_DIR = new File(DATA_DIR + "recipes");
 
     //Stairs
     private static final String[] STAIR_DIRECTIONS = {"east", "west", "south", "north"};
@@ -111,7 +109,7 @@ public class JsonGenerator
         stairBlockState(name);
         stairBlockModel(name, parentName);
         basicItemBlockModel(name);
-        addShapedRecipe(name, new ItemStack(block, 4), "x  ", "xx ", "xxx", 'x', parent);
+        //addShapedRecipe(name, new ItemStack(block, 4), "x  ", "xx ", "xxx", 'x', parent);
     }
 
     private static void stairBlockState(String name)
@@ -176,7 +174,7 @@ public class JsonGenerator
         slabBlockState(name, parentName);
         slabBlockModel(name, parentName);
         basicItemBlockModel(name);
-        addShapedRecipe(name, new ItemStack(block, 6), "xxx", 'x', parent);
+        //addShapedRecipe(name, new ItemStack(block, 6), "xxx", 'x', parent);
     }
 
     private static void slabBlockState(String name, String parentName)
@@ -220,7 +218,7 @@ public class JsonGenerator
         paneBlockState(name);
         paneBlockModel(name);
         basicItemModel(name, "block/" + name.replace("_pane", ""));
-        addShapedRecipe(name, new ItemStack(block, 16), "xxx", "xxx", 'x', parent);
+        //addShapedRecipe(name, new ItemStack(block, 16), "xxx", "xxx", 'x', parent);
     }
 
     private static void paneBlockState(String name)
@@ -271,93 +269,6 @@ public class JsonGenerator
             json.put("textures", textures);
             writeFile(json, BLOCK_MODEL_DIR, name + PANE_SUFFIX[i]);
         }
-    }
-
-    //Recipes
-    private static void addShapedRecipe(String fileName, ItemStack result, Object... components)
-    {
-        Map<String, Object> json = new HashMap<>();
-        List<String> pattern = new ArrayList<>();
-        int i = 0;
-
-        while (i < components.length && components[i] instanceof String)
-        {
-            pattern.add((String) components[i]);
-            i++;
-        }
-
-        json.put("pattern", pattern);
-
-        Map<String, Map<String, Object>> key = new HashMap<>();
-        Character curKey = null;
-
-        for (; i < components.length; i++)
-        {
-            Object obj = components[i];
-
-            if (obj instanceof Character)
-            {
-                if (curKey != null)
-                {
-                    throw new IllegalArgumentException("Provided two char keys in a row");
-                }
-
-                curKey = (Character) obj;
-            }
-            else
-            {
-                if (curKey == null)
-                {
-                    throw new IllegalArgumentException("Providing object without a char key");
-                }
-
-                key.put(Character.toString(curKey), serializeItem(obj));
-                curKey = null;
-            }
-        }
-
-        json.put("key", key);
-        json.put("type", "minecraft:crafting_shaped");
-        json.put("result", serializeItem(result));
-        writeFile(json, RECIPES_DIR, fileName);
-    }
-
-    private static Map<String, Object> serializeItem(Object obj)
-    {
-        if (obj instanceof Item)
-        {
-            return serializeItem(new ItemStack((Item) obj));
-        }
-
-        if (obj instanceof Block)
-        {
-            return serializeItem(new ItemStack((Block) obj));
-        }
-
-        if (obj instanceof String)
-        {
-            String tag = (String) obj;
-            Map<String, Object> result = new HashMap<>();
-            result.put("tag", tag);
-
-            return result;
-        }
-
-        if (obj instanceof ItemStack)
-        {
-            ItemStack stack = (ItemStack) obj;
-            Map<String, Object> result = new HashMap<>();
-            result.put("item", stack.getItem().getRegistryName().toString());
-
-            if (stack.getCount() > 1)
-            {
-                result.put("count", stack.getCount());
-            }
-
-            return result;
-        }
-
-        throw new IllegalArgumentException("Not a Block, Item or ItemStack");
     }
 
     //Utils

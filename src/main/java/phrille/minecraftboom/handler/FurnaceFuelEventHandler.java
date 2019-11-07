@@ -22,7 +22,7 @@ public class FurnaceFuelEventHandler
     public static final int PINECONE = 300;
 
     @SubscribeEvent
-    public void onBlockDropItems(FurnaceFuelBurnTimeEvent event)
+    public void onFuelBurnTime(FurnaceFuelBurnTimeEvent event)
     {
         Item item = event.getItemStack().getItem();
 

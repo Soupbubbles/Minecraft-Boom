@@ -14,7 +14,10 @@ import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import phrille.minecraftboom.handler.FurnaceFuelEventHandler;
 import phrille.minecraftboom.handler.PlayerEventHandler;
-import phrille.minecraftboom.util.JsonGenerator;
+import phrille.minecraftboom.init.ModBlocks;
+import phrille.minecraftboom.init.ModItems;
+import phrille.minecraftboom.util.JsonDataGenerator;
+import phrille.minecraftboom.util.Utils;
 
 @Mod(MinecraftBoom.MOD_ID)
 public class MinecraftBoom
@@ -32,10 +35,14 @@ public class MinecraftBoom
 
     public void setup(FMLCommonSetupEvent event)
     {
-        JsonGenerator.init();
+        JsonDataGenerator.init();
 
         MinecraftForge.EVENT_BUS.register(new PlayerEventHandler());
         MinecraftForge.EVENT_BUS.register(new FurnaceFuelEventHandler());
+        
+        Utils.addCompostMaterial(0.35F, ModItems.PINECONE);
+        Utils.addCompostMaterial(0.5F, ModItems.PUMPKIN_SLICE);
+        Utils.addCompostMaterial(0.65F, ModBlocks.ROSE);
     }
 
     private void clientSetup(FMLClientSetupEvent event)
