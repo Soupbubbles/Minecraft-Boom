@@ -1,0 +1,6 @@
+{
+  "parent": "block/wall_inventory",
+  "textures": {
+    "wall": "minecraftboom:block/polished_end_stone"
+  }
+}

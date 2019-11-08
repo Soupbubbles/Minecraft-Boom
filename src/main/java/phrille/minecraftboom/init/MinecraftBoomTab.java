@@ -18,10 +18,10 @@ import phrille.minecraftboom.MinecraftBoom;
 public class MinecraftBoomTab extends ItemGroup
 {
     public static final List<Item> MINECRAFTBOOM_TAB_LIST = new ArrayList<Item>();
-    public static final List<Item> MINECRAFTBOOM_STAIRS_AND_SLAB_TAB_LIST = new ArrayList<Item>();
+    public static final List<Item> MINECRAFTBOOM_VARIANT_BLOCKS_TAB_LIST = new ArrayList<Item>();
     
     public static final ItemGroup MINECRAFTBOOM_TAB = new MinecraftBoomTab(MinecraftBoom.MOD_ID + "_tab", () -> new ItemStack(ModBlocks.MOSSY_COBBLESTONE_BRICKS), MINECRAFTBOOM_TAB_LIST);
-    public static final ItemGroup MINECRAFTBOOM_STAIRS_AND_SLAB_TAB = new MinecraftBoomTab(MinecraftBoom.MOD_ID + "_stairs_and_slab_tab", () -> new ItemStack(ModBlocks.MAGMA_BRICK_STAIRS), MINECRAFTBOOM_STAIRS_AND_SLAB_TAB_LIST);
+    public static final ItemGroup MINECRAFTBOOM_VARIANT_BLOCKS_TAB = new MinecraftBoomTab(MinecraftBoom.MOD_ID + "_variant_blocks_tab", () -> new ItemStack(ModBlocks.MAGMA_BRICK_STAIRS), MINECRAFTBOOM_VARIANT_BLOCKS_TAB_LIST);
 
     private final Supplier<ItemStack> iconSupplier;
     private final List<Item> tabList;

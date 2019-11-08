@@ -13,7 +13,6 @@ import net.minecraft.block.SlimeBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StainedGlassBlock;
 import net.minecraft.block.StainedGlassPaneBlock;
-import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
@@ -32,6 +31,7 @@ import phrille.minecraftboom.block.GoldBarBlock;
 import phrille.minecraftboom.block.GunpowderBlock;
 import phrille.minecraftboom.block.ModSlabBlock;
 import phrille.minecraftboom.block.ModStairBlock;
+import phrille.minecraftboom.block.ModWallBlock;
 import phrille.minecraftboom.block.WoodenLadderBlock;
 import phrille.minecraftboom.lib.Names;
 import phrille.minecraftboom.util.Utils;
@@ -160,9 +160,6 @@ public class ModBlocks
 
     //Misc
     public static final Block GOLD_BARS = Utils._null();
-    public static final Block RED_NETHER_BRICK_FENCE = Utils._null();
-    public static final Block NETHER_BRICK_FENCE_GATE = Utils._null();
-    public static final Block RED_NETHER_BRICK_FENCE_GATE = Utils._null();
     public static final Block ROSE = Utils._null();
 
     //MinecraftBoom Stairs
@@ -334,6 +331,98 @@ public class ModBlocks
 
     //MinecraftBoom Walls
     public static final Block COBBLESTONE_BRICK_WALL = Utils._null();
+    public static final Block MOSSY_COBBLESTONE_BRICK_WALL = Utils._null();
+    public static final Block MAGMA_BRICK_WALL = Utils._null();
+    public static final Block OBSIDIAN_BRICK_WALL = Utils._null();
+    public static final Block SNOW_BRICK_WALL = Utils._null();
+    public static final Block TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block WHITE_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block ORANGE_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block MAGENTA_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block LIGHT_BLUE_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block YELLOW_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block LIME_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block PINK_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block GRAY_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block LIGHT_GRAY_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block CYAN_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block PURPLE_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block BLUE_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block BROWN_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block GREEN_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block RED_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block BLACK_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block GRAVEL_STONE_WALL = Utils._null();
+    public static final Block FINE_GRAVEL_STONE_WALL = Utils._null();
+    public static final Block GRAVEL_BRICK_WALL = Utils._null();
+    public static final Block POLISHED_PRISMARINE_WALL = Utils._null();
+    public static final Block POLISHED_DARK_PRISMARINE_WALL = Utils._null();
+    public static final Block POLISHED_END_STONE_WALL = Utils._null();
+    public static final Block POLISHED_NETHERRACK_WALL = Utils._null();
+
+    //Vanilla Walls
+    public static final Block CRACKED_STONE_BRICK_WALL = Utils._null();
+    public static final Block CHISELED_STONE_BRICK_WALL = Utils._null();
+    public static final Block CHISELED_SANDSTONE_WALL = Utils._null();
+    public static final Block CHISELED_RED_SANDSTONE_WALL = Utils._null();
+    public static final Block IRON_BLOCK_WALL = Utils._null();
+    public static final Block GOLD_BLOCK_WALL = Utils._null();
+    public static final Block OBSIDIAN_WALL = Utils._null();
+    public static final Block NETHERRACK_WALL = Utils._null();
+    public static final Block END_STONE_WALL = Utils._null();
+    public static final Block CHISELED_QUARTZ_BLOCK_WALL = Utils._null();
+    public static final Block TERRACOTTA_WALL = Utils._null();
+    public static final Block WHITE_TERRACOTTA_WALL = Utils._null();
+    public static final Block ORANGE_TERRACOTTA_WALL = Utils._null();
+    public static final Block MAGENTA_TERRACOTTA_WALL = Utils._null();
+    public static final Block LIGHT_BLUE_TERRACOTTA_WALL = Utils._null();
+    public static final Block YELLOW_TERRACOTTA_WALL = Utils._null();
+    public static final Block LIME_TERRACOTTA_WALL = Utils._null();
+    public static final Block PINK_TERRACOTTA_WALL = Utils._null();
+    public static final Block GRAY_TERRACOTTA_WALL = Utils._null();
+    public static final Block LIGHT_GRAY_TERRACOTTA_WALL = Utils._null();
+    public static final Block CYAN_TERRACOTTA_WALL = Utils._null();
+    public static final Block PURPLE_TERRACOTTA_WALL = Utils._null();
+    public static final Block BLUE_TERRACOTTA_WALL = Utils._null();
+    public static final Block BROWN_TERRACOTTA_WALL = Utils._null();
+    public static final Block GREEN_TERRACOTTA_WALL = Utils._null();
+    public static final Block RED_TERRACOTTA_WALL = Utils._null();
+    public static final Block BLACK_TERRACOTTA_WALL = Utils._null();
+    public static final Block WHITE_CONCRETE_WALL = Utils._null();
+    public static final Block ORANGE_CONCRETE_WALL = Utils._null();
+    public static final Block MAGENTA_CONCRETE_WALL = Utils._null();
+    public static final Block LIGHT_BLUE_CONCRETE_WALL = Utils._null();
+    public static final Block YELLOW_CONCRETE_WALL = Utils._null();
+    public static final Block LIME_CONCRETE_WALL = Utils._null();
+    public static final Block PINK_CONCRETE_WALL = Utils._null();
+    public static final Block GRAY_CONCRETE_WALL = Utils._null();
+    public static final Block LIGHT_GRAY_CONCRETE_WALL = Utils._null();
+    public static final Block CYAN_CONCRETE_WALL = Utils._null();
+    public static final Block PURPLE_CONCRETE_WALL = Utils._null();
+    public static final Block BLUE_CONCRETE_WALL = Utils._null();
+    public static final Block BROWN_CONCRETE_WALL = Utils._null();
+    public static final Block GREEN_CONCRETE_WALL = Utils._null();
+    public static final Block RED_CONCRETE_WALL = Utils._null();
+    public static final Block BLACK_CONCRETE_WALL = Utils._null();
+    public static final Block CUT_SANDSTONE_WALL = Utils._null();
+    public static final Block CUT_RED_SANDSTONE_WALL = Utils._null();
+    public static final Block SMOOTH_STONE_WALL = Utils._null();
+    public static final Block STONE_WALL = Utils._null();
+    public static final Block POLISHED_GRANITE_WALL = Utils._null();
+    public static final Block POLISHED_DIORITE_WALL = Utils._null();
+    public static final Block POLISHED_ANDESITE_WALL = Utils._null();
+    public static final Block SMOOTH_SANDSTONE_WALL = Utils._null();
+    public static final Block SMOOTH_RED_SANDSTONE_WALL = Utils._null();
+    public static final Block PURPUR_BLOCK_WALL = Utils._null();
+    public static final Block QUARTZ_BLOCK_WALL = Utils._null();
+    public static final Block SMOOTH_QUARTZ_WALL = Utils._null();
+    public static final Block PRISMARINE_BRICK_WALL = Utils._null();
+    public static final Block DARK_PRISMARINE_WALL = Utils._null();
+    
+    //Vanilla Fences
+    public static final Block RED_NETHER_BRICK_FENCE = Utils._null();
+    public static final Block NETHER_BRICK_FENCE_GATE = Utils._null();
+    public static final Block RED_NETHER_BRICK_FENCE_GATE = Utils._null();
 
     @Mod.EventBusSubscriber(modid = MinecraftBoom.MOD_ID, bus = Bus.MOD)
     public static class RegistrationHandler
@@ -345,9 +434,6 @@ public class ModBlocks
 
             //Bricks
             createSpecialBlock(registry, Properties.from(Blocks.COBBLESTONE), Names.COBBLESTONE_BRICKS);
-
-            registry.register(setup(new WallBlock((Properties.from(Blocks.COBBLESTONE))), Utils.getWallName(Names.COBBLESTONE_BRICKS)));
-
             createSpecialBlock(registry, Properties.from(Blocks.MOSSY_COBBLESTONE), Names.MOSSY_COBBLESTONE_BRICKS);
             createSpecialBlock(registry, new MagmaBlock(Properties.from(Blocks.MAGMA_BLOCK)), Names.MAGMA_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.OBSIDIAN), Names.OBSIDIAN_BRICKS);
@@ -467,67 +553,80 @@ public class ModBlocks
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.JUNGLE_LADDER));
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.ACACIA_LADDER));
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.DARK_OAK_LADDER));
+            registry.register(setup(new FlowerBlock(Effects.REGENERATION, 5, Properties.from(Blocks.POPPY)), Names.ROSE));
+
+            //Vanilla Stairs, Slabs and Walls
+            addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_STONE_BRICKS, true, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_SANDSTONE, true, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_RED_SANDSTONE, true, true, true);
+            addVanillaVariants(registry, Blocks.OAK_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.SPRUCE_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.BIRCH_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.JUNGLE_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.ACACIA_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.DARK_OAK_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.IRON_BLOCK, true, true, true);
+            addVanillaVariants(registry, Blocks.GOLD_BLOCK, true, true, true);
+            addVanillaVariants(registry, Blocks.OBSIDIAN, true, true, true);
+            addVanillaVariants(registry, Blocks.NETHERRACK, true, true, true);
+            addVanillaVariants(registry, Blocks.END_STONE, true, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_QUARTZ_BLOCK, true, true, true);
+            addVanillaVariants(registry, Blocks.TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.WHITE_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.ORANGE_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.MAGENTA_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.LIGHT_BLUE_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.YELLOW_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.LIME_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.PINK_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.GRAY_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.LIGHT_GRAY_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.CYAN_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.PURPLE_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.BLUE_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.BROWN_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.GREEN_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.RED_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.BLACK_TERRACOTTA, true, true, true);
+            addVanillaVariants(registry, Blocks.WHITE_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.ORANGE_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.MAGENTA_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.LIGHT_BLUE_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.YELLOW_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.LIME_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.PINK_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.GRAY_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.LIGHT_GRAY_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.CYAN_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.PURPLE_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.BLUE_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.BROWN_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.GREEN_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.RED_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.BLACK_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.CUT_SANDSTONE, true, false, true);
+            addVanillaVariants(registry, Blocks.CUT_RED_SANDSTONE, true, false, true);
+            addVanillaVariants(registry, Blocks.SMOOTH_STONE, true, false, true);
+            addVanillaVariants(registry, Blocks.STONE, false, false, true);
+            addVanillaVariants(registry, Blocks.POLISHED_GRANITE, false, false, true);
+            addVanillaVariants(registry, Blocks.POLISHED_DIORITE, false, false, true);
+            addVanillaVariants(registry, Blocks.POLISHED_ANDESITE, false, false, true);
+            addVanillaVariants(registry, Blocks.SMOOTH_SANDSTONE, false, false, true);
+            addVanillaVariants(registry, Blocks.SMOOTH_RED_SANDSTONE, false, false, true);
+            addVanillaVariants(registry, Blocks.PURPUR_BLOCK, false, false, true);
+            addVanillaVariants(registry, Blocks.QUARTZ_BLOCK, false, false, true);
+            addVanillaVariants(registry, Blocks.SMOOTH_QUARTZ, false, false, true);
+            addVanillaVariants(registry, Blocks.PRISMARINE_BRICKS, false, false, true);
+            addVanillaVariants(registry, Blocks.DARK_PRISMARINE, false, false, true);
+            
+            //Fences
             registry.register(setup(new FenceBlock(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.RED_NETHER_BRICK_FENCE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.NETHER_BRICK_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.RED_NETHER_BRICK_FENCE_GATE));
-            registry.register(setup(new FlowerBlock(Effects.REGENERATION, 5, Properties.from(Blocks.POPPY)), Names.ROSE));
-
-            //Vanilla Stairs and Slabs
-            addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true);
-            addVanillaVariants(registry, Blocks.CHISELED_STONE_BRICKS, true, true);
-            addVanillaVariants(registry, Blocks.CHISELED_SANDSTONE, true, true);
-            addVanillaVariants(registry, Blocks.CHISELED_RED_SANDSTONE, true, true);
-            addVanillaVariants(registry, Blocks.OAK_WOOD, true, true);
-            addVanillaVariants(registry, Blocks.SPRUCE_WOOD, true, true);
-            addVanillaVariants(registry, Blocks.BIRCH_WOOD, true, true);
-            addVanillaVariants(registry, Blocks.JUNGLE_WOOD, true, true);
-            addVanillaVariants(registry, Blocks.ACACIA_WOOD, true, true);
-            addVanillaVariants(registry, Blocks.DARK_OAK_WOOD, true, true);
-            addVanillaVariants(registry, Blocks.IRON_BLOCK, true, true);
-            addVanillaVariants(registry, Blocks.GOLD_BLOCK, true, true);
-            addVanillaVariants(registry, Blocks.OBSIDIAN, true, true);
-            addVanillaVariants(registry, Blocks.NETHERRACK, true, true);
-            addVanillaVariants(registry, Blocks.END_STONE, true, true);
-            addVanillaVariants(registry, Blocks.CHISELED_QUARTZ_BLOCK, true, true);
-            addVanillaVariants(registry, Blocks.TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.WHITE_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.ORANGE_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.MAGENTA_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.LIGHT_BLUE_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.YELLOW_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.LIME_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.PINK_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.GRAY_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.LIGHT_GRAY_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.CYAN_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.PURPLE_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.BLUE_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.BROWN_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.GREEN_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.RED_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.BLACK_TERRACOTTA, true, true);
-            addVanillaVariants(registry, Blocks.WHITE_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.ORANGE_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.MAGENTA_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.LIGHT_BLUE_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.YELLOW_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.LIME_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.PINK_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.GRAY_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.LIGHT_GRAY_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.CYAN_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.PURPLE_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.BLUE_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.BROWN_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.GREEN_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.RED_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.BLACK_CONCRETE, true, true);
-            addVanillaVariants(registry, Blocks.CUT_SANDSTONE, true, false);
-            addVanillaVariants(registry, Blocks.CUT_RED_SANDSTONE, true, false);
-            addVanillaVariants(registry, Blocks.SMOOTH_STONE, true, false);
         }
 
-        private static void addVanillaVariants(IForgeRegistry<Block> registry, Block block, boolean addStair, boolean addSlab)
+        private static void addVanillaVariants(IForgeRegistry<Block> registry, Block block, boolean addStair, boolean addSlab, boolean addWall)
         {
             if (addStair)
             {
@@ -537,6 +636,11 @@ public class ModBlocks
             if (addSlab)
             {
                 registry.register(setup(new ModSlabBlock((block)), Utils.getSlabName(block.getRegistryName().getPath())));
+            }
+
+            if (addWall)
+            {
+                registry.register(setup(new ModWallBlock(block), Utils.getWallName(block.getRegistryName().getPath())));
             }
         }
 
@@ -550,6 +654,7 @@ public class ModBlocks
             registry.register(setup(block, name));
             registry.register(setup(new ModStairBlock(block), Utils.getStairName(name)));
             registry.register(setup(new ModSlabBlock(block), Utils.getSlabName(name)));
+            registry.register(setup(new ModWallBlock(block), Utils.getWallName(name)));
         }
 
         public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name)

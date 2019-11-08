@@ -16,10 +16,9 @@ import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import phrille.minecraftboom.MinecraftBoom;
+import phrille.minecraftboom.block.ModWallBlock;
 import phrille.minecraftboom.init.ModBlocks;
-import phrille.minecraftboom.init.ModItems;
 
 public class JsonDataGenerator
 {
@@ -27,192 +26,126 @@ public class JsonDataGenerator
     private static final String RESOURCE_DIR = "F:\\Programming\\Minecraft\\1.14.4\\Minecraft-Boom\\src\\main\\resources\\";
     public static final String DATA_DIR = RESOURCE_DIR + "data\\minecraftboom\\";
 
-    //TEMP CODE
     public static void init()
     {
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.COBBLESTONE_BRICKS), Blocks.COBBLESTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.COBBLESTONE_BRICK_STAIRS), Blocks.COBBLESTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.COBBLESTONE_BRICK_SLAB, 2), Blocks.COBBLESTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.COBBLESTONE_BRICK_STAIRS), ModBlocks.COBBLESTONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.COBBLESTONE_BRICK_SLAB, 2), ModBlocks.COBBLESTONE_BRICKS);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.MOSSY_COBBLESTONE_BRICKS), Blocks.MOSSY_COBBLESTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS), Blocks.MOSSY_COBBLESTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.MOSSY_COBBLESTONE_BRICK_SLAB, 2), Blocks.MOSSY_COBBLESTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.MOSSY_COBBLESTONE_BRICK_STAIRS), ModBlocks.MOSSY_COBBLESTONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.MOSSY_COBBLESTONE_BRICK_SLAB, 2), ModBlocks.MOSSY_COBBLESTONE_BRICKS);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.MAGMA_BRICK_STAIRS), ModBlocks.MAGMA_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.MAGMA_BRICK_SLAB, 2), ModBlocks.MAGMA_BRICKS);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_BRICKS), Blocks.OBSIDIAN);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_BRICK_STAIRS), Blocks.OBSIDIAN);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_BRICK_SLAB, 2), Blocks.OBSIDIAN);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_STAIRS), Blocks.OBSIDIAN);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_SLAB, 2), Blocks.OBSIDIAN);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_BRICK_STAIRS), ModBlocks.OBSIDIAN_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_BRICK_SLAB, 2), ModBlocks.OBSIDIAN_BRICKS);
-
-        addStoneCutterRecipes(ModBlocks.TERRACOTTA_BRICKS, ModBlocks.TERRACOTTA_BRICK_SLAB, ModBlocks.TERRACOTTA_BRICK_STAIRS, Blocks.TERRACOTTA, ModBlocks.TERRACOTTA_SLAB, ModBlocks.TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.WHITE_TERRACOTTA_BRICKS, ModBlocks.WHITE_TERRACOTTA_BRICK_SLAB, ModBlocks.WHITE_TERRACOTTA_BRICK_STAIRS, Blocks.WHITE_TERRACOTTA, ModBlocks.WHITE_TERRACOTTA_SLAB, ModBlocks.WHITE_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.ORANGE_TERRACOTTA_BRICKS, ModBlocks.ORANGE_TERRACOTTA_BRICK_SLAB, ModBlocks.ORANGE_TERRACOTTA_BRICK_STAIRS, Blocks.ORANGE_TERRACOTTA, ModBlocks.ORANGE_TERRACOTTA_SLAB, ModBlocks.ORANGE_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.MAGENTA_TERRACOTTA_BRICKS, ModBlocks.MAGENTA_TERRACOTTA_BRICK_SLAB, ModBlocks.MAGENTA_TERRACOTTA_BRICK_STAIRS, Blocks.MAGENTA_TERRACOTTA, ModBlocks.MAGENTA_TERRACOTTA_SLAB, ModBlocks.MAGENTA_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICKS, ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICK_SLAB, ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICK_STAIRS, Blocks.LIGHT_BLUE_TERRACOTTA, ModBlocks.LIGHT_BLUE_TERRACOTTA_SLAB, ModBlocks.LIGHT_BLUE_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.YELLOW_TERRACOTTA_BRICKS, ModBlocks.YELLOW_TERRACOTTA_BRICK_SLAB, ModBlocks.YELLOW_TERRACOTTA_BRICK_STAIRS, Blocks.YELLOW_TERRACOTTA, ModBlocks.YELLOW_TERRACOTTA_SLAB, ModBlocks.YELLOW_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.LIME_TERRACOTTA_BRICKS, ModBlocks.LIME_TERRACOTTA_BRICK_SLAB, ModBlocks.LIME_TERRACOTTA_BRICK_STAIRS, Blocks.LIME_TERRACOTTA, ModBlocks.LIME_TERRACOTTA_SLAB, ModBlocks.LIME_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.PINK_TERRACOTTA_BRICKS, ModBlocks.PINK_TERRACOTTA_BRICK_SLAB, ModBlocks.PINK_TERRACOTTA_BRICK_STAIRS, Blocks.PINK_TERRACOTTA, ModBlocks.PINK_TERRACOTTA_SLAB, ModBlocks.PINK_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.GRAY_TERRACOTTA_BRICKS, ModBlocks.GRAY_TERRACOTTA_BRICK_SLAB, ModBlocks.GRAY_TERRACOTTA_BRICK_STAIRS, Blocks.GRAY_TERRACOTTA, ModBlocks.GRAY_TERRACOTTA_SLAB, ModBlocks.GRAY_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICKS, ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICK_SLAB, ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICK_STAIRS, Blocks.LIGHT_GRAY_TERRACOTTA, ModBlocks.LIGHT_GRAY_TERRACOTTA_SLAB, ModBlocks.LIGHT_GRAY_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.CYAN_TERRACOTTA_BRICKS, ModBlocks.CYAN_TERRACOTTA_BRICK_SLAB, ModBlocks.CYAN_TERRACOTTA_BRICK_STAIRS, Blocks.CYAN_TERRACOTTA, ModBlocks.CYAN_TERRACOTTA_SLAB, ModBlocks.CYAN_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.PURPLE_TERRACOTTA_BRICKS, ModBlocks.PURPLE_TERRACOTTA_BRICK_SLAB, ModBlocks.PURPLE_TERRACOTTA_BRICK_STAIRS, Blocks.PURPLE_TERRACOTTA, ModBlocks.PURPLE_TERRACOTTA_SLAB, ModBlocks.PURPLE_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.BLUE_TERRACOTTA_BRICKS, ModBlocks.BLUE_TERRACOTTA_BRICK_SLAB, ModBlocks.BLUE_TERRACOTTA_BRICK_STAIRS, Blocks.BLUE_TERRACOTTA, ModBlocks.BLUE_TERRACOTTA_SLAB, ModBlocks.BLUE_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.BROWN_TERRACOTTA_BRICKS, ModBlocks.BROWN_TERRACOTTA_BRICK_SLAB, ModBlocks.BROWN_TERRACOTTA_BRICK_STAIRS, Blocks.BROWN_TERRACOTTA, ModBlocks.BROWN_TERRACOTTA_SLAB, ModBlocks.BROWN_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.GREEN_TERRACOTTA_BRICKS, ModBlocks.GREEN_TERRACOTTA_BRICK_SLAB, ModBlocks.GREEN_TERRACOTTA_BRICK_STAIRS, Blocks.GREEN_TERRACOTTA, ModBlocks.GREEN_TERRACOTTA_SLAB, ModBlocks.GREEN_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.RED_TERRACOTTA_BRICKS, ModBlocks.RED_TERRACOTTA_BRICK_SLAB, ModBlocks.RED_TERRACOTTA_BRICK_STAIRS, Blocks.RED_TERRACOTTA, ModBlocks.RED_TERRACOTTA_SLAB, ModBlocks.RED_TERRACOTTA_STAIRS);
-        addStoneCutterRecipes(ModBlocks.BLACK_TERRACOTTA_BRICKS, ModBlocks.BLACK_TERRACOTTA_BRICK_SLAB, ModBlocks.BLACK_TERRACOTTA_BRICK_STAIRS, Blocks.BLACK_TERRACOTTA, ModBlocks.BLACK_TERRACOTTA_SLAB, ModBlocks.BLACK_TERRACOTTA_STAIRS);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICKS), ModBlocks.GRAVEL_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICK_STAIRS), ModBlocks.GRAVEL_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICK_SLAB, 2), ModBlocks.GRAVEL_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_STONE_STAIRS), ModBlocks.GRAVEL_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_STONE_SLAB, 2), ModBlocks.GRAVEL_STONE);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICKS), ModBlocks.FINE_GRAVEL_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICK_STAIRS), ModBlocks.FINE_GRAVEL_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICK_SLAB, 2), ModBlocks.FINE_GRAVEL_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.FINE_GRAVEL_STONE_STAIRS), ModBlocks.FINE_GRAVEL_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.FINE_GRAVEL_STONE_SLAB, 2), ModBlocks.FINE_GRAVEL_STONE);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICK_STAIRS), ModBlocks.GRAVEL_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICK_SLAB, 2), ModBlocks.GRAVEL_BRICKS);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE), Blocks.PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE_STAIRS), Blocks.PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE_SLAB, 2), Blocks.PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.PRISMARINE_PILLAR), Blocks.PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE), Blocks.PRISMARINE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE_STAIRS), Blocks.PRISMARINE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE_SLAB, 2), Blocks.PRISMARINE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.PRISMARINE_PILLAR), Blocks.PRISMARINE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_DARK_PRISMARINE), Blocks.DARK_PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_DARK_PRISMARINE_STAIRS), Blocks.DARK_PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_DARK_PRISMARINE_SLAB, 2), Blocks.DARK_PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.DARK_PRISMARINE_PILLAR), Blocks.DARK_PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE_STAIRS), ModBlocks.POLISHED_PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE_SLAB, 2), ModBlocks.POLISHED_PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_DARK_PRISMARINE_STAIRS), ModBlocks.POLISHED_DARK_PRISMARINE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_DARK_PRISMARINE_SLAB, 2), ModBlocks.POLISHED_DARK_PRISMARINE);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.NETHERRACK_STAIRS), Blocks.NETHERRACK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.NETHERRACK_SLAB, 2), Blocks.NETHERRACK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_NETHERRACK), Blocks.NETHERRACK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_NETHERRACK_STAIRS), Blocks.NETHERRACK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_NETHERRACK_SLAB, 2), Blocks.NETHERRACK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.NETHERRACK_PILLAR), Blocks.NETHERRACK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_NETHERRACK_STAIRS), ModBlocks.POLISHED_NETHERRACK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_NETHERRACK_SLAB, 2), ModBlocks.POLISHED_NETHERRACK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.NETHERRACK_PILLAR), ModBlocks.POLISHED_NETHERRACK);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.END_STONE_STAIRS), Blocks.END_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.END_STONE_SLAB, 2), Blocks.END_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE), Blocks.END_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE_STAIRS), Blocks.END_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE_SLAB, 2), Blocks.END_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.END_STONE_PILLAR), Blocks.END_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE), Blocks.END_STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE_STAIRS), Blocks.END_STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE_SLAB, 2), Blocks.END_STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.END_STONE_PILLAR), Blocks.END_STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE_STAIRS), ModBlocks.POLISHED_END_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE_SLAB, 2), ModBlocks.POLISHED_END_STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.END_STONE_PILLAR), ModBlocks.POLISHED_END_STONE);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRANITE_PILLAR), Blocks.GRANITE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRANITE_PILLAR), Blocks.POLISHED_GRANITE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.DIORITE_PILLAR), Blocks.DIORITE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.DIORITE_PILLAR), Blocks.POLISHED_DIORITE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.ANDESITE_PILLAR), Blocks.ANDESITE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.ANDESITE_PILLAR), Blocks.POLISHED_ANDESITE);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CRACKED_STONE_BRICK_STAIRS), Blocks.CRACKED_STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CRACKED_STONE_BRICK_SLAB, 2), Blocks.CRACKED_STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_STONE_BRICK_STAIRS), Blocks.CHISELED_STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_STONE_BRICK_SLAB, 2), Blocks.CHISELED_STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_STONE_BRICK_STAIRS), Blocks.STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_STONE_BRICK_SLAB, 2), Blocks.STONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_STONE_BRICK_STAIRS), Blocks.STONE_BRICKS);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_STONE_BRICK_SLAB, 2), Blocks.STONE_BRICKS);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_SANDSTONE_STAIRS), Blocks.SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_SANDSTONE_SLAB, 2), Blocks.SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CUT_SANDSTONE_STAIRS), Blocks.SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CUT_SANDSTONE_STAIRS), Blocks.CUT_SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_SANDSTONE_STAIRS), Blocks.CHISELED_SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_SANDSTONE_SLAB, 2), Blocks.CHISELED_SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_RED_SANDSTONE_STAIRS), Blocks.RED_SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_RED_SANDSTONE_SLAB, 2), Blocks.RED_SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CUT_RED_SANDSTONE_STAIRS), Blocks.RED_SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CUT_RED_SANDSTONE_STAIRS), Blocks.CUT_RED_SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_RED_SANDSTONE_STAIRS), Blocks.CHISELED_RED_SANDSTONE);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_RED_SANDSTONE_SLAB, 2), Blocks.CHISELED_RED_SANDSTONE);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.IRON_BLOCK_STAIRS), Blocks.IRON_BLOCK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.IRON_BLOCK_SLAB, 2), Blocks.IRON_BLOCK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GOLD_BLOCK_STAIRS), Blocks.GOLD_BLOCK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GOLD_BLOCK_SLAB, 2), Blocks.GOLD_BLOCK);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_QUARTZ_BLOCK_STAIRS), Blocks.QUARTZ_BLOCK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_QUARTZ_BLOCK_SLAB, 2), Blocks.QUARTZ_BLOCK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_QUARTZ_BLOCK_STAIRS), Blocks.CHISELED_QUARTZ_BLOCK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_QUARTZ_BLOCK_SLAB, 2), Blocks.CHISELED_QUARTZ_BLOCK);
-
-        addStoneCutterRecipes(Blocks.WHITE_CONCRETE, ModBlocks.WHITE_CONCRETE_SLAB, ModBlocks.WHITE_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.ORANGE_CONCRETE, ModBlocks.ORANGE_CONCRETE_SLAB, ModBlocks.ORANGE_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.MAGENTA_CONCRETE, ModBlocks.MAGENTA_CONCRETE_SLAB, ModBlocks.MAGENTA_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.LIGHT_BLUE_CONCRETE, ModBlocks.LIGHT_BLUE_CONCRETE_SLAB, ModBlocks.LIGHT_BLUE_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.YELLOW_CONCRETE, ModBlocks.YELLOW_CONCRETE_SLAB, ModBlocks.YELLOW_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.LIME_CONCRETE, ModBlocks.LIME_CONCRETE_SLAB, ModBlocks.LIME_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.PINK_CONCRETE, ModBlocks.PINK_CONCRETE_SLAB, ModBlocks.PINK_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.GRAY_CONCRETE, ModBlocks.GRAY_CONCRETE_SLAB, ModBlocks.GRAY_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.LIGHT_GRAY_CONCRETE, ModBlocks.LIGHT_GRAY_CONCRETE_SLAB, ModBlocks.LIGHT_GRAY_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.CYAN_CONCRETE, ModBlocks.CYAN_CONCRETE_SLAB, ModBlocks.CYAN_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.PURPLE_CONCRETE, ModBlocks.PURPLE_CONCRETE_SLAB, ModBlocks.PURPLE_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.BLUE_CONCRETE, ModBlocks.BLUE_CONCRETE_SLAB, ModBlocks.BLUE_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.BROWN_CONCRETE, ModBlocks.BROWN_CONCRETE_SLAB, ModBlocks.BROWN_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.GREEN_CONCRETE, ModBlocks.GREEN_CONCRETE_SLAB, ModBlocks.GREEN_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.RED_CONCRETE, ModBlocks.RED_CONCRETE_SLAB, ModBlocks.RED_CONCRETE_STAIRS);
-        addStoneCutterRecipes(Blocks.BLACK_CONCRETE, ModBlocks.BLACK_CONCRETE_SLAB, ModBlocks.BLACK_CONCRETE_STAIRS);
-
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.SMOOTH_STONE_STAIRS), Blocks.SMOOTH_STONE);
-
-        RecipeGenerator.addBlastingRecipe(new ItemStack(ModItems.MAGMA_BRICK), Blocks.MAGMA_BLOCK, 0.1F);
-        RecipeGenerator.addBlastingRecipe(new ItemStack(ModBlocks.GRAVEL_STONE), Blocks.GRAVEL, 0.1F);
-        RecipeGenerator.addBlastingRecipe(new ItemStack(ModBlocks.FINE_GRAVEL_STONE), ModBlocks.FINE_GRAVEL, 0.1F);
-        RecipeGenerator.addBlastingRecipe(new ItemStack(ModBlocks.SOUL_GLASS), Blocks.SOUL_SAND, 0.1F);
-
-        RecipeGenerator.addShapelessRecipe(new ItemStack(Items.BLACK_DYE, 3), ModItems.WITHER_BONE);
-        RecipeGenerator.addShapedRecipe(new ItemStack(ModBlocks.SNOW_BRICKS, 4), "xx", "xx", 'x', Blocks.SNOW_BLOCK);
+        addWallRecipe(ModBlocks.COBBLESTONE_BRICK_WALL, Blocks.COBBLESTONE);
+        addWallRecipe(ModBlocks.MOSSY_COBBLESTONE_BRICK_WALL, Blocks.MOSSY_COBBLESTONE);
+        addWallRecipe(ModBlocks.MAGMA_BRICK_WALL);
+        addWallRecipe(ModBlocks.OBSIDIAN_BRICK_WALL, Blocks.OBSIDIAN);
+        addWallRecipe(ModBlocks.SNOW_BRICK_WALL, Blocks.SNOW_BLOCK);
+        addWallRecipe(ModBlocks.TERRACOTTA_BRICK_WALL, Blocks.TERRACOTTA);
+        addWallRecipe(ModBlocks.WHITE_TERRACOTTA_BRICK_WALL, Blocks.WHITE_TERRACOTTA);
+        addWallRecipe(ModBlocks.ORANGE_TERRACOTTA_BRICK_WALL, Blocks.ORANGE_TERRACOTTA);
+        addWallRecipe(ModBlocks.MAGENTA_TERRACOTTA_BRICK_WALL, Blocks.MAGENTA_TERRACOTTA);
+        addWallRecipe(ModBlocks.LIGHT_BLUE_TERRACOTTA_BRICK_WALL, Blocks.LIGHT_BLUE_TERRACOTTA);
+        addWallRecipe(ModBlocks.YELLOW_TERRACOTTA_BRICK_WALL, Blocks.YELLOW_TERRACOTTA);
+        addWallRecipe(ModBlocks.LIME_TERRACOTTA_BRICK_WALL, Blocks.LIME_TERRACOTTA);
+        addWallRecipe(ModBlocks.PINK_TERRACOTTA_BRICK_WALL, Blocks.PINK_TERRACOTTA);
+        addWallRecipe(ModBlocks.GRAY_TERRACOTTA_BRICK_WALL, Blocks.GRAY_TERRACOTTA);
+        addWallRecipe(ModBlocks.LIGHT_GRAY_TERRACOTTA_BRICK_WALL, Blocks.LIGHT_GRAY_TERRACOTTA);
+        addWallRecipe(ModBlocks.CYAN_TERRACOTTA_BRICK_WALL, Blocks.CYAN_TERRACOTTA);
+        addWallRecipe(ModBlocks.PURPLE_TERRACOTTA_BRICK_WALL, Blocks.PURPLE_TERRACOTTA);
+        addWallRecipe(ModBlocks.BLUE_TERRACOTTA_BRICK_WALL, Blocks.BLUE_TERRACOTTA);
+        addWallRecipe(ModBlocks.BROWN_TERRACOTTA_BRICK_WALL, Blocks.BROWN_TERRACOTTA);
+        addWallRecipe(ModBlocks.GREEN_TERRACOTTA_BRICK_WALL, Blocks.GREEN_TERRACOTTA);
+        addWallRecipe(ModBlocks.RED_TERRACOTTA_BRICK_WALL, Blocks.RED_TERRACOTTA);
+        addWallRecipe(ModBlocks.BLACK_TERRACOTTA_BRICK_WALL, Blocks.BLACK_TERRACOTTA);
         
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.SNOW_BRICKS), Blocks.SNOW_BLOCK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.SNOW_BRICK_STAIRS), Blocks.SNOW_BLOCK);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.SNOW_BRICK_SLAB, 2), Blocks.SNOW_BLOCK);
+        addWallRecipe(ModBlocks.GRAVEL_BRICK_WALL, ModBlocks.FINE_GRAVEL_STONE);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.GRAVEL_BRICK_WALL), ModBlocks.GRAVEL_STONE);
+        addWallRecipe(ModBlocks.GRAVEL_STONE_WALL);
+        addWallRecipe(ModBlocks.FINE_GRAVEL_STONE_WALL);
+        
+        addWallRecipe(ModBlocks.POLISHED_PRISMARINE_WALL, Blocks.PRISMARINE);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_PRISMARINE_WALL), Blocks.PRISMARINE_BRICKS);
+        addWallRecipe(ModBlocks.POLISHED_DARK_PRISMARINE_WALL, Blocks.DARK_PRISMARINE);
+        addWallRecipe(ModBlocks.POLISHED_END_STONE_WALL, Blocks.END_STONE);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.POLISHED_END_STONE_WALL), Blocks.END_STONE_BRICKS);
+        addWallRecipe(ModBlocks.POLISHED_NETHERRACK_WALL, Blocks.NETHERRACK);
+        
+        addWallRecipe(ModBlocks.CRACKED_STONE_BRICK_WALL);
+        addWallRecipe(ModBlocks.CHISELED_STONE_BRICK_WALL, Blocks.STONE_BRICKS);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_STONE_BRICK_WALL), Blocks.STONE);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.STONE_WALL), Blocks.STONE);
+
+        addWallRecipe(ModBlocks.CHISELED_SANDSTONE_WALL, Blocks.SANDSTONE);
+        addWallRecipe(ModBlocks.CHISELED_RED_SANDSTONE_WALL, Blocks.RED_SANDSTONE);
+        addWallRecipe(ModBlocks.CUT_SANDSTONE_WALL, Blocks.SANDSTONE);
+        addWallRecipe(ModBlocks.CUT_RED_SANDSTONE_WALL, Blocks.RED_SANDSTONE);
+        
+        addWallRecipe(ModBlocks.IRON_BLOCK_WALL);
+        addWallRecipe(ModBlocks.GOLD_BLOCK_WALL);
+        addWallRecipe(ModBlocks.OBSIDIAN_WALL);
+        addWallRecipe(ModBlocks.NETHERRACK_WALL);
+        addWallRecipe(ModBlocks.END_STONE_WALL);
+        addWallRecipe(ModBlocks.CHISELED_QUARTZ_BLOCK_WALL, Blocks.QUARTZ_BLOCK);
+        addWallRecipe(ModBlocks.SMOOTH_STONE_WALL);
+        addWallRecipe(ModBlocks.POLISHED_GRANITE_WALL, Blocks.GRANITE);
+        addWallRecipe(ModBlocks.POLISHED_DIORITE_WALL, Blocks.DIORITE);
+        addWallRecipe(ModBlocks.POLISHED_ANDESITE_WALL, Blocks.ANDESITE);
+        addWallRecipe(ModBlocks.SMOOTH_SANDSTONE_WALL);
+        addWallRecipe(ModBlocks.SMOOTH_RED_SANDSTONE_WALL);
+        addWallRecipe(ModBlocks.PURPUR_BLOCK_WALL);
+        addWallRecipe(ModBlocks.QUARTZ_BLOCK_WALL);
+        addWallRecipe(ModBlocks.SMOOTH_QUARTZ_WALL);
+        addWallRecipe(ModBlocks.PRISMARINE_BRICK_WALL);
+        addWallRecipe(ModBlocks.DARK_PRISMARINE_WALL);
+        
+        addWallRecipe(ModBlocks.TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.WHITE_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.ORANGE_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.MAGENTA_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.LIGHT_BLUE_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.YELLOW_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.LIME_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.PINK_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.GRAY_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.LIGHT_GRAY_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.CYAN_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.PURPLE_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.BLUE_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.BROWN_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.GREEN_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.RED_TERRACOTTA_WALL);
+        addWallRecipe(ModBlocks.BLACK_TERRACOTTA_WALL);
+        
+        addWallRecipe(ModBlocks.WHITE_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.ORANGE_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.MAGENTA_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.LIGHT_BLUE_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.YELLOW_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.LIME_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.PINK_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.GRAY_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.LIGHT_GRAY_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.CYAN_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.PURPLE_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.BLUE_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.BROWN_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.GREEN_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.RED_CONCRETE_WALL);
+        addWallRecipe(ModBlocks.BLACK_CONCRETE_WALL);
     }
 
-    public static void addStoneCutterRecipes(Block vanilla, Block vanillaSlab, Block vanillaStairs)
+    public static void addWallRecipe(Block wall)
     {
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(vanillaStairs), vanilla);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(vanillaSlab, 2), vanilla);
+        addWallRecipe(wall, ((ModWallBlock) wall).getModelBlock(), null);
     }
 
-    public static void addStoneCutterRecipes(Block bricks, Block slab, Block stairs, Block vanilla, Block vanillaSlab, Block vanillaStairs)
+    public static void addWallRecipe(Block wall, Block grandParent)
     {
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(bricks), vanilla);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(stairs), vanilla);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(slab, 2), vanilla);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(vanillaStairs), vanilla);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(vanillaSlab, 2), vanilla);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(stairs), bricks);
-        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(slab, 2), bricks);
+        addWallRecipe(wall, ((ModWallBlock) wall).getModelBlock(), grandParent);
+    }
+
+    public static void addWallRecipe(Block wall, Block parent, Block grandParent)
+    {
+        RecipeGenerator.addShapedRecipe(new ItemStack(wall, 6), "xxx", "xxx", 'x', parent);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(wall), parent);
+
+        if (grandParent != null)
+        {
+            RecipeGenerator.addStoneCuttingRecipe(new ItemStack(wall), grandParent);
+        }
     }
 
     public static class RecipeGenerator
@@ -432,11 +365,35 @@ public class JsonDataGenerator
         }
     }
 
+    public static class TagGenerator
+    {
+        public static final List<String> WALLS = new ArrayList<String>();
+        private static final File TAGS_DIR = new File(RESOURCE_DIR + "data/minecraft/tags/blocks");
+
+        /**
+         * Method for generating tags in data/minecraft/tags/block/walls.json Do
+         * not call since it will override the file with an empty one
+         */
+        public static void wallTags()
+        {
+            Map<String, Object> json = new LinkedHashMap();
+            json.put("replace", false);
+            json.put("values", WALLS);
+
+            writeFile(json, TAGS_DIR, "walls", true);
+        }
+    }
+
     private static void writeFile(Map map, File dir, String name)
+    {
+        writeFile(map, dir, name, false);
+    }
+
+    private static void writeFile(Map map, File dir, String name, boolean override)
     {
         File f = new File(dir, name + ".json");
 
-        if (f.exists())
+        if (f.exists() && !override)
         {
             return;
         }

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "minecraft:air"
+  },
+  "result": "minecraftboom:netherrack_pillar",
+  "count": 1
+}

@@ -13,11 +13,8 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.SlabBlock;
-import net.minecraft.block.StairsBlock;
 import net.minecraft.item.ItemStack;
 import phrille.minecraftboom.MinecraftBoom;
-import phrille.minecraftboom.init.ModBlocks;
 
 public class JsonAssetsGenerator
 {
@@ -33,11 +30,6 @@ public class JsonAssetsGenerator
 
     public static void init()
     {
-        addBasicBlockFiles(ModBlocks.SNOW_BRICKS);
-        addStairFiles(ModBlocks.SNOW_BRICK_STAIRS, ModBlocks.SNOW_BRICKS);
-        addSlabFiles(ModBlocks.SNOW_BRICK_SLAB, ModBlocks.SNOW_BRICKS);
-        
-        BlockStateGenerator.wallBlockState("mossy_cobblestone_brick_wall");
     }
 
     //Basic Block
@@ -72,7 +64,7 @@ public class JsonAssetsGenerator
     }
 
     //Panes
-    private static void addPaneFiles(Block block, Block parent)
+    public static void addPaneFiles(Block block, Block parent)
     {
         BlockStateGenerator.paneBlockState(block.getRegistryName().getPath());
         BlockModelGenerator.paneBlockModel(block.getRegistryName().getPath());
@@ -80,6 +72,17 @@ public class JsonAssetsGenerator
         JsonDataGenerator.RecipeGenerator.addShapedRecipe(new ItemStack(block, 16), "xxx", "xxx", 'x', parent);
     }
 
+    //Walls
+    public static void addWallFiles(Block block, Block parent)
+    {
+        BlockStateGenerator.wallBlockState(block.getRegistryName().getPath());
+        BlockModelGenerator.wallBlockModel(block.getRegistryName().getPath(), parent.getRegistryName().getPath());
+        ItemModelGenerator.basicItemBlockModel(block.getRegistryName().getPath() + "_inventory", block.getRegistryName().getPath());
+        JsonDataGenerator.RecipeGenerator.addShapedRecipe(new ItemStack(block, 6), "xxx", "xxx", 'x', parent);
+        JsonDataGenerator.RecipeGenerator.addStoneCuttingRecipe(new ItemStack(block), parent);
+        JsonDataGenerator.LootTableGenerator.basicBlockLootTable(block.getRegistryName().getPath());
+    }
+    
     public static class BlockStateGenerator
     {
         private static final File BLOCKSTATE_DIR = new File(ASSETS_DIR + "blockstates");
@@ -188,7 +191,7 @@ public class JsonAssetsGenerator
             json.put("multipart", multipart);
             writeFile(json, BLOCKSTATE_DIR, name);
         }
-        
+
         private static final String[] WALL_DIRECTIONS = {"up", "north", "east", "south", "west"};
         private static final int[] WALL_ROTATIONS = {0, 0, 90, 180, 270};
 
@@ -196,32 +199,32 @@ public class JsonAssetsGenerator
         {
             Map<String, Object> json = new HashMap();
             List<Map> multipart = new ArrayList<>();
-            
+
             for (int i = 0; i < WALL_DIRECTIONS.length; i++)
             {
                 Map<String, Object> map = new LinkedHashMap();
-                
+
                 Map<String, Object> direction = new HashMap();
                 direction.put(WALL_DIRECTIONS[i], true);
                 map.put("when", direction);
-                
-                Map<String, Object> model = new HashMap();
+
+                Map<String, Object> model = new LinkedHashMap();
                 model.put("model", MinecraftBoom.MOD_ID + ":block/" + name + (i == 0 ? "_post" : "_side"));
-                
+
                 if (WALL_ROTATIONS[i] != 0)
                 {
                     model.put("y", WALL_ROTATIONS[i]);
                 }
-                
+
                 if (i != 0)
                 {
                     model.put("uvlock", true);
                 }
-                
+
                 map.put("apply", model);
                 multipart.add(map);
             }
-            
+
             json.put("multipart", multipart);
             writeFile(json, BLOCKSTATE_DIR, name);
         }
@@ -299,17 +302,37 @@ public class JsonAssetsGenerator
                 writeFile(json, BLOCK_MODEL_DIR, name + PANE_SUFFIX[i]);
             }
         }
+
+        private static final String[] WALL_MODELS = {"post", "side", "inventory"};
+
+        public static void wallBlockModel(String name, String parentName)
+        {
+            for (int i = 0; i < WALL_MODELS.length; i++)
+            {
+                Map<String, Object> json = new HashMap();
+                Map<String, Object> textures = new HashMap();
+                json.put("parent", "block/" + (i == 2 ? "" : "template_") + "wall_" + WALL_MODELS[i]);
+                textures.put("wall", MinecraftBoom.MOD_ID + ":block/" + parentName);
+                json.put("textures", textures);
+                writeFile(json, BLOCK_MODEL_DIR, name + "_" + WALL_MODELS[i]);
+            }
+        }
     }
 
     public static class ItemModelGenerator
     {
         private static final File ITEM_MODEL_DIR = new File(ASSETS_DIR + "models/item");
 
-        public static void basicItemBlockModel(String name)
+        public static void basicItemBlockModel(String name, String fileName)
         {
             Map<String, Object> json = new HashMap();
             json.put("parent", MinecraftBoom.MOD_ID + ":block/" + name);
-            writeFile(json, ITEM_MODEL_DIR, name);
+            writeFile(json, ITEM_MODEL_DIR, fileName);
+        }
+
+        public static void basicItemBlockModel(String name)
+        {
+            basicItemBlockModel(name, name);
         }
 
         public static void basicItemModel(String name, String textureName)

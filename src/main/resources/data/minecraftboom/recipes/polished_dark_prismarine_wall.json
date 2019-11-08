@@ -1,0 +1,16 @@
+{
+  "result": {
+    "item": "minecraftboom:polished_dark_prismarine_wall",
+    "count": 6
+  },
+  "pattern": [
+    "xxx",
+    "xxx"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:polished_dark_prismarine"
+    }
+  }
+}

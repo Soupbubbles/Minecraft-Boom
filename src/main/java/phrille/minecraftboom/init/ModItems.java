@@ -1,8 +1,11 @@
 package phrille.minecraftboom.init;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.FenceBlock;
+import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
+import net.minecraft.block.WallBlock;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
@@ -62,13 +65,13 @@ public class ModItems
             registerItem(registry, item, false);
         }
 
-        private static void registerItem(IForgeRegistry<Item> registry, Item item, boolean stairSlab)
+        private static void registerItem(IForgeRegistry<Item> registry, Item item, boolean variantBlock)
         {
             registry.register(item);
 
-            if (stairSlab)
+            if (variantBlock)
             {
-                MinecraftBoomTab.MINECRAFTBOOM_STAIRS_AND_SLAB_TAB_LIST.add(item);
+                MinecraftBoomTab.MINECRAFTBOOM_VARIANT_BLOCKS_TAB_LIST.add(item);
             }
             else
             {
@@ -87,10 +90,10 @@ public class ModItems
                     continue;
                 }
 
-                boolean stairSlab = (block instanceof SlabBlock || block instanceof StairsBlock);
-                Item.Properties properties = new Item.Properties().group(stairSlab ? MinecraftBoomTab.MINECRAFTBOOM_STAIRS_AND_SLAB_TAB : MinecraftBoomTab.MINECRAFTBOOM_TAB);
+                boolean variantBlock = block instanceof SlabBlock || block instanceof StairsBlock || block instanceof WallBlock || block instanceof FenceBlock || block instanceof FenceGateBlock;
+                Item.Properties properties = new Item.Properties().group(variantBlock ? MinecraftBoomTab.MINECRAFTBOOM_VARIANT_BLOCKS_TAB : MinecraftBoomTab.MINECRAFTBOOM_TAB);
                 BlockItem blockItem = new BlockItem(block, properties);
-                registerItem(registry, setup(blockItem, blockRegistryName), stairSlab);
+                registerItem(registry, setup(blockItem, blockRegistryName), variantBlock);
             }
         }
 

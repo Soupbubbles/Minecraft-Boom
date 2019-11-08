@@ -13,8 +13,8 @@
         "north": true
       },
       "apply": {
-        "uvlock": true,
-        "model": "minecraftboom:block/mossy_cobblestone_brick_wall_side"
+        "model": "minecraftboom:block/mossy_cobblestone_brick_wall_side",
+        "uvlock": true
       }
     },
     {
@@ -22,9 +22,9 @@
         "east": true
       },
       "apply": {
-        "uvlock": true,
+        "model": "minecraftboom:block/mossy_cobblestone_brick_wall_side",
         "y": 90,
-        "model": "minecraftboom:block/mossy_cobblestone_brick_wall_side"
+        "uvlock": true
       }
     },
     {
@@ -32,9 +32,9 @@
         "south": true
       },
       "apply": {
-        "uvlock": true,
+        "model": "minecraftboom:block/mossy_cobblestone_brick_wall_side",
         "y": 180,
-        "model": "minecraftboom:block/mossy_cobblestone_brick_wall_side"
+        "uvlock": true
       }
     },
     {
@@ -42,9 +42,9 @@
         "west": true
       },
       "apply": {
-        "uvlock": true,
+        "model": "minecraftboom:block/mossy_cobblestone_brick_wall_side",
         "y": 270,
-        "model": "minecraftboom:block/mossy_cobblestone_brick_wall_side"
+        "uvlock": true
       }
     }
   ]
