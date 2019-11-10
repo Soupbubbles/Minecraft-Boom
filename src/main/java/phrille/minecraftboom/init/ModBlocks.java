@@ -7,6 +7,7 @@ import net.minecraft.block.FallingBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerBlock;
+import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.MagmaBlock;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlimeBlock;
@@ -161,6 +162,7 @@ public class ModBlocks
     //Misc
     public static final Block GOLD_BARS = Utils._null();
     public static final Block ROSE = Utils._null();
+    public static final Block POTTED_ROSE = Utils._null();
 
     //MinecraftBoom Stairs
     public static final Block COBBLESTONE_BRICK_STAIRS = Utils._null();
@@ -553,7 +555,9 @@ public class ModBlocks
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.JUNGLE_LADDER));
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.ACACIA_LADDER));
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.DARK_OAK_LADDER));
-            registry.register(setup(new FlowerBlock(Effects.REGENERATION, 5, Properties.from(Blocks.POPPY)), Names.ROSE));
+            Block rose = new FlowerBlock(Effects.HASTE, 10, Properties.from(Blocks.POPPY));
+            registry.register(setup(rose, Names.ROSE));
+            registry.register(setup(new FlowerPotBlock(rose, Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F)), Names.POTTED_ROSE));
 
             //Vanilla Stairs, Slabs and Walls
             addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true, true);

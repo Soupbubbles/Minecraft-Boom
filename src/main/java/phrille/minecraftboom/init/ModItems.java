@@ -3,6 +3,7 @@ package phrille.minecraftboom.init;
 import net.minecraft.block.Block;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
+import net.minecraft.block.FlowerPotBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
@@ -68,7 +69,7 @@ public class ModItems
         private static void registerItem(IForgeRegistry<Item> registry, Item item, boolean variantBlock)
         {
             registry.register(item);
-
+            
             if (variantBlock)
             {
                 MinecraftBoomTab.MINECRAFTBOOM_VARIANT_BLOCKS_TAB_LIST.add(item);
@@ -90,10 +91,15 @@ public class ModItems
                     continue;
                 }
 
-                boolean variantBlock = block instanceof SlabBlock || block instanceof StairsBlock || block instanceof WallBlock || block instanceof FenceBlock || block instanceof FenceGateBlock;
-                Item.Properties properties = new Item.Properties().group(variantBlock ? MinecraftBoomTab.MINECRAFTBOOM_VARIANT_BLOCKS_TAB : MinecraftBoomTab.MINECRAFTBOOM_TAB);
-                BlockItem blockItem = new BlockItem(block, properties);
-                registerItem(registry, setup(blockItem, blockRegistryName), variantBlock);
+                boolean notAdd = block instanceof FlowerPotBlock;
+                
+                if (!notAdd) 
+                {
+                    boolean variantBlock = block instanceof SlabBlock || block instanceof StairsBlock || block instanceof WallBlock || block instanceof FenceBlock || block instanceof FenceGateBlock;
+                    Item.Properties properties = new Item.Properties().group(variantBlock ? MinecraftBoomTab.MINECRAFTBOOM_VARIANT_BLOCKS_TAB : MinecraftBoomTab.MINECRAFTBOOM_TAB);
+                    BlockItem blockItem = new BlockItem(block, properties);
+                    registerItem(registry, setup(blockItem, blockRegistryName), variantBlock);
+                }
             }
         }
 

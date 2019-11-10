@@ -126,7 +126,8 @@ public class Names
     public static final String NETHER_BRICK_FENCE_GATE = "nether_brick_fence_gate";
     public static final String RED_NETHER_BRICK_FENCE_GATE = "red_nether_brick_fence_gate";
     public static final String ROSE = "rose";
-    
+    public static final String POTTED_ROSE = "potted_rose";
+
     public static final String MAGMA_BRICK = "magma_brick";
     public static final String ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
     public static final String PINECONE = "pinecone";
