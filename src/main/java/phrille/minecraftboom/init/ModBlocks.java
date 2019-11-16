@@ -17,6 +17,7 @@ import net.minecraft.block.StainedGlassPaneBlock;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.material.MaterialColor;
 import net.minecraft.item.DyeColor;
+import net.minecraft.potion.Effect;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
@@ -420,7 +421,7 @@ public class ModBlocks
     public static final Block SMOOTH_QUARTZ_WALL = Utils._null();
     public static final Block PRISMARINE_BRICK_WALL = Utils._null();
     public static final Block DARK_PRISMARINE_WALL = Utils._null();
-    
+
     //Vanilla Fences
     public static final Block RED_NETHER_BRICK_FENCE = Utils._null();
     public static final Block NETHER_BRICK_FENCE_GATE = Utils._null();
@@ -555,9 +556,7 @@ public class ModBlocks
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.JUNGLE_LADDER));
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.ACACIA_LADDER));
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.DARK_OAK_LADDER));
-            Block rose = new FlowerBlock(Effects.HASTE, 10, Properties.from(Blocks.POPPY));
-            registry.register(setup(rose, Names.ROSE));
-            registry.register(setup(new FlowerPotBlock(rose, Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F)), Names.POTTED_ROSE));
+            createFlower(registry, Effects.HASTE, 10, Names.ROSE);
 
             //Vanilla Stairs, Slabs and Walls
             addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true, true);
@@ -623,7 +622,7 @@ public class ModBlocks
             addVanillaVariants(registry, Blocks.SMOOTH_QUARTZ, false, false, true);
             addVanillaVariants(registry, Blocks.PRISMARINE_BRICKS, false, false, true);
             addVanillaVariants(registry, Blocks.DARK_PRISMARINE, false, false, true);
-            
+
             //Fences
             registry.register(setup(new FenceBlock(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.RED_NETHER_BRICK_FENCE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.NETHER_BRICK_FENCE_GATE));
@@ -659,6 +658,13 @@ public class ModBlocks
             registry.register(setup(new ModStairBlock(block), Utils.getStairName(name)));
             registry.register(setup(new ModSlabBlock(block), Utils.getSlabName(name)));
             registry.register(setup(new ModWallBlock(block), Utils.getWallName(name)));
+        }
+
+        private static void createFlower(IForgeRegistry<Block> registry, Effect effect, int effectDuration, String name)
+        {
+            Block flower = new FlowerBlock(effect, effectDuration, Properties.from(Blocks.POPPY));
+            registry.register(setup(flower, name));
+            registry.register(setup(new FlowerPotBlock(flower, Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F)), "potted_" + name));
         }
 
         public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name)

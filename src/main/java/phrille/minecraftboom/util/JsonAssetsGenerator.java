@@ -13,8 +13,13 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.minecraft.block.Block;
+import net.minecraft.entity.item.PaintingType;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import phrille.minecraftboom.MinecraftBoom;
+import phrille.minecraftboom.init.MinecraftBoomTab;
+import phrille.minecraftboom.item.PaintingItem;
+import phrille.minecraftboom.lib.Names;
 
 public class JsonAssetsGenerator
 {
@@ -30,6 +35,32 @@ public class JsonAssetsGenerator
 
     public static void init()
     {
+        ItemModelGenerator.basicItemModel(Names.AZTEC_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.COURBET_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.GRAHAM_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.SKULL_AND_ROSES_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.FIGHTERS_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.POINTER_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.KEBAB_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.ALBAN_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.AZTEC2_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.BOMB_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.PLANT_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.WASTELAND_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.POOL_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.SEA_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.SUNSET_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.CREEBET_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.WANDERER_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.MATCH_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.BUST_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.STAGE_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.VOID_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.WITHER_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.PIGSCENE_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.BURNING_SKULL_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.SKELETON_PAINTING);
+        ItemModelGenerator.basicItemModel(Names.DONKEY_KONG_PAINTING);
     }
 
     //Basic Block
@@ -82,7 +113,7 @@ public class JsonAssetsGenerator
         JsonDataGenerator.RecipeGenerator.addStoneCuttingRecipe(new ItemStack(block), parent);
         JsonDataGenerator.LootTableGenerator.basicBlockLootTable(block.getRegistryName().getPath());
     }
-    
+
     public static class BlockStateGenerator
     {
         private static final File BLOCKSTATE_DIR = new File(ASSETS_DIR + "blockstates");
@@ -340,9 +371,14 @@ public class JsonAssetsGenerator
             Map<String, Object> json = new HashMap();
             Map<String, Object> textures = new HashMap();
             json.put("parent", "item/generated");
-            textures.put("layer0", MinecraftBoom.MOD_ID + ":" + textureName);
+            textures.put("layer0", MinecraftBoom.MOD_ID + ":item/" + textureName);
             json.put("textures", textures);
             writeFile(json, ITEM_MODEL_DIR, name);
+        }
+
+        public static void basicItemModel(String name)
+        {
+            basicItemModel(name, name);
         }
     }
 
