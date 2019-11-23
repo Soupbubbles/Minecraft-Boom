@@ -2,10 +2,10 @@
 	"language.name": "English",
 	"language.region": "United States",
 	"language.code": "en_us",
-	
+
 	"itemGroup.minecraftboom_tab": "Minecraft Boom",
 	"itemGroup.minecraftboom_variant_blocks_tab": "Minecraft Boom: Variant Blocks",
-	
+
 	"block.minecraftboom.cobblestone_bricks": "Cobblestone Bricks",
     "block.minecraftboom.mossy_cobblestone_bricks": "Mossy Cobblestone Bricks",
     "block.minecraftboom.magma_bricks": "Magma Bricks",
