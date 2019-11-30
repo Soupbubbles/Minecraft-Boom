@@ -39,6 +39,7 @@ public class Names
     public static final String POLISHED_DARK_PRISMARINE = "polished_dark_prismarine";
     public static final String POLISHED_END_STONE = "polished_end_stone";
     public static final String POLISHED_NETHERRACK = "polished_netherrack";
+    public static final String CHISELED_OBSIDIAN = "chiseled_obsidian";
     
     //Pillar
     public static final String GRANITE_PILLAR = "granite_pillar";
@@ -48,7 +49,8 @@ public class Names
     public static final String DARK_PRISMARINE_PILLAR = "dark_prismarine_pillar";
     public static final String END_STONE_PILLAR = "end_stone_pillar";
     public static final String NETHERRACK_PILLAR = "netherrack_pillar";
-    
+    public static final String OBSIDIAN_PILLAR = "obsidian_pillar";
+
     //Wood Variations
     public static final String SPRUCE_BOOKSHELF = "spruce_bookshelf";
     public static final String BIRCH_BOOKSHELF = "birch_bookshelf";

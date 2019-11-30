@@ -76,6 +76,7 @@ public class ModBlocks
     public static final Block POLISHED_DARK_PRISMARINE = Utils._null();
     public static final Block POLISHED_END_STONE = Utils._null();
     public static final Block POLISHED_NETHERRACK = Utils._null();
+    public static final Block CHISELED_OBSIDIAN = Utils._null();
 
     //Pillars
     public static final Block GRANITE_PILLAR = Utils._null();
@@ -85,6 +86,7 @@ public class ModBlocks
     public static final Block DARK_PRISMARINE_PILLAR = Utils._null();
     public static final Block END_STONE_PILLAR = Utils._null();
     public static final Block NETHERRACK_PILLAR = Utils._null();
+    public static final Block OBSIDIAN_PILLAR = Utils._null();
 
     //Wood Variations
     public static final Block SPRUCE_BOOKSHELF = Utils._null();
@@ -195,6 +197,7 @@ public class ModBlocks
     public static final Block POLISHED_DARK_PRISMARINE_STAIRS = Utils._null();
     public static final Block POLISHED_END_STONE_STAIRS = Utils._null();
     public static final Block POLISHED_NETHERRACK_STAIRS = Utils._null();
+    public static final Block CHISELED_OBSIDIAN_STAIRS = Utils._null();
 
     //Vanilla Stairs
     public static final Block CRACKED_STONE_BRICK_STAIRS = Utils._null();
@@ -280,6 +283,7 @@ public class ModBlocks
     public static final Block POLISHED_DARK_PRISMARINE_SLAB = Utils._null();
     public static final Block POLISHED_END_STONE_SLAB = Utils._null();
     public static final Block POLISHED_NETHERRACK_SLAB = Utils._null();
+    public static final Block CHISELED_OBSIDIAN_SLAB = Utils._null();
 
     //Vanilla Slabs
     public static final Block CRACKED_STONE_BRICK_SLAB = Utils._null();
@@ -362,6 +366,7 @@ public class ModBlocks
     public static final Block POLISHED_DARK_PRISMARINE_WALL = Utils._null();
     public static final Block POLISHED_END_STONE_WALL = Utils._null();
     public static final Block POLISHED_NETHERRACK_WALL = Utils._null();
+    public static final Block CHISELED_OBSIDIAN_WALL = Utils._null();
 
     //Vanilla Walls
     public static final Block CRACKED_STONE_BRICK_WALL = Utils._null();
@@ -470,6 +475,7 @@ public class ModBlocks
             createSpecialBlock(registry, Properties.from(Blocks.DARK_PRISMARINE), Names.POLISHED_DARK_PRISMARINE);
             createSpecialBlock(registry, Properties.from(Blocks.END_STONE), Names.POLISHED_END_STONE);
             createSpecialBlock(registry, Properties.from(Blocks.NETHERRACK), Names.POLISHED_NETHERRACK);
+            createSpecialBlock(registry, Properties.from(Blocks.OBSIDIAN), Names.CHISELED_OBSIDIAN);
 
             //Pillars
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.GRANITE)), Names.GRANITE_PILLAR));
@@ -479,6 +485,7 @@ public class ModBlocks
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.DARK_PRISMARINE)), Names.DARK_PRISMARINE_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.END_STONE)), Names.END_STONE_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.NETHERRACK)), Names.NETHERRACK_PILLAR));
+            registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.OBSIDIAN)), Names.OBSIDIAN_PILLAR));
 
             //Wood Variations
             registry.register(setup(new BookshelfBlock(Properties.from(Blocks.BOOKSHELF)), Names.SPRUCE_BOOKSHELF));

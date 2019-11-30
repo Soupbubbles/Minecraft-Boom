@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "minecraftboom:block/chiseled_obsidian_slab"
+    },
+    "type=top": {
+      "model": "minecraftboom:block/chiseled_obsidian_slab_top"
+    },
+    "type=double": {
+      "model": "minecraftboom:block/chiseled_obsidian"
+    }
+  }
+}

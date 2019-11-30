@@ -18,6 +18,7 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import phrille.minecraftboom.MinecraftBoom;
 import phrille.minecraftboom.init.MinecraftBoomTab;
+import phrille.minecraftboom.init.ModBlocks;
 import phrille.minecraftboom.item.PaintingItem;
 import phrille.minecraftboom.lib.Names;
 
@@ -35,32 +36,12 @@ public class JsonAssetsGenerator
 
     public static void init()
     {
-        ItemModelGenerator.basicItemModel(Names.AZTEC_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.COURBET_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.GRAHAM_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.SKULL_AND_ROSES_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.FIGHTERS_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.POINTER_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.KEBAB_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.ALBAN_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.AZTEC2_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.BOMB_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.PLANT_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.WASTELAND_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.POOL_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.SEA_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.SUNSET_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.CREEBET_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.WANDERER_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.MATCH_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.BUST_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.STAGE_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.VOID_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.WITHER_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.PIGSCENE_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.BURNING_SKULL_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.SKELETON_PAINTING);
-        ItemModelGenerator.basicItemModel(Names.DONKEY_KONG_PAINTING);
+        addBasicBlockFiles(ModBlocks.CHISELED_OBSIDIAN);
+        addBasicBlockFiles(ModBlocks.OBSIDIAN_PILLAR);
+
+        addStairFiles(ModBlocks.CHISELED_OBSIDIAN_STAIRS, ModBlocks.CHISELED_OBSIDIAN);
+        addSlabFiles(ModBlocks.CHISELED_OBSIDIAN_SLAB, ModBlocks.CHISELED_OBSIDIAN);
+        addWallFiles(ModBlocks.CHISELED_OBSIDIAN_WALL, ModBlocks.CHISELED_OBSIDIAN);
     }
 
     //Basic Block
@@ -305,7 +286,7 @@ public class JsonAssetsGenerator
 
                 for (int j = 0; j < STAIR_SIDE.length; j++)
                 {
-                    textures.put(STAIR_SIDE[j], parentName);
+                    textures.put(STAIR_SIDE[j], MinecraftBoom.MOD_ID + ":block/" + parentName);
                 }
 
                 json.put("textures", textures);

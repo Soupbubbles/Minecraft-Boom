@@ -35,7 +35,7 @@ displayName="Minecraft Boom" #mandatory
 displayURL="https://www.curseforge.com/minecraft/mc-mods/minecraft-boom" #optional
 
 # A text field displayed in the mod UI
-credits="Phrille as lead developer and maintainer of the mod. Big thanks to RatavierCreations for his textures and initial idea" #optional
+credits="Big thanks to the following people: RatavierCreations for initial textures and idea, George S. as the current texture designer and K0ld for translation" #optional
 
 # A text field displayed in the mod UI
 authors="Phrille" #optional

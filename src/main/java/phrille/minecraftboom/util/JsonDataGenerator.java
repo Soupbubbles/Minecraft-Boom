@@ -28,6 +28,25 @@ public class JsonDataGenerator
 
     public static void init()
     {
+        RecipeGenerator.addShapedRecipe(new ItemStack(ModBlocks.OBSIDIAN_PILLAR, 2),  "x", "x", 'x', Blocks.OBSIDIAN);
+        RecipeGenerator.addShapedRecipe(new ItemStack(ModBlocks.OBSIDIAN_PILLAR, 2),  "x", "x", 'x', ModBlocks.OBSIDIAN_BRICKS);
+
+        RecipeGenerator.addShapedRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN),  "x", "x", 'x', ModBlocks.OBSIDIAN_BRICK_SLAB);
+        RecipeGenerator.addShapedRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN),  "x", "x", 'x', ModBlocks.OBSIDIAN_SLAB);
+        
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN), new ItemStack(Blocks.OBSIDIAN));
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN), new ItemStack(ModBlocks.OBSIDIAN_BRICKS));
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_PILLAR), new ItemStack(Blocks.OBSIDIAN));
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.OBSIDIAN_PILLAR), new ItemStack(ModBlocks.OBSIDIAN_BRICKS));
+        
+        
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN_STAIRS), new ItemStack(Blocks.OBSIDIAN));
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN_SLAB, 2), new ItemStack(Blocks.OBSIDIAN));
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN_WALL), new ItemStack(Blocks.OBSIDIAN));
+
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN_STAIRS), new ItemStack(ModBlocks.OBSIDIAN_BRICKS));
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN_SLAB, 2), new ItemStack(ModBlocks.OBSIDIAN_BRICKS));
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_OBSIDIAN_WALL), new ItemStack(ModBlocks.OBSIDIAN_BRICKS));
     }
 
     public static class RecipeGenerator

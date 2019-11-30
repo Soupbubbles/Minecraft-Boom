@@ -1,0 +1,15 @@
+{
+  "result": {
+    "item": "minecraftboom:chiseled_obsidian"
+  },
+  "pattern": [
+    "x",
+    "x"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "x": {
+      "item": "minecraftboom:obsidian_slab"
+    }
+  }
+}

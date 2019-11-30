@@ -38,14 +38,16 @@
     "block.minecraftboom.polished_dark_prismarine": "Polished Dark Prismarine",
     "block.minecraftboom.polished_end_stone": "Polished End Stone",
     "block.minecraftboom.polished_netherrack": "Polished Netherrack",
+    "block.minecraftboom.chiseled_obsidian": "Chiseled Obsidian",
     
     "block.minecraftboom.granite_pillar": "Granite Pillar",
     "block.minecraftboom.diorite_pillar": "Diorite Pillar",
     "block.minecraftboom.andesite_pillar": "Andesite Pillar",
     "block.minecraftboom.prismarine_pillar": "Prismarine Pillar",
     "block.minecraftboom.dark_prismarine_pillar": "Dark Prismarine Pillar",
-    "block.minecraftboom.netherrack_pillar": "Netherrack Pillar",
     "block.minecraftboom.end_stone_pillar": "End Stone Pillar",
+    "block.minecraftboom.netherrack_pillar": "Netherrack Pillar",
+    "block.minecraftboom.obsidian_pillar": "Obsidian Pillar",
     
     "block.minecraftboom.spruce_bookshelf": "Spruce Bookshelf",
     "block.minecraftboom.birch_bookshelf": "Birch Bookshelf",
@@ -153,6 +155,7 @@
     "block.minecraftboom.polished_dark_prismarine_stairs": "Polished Dark Prismarine Stairs",
     "block.minecraftboom.polished_end_stone_stairs": "Polished End Stone Stairs",
     "block.minecraftboom.polished_netherrack_stairs": "Polished Netherrack Stairs",
+    "block.minecraftboom.chiseled_obsidian_stairs": "Chiseled Obsidian Stairs",
     
     "block.minecraftboom.cobblestone_brick_slab": "Cobblestone Brick Slab",
     "block.minecraftboom.mossy_cobblestone_brick_slab": "Mossy Cobblestone Brick Slab",
@@ -183,6 +186,7 @@
     "block.minecraftboom.polished_dark_prismarine_slab": "Polished Dark Prismarine Slab",
     "block.minecraftboom.polished_end_stone_slab": "Polished End Stone Slab",
     "block.minecraftboom.polished_netherrack_slab": "Polished Netherrack Slab",
+    "block.minecraftboom.chiseled_obsidian_slab": "Chiseled Obsidian Slab",
     
     "block.minecraftboom.cobblestone_brick_wall": "Cobblestone Brick Wall",
     "block.minecraftboom.mossy_cobblestone_brick_wall": "Mossy Cobblestone Brick Wall",
@@ -213,6 +217,7 @@
     "block.minecraftboom.polished_dark_prismarine_wall": "Polished Dark Prismarine Wall",
     "block.minecraftboom.polished_end_stone_wall": "Polished End Stone Wall",
     "block.minecraftboom.polished_netherrack_wall": "Polished Netherrack Wall",
+    "block.minecraftboom.chiseled_obsidian_wall": "Chiseled Obsidian Wall",
     
     "block.minecraftboom.cracked_stone_brick_stairs": "Cracked Stone Brick Stairs",
     "block.minecraftboom.chiseled_stone_brick_stairs": "Chiseled Stone Brick Stairs",
