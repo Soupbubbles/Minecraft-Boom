@@ -34,6 +34,7 @@ import phrille.minecraftboom.block.GunpowderBlock;
 import phrille.minecraftboom.block.ModSlabBlock;
 import phrille.minecraftboom.block.ModStairBlock;
 import phrille.minecraftboom.block.ModWallBlock;
+import phrille.minecraftboom.block.RiceBlock;
 import phrille.minecraftboom.block.WoodenLadderBlock;
 import phrille.minecraftboom.lib.Names;
 import phrille.minecraftboom.util.Utils;
@@ -166,6 +167,7 @@ public class ModBlocks
     public static final Block GOLD_BARS = Utils._null();
     public static final Block ROSE = Utils._null();
     public static final Block POTTED_ROSE = Utils._null();
+    public static final Block RICE = Utils._null();
 
     //MinecraftBoom Stairs
     public static final Block COBBLESTONE_BRICK_STAIRS = Utils._null();
@@ -564,6 +566,7 @@ public class ModBlocks
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.ACACIA_LADDER));
             registry.register(setup(new WoodenLadderBlock(Properties.from(Blocks.LADDER)), Names.DARK_OAK_LADDER));
             createFlower(registry, Effects.HASTE, 10, Names.ROSE);
+            registry.register(setup(new RiceBlock(Properties.from(Blocks.CARROTS)), Names.RICE));
 
             //Vanilla Stairs, Slabs and Walls
             addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true, true);

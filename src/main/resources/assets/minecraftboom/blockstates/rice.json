@@ -1,0 +1,12 @@
+{
+    "variants": {
+        "age=0": { "model": "minecraftboom:block/rice_stage0" },
+        "age=1": { "model": "minecraftboom:block/rice_stage0" },
+        "age=2": { "model": "minecraftboom:block/rice_stage1" },
+        "age=3": { "model": "minecraftboom:block/rice_stage1" },
+        "age=4": { "model": "minecraftboom:block/rice_stage2" },
+        "age=5": { "model": "minecraftboom:block/rice_stage2" },
+        "age=6": { "model": "minecraftboom:block/rice_stage2" },
+        "age=7": { "model": "minecraftboom:block/rice_stage3" }
+    }
+}

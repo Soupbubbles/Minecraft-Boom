@@ -146,7 +146,8 @@ public class Names
     public static final String LEVITATION_DUST = "levitation_dust";
     public static final String COOKED_EGG = "cooked_egg";
     public static final String DROWNED_FLESH = "drowned_flesh";
-    
+    public static final String RICE = "rice";
+
     public static final String KEBAB_PAINTING = "kebab_painting";
     public static final String AZTEC_PAINTING = "aztec_painting";
     public static final String ALBAN_PAINTING = "alban_painting";

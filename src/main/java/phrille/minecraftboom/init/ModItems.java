@@ -1,6 +1,7 @@
 package phrille.minecraftboom.init;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.CropsBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerPotBlock;
@@ -9,6 +10,7 @@ import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.entity.item.PaintingType;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.potion.EffectInstance;
@@ -41,6 +43,7 @@ public class ModItems
     public static final Item COOKED_EGG = Utils._null();
     public static final Item DROWNED_FLESH = Utils._null();
     public static final Item PRISMARINE_ARROW = Utils._null();
+    public static final Item RICE = Utils._null();
 
     public static final Item AZTEC_PAINTING = Utils._null();
     public static final Item COURBET_PAINTING = Utils._null();
@@ -68,6 +71,7 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EGG).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.COOKED_EGG));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.DROWNED_FLESH));
             registerItem(registry, setup(new PrismarineArrowItem(), Names.PRISMARINE_ARROW));
+            registerItem(registry, setup(new BlockNamedItem(ModBlocks.RICE, new Item.Properties().food(ModFoods.RICE).group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.RICE));
 
             registerItem(registry, setup(new PaintingItem(PaintingType.KEBAB, new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.KEBAB_PAINTING));
             registerItem(registry, setup(new PaintingItem(PaintingType.AZTEC, new Item.Properties().group(MinecraftBoomTab.MINECRAFTBOOM_TAB)), Names.AZTEC_PAINTING));
@@ -127,7 +131,7 @@ public class ModItems
                     continue;
                 }
 
-                boolean notAdd = block instanceof FlowerPotBlock;
+                boolean notAdd = block instanceof FlowerPotBlock || block instanceof CropsBlock;
 
                 if (!notAdd)
                 {
@@ -159,5 +163,6 @@ public class ModItems
         public static final Food PUMPKIN_SLICE = new Food.Builder().hunger(2).saturation(1.2F).build();
         public static final Food COOKED_EGG = new Food.Builder().hunger(6).saturation(2.8F).build();
         public static final Food DROWNED_FLESH = new Food.Builder().hunger(4).saturation(0.1F).effect(new EffectInstance(Effects.HUNGER, 600, 0), 0.8F).effect(new EffectInstance(Effects.WATER_BREATHING, 600, 0), 0.5F).meat().build();
+        public static final Food RICE = new Food.Builder().hunger(4).saturation(0.5F).build();
     }
 }
