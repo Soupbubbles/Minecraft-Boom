@@ -1,8 +1,0 @@
-{
-    "variants": {
-        "facing=north": { "model": "minecraftboom:block/acacia_ladder" },
-        "facing=east":  { "model": "minecraftboom:block/acacia_ladder", "y": 90 },
-        "facing=south": { "model": "minecraftboom:block/acacia_ladder", "y": 180 },
-        "facing=west":  { "model": "minecraftboom:block/acacia_ladder", "y": 270 }
-    }
-}

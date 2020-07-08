@@ -1,6 +1,0 @@
-{
-    "parent": "block/cube_all",
-    "textures": {
-        "all": "minecraftboom:block/red_dye_block"
-    }
-}

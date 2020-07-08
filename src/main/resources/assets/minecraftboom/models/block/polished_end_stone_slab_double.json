@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "side": "minecraftboom:block/polished_end_stone_slab_side",
-        "end": "minecraftboom:block/polished_end_stone"
-    }
-}

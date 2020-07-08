@@ -155,7 +155,7 @@
               "function": "minecraft:explosion_decay"
             }
           ],
-          "name": "minecraftboom:pinecone"
+          "name": "vanillaboom:pinecone"
         }
       ],
       "conditions": [

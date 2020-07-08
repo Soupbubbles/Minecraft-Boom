@@ -1,6 +1,0 @@
-{
-    "parent": "block/crop",
-    "textures": {
-        "crop": "minecraftboom:block/rice_stage0"
-    }
-}

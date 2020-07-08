@@ -31,7 +31,7 @@
             "entries": [
                 {
                     "type": "item",
-                    "name": "minecraftboom:wither_bone",
+                    "name": "vanillaboom:wither_bone",
                     "weight": 1,
                     "functions": [
                         {

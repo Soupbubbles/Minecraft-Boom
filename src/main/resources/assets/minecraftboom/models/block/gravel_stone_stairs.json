@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "minecraftboom:block/gravel_stone",
-    "top": "minecraftboom:block/gravel_stone",
-    "side": "minecraftboom:block/gravel_stone"
-  }
-}

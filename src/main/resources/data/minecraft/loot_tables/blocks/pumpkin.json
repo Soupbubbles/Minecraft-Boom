@@ -55,7 +55,7 @@
                   "function": "minecraft:explosion_decay"
                 }
               ],
-              "name": "minecraftboom:pumpkin_slice"
+              "name": "vanillaboom:pumpkin_slice"
             }
           ]
         }

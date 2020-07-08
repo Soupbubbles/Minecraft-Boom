@@ -1,7 +1,0 @@
-{
-    "parent": "block/cube_column",
-    "textures": {
-        "end": "minecraft:block/acacia_planks",
-        "side": "minecraftboom:block/acacia_bookshelf"
-    }
-}

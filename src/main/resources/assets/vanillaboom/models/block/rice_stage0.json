@@ -1,0 +1,6 @@
+{
+    "parent": "block/crop",
+    "textures": {
+        "crop": "vanillaboom:block/rice_stage0"
+    }
+}

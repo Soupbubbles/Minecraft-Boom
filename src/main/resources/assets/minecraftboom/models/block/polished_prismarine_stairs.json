@@ -1,8 +1,0 @@
-{
-  "parent": "block/stairs",
-  "textures": {
-    "bottom": "minecraftboom:block/polished_prismarine",
-    "top": "minecraftboom:block/polished_prismarine",
-    "side": "minecraftboom:block/polished_prismarine"
-  }
-}

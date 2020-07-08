@@ -1,6 +1,0 @@
-{
-  "parent": "block/wall_inventory",
-  "textures": {
-    "wall": "minecraftboom:block/magenta_terracotta_bricks"
-  }
-}

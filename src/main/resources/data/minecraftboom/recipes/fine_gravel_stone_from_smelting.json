@@ -1,9 +1,0 @@
-{
-  "type": "smelting",
-  "ingredient": {
-    "item": "minecraftboom:fine_gravel"
-  },
-  "result": "minecraftboom:fine_gravel_stone",
-  "experience": 0.1,
-  "cookingtime": 200
-}

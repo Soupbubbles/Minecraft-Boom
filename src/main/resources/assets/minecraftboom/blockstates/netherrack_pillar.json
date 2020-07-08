@@ -1,7 +1,0 @@
-{
-    "variants": {
-        "axis=y":  { "model": "minecraftboom:block/netherrack_pillar" },
-        "axis=z":   { "model": "minecraftboom:block/netherrack_pillar", "x": 90 },
-        "axis=x":   { "model": "minecraftboom:block/netherrack_pillar", "x": 90, "y": 90 }
-    }
-}

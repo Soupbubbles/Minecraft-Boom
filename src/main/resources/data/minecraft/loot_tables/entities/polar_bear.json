@@ -23,7 +23,7 @@
               }
             }
           ],
-          "name": "minecraftboom:polar_bear_fur"
+          "name": "vanillaboom:polar_bear_fur"
         }
       ]
     },
@@ -63,7 +63,7 @@
               }
             }
           ],
-          "name": "minecraftboom:raw_polar_bear_meat"
+          "name": "vanillaboom:raw_polar_bear_meat"
         }
       ]
     }
