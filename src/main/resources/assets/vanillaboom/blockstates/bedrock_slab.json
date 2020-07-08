@@ -7,7 +7,7 @@
       "model": "vanillaboom:block/bedrock_slab_top"
     },
     "type=double": {
-      "model": "vanillaboom:block/bedrock"
+      "model": "minecraft:block/bedrock"
     }
   }
 }

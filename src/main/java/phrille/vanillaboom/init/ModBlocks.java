@@ -210,27 +210,15 @@ public class ModBlocks
     public static final Block CHISELED_STONE_BRICK_STAIRS = Utils._null();
     public static final Block CHISELED_SANDSTONE_STAIRS = Utils._null();
     public static final Block CHISELED_RED_SANDSTONE_STAIRS = Utils._null();
-    public static final Block OAK_WOOD_STAIRS = Utils._null();
-    public static final Block SPRUCE_WOOD_STAIRS = Utils._null();
-    public static final Block BIRCH_WOOD_STAIRS = Utils._null();
-    public static final Block JUNGLE_WOOD_STAIRS = Utils._null();
-    public static final Block ACACIA_WOOD_STAIRS = Utils._null();
-    public static final Block DARK_OAK_WOOD_STAIRS = Utils._null();
-    public static final Block CRIMSON_HYPHAE_STAIRS = Utils._null();
-    public static final Block WARPED_HYPHAE_STAIRS = Utils._null();
-    public static final Block STRIPPED_OAK_WOOD_STAIRS = Utils._null();
-    public static final Block STRIPPED_SPRUCE_WOOD_STAIRS = Utils._null();
-    public static final Block STRIPPED_BIRCH_WOOD_STAIRS = Utils._null();
-    public static final Block STRIPPED_JUNGLE_WOOD_STAIRS = Utils._null();
-    public static final Block STRIPPED_ACACIA_WOOD_STAIRS = Utils._null();
-    public static final Block STRIPPED_DARK_OAK_WOOD_STAIRS = Utils._null();
-    public static final Block STRIPPED_CRIMSON_HYPHAE_STAIRS = Utils._null();
-    public static final Block STRIPPED_WARPED_HYPHAE_STAIRS = Utils._null();
     public static final Block IRON_BLOCK_STAIRS = Utils._null();
     public static final Block GOLD_BLOCK_STAIRS = Utils._null();
     public static final Block OBSIDIAN_STAIRS = Utils._null();
     public static final Block BEDROCK_STAIRS = Utils._null();
     public static final Block NETHERRACK_STAIRS = Utils._null();
+    public static final Block CRACKED_NETHER_BRICK_STAIRS = Utils._null();
+    public static final Block CHISELED_NETHER_BRICK_STAIRS = Utils._null();
+    public static final Block CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS = Utils._null();
+    public static final Block CHISELED_POLISHED_BLACKSTONE_STAIRS = Utils._null();
     public static final Block END_STONE_STAIRS = Utils._null();
     public static final Block CHISELED_QUARTZ_BLOCK_STAIRS = Utils._null();
     public static final Block QUARTZ_BRICK_STAIRS = Utils._null();
@@ -267,6 +255,22 @@ public class ModBlocks
     public static final Block GREEN_CONCRETE_STAIRS = Utils._null();
     public static final Block RED_CONCRETE_STAIRS = Utils._null();
     public static final Block BLACK_CONCRETE_STAIRS = Utils._null();
+    public static final Block OAK_WOOD_STAIRS = Utils._null();
+    public static final Block SPRUCE_WOOD_STAIRS = Utils._null();
+    public static final Block BIRCH_WOOD_STAIRS = Utils._null();
+    public static final Block JUNGLE_WOOD_STAIRS = Utils._null();
+    public static final Block ACACIA_WOOD_STAIRS = Utils._null();
+    public static final Block DARK_OAK_WOOD_STAIRS = Utils._null();
+    public static final Block CRIMSON_HYPHAE_STAIRS = Utils._null();
+    public static final Block WARPED_HYPHAE_STAIRS = Utils._null();
+    public static final Block STRIPPED_OAK_WOOD_STAIRS = Utils._null();
+    public static final Block STRIPPED_SPRUCE_WOOD_STAIRS = Utils._null();
+    public static final Block STRIPPED_BIRCH_WOOD_STAIRS = Utils._null();
+    public static final Block STRIPPED_JUNGLE_WOOD_STAIRS = Utils._null();
+    public static final Block STRIPPED_ACACIA_WOOD_STAIRS = Utils._null();
+    public static final Block STRIPPED_DARK_OAK_WOOD_STAIRS = Utils._null();
+    public static final Block STRIPPED_CRIMSON_HYPHAE_STAIRS = Utils._null();
+    public static final Block STRIPPED_WARPED_HYPHAE_STAIRS = Utils._null();
     public static final Block CUT_SANDSTONE_STAIRS = Utils._null();
     public static final Block CUT_RED_SANDSTONE_STAIRS = Utils._null();
     public static final Block SMOOTH_STONE_STAIRS = Utils._null();
@@ -308,27 +312,15 @@ public class ModBlocks
     public static final Block CHISELED_STONE_BRICK_SLAB = Utils._null();
     public static final Block CHISELED_SANDSTONE_SLAB = Utils._null();
     public static final Block CHISELED_RED_SANDSTONE_SLAB = Utils._null();
-    public static final Block OAK_WOOD_SLAB = Utils._null();
-    public static final Block SPRUCE_WOOD_SLAB = Utils._null();
-    public static final Block BIRCH_WOOD_SLAB = Utils._null();
-    public static final Block JUNGLE_WOOD_SLAB = Utils._null();
-    public static final Block ACACIA_WOOD_SLAB = Utils._null();
-    public static final Block DARK_OAK_WOOD_SLAB = Utils._null();
-    public static final Block CRIMSON_HYPHAE_SLAB = Utils._null();
-    public static final Block WARPED_HYPHAE_SLAB = Utils._null();
-    public static final Block STRIPPED_OAK_WOOD_SLAB = Utils._null();
-    public static final Block STRIPPED_SPRUCE_WOOD_SLAB = Utils._null();
-    public static final Block STRIPPED_BIRCH_WOOD_SLAB = Utils._null();
-    public static final Block STRIPPED_JUNGLE_WOOD_SLAB = Utils._null();
-    public static final Block STRIPPED_ACACIA_WOOD_SLAB = Utils._null();
-    public static final Block STRIPPED_DARK_OAK_WOOD_SLAB = Utils._null();
-    public static final Block STRIPPED_CRIMSON_HYPHAE_SLAB = Utils._null();
-    public static final Block STRIPPED_WARPED_HYPHAE_SLAB = Utils._null();
     public static final Block IRON_BLOCK_SLAB = Utils._null();
     public static final Block GOLD_BLOCK_SLAB = Utils._null();
     public static final Block OBSIDIAN_SLAB = Utils._null();
     public static final Block BEDROCK_SLAB = Utils._null();
     public static final Block NETHERRACK_SLAB = Utils._null();
+    public static final Block CRACKED_NETHER_BRICK_SLAB = Utils._null();
+    public static final Block CHISELED_NETHER_BRICK_SLAB = Utils._null();
+    public static final Block CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB = Utils._null();
+    public static final Block CHISELED_POLISHED_BLACKSTONE_SLAB = Utils._null();
     public static final Block END_STONE_SLAB = Utils._null();
     public static final Block CHISELED_QUARTZ_BLOCK_SLAB = Utils._null();
     public static final Block QUARTZ_BRICK_SLAB = Utils._null();
@@ -365,6 +357,22 @@ public class ModBlocks
     public static final Block GREEN_CONCRETE_SLAB = Utils._null();
     public static final Block RED_CONCRETE_SLAB = Utils._null();
     public static final Block BLACK_CONCRETE_SLAB = Utils._null();
+    public static final Block OAK_WOOD_SLAB = Utils._null();
+    public static final Block SPRUCE_WOOD_SLAB = Utils._null();
+    public static final Block BIRCH_WOOD_SLAB = Utils._null();
+    public static final Block JUNGLE_WOOD_SLAB = Utils._null();
+    public static final Block ACACIA_WOOD_SLAB = Utils._null();
+    public static final Block DARK_OAK_WOOD_SLAB = Utils._null();
+    public static final Block CRIMSON_HYPHAE_SLAB = Utils._null();
+    public static final Block WARPED_HYPHAE_SLAB = Utils._null();
+    public static final Block STRIPPED_OAK_WOOD_SLAB = Utils._null();
+    public static final Block STRIPPED_SPRUCE_WOOD_SLAB = Utils._null();
+    public static final Block STRIPPED_BIRCH_WOOD_SLAB = Utils._null();
+    public static final Block STRIPPED_JUNGLE_WOOD_SLAB = Utils._null();
+    public static final Block STRIPPED_ACACIA_WOOD_SLAB = Utils._null();
+    public static final Block STRIPPED_DARK_OAK_WOOD_SLAB = Utils._null();
+    public static final Block STRIPPED_CRIMSON_HYPHAE_SLAB = Utils._null();
+    public static final Block STRIPPED_WARPED_HYPHAE_SLAB = Utils._null();
 
     //VanillaBoom Walls
     public static final Block COBBLESTONE_BRICK_WALL = Utils._null();
@@ -408,6 +416,10 @@ public class ModBlocks
     public static final Block OBSIDIAN_WALL = Utils._null();
     public static final Block BEDROCK_WALL = Utils._null();
     public static final Block NETHERRACK_WALL = Utils._null();
+    public static final Block CRACKED_NETHER_BRICK_WALL = Utils._null();
+    public static final Block CHISELED_NETHER_BRICK_WALL = Utils._null();
+    public static final Block CRACKED_POLISHED_BLACKSTONE_BRICK_WALL = Utils._null();
+    public static final Block CHISELED_POLISHED_BLACKSTONE_WALL = Utils._null();
     public static final Block END_STONE_WALL = Utils._null();
     public static final Block CHISELED_QUARTZ_BLOCK_WALL = Utils._null();
     public static final Block QUARTZ_BRICK_WALL = Utils._null();
@@ -639,27 +651,15 @@ public class ModBlocks
             addVanillaVariants(registry, Blocks.CHISELED_STONE_BRICKS, true, true, true);
             addVanillaVariants(registry, Blocks.CHISELED_SANDSTONE, true, true, true);
             addVanillaVariants(registry, Blocks.CHISELED_RED_SANDSTONE, true, true, true);
-            addVanillaVariants(registry, Blocks.OAK_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.SPRUCE_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.BIRCH_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.JUNGLE_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.ACACIA_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.DARK_OAK_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.field_235379_ms_, true, true, false); //Crimson Hyphae
-            addVanillaVariants(registry, Blocks.field_235370_mj_, true, true, false); //Warped Hyphae
-            addVanillaVariants(registry, Blocks.STRIPPED_OAK_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.STRIPPED_SPRUCE_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.STRIPPED_BIRCH_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.STRIPPED_JUNGLE_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.STRIPPED_ACACIA_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.STRIPPED_DARK_OAK_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.field_235380_mt_, true, true, false); //Stripped Crimson Hyphae
-            addVanillaVariants(registry, Blocks.field_235371_mk_, true, true, false); //Stripped Warped Hyphae
             addVanillaVariants(registry, Blocks.IRON_BLOCK, true, true, true);
             addVanillaVariants(registry, Blocks.GOLD_BLOCK, true, true, true);
             addVanillaVariants(registry, Blocks.OBSIDIAN, true, true, true);
             addVanillaVariants(registry, Blocks.BEDROCK, true, true, true);
             addVanillaVariants(registry, Blocks.NETHERRACK, true, true, true);
+            addVanillaVariants(registry, Blocks.field_235394_nH_, true, true, true); //Cracked Nether Bricks
+            addVanillaVariants(registry, Blocks.field_235393_nG_, true, true, true); //Chiseled Nether Bricks
+            addVanillaVariants(registry, Blocks.field_235412_nv_, true, true, true); //Cracked Polished Blackstone
+            addVanillaVariants(registry, Blocks.field_235413_nw_, true, true, true); //Chisled Blackstone
             addVanillaVariants(registry, Blocks.END_STONE, true, true, true);
             addVanillaVariants(registry, Blocks.CHISELED_QUARTZ_BLOCK, true, true, true);
             addVanillaVariants(registry, Blocks.field_235395_nI_, true, true, true); //Quartz Bricks
@@ -696,6 +696,22 @@ public class ModBlocks
             addVanillaVariants(registry, Blocks.GREEN_CONCRETE, true, true, true);
             addVanillaVariants(registry, Blocks.RED_CONCRETE, true, true, true);
             addVanillaVariants(registry, Blocks.BLACK_CONCRETE, true, true, true);
+            addVanillaVariants(registry, Blocks.OAK_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.SPRUCE_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.BIRCH_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.JUNGLE_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.ACACIA_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.DARK_OAK_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.field_235379_ms_, true, true, false); //Crimson Hyphae
+            addVanillaVariants(registry, Blocks.field_235370_mj_, true, true, false); //Warped Hyphae
+            addVanillaVariants(registry, Blocks.STRIPPED_OAK_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.STRIPPED_SPRUCE_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.STRIPPED_BIRCH_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.STRIPPED_JUNGLE_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.STRIPPED_ACACIA_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.STRIPPED_DARK_OAK_WOOD, true, true, false);
+            addVanillaVariants(registry, Blocks.field_235380_mt_, true, true, false); //Stripped Crimson Hyphae
+            addVanillaVariants(registry, Blocks.field_235371_mk_, true, true, false); //Stripped Warped Hyphae
             addVanillaVariants(registry, Blocks.CUT_SANDSTONE, true, false, true);
             addVanillaVariants(registry, Blocks.CUT_RED_SANDSTONE, true, false, true);
             addVanillaVariants(registry, Blocks.SMOOTH_STONE, true, false, true);

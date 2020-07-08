@@ -33,9 +33,21 @@ public class JsonAssetsGenerator
 
     public static void init()
     {
-        addStairFiles(ModBlocks.QUARTZ_BRICK_STAIRS, Blocks.field_235395_nI_);
-        addSlabFiles(ModBlocks.QUARTZ_BRICK_SLAB, Blocks.field_235395_nI_);
-        addWallFiles(ModBlocks.QUARTZ_BRICK_WALL, Blocks.field_235395_nI_);
+        addStairFiles(ModBlocks.CRACKED_NETHER_BRICK_STAIRS, Blocks.field_235394_nH_);
+        addSlabFiles(ModBlocks.CRACKED_NETHER_BRICK_SLAB, Blocks.field_235394_nH_);
+        addWallFiles(ModBlocks.CRACKED_NETHER_BRICK_WALL, Blocks.field_235394_nH_);
+        
+        addStairFiles(ModBlocks.CHISELED_NETHER_BRICK_STAIRS, Blocks.field_235393_nG_);
+        addSlabFiles(ModBlocks.CHISELED_NETHER_BRICK_SLAB, Blocks.field_235393_nG_);
+        addWallFiles(ModBlocks.CHISELED_NETHER_BRICK_WALL, Blocks.field_235393_nG_);
+        
+        addStairFiles(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS, Blocks.field_235412_nv_);
+        addSlabFiles(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB, Blocks.field_235412_nv_);
+        addWallFiles(ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_WALL, Blocks.field_235412_nv_);
+        
+        addStairFiles(ModBlocks.CHISELED_POLISHED_BLACKSTONE_STAIRS, Blocks.field_235413_nw_);
+        addSlabFiles(ModBlocks.CHISELED_POLISHED_BLACKSTONE_SLAB, Blocks.field_235413_nw_);
+        addWallFiles(ModBlocks.CHISELED_POLISHED_BLACKSTONE_WALL, Blocks.field_235413_nw_);
     }
 
     //Basic Block

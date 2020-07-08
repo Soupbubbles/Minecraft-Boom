@@ -31,6 +31,19 @@ public class JsonDataGenerator
         RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.QUARTZ_BRICK_SLAB, 2), Blocks.QUARTZ_BLOCK);
         RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.QUARTZ_BRICK_WALL), Blocks.QUARTZ_BLOCK);
         RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.QUARTZ_BRICK_STAIRS), Blocks.QUARTZ_BLOCK);
+        
+        
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_NETHER_BRICK_SLAB, 2), Blocks.NETHER_BRICKS);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_NETHER_BRICK_STAIRS), Blocks.NETHER_BRICKS);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_NETHER_BRICK_WALL), Blocks.NETHER_BRICKS);
+        
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_POLISHED_BLACKSTONE_SLAB, 2), Blocks.field_235406_np_);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_POLISHED_BLACKSTONE_STAIRS), Blocks.field_235406_np_);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_POLISHED_BLACKSTONE_WALL), Blocks.field_235406_np_);
+        
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_POLISHED_BLACKSTONE_SLAB, 2), Blocks.field_235410_nt_);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_POLISHED_BLACKSTONE_STAIRS), Blocks.field_235410_nt_);
+        RecipeGenerator.addStoneCuttingRecipe(new ItemStack(ModBlocks.CHISELED_POLISHED_BLACKSTONE_WALL), Blocks.field_235410_nt_);
     }
 
     public static class RecipeGenerator
