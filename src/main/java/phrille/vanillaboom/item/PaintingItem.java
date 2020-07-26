@@ -50,7 +50,8 @@ public class PaintingItem extends Item
         else
         {
             World world = context.getWorld();
-            PaintingEntity painting = new PaintingEntity(world, blockpos1, direction, paintingType);
+            PaintingEntity painting = new PaintingEntity(world, blockpos1, direction);
+            painting.art = paintingType;
             CompoundNBT compoundnbt = itemstack.getTag();
 
             if (compoundnbt != null)
