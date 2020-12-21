@@ -35,7 +35,6 @@ import phrille.vanillaboom.block.GunpowderBlock;
 import phrille.vanillaboom.block.ModSlabBlock;
 import phrille.vanillaboom.block.ModStairBlock;
 import phrille.vanillaboom.block.ModWallBlock;
-import phrille.vanillaboom.block.RiceBlock;
 import phrille.vanillaboom.lib.Names;
 import phrille.vanillaboom.util.Utils;
 
@@ -171,7 +170,6 @@ public class ModBlocks
     public static final Block GOLD_BARS = Utils._null();
     public static final Block ROSE = Utils._null();
     public static final Block POTTED_ROSE = Utils._null();
-    public static final Block RICE = Utils._null();
 
     //VanillaBoom Stairs
     public static final Block COBBLESTONE_BRICK_STAIRS = Utils._null();
@@ -644,7 +642,6 @@ public class ModBlocks
             registry.register(setup(new LadderBlock(Properties.from(Blocks.LADDER)), Names.CRIMSON_LADDER));
             registry.register(setup(new LadderBlock(Properties.from(Blocks.LADDER)), Names.WARPED_LADDER));
             createFlower(registry, Effects.HASTE, 10, Names.ROSE);
-            registry.register(setup(new RiceBlock(Properties.from(Blocks.CARROTS)), Names.RICE));
 
             //Vanilla Stairs, Slabs and Walls
             addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true, true);

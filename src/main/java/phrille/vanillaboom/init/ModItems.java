@@ -42,7 +42,6 @@ public class ModItems
     public static final Item COOKED_EGG = Utils._null();
     public static final Item DROWNED_FLESH = Utils._null();
     public static final Item PRISMARINE_ARROW = Utils._null();
-    //public static final Item RICE = Utils._null();
 
     public static final Item AZTEC_PAINTING = Utils._null();
     public static final Item COURBET_PAINTING = Utils._null();
@@ -70,7 +69,6 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EGG).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.COOKED_EGG));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.DROWNED_FLESH));
             registerItem(registry, setup(new PrismarineArrowItem(), Names.PRISMARINE_ARROW));
-            //registerItem(registry, setup(new BlockNamedItem(ModBlocks.RICE, new Item.Properties().food(ModFoods.RICE).group(MinecraftBoomTab.VANILLABOOM_TAB)), Names.RICE));
 
             registerItem(registry, setup(new PaintingItem(PaintingType.KEBAB, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.KEBAB_PAINTING));
             registerItem(registry, setup(new PaintingItem(PaintingType.AZTEC, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.AZTEC_PAINTING));
