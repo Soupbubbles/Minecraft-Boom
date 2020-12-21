@@ -78,7 +78,7 @@ public class PaintingItem extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag)
     {
-        tooltip.add(getPaintingDescription().func_240699_a_(TextFormatting.BLUE));
+        tooltip.add(getPaintingDescription().mergeStyle(TextFormatting.BLUE));
     }
 
     @OnlyIn(Dist.CLIENT)

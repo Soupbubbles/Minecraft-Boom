@@ -577,8 +577,8 @@ public class ModBlocks
             registry.register(setup(new GunpowderBlock(), Names.GUNPOWDER_BLOCK));
             registry.register(setup(new FallingBlock(Properties.from(Blocks.SAND).sound(SoundType.SNOW)), Names.BLAZE_POWDER_BLOCK));
             registry.register(setup(new SlimeBlock(Properties.from(Blocks.SLIME_BLOCK)), Names.MAGMA_CREAM_BLOCK));
-            registry.register(setup(new Block(Properties.create(Material.GLASS, MaterialColor.CYAN).hardnessAndResistance(0.3F, 0.5F).sound(SoundType.GLASS).func_235838_a_((lightValue) ->{ return 5; })), Names.PRISMARINE_CRYSTAL_BLOCK));
-            registry.register(setup(new RotatedPillarBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).sound(SoundType.field_235593_O_).hardnessAndResistance(1.8F, 3.33F)), Names.WITHER_BONE_BLOCK));
+            registry.register(setup(new Block(Properties.create(Material.GLASS, MaterialColor.CYAN).hardnessAndResistance(0.3F, 0.5F).sound(SoundType.GLASS).setLightLevel((lightValue) ->{ return 5; })), Names.PRISMARINE_CRYSTAL_BLOCK));
+            registry.register(setup(new RotatedPillarBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).sound(SoundType.BONE).hardnessAndResistance(1.8F, 3.33F)), Names.WITHER_BONE_BLOCK));
             registry.register(setup(new Block(Properties.create(Material.ROCK, MaterialColor.WOOL).hardnessAndResistance(3.0F, 5.0F)), Names.WHITE_DYE_BLOCK));
             registry.register(setup(new Block(Properties.create(Material.ROCK, MaterialColor.ADOBE).hardnessAndResistance(3.0F, 5.0F)), Names.ORANGE_DYE_BLOCK));
             registry.register(setup(new Block(Properties.create(Material.ROCK, MaterialColor.MAGENTA).hardnessAndResistance(3.0F, 5.0F)), Names.MAGENTA_DYE_BLOCK));
@@ -653,13 +653,13 @@ public class ModBlocks
             addVanillaVariants(registry, Blocks.OBSIDIAN, true, true, true);
             addVanillaVariants(registry, Blocks.BEDROCK, true, true, true);
             addVanillaVariants(registry, Blocks.NETHERRACK, true, true, true);
-            addVanillaVariants(registry, Blocks.field_235394_nH_, true, true, true); //Cracked Nether Bricks
-            addVanillaVariants(registry, Blocks.field_235393_nG_, true, true, true); //Chiseled Nether Bricks
-            addVanillaVariants(registry, Blocks.field_235412_nv_, true, true, true); //Cracked Polished Blackstone
-            addVanillaVariants(registry, Blocks.field_235413_nw_, true, true, true); //Chisled Blackstone
+            addVanillaVariants(registry, Blocks.CRACKED_NETHER_BRICKS, true, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_NETHER_BRICKS, true, true, true);
+            addVanillaVariants(registry, Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS, true, true, true);
+            addVanillaVariants(registry, Blocks.CHISELED_POLISHED_BLACKSTONE, true, true, true);
             addVanillaVariants(registry, Blocks.END_STONE, true, true, true);
             addVanillaVariants(registry, Blocks.CHISELED_QUARTZ_BLOCK, true, true, true);
-            addVanillaVariants(registry, Blocks.field_235395_nI_, true, true, true); //Quartz Bricks
+            addVanillaVariants(registry, Blocks.QUARTZ_BRICKS, true, true, true);
             addVanillaVariants(registry, Blocks.TERRACOTTA, true, true, true);
             addVanillaVariants(registry, Blocks.WHITE_TERRACOTTA, true, true, true);
             addVanillaVariants(registry, Blocks.ORANGE_TERRACOTTA, true, true, true);
@@ -699,16 +699,16 @@ public class ModBlocks
             addVanillaVariants(registry, Blocks.JUNGLE_WOOD, true, true, false);
             addVanillaVariants(registry, Blocks.ACACIA_WOOD, true, true, false);
             addVanillaVariants(registry, Blocks.DARK_OAK_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.field_235379_ms_, true, true, false); //Crimson Hyphae
-            addVanillaVariants(registry, Blocks.field_235370_mj_, true, true, false); //Warped Hyphae
+            addVanillaVariants(registry, Blocks.CRIMSON_HYPHAE, true, true, false);
+            addVanillaVariants(registry, Blocks.WARPED_HYPHAE, true, true, false);
             addVanillaVariants(registry, Blocks.STRIPPED_OAK_WOOD, true, true, false);
             addVanillaVariants(registry, Blocks.STRIPPED_SPRUCE_WOOD, true, true, false);
             addVanillaVariants(registry, Blocks.STRIPPED_BIRCH_WOOD, true, true, false);
             addVanillaVariants(registry, Blocks.STRIPPED_JUNGLE_WOOD, true, true, false);
             addVanillaVariants(registry, Blocks.STRIPPED_ACACIA_WOOD, true, true, false);
             addVanillaVariants(registry, Blocks.STRIPPED_DARK_OAK_WOOD, true, true, false);
-            addVanillaVariants(registry, Blocks.field_235380_mt_, true, true, false); //Stripped Crimson Hyphae
-            addVanillaVariants(registry, Blocks.field_235371_mk_, true, true, false); //Stripped Warped Hyphae
+            addVanillaVariants(registry, Blocks.STRIPPED_CRIMSON_HYPHAE, true, true, false);
+            addVanillaVariants(registry, Blocks.STRIPPED_WARPED_HYPHAE, true, true, false);
             addVanillaVariants(registry, Blocks.CUT_SANDSTONE, true, false, true);
             addVanillaVariants(registry, Blocks.CUT_RED_SANDSTONE, true, false, true);
             addVanillaVariants(registry, Blocks.SMOOTH_STONE, true, false, true);
@@ -731,16 +731,16 @@ public class ModBlocks
             registry.register(setup(new FenceBlock(Properties.from(Blocks.JUNGLE_FENCE)), Names.JUNGLE_WOOD_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.ACACIA_FENCE)), Names.ACACIA_WOOD_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.DARK_OAK_FENCE)), Names.DARK_OAK_WOOD_FENCE));
-            registry.register(setup(new FenceBlock(Properties.from(Blocks.field_235350_mI_).sound(SoundType.field_235602_z_)), Names.CRIMSON_HYPHAE_FENCE));
-            registry.register(setup(new FenceBlock(Properties.from(Blocks.field_235351_mJ_).sound(SoundType.field_235602_z_)), Names.WARPED_HYPHAE_FENCE));
+            registry.register(setup(new FenceBlock(Properties.from(Blocks.CRIMSON_FENCE).sound(SoundType.HYPHAE)), Names.CRIMSON_HYPHAE_FENCE));
+            registry.register(setup(new FenceBlock(Properties.from(Blocks.WARPED_FENCE).sound(SoundType.HYPHAE)), Names.WARPED_HYPHAE_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.OAK_FENCE)), Names.STRIPPED_OAK_WOOD_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.SPRUCE_FENCE)), Names.STRIPPED_SPRUCE_WOOD_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.BIRCH_FENCE)), Names.STRIPPED_BIRCH_WOOD_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.JUNGLE_FENCE)), Names.STRIPPED_JUNGLE_WOOD_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.ACACIA_FENCE)), Names.STRIPPED_ACACIA_WOOD_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.DARK_OAK_FENCE)), Names.STRIPPED_DARK_OAK_WOOD_FENCE));
-            registry.register(setup(new FenceBlock(Properties.from(Blocks.field_235350_mI_).sound(SoundType.field_235602_z_)), Names.STRIPPED_CRIMSON_HYPHAE_FENCE));
-            registry.register(setup(new FenceBlock(Properties.from(Blocks.field_235351_mJ_).sound(SoundType.field_235602_z_)), Names.STRIPPED_WARPED_HYPHAE_FENCE));
+            registry.register(setup(new FenceBlock(Properties.from(Blocks.CRIMSON_FENCE).sound(SoundType.HYPHAE)), Names.STRIPPED_CRIMSON_HYPHAE_FENCE));
+            registry.register(setup(new FenceBlock(Properties.from(Blocks.WARPED_FENCE).sound(SoundType.HYPHAE)), Names.STRIPPED_WARPED_HYPHAE_FENCE));
             registry.register(setup(new FenceBlock(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.RED_NETHER_BRICK_FENCE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.OAK_FENCE_GATE)), Names.OAK_WOOD_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.SPRUCE_FENCE_GATE)), Names.SPRUCE_WOOD_FENCE_GATE));
@@ -748,16 +748,16 @@ public class ModBlocks
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.JUNGLE_FENCE_GATE)), Names.JUNGLE_WOOD_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.ACACIA_FENCE_GATE)), Names.ACACIA_WOOD_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.DARK_OAK_FENCE_GATE)), Names.DARK_OAK_WOOD_FENCE_GATE));
-            registry.register(setup(new FenceGateBlock(Properties.from(Blocks.field_235354_mM_).sound(SoundType.field_235602_z_)), Names.CRIMSON_HYPHAE_FENCE_GATE));
-            registry.register(setup(new FenceGateBlock(Properties.from(Blocks.field_235355_mN_).sound(SoundType.field_235602_z_)), Names.WARPED_HYPHAE_FENCE_GATE));
+            registry.register(setup(new FenceGateBlock(Properties.from(Blocks.CRIMSON_FENCE_GATE).sound(SoundType.HYPHAE)), Names.CRIMSON_HYPHAE_FENCE_GATE));
+            registry.register(setup(new FenceGateBlock(Properties.from(Blocks.WARPED_FENCE_GATE).sound(SoundType.HYPHAE)), Names.WARPED_HYPHAE_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.OAK_FENCE_GATE)), Names.STRIPPED_OAK_WOOD_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.SPRUCE_FENCE_GATE)), Names.STRIPPED_SPRUCE_WOOD_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.BIRCH_FENCE_GATE)), Names.STRIPPED_BIRCH_WOOD_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.JUNGLE_FENCE_GATE)), Names.STRIPPED_JUNGLE_WOOD_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.ACACIA_FENCE_GATE)), Names.STRIPPED_ACACIA_WOOD_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.DARK_OAK_FENCE_GATE)), Names.STRIPPED_DARK_OAK_WOOD_FENCE_GATE));
-            registry.register(setup(new FenceGateBlock(Properties.from(Blocks.field_235354_mM_).sound(SoundType.field_235602_z_)), Names.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE));
-            registry.register(setup(new FenceGateBlock(Properties.from(Blocks.field_235355_mN_).sound(SoundType.field_235602_z_)), Names.STRIPPED_WARPED_HYPHAE_FENCE_GATE));
+            registry.register(setup(new FenceGateBlock(Properties.from(Blocks.CRIMSON_FENCE_GATE).sound(SoundType.HYPHAE)), Names.STRIPPED_CRIMSON_HYPHAE_FENCE_GATE));
+            registry.register(setup(new FenceGateBlock(Properties.from(Blocks.WARPED_FENCE_GATE).sound(SoundType.HYPHAE)), Names.STRIPPED_WARPED_HYPHAE_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.NETHER_BRICK_FENCE_GATE));
             registry.register(setup(new FenceGateBlock(Properties.from(Blocks.NETHER_BRICK_FENCE)), Names.RED_NETHER_BRICK_FENCE_GATE));
         }

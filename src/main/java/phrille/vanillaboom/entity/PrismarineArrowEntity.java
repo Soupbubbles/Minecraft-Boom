@@ -44,7 +44,7 @@ public class PrismarineArrowEntity extends ArrowEntity
         {
             Entity entity = ((EntityRayTraceResult) raytrace).getEntity();
 
-            if (entity.func_230279_az_())
+            if (entity.isImmuneToFire())
             {
                 setDamage(getDamage() * 1.1F);
             }
