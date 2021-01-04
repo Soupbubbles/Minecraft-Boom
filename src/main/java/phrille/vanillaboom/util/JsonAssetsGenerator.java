@@ -22,7 +22,7 @@ import phrille.vanillaboom.init.ModBlocks;
 public class JsonAssetsGenerator
 {
     //File Paths
-    private static final String RESOURCE_DIR = "F:\\Programming\\Minecraft\\1.16.1\\Vanilla-Boom\\src\\main\\resources\\";
+    private static final String RESOURCE_DIR = "F:\\Programming\\Minecraft\\1.16.4\\Vanilla-Boom\\src\\main\\resources\\";
     public static final String ASSETS_DIR = RESOURCE_DIR + "assets\\vanillaboom\\";
     private static final Gson GSON = new GsonBuilder().setPrettyPrinting().disableHtmlEscaping().create();
 
