@@ -1,4 +1,4 @@
-package phrille.vanillaboom.handler;
+package phrille.vanillaboom.event;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;

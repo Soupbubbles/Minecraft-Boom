@@ -1,4 +1,4 @@
-package phrille.vanillaboom.handler;
+package phrille.vanillaboom.event;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;

@@ -43,12 +43,40 @@ public class ModItems
     public static final Item DROWNED_FLESH = Utils._null();
     public static final Item PRISMARINE_ARROW = Utils._null();
 
+    public static final Item CANVAS = Utils._null();
+    public static final Item SMALL_PAINTING = Utils._null();
+    public static final Item HORIZONTAL_PAINTING = Utils._null();
+    public static final Item VERTICAL_PAINTING = Utils._null();
+    public static final Item MEDIUM_PAINTING = Utils._null();
+    public static final Item LARGE_HORIZONTAL_PAINTING = Utils._null();
+    public static final Item LARGE_PAINTING = Utils._null();
+
+    public static final Item KEBAB_PAINTING = Utils._null();
     public static final Item AZTEC_PAINTING = Utils._null();
+    public static final Item ALBAN_PAINTING = Utils._null();
+    public static final Item AZTEC2_PAINTING = Utils._null();
+    public static final Item BOMB_PAINTING = Utils._null();
+    public static final Item PLANT_PAINTING = Utils._null();
+    public static final Item WASTELAND_PAINTING = Utils._null();
+    public static final Item POOL_PAINTING = Utils._null();
     public static final Item COURBET_PAINTING = Utils._null();
+    public static final Item SEA_PAINTING = Utils._null();
+    public static final Item SUNSET_PAINTING = Utils._null();
+    public static final Item CREEBET_PAINTING = Utils._null();
+    public static final Item WANDERER_PAINTING = Utils._null();
     public static final Item GRAHAM_PAINTING = Utils._null();
+    public static final Item MATCH_PAINTING = Utils._null();
+    public static final Item BUST_PAINTING = Utils._null();
+    public static final Item STAGE_PAINTING = Utils._null();
+    public static final Item VOID_PAINTING = Utils._null();
     public static final Item SKULL_AND_ROSES_PAINTING = Utils._null();
+    public static final Item WITHER_PAINTING = Utils._null();
     public static final Item FIGHTERS_PAINTING = Utils._null();
     public static final Item POINTER_PAINTING = Utils._null();
+    public static final Item PIGSCENE_PAINTING = Utils._null();
+    public static final Item BURNING_SKULL_PAINTING = Utils._null();
+    public static final Item SKELETON_PAINTING = Utils._null();
+    public static final Item DONKEY_KONG_PAINTING = Utils._null();
 
     @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, bus = Bus.MOD)
     public static class RegistrationHandler
@@ -70,32 +98,40 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.DROWNED_FLESH));
             registerItem(registry, setup(new PrismarineArrowItem(), Names.PRISMARINE_ARROW));
 
-            registerItem(registry, setup(new PaintingItem(PaintingType.KEBAB, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.KEBAB_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.AZTEC, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.AZTEC_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.ALBAN, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.ALBAN_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.AZTEC2, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.AZTEC2_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.BOMB, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.BOMB_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PLANT_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.WASTELAND, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WASTELAND_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.POOL, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POOL_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.COURBET, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.COURBET_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.SEA, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.SEA_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.SUNSET, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.SUNSET_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.CREEBET, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.CREEBET_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.WANDERER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WANDERER_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.GRAHAM, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.GRAHAM_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.MATCH, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.MATCH_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.BUST, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.BUST_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.STAGE, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.STAGE_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.VOID, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.VOID_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.SKULL_AND_ROSES, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.SKULL_AND_ROSES_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.WITHER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WITHER_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.FIGHTERS, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.FIGHTERS_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.POINTER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POINTER_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.PIGSCENE, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PIGSCENE_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.BURNING_SKULL, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.BURNING_SKULL_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.SKELETON, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.SKELETON_PAINTING));
-            registerItem(registry, setup(new PaintingItem(PaintingType.DONKEY_KONG, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.DONKEY_KONG_PAINTING));
+            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.CANVAS));
+            registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SMALL_PAINTING));
+            registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.HORIZONTAL_PAINTING));
+            registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.VERTICAL_PAINTING));
+            registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.MEDIUM_PAINTING));
+            registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.LARGE_HORIZONTAL_PAINTING));
+            registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.LARGE_PAINTING));
+
+            registerItem(registry, setup(new PaintingItem(PaintingType.KEBAB, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.KEBAB_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.AZTEC, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.AZTEC_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.ALBAN, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.ALBAN_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.AZTEC2, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.AZTEC2_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.BOMB, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.BOMB_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.PLANT_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.WASTELAND, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.WASTELAND_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.POOL, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.POOL_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.COURBET, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.COURBET_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.SEA, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SEA_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.SUNSET, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SUNSET_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.CREEBET, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.CREEBET_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.WANDERER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.WANDERER_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.GRAHAM, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.GRAHAM_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.MATCH, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.MATCH_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.BUST, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.BUST_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.STAGE, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.STAGE_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.VOID, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.VOID_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.SKULL_AND_ROSES, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SKULL_AND_ROSES_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.WITHER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.WITHER_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.FIGHTERS, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.FIGHTERS_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.POINTER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.POINTER_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.PIGSCENE, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.PIGSCENE_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.BURNING_SKULL, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.BURNING_SKULL_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.SKELETON, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SKELETON_PAINTING));
+            registerItem(registry, setup(new PaintingItem(PaintingType.DONKEY_KONG, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.DONKEY_KONG_PAINTING));
         }
 
         private static void registerItem(IForgeRegistry<Item> registry, Item item)
@@ -160,6 +196,5 @@ public class ModItems
         public static final Food PUMPKIN_SLICE = new Food.Builder().hunger(2).saturation(1.2F).build();
         public static final Food COOKED_EGG = new Food.Builder().hunger(6).saturation(2.8F).build();
         public static final Food DROWNED_FLESH = new Food.Builder().hunger(4).saturation(0.1F).effect(new EffectInstance(Effects.HUNGER, 600, 0), 0.8F).effect(new EffectInstance(Effects.WATER_BREATHING, 600, 0), 0.5F).meat().build();
-        public static final Food RICE = new Food.Builder().hunger(4).saturation(0.5F).build();
     }
 }

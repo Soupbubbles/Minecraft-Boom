@@ -6,7 +6,6 @@ import javax.annotation.Nullable;
 
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.item.PaintingEntity;
 import net.minecraft.entity.item.PaintingType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
@@ -23,15 +22,18 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import phrille.vanillaboom.entity.CustomPaintingEntity;
 
 public class PaintingItem extends Item
 {
     private final PaintingType paintingType;
+    private boolean canBePlaced;
 
-    public PaintingItem(PaintingType type, Properties properties)
+    public PaintingItem(@Nullable PaintingType type, Properties properties, boolean place)
     {
         super(properties);
         paintingType = type;
+        canBePlaced = place;
     }
 
     @Override
@@ -43,15 +45,16 @@ public class PaintingItem extends Item
         PlayerEntity playerentity = context.getPlayer();
         ItemStack itemstack = context.getItem();
 
-        if (playerentity != null && !canPlace(playerentity, direction, itemstack, blockpos1))
+        if (!canBePlaced && paintingType != null && playerentity != null && !canPlace(playerentity, direction, itemstack, blockpos1))
         {
             return ActionResultType.FAIL;
         }
         else
         {
             World world = context.getWorld();
-            PaintingEntity painting = new PaintingEntity(world, blockpos1, direction);
-            painting.art = paintingType;
+            CustomPaintingEntity painting = new CustomPaintingEntity(world, blockpos1, direction);
+            painting.updateArt(paintingType, direction);
+
             CompoundNBT compoundnbt = itemstack.getTag();
 
             if (compoundnbt != null)

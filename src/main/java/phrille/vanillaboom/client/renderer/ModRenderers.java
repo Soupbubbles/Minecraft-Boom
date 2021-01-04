@@ -2,6 +2,7 @@ package phrille.vanillaboom.client.renderer;
 
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
+import net.minecraft.client.renderer.entity.PaintingRenderer;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,9 +21,10 @@ public class ModRenderers
     public static void register(FMLClientSetupEvent event)
     {
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.PRISMARINE_ARROW, renderManager -> new PrismarineArrowRenderer(renderManager, new ResourceLocation(VanillaBoom.MOD_ID, "textures/entity/prismarine_arrow.png")));
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.CUSTOM_PAINTING, renderManager -> new PaintingRenderer(renderManager));
     }
-    
-    public static void setRenderLayers() 
+
+    public static void setRenderLayers()
     {
         RenderTypeLookup.setRenderLayer(ModBlocks.MAGMA_CREAM_BLOCK, RenderType.getTranslucent());
         RenderTypeLookup.setRenderLayer(ModBlocks.SOUL_GLASS, RenderType.getTranslucent());

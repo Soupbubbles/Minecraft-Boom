@@ -182,8 +182,16 @@ public class Names
     public static final String LEVITATION_DUST = "levitation_dust";
     public static final String COOKED_EGG = "cooked_egg";
     public static final String DROWNED_FLESH = "drowned_flesh";
-    public static final String RICE = "rice";
 
+    public static final String CANVAS = "canvas";
+    public static final String SMALL_PAINTING = "small_painting";
+    public static final String HORIZONTAL_PAINTING = "horizontal_painting";
+    public static final String VERTICAL_PAINTING = "vertical_painting";
+    public static final String MEDIUM_PAINTING = "medium_painting";
+    public static final String LARGE_HORIZONTAL_PAINTING = "large_horizontal_painting";
+    public static final String LARGE_PAINTING = "large_painting";
+
+    public static final String CUSTOM_PAINTING = "custom_painting";
     public static final String KEBAB_PAINTING = "kebab_painting";
     public static final String AZTEC_PAINTING = "aztec_painting";
     public static final String ALBAN_PAINTING = "alban_painting";
