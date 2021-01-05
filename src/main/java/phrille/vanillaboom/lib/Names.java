@@ -74,6 +74,7 @@ public class Names
     public static final String MAGMA_CREAM_BLOCK = "magma_cream_block";
     public static final String PRISMARINE_CRYSTAL_BLOCK = "prismarine_crystal_block";
     public static final String WITHER_BONE_BLOCK = "wither_bone_block";
+    
     public static final String WHITE_DYE_BLOCK = "white_dye_block";
     public static final String ORANGE_DYE_BLOCK = "orange_dye_block";
     public static final String MAGENTA_DYE_BLOCK = "magenta_dye_block";

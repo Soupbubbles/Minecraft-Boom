@@ -9,7 +9,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "vanillaboom:magma_brick"
+      "tag": "forge:ingots/magma_brick"
     }
   }
 }

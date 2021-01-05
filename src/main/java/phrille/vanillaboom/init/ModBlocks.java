@@ -505,7 +505,7 @@ public class ModBlocks
     public static final Block STRIPPED_WARPED_HYPHAE_FENCE_GATE = Utils._null();
     public static final Block NETHER_BRICK_FENCE_GATE = Utils._null();
     public static final Block RED_NETHER_BRICK_FENCE_GATE = Utils._null();
-    
+
     @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, bus = Bus.MOD)
     public static class RegistrationHandler
     {
@@ -577,7 +577,10 @@ public class ModBlocks
             registry.register(setup(new GunpowderBlock(), Names.GUNPOWDER_BLOCK));
             registry.register(setup(new FallingBlock(Properties.from(Blocks.SAND).sound(SoundType.SNOW)), Names.BLAZE_POWDER_BLOCK));
             registry.register(setup(new SlimeBlock(Properties.from(Blocks.SLIME_BLOCK)), Names.MAGMA_CREAM_BLOCK));
-            registry.register(setup(new Block(Properties.create(Material.GLASS, MaterialColor.CYAN).hardnessAndResistance(0.3F, 0.5F).sound(SoundType.GLASS).setLightLevel((lightValue) ->{ return 5; })), Names.PRISMARINE_CRYSTAL_BLOCK));
+            registry.register(setup(new Block(Properties.create(Material.GLASS, MaterialColor.CYAN).hardnessAndResistance(0.3F, 0.5F).sound(SoundType.GLASS).setLightLevel((lightValue) ->
+            {
+                return 5;
+            })), Names.PRISMARINE_CRYSTAL_BLOCK));
             registry.register(setup(new RotatedPillarBlock(Block.Properties.create(Material.ROCK, MaterialColor.BLACK).sound(SoundType.BONE).hardnessAndResistance(1.8F, 3.33F)), Names.WITHER_BONE_BLOCK));
             registry.register(setup(new Block(Properties.create(Material.ROCK, MaterialColor.WOOL).hardnessAndResistance(3.0F, 5.0F)), Names.WHITE_DYE_BLOCK));
             registry.register(setup(new Block(Properties.create(Material.ROCK, MaterialColor.ADOBE).hardnessAndResistance(3.0F, 5.0F)), Names.ORANGE_DYE_BLOCK));

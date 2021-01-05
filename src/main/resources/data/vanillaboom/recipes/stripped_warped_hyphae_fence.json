@@ -13,7 +13,7 @@
       "item": "minecraft:stripped_warped_hyphae"
     },
     "y": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
     }
   }
 }

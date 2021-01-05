@@ -10,7 +10,7 @@
   "type": "minecraft:crafting_shaped",
   "key": {
     "x": {
-      "item": "vanillaboom:wither_bone"
+      "tag": "forge:wither_bones"
     }
   }
 }

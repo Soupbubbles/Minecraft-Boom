@@ -36,7 +36,7 @@ public class VanillaBoom
     {
         JsonAssetsGenerator.init();
         JsonDataGenerator.init();
-        
+
         Utils.addCompostMaterial(0.35F, ModItems.PINECONE);
         Utils.addCompostMaterial(0.5F, ModItems.PUMPKIN_SLICE);
         Utils.addCompostMaterial(0.65F, ModBlocks.ROSE);

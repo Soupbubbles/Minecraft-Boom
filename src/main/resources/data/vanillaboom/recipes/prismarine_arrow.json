@@ -13,10 +13,10 @@
       "item": "minecraft:prismarine_shard"
     },
     "y": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
     },
     "z": {
-      "item": "minecraft:feather"
+      "tag": "forge:feathers"
     }
   }
 }

@@ -5,7 +5,7 @@
   },
   "ingredients": [
     {
-      "item": "vanillaboom:wither_bone"
+      "tag": "forge:wither_bones"
     }
   ],
   "type": "minecraft:crafting_shapeless"

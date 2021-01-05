@@ -13,7 +13,7 @@
       "item": "minecraft:stripped_dark_oak_wood"
     },
     "y": {
-      "item": "minecraft:stick"
+      "tag": "forge:rods/wooden"
     }
   }
 }

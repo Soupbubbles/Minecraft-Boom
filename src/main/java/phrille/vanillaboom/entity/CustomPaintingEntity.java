@@ -8,12 +8,14 @@ import net.minecraft.entity.item.PaintingEntity;
 import net.minecraft.entity.item.PaintingType;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.network.IPacket;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
@@ -62,6 +64,12 @@ public class CustomPaintingEntity extends PaintingEntity implements IEntityAddit
     }
 
     @Override
+    public ItemStack getPickedResult(RayTraceResult target)
+    {
+        return new ItemStack(getDrop());
+    }
+
+    @Override
     public EntityType<?> getType()
     {
         return ModEntities.CUSTOM_PAINTING;
@@ -91,114 +99,114 @@ public class CustomPaintingEntity extends PaintingEntity implements IEntityAddit
         hangingPosition = new BlockPos(additionalData.readInt(), additionalData.readInt(), additionalData.readInt());
         updateFacingWithBoundingBox(facingDirection);
     }
-    
+
     public Item getDrop()
     {
-        if (art == PaintingType.ALBAN) 
+        if (art == PaintingType.ALBAN)
         {
             return ModItems.ALBAN_PAINTING;
         }
-        else if (art == PaintingType.AZTEC) 
+        else if (art == PaintingType.AZTEC)
         {
             return ModItems.AZTEC_PAINTING;
         }
-        else if (art == PaintingType.AZTEC2) 
+        else if (art == PaintingType.AZTEC2)
         {
             return ModItems.AZTEC2_PAINTING;
         }
-        else if (art == PaintingType.BOMB) 
+        else if (art == PaintingType.BOMB)
         {
             return ModItems.BOMB_PAINTING;
         }
-        else if (art == PaintingType.BURNING_SKULL) 
+        else if (art == PaintingType.BURNING_SKULL)
         {
             return ModItems.BURNING_SKULL_PAINTING;
         }
-        else if (art == PaintingType.BUST) 
+        else if (art == PaintingType.BUST)
         {
             return ModItems.BUST_PAINTING;
         }
-        else if (art == PaintingType.COURBET) 
+        else if (art == PaintingType.COURBET)
         {
             return ModItems.COURBET_PAINTING;
         }
-        else if (art == PaintingType.CREEBET) 
+        else if (art == PaintingType.CREEBET)
         {
             return ModItems.CREEBET_PAINTING;
         }
-        else if (art == PaintingType.DONKEY_KONG) 
+        else if (art == PaintingType.DONKEY_KONG)
         {
             return ModItems.DONKEY_KONG_PAINTING;
         }
-        else if (art == PaintingType.FIGHTERS) 
+        else if (art == PaintingType.FIGHTERS)
         {
             return ModItems.FIGHTERS_PAINTING;
         }
-        else if (art == PaintingType.GRAHAM) 
+        else if (art == PaintingType.GRAHAM)
         {
             return ModItems.GRAHAM_PAINTING;
         }
-        else if (art == PaintingType.KEBAB) 
+        else if (art == PaintingType.KEBAB)
         {
             return ModItems.KEBAB_PAINTING;
         }
-        else if (art == PaintingType.MATCH) 
+        else if (art == PaintingType.MATCH)
         {
             return ModItems.MATCH_PAINTING;
         }
-        else if (art == PaintingType.PIGSCENE) 
+        else if (art == PaintingType.PIGSCENE)
         {
             return ModItems.PIGSCENE_PAINTING;
         }
-        else if (art == PaintingType.PLANT) 
+        else if (art == PaintingType.PLANT)
         {
             return ModItems.PLANT_PAINTING;
         }
-        else if (art == PaintingType.POINTER) 
+        else if (art == PaintingType.POINTER)
         {
             return ModItems.POINTER_PAINTING;
         }
-        else if (art == PaintingType.POOL) 
+        else if (art == PaintingType.POOL)
         {
             return ModItems.POOL_PAINTING;
         }
-        else if (art == PaintingType.SEA) 
+        else if (art == PaintingType.SEA)
         {
             return ModItems.SEA_PAINTING;
         }
-        else if (art == PaintingType.SKELETON) 
+        else if (art == PaintingType.SKELETON)
         {
             return ModItems.SKELETON_PAINTING;
         }
-        else if (art == PaintingType.SKULL_AND_ROSES) 
+        else if (art == PaintingType.SKULL_AND_ROSES)
         {
             return ModItems.SKULL_AND_ROSES_PAINTING;
         }
-        else if (art == PaintingType.STAGE) 
+        else if (art == PaintingType.STAGE)
         {
             return ModItems.STAGE_PAINTING;
         }
-        else if (art == PaintingType.SUNSET) 
+        else if (art == PaintingType.SUNSET)
         {
             return ModItems.SUNSET_PAINTING;
         }
-        else if (art == PaintingType.VOID) 
+        else if (art == PaintingType.VOID)
         {
             return ModItems.VOID_PAINTING;
         }
-        else if (art == PaintingType.WANDERER) 
+        else if (art == PaintingType.WANDERER)
         {
             return ModItems.WANDERER_PAINTING;
         }
-        else if (art == PaintingType.WASTELAND) 
+        else if (art == PaintingType.WASTELAND)
         {
             return ModItems.WASTELAND_PAINTING;
         }
-        else if (art == PaintingType.WITHER) 
+        else if (art == PaintingType.WITHER)
         {
             return ModItems.WITHER_PAINTING;
         }
-        
+
         return null;
     }
 }

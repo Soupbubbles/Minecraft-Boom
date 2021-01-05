@@ -13,14 +13,10 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
-import net.minecraft.item.DyeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.init.ModItems;
-import phrille.vanillaboom.item.PaintingItem;
 
 public class JsonDataGenerator
 {
@@ -30,44 +26,7 @@ public class JsonDataGenerator
 
     public static void init()
     {
-        /*
-        addPaintingRecipe(ModItems.KEBAB_PAINTING, "red", "lime", Items.COOKED_MUTTON, "s");
-        addPaintingRecipe(ModItems.AZTEC_PAINTING, "gray", "lime", Items.FLINT, "s");
-        addPaintingRecipe(ModItems.ALBAN_PAINTING, "yellow", "green", Items.MAGMA_CREAM, "s");
-        addPaintingRecipe(ModItems.AZTEC2_PAINTING, "blue", "green", Items.POISONOUS_POTATO, "s");
-        addPaintingRecipe(ModItems.BOMB_PAINTING, "yellow", "light_blue", Blocks.TNT, "s");
-        addPaintingRecipe(ModItems.PLANT_PAINTING, "green", "light_blue", Blocks.FLOWER_POT, "s");
-        addPaintingRecipe(ModItems.WASTELAND_PAINTING, "white", "yellow", Blocks.SAND, "s");
-        
-        addPaintingRecipe(ModItems.WANDERER_PAINTING, "black", "white", Items.LEATHER_BOOTS, "v");
-        addPaintingRecipe(ModItems.GRAHAM_PAINTING, "black", "red", Items.COOKIE, "v");
-
-        addPaintingRecipe(ModItems.POOL_PAINTING, "brown", "blue", Items.WATER_BUCKET, "h");
-        addPaintingRecipe(ModItems.COURBET_PAINTING, "white", "black", Blocks.BIRCH_WOOD, "h");
-        addPaintingRecipe(ModItems.SEA_PAINTING, "blue", "lime", Items.PRISMARINE_SHARD, "h");
-        addPaintingRecipe(ModItems.SUNSET_PAINTING, "light_blue", "orange", Items.GLOWSTONE_DUST, "h");
-        addPaintingRecipe(ModItems.CREEBET_PAINTING, "blue", "lime", Items.GUNPOWDER, "h");
-        addPaintingRecipe(ModItems.CREEBET_PAINTING, "blue", "lime", Items.CREEPER_HEAD, "h", 64);
-
-        addPaintingRecipe(ModItems.MATCH_PAINTING, "brown", "orange", Items.FLINT_AND_STEEL, "m");
-        addPaintingRecipe(ModItems.BUST_PAINTING, "black", "orange", Blocks.POLISHED_DIORITE, "m");
-        addPaintingRecipe(ModItems.STAGE_PAINTING, "black", "white", Items.STRING, "m");
-        addPaintingRecipe(ModItems.VOID_PAINTING, "black", "magenta", Blocks.OBSIDIAN, "m");
-        addPaintingRecipe(ModItems.SKULL_AND_ROSES_PAINTING, "cyan", "red", Items.BONE, "m");
-        addPaintingRecipe(ModItems.SKULL_AND_ROSES_PAINTING, "cyan", "red", Items.SKELETON_SKULL, "m", 64);
-        addPaintingRecipe(ModItems.WITHER_PAINTING, "red", "green", ModItems.WITHER_BONE, "m");
-        addPaintingRecipe(ModItems.WITHER_PAINTING, "red", "green", Items.WITHER_SKELETON_SKULL, "m", 64);
-
-        addPaintingRecipe(ModItems.POINTER_PAINTING, "white", "orange", Items.SNOWBALL, "l");
-        addPaintingRecipe(ModItems.PIGSCENE_PAINTING, "black", "orange", Items.PORKCHOP, "l");
-        addPaintingRecipe(ModItems.BURNING_SKULL_PAINTING, "green", "blue", Items.BONE, "l");
-        addPaintingRecipe(ModItems.BURNING_SKULL_PAINTING, "green", "blue", Items.SKELETON_SKULL, "l", 64);
-        addPaintingRecipe(ModItems.SKELETON_PAINTING, "white", "orange", Items.BONE, "l");
-        addPaintingRecipe(ModItems.SKELETON_PAINTING, "white", "orange", Items.SKELETON_SKULL, "l", 64);
-        addPaintingRecipe(ModItems.DONKEY_KONG_PAINTING, "black", "pink", Blocks.BARREL, "l");
-        addPaintingRecipe(ModItems.FIGHTERS_PAINTING, "green", "orange", Items.IRON_SWORD, "dsd");
-        */
-   }
+    }
 
     private static void addPaintingRecipe(Item painting, String dye1, String dye2, Object special, String size)
     {
@@ -302,17 +261,35 @@ public class JsonDataGenerator
         public static final List<String> WALLS = new ArrayList<String>();
         private static final File TAGS_DIR = new File(RESOURCE_DIR + "data/minecraft/tags/blocks");
 
-        /**
-         * Method for generating tags in data/minecraft/tags/block/walls.json Do
-         * not call since it will override the file with an empty one
-         */
         public static void wallTags()
         {
             Map<String, Object> json = new LinkedHashMap();
             json.put("replace", false);
             json.put("values", WALLS);
 
-            writeFile(json, TAGS_DIR, "walls", true);
+            writeFile(json, TAGS_DIR, "walls");
+        }
+
+        public static final List<String> SLABS = new ArrayList<String>();
+
+        public static void slabTags()
+        {
+            Map<String, Object> json = new LinkedHashMap();
+            json.put("replace", false);
+            json.put("values", SLABS);
+
+            writeFile(json, TAGS_DIR, "slabs");
+        }
+
+        public static final List<String> STAIRS = new ArrayList<String>();
+
+        public static void stairTags()
+        {
+            Map<String, Object> json = new LinkedHashMap();
+            json.put("replace", false);
+            json.put("values", STAIRS);
+
+            writeFile(json, TAGS_DIR, "stairs");
         }
     }
 
