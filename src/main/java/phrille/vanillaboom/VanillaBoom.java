@@ -3,16 +3,16 @@ package phrille.vanillaboom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
-import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import phrille.vanillaboom.client.renderer.ModRenderers;
 import phrille.vanillaboom.init.ModBlocks;
+import phrille.vanillaboom.init.ModFeatures;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.util.JsonAssetsGenerator;
 import phrille.vanillaboom.util.JsonDataGenerator;
@@ -26,10 +26,14 @@ public class VanillaBoom
 
     public VanillaBoom()
     {
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::setup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::enqueueIMC);
-        FMLJavaModLoadingContext.get().getModEventBus().addListener(this::processIMC);
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        modEventBus.addListener(this::setup);
+        modEventBus.addListener(this::clientSetup);
+        modEventBus.addListener(this::enqueueIMC);
+        modEventBus.addListener(this::processIMC);
+
+        ModFeatures.initialise(modEventBus);
     }
 
     public void setup(FMLCommonSetupEvent event)
@@ -52,11 +56,6 @@ public class VanillaBoom
     }
 
     private void processIMC(InterModProcessEvent event)
-    {
-    }
-
-    @SubscribeEvent
-    public void onServerStarting(FMLServerStartingEvent event)
     {
     }
 }

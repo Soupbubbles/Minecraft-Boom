@@ -24,6 +24,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.VanillaBoomTab;
 import phrille.vanillaboom.item.PaintingItem;
 import phrille.vanillaboom.item.PrismarineArrowItem;
 import phrille.vanillaboom.lib.Names;

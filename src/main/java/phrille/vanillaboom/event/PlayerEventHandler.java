@@ -6,6 +6,8 @@ import net.minecraft.block.DirectionalBlock;
 import net.minecraft.block.NetherWartBlock;
 import net.minecraft.block.PistonBlock;
 import net.minecraft.block.PistonHeadBlock;
+import net.minecraft.block.StairsBlock;
+import net.minecraft.block.pattern.BlockStateMatcher;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
@@ -21,6 +23,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.util.Utils;
 
 @Mod.EventBusSubscriber

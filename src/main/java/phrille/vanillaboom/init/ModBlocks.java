@@ -803,12 +803,12 @@ public class ModBlocks
             registry.register(setup(new FlowerPotBlock(flower, Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F)), "potted_" + name));
         }
 
-        public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name)
+        public static <T extends IForgeRegistryEntry<T>> T setup(T entry, String name)
         {
             return setup(entry, new ResourceLocation(VanillaBoom.MOD_ID, name));
         }
 
-        public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final ResourceLocation registryName)
+        public static <T extends IForgeRegistryEntry<T>> T setup(T entry, ResourceLocation registryName)
         {
             entry.setRegistryName(registryName);
             return entry;

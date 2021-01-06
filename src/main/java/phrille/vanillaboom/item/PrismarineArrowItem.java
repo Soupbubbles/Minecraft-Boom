@@ -6,8 +6,8 @@ import net.minecraft.item.ArrowItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import phrille.vanillaboom.VanillaBoomTab;
 import phrille.vanillaboom.entity.PrismarineArrowEntity;
-import phrille.vanillaboom.init.VanillaBoomTab;
 
 public class PrismarineArrowItem extends ArrowItem
 {
