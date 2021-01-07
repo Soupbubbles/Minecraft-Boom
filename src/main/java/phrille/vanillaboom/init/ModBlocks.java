@@ -78,6 +78,9 @@ public class ModBlocks
     public static final Block POLISHED_NETHERRACK = Utils._null();
     public static final Block CHISELED_OBSIDIAN = Utils._null();
 
+    public static final Block CRACKED_RED_NETHER_BRICKS = Utils._null();
+    public static final Block CHISELED_RED_NETHER_BRICKS = Utils._null();
+
     //Pillars
     public static final Block GRANITE_PILLAR = Utils._null();
     public static final Block DIORITE_PILLAR = Utils._null();
@@ -202,6 +205,8 @@ public class ModBlocks
     public static final Block POLISHED_END_STONE_STAIRS = Utils._null();
     public static final Block POLISHED_NETHERRACK_STAIRS = Utils._null();
     public static final Block CHISELED_OBSIDIAN_STAIRS = Utils._null();
+    public static final Block CRACKED_RED_NETHER_BRICK_STAIRS = Utils._null();
+    public static final Block CHISELED_RED_NETHER_BRICK_STAIRS = Utils._null();
 
     //Vanilla Stairs
     public static final Block CRACKED_STONE_BRICK_STAIRS = Utils._null();
@@ -304,6 +309,8 @@ public class ModBlocks
     public static final Block POLISHED_END_STONE_SLAB = Utils._null();
     public static final Block POLISHED_NETHERRACK_SLAB = Utils._null();
     public static final Block CHISELED_OBSIDIAN_SLAB = Utils._null();
+    public static final Block CRACKED_RED_NETHER_BRICK_SLAB = Utils._null();
+    public static final Block CHISELED_RED_NETHER_BRICK_SLAB = Utils._null();
 
     //Vanilla Slabs
     public static final Block CRACKED_STONE_BRICK_SLAB = Utils._null();
@@ -403,6 +410,8 @@ public class ModBlocks
     public static final Block POLISHED_END_STONE_WALL = Utils._null();
     public static final Block POLISHED_NETHERRACK_WALL = Utils._null();
     public static final Block CHISELED_OBSIDIAN_WALL = Utils._null();
+    public static final Block CRACKED_RED_NETHER_BRICK_WALL = Utils._null();
+    public static final Block CHISELED_RED_NETHER_BRICK_WALL = Utils._null();
 
     //Vanilla Walls
     public static final Block CRACKED_STONE_BRICK_WALL = Utils._null();
@@ -550,6 +559,9 @@ public class ModBlocks
             createSpecialBlock(registry, Properties.from(Blocks.END_STONE), Names.POLISHED_END_STONE);
             createSpecialBlock(registry, Properties.from(Blocks.NETHERRACK), Names.POLISHED_NETHERRACK);
             createSpecialBlock(registry, Properties.from(Blocks.OBSIDIAN), Names.CHISELED_OBSIDIAN);
+
+            createSpecialBlock(registry, Properties.from(Blocks.RED_NETHER_BRICKS), Names.CRACKED_RED_NETHER_BRICKS);
+            createSpecialBlock(registry, Properties.from(Blocks.RED_NETHER_BRICKS), Names.CHISELED_RED_NETHER_BRICKS);
 
             //Pillars
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.GRANITE)), Names.GRANITE_PILLAR));

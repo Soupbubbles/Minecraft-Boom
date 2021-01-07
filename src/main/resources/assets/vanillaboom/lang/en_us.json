@@ -39,6 +39,9 @@
     "block.vanillaboom.polished_end_stone": "Polished End Stone",
     "block.vanillaboom.polished_netherrack": "Polished Netherrack",
     "block.vanillaboom.chiseled_obsidian": "Chiseled Obsidian",
+  
+    "block.vanillaboom.cracked_red_nether_bricks": "Cracked Red Nether Bricks",
+    "block.vanillaboom.chiseled_red_nether_bricks": "Chiseled Red Nether Bricks",
     
     "block.vanillaboom.granite_pillar": "Granite Pillar",
     "block.vanillaboom.diorite_pillar": "Diorite Pillar",
@@ -157,7 +160,9 @@
     "block.vanillaboom.polished_end_stone_stairs": "Polished End Stone Stairs",
     "block.vanillaboom.polished_netherrack_stairs": "Polished Netherrack Stairs",
     "block.vanillaboom.chiseled_obsidian_stairs": "Chiseled Obsidian Stairs",
-    
+    "block.vanillaboom.cracked_red_nether_brick_stairs": "Cracked Red Nether Brick Stairs",
+    "block.vanillaboom.chiseled_red_nether_brick_stairs": "Chiseled Red Nether Brick Stairs",
+        
     "block.vanillaboom.cobblestone_brick_slab": "Cobblestone Brick Slab",
     "block.vanillaboom.mossy_cobblestone_brick_slab": "Mossy Cobblestone Brick Slab",
     "block.vanillaboom.magma_brick_slab": "Magma Brick Slab",
@@ -188,6 +193,8 @@
     "block.vanillaboom.polished_end_stone_slab": "Polished End Stone Slab",
     "block.vanillaboom.polished_netherrack_slab": "Polished Netherrack Slab",
     "block.vanillaboom.chiseled_obsidian_slab": "Chiseled Obsidian Slab",
+    "block.vanillaboom.cracked_red_nether_brick_slab": "Cracked Red Nether Brick Slab",
+    "block.vanillaboom.chiseled_red_nether_brick_slab": "Chiseled Red Nether Brick Slab",    
     
     "block.vanillaboom.cobblestone_brick_wall": "Cobblestone Brick Wall",
     "block.vanillaboom.mossy_cobblestone_brick_wall": "Mossy Cobblestone Brick Wall",
@@ -219,7 +226,9 @@
     "block.vanillaboom.polished_end_stone_wall": "Polished End Stone Wall",
     "block.vanillaboom.polished_netherrack_wall": "Polished Netherrack Wall",
     "block.vanillaboom.chiseled_obsidian_wall": "Chiseled Obsidian Wall",
-    
+    "block.vanillaboom.cracked_red_nether_brick_wall": "Cracked Red Nether Brick Wall",
+    "block.vanillaboom.chiseled_red_nether_brick_wall": "Chiseled Red Nether Brick Wall",
+        
     "block.vanillaboom.cracked_stone_brick_stairs": "Cracked Stone Brick Stairs",
     "block.vanillaboom.chiseled_stone_brick_stairs": "Chiseled Stone Brick Stairs",
     "block.vanillaboom.chiseled_sandstone_stairs": "Chiseled Sandstone Stairs",

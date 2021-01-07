@@ -93,6 +93,8 @@
     "vanillaboom:quartz_block_wall",
     "vanillaboom:smooth_quartz_wall",
     "vanillaboom:prismarine_brick_wall",
-    "vanillaboom:dark_prismarine_wall"
+    "vanillaboom:dark_prismarine_wall",
+    "vanillaboom:cracked_red_nether_brick_wall",
+    "vanillaboom:chisled_red_nether_brick_wall"
   ]
 }

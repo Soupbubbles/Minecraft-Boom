@@ -38,7 +38,10 @@ public class Names
     public static final String POLISHED_END_STONE = "polished_end_stone";
     public static final String POLISHED_NETHERRACK = "polished_netherrack";
     public static final String CHISELED_OBSIDIAN = "chiseled_obsidian";
-
+    
+    public static final String CRACKED_RED_NETHER_BRICKS = "cracked_red_nether_bricks";
+    public static final String CHISELED_RED_NETHER_BRICKS = "chiseled_red_nether_bricks";
+    
     //Pillar
     public static final String GRANITE_PILLAR = "granite_pillar";
     public static final String DIORITE_PILLAR = "diorite_pillar";

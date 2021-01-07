@@ -35,6 +35,15 @@ public class JsonAssetsGenerator
     {
     }
 
+    //Block with stairs, slab and wall
+    public static void addBlockWithVariantFiles(Block block, Block stairBlock, Block slabBlock, Block wallBlock)
+    {
+        addBasicBlockFiles(block);
+        addStairFiles(stairBlock, block);
+        addSlabFiles(slabBlock, block);
+        addWallFiles(wallBlock, block);
+    }
+
     //Basic Block
     public static void addBasicBlockFiles(Block block)
     {
@@ -91,12 +100,12 @@ public class JsonAssetsGenerator
         BlockStateGenerator.fenceBlockState(fence.getRegistryName().getPath());
         BlockModelGenerator.fenceBlockModel(fence.getRegistryName().getPath(), parent.getRegistryName().getPath());
         ItemModelGenerator.basicItemBlockModel(fence.getRegistryName().getPath() + "_inventory", fence.getRegistryName().getPath());
-        JsonDataGenerator.RecipeGenerator.addShapedRecipe(new ItemStack(fence, 3), "xyx", "xyx", 'x', parent, 'y', Items.STICK);
+        JsonDataGenerator.RecipeGenerator.addShapedRecipe(new ItemStack(fence, 3), "xyx", "xyx", 'x', parent, 'y', "forge:rods/wooden");
         JsonDataGenerator.LootTableGenerator.basicBlockLootTable(fence.getRegistryName().getPath());
         BlockStateGenerator.fenceGateBlockState(fenceGate.getRegistryName().getPath());
         BlockModelGenerator.fenceGateBlockModel(fenceGate.getRegistryName().getPath(), parent.getRegistryName().getPath());
         ItemModelGenerator.basicItemBlockModel(fenceGate.getRegistryName().getPath());
-        JsonDataGenerator.RecipeGenerator.addShapedRecipe(new ItemStack(fenceGate), "xyx", "xyx", 'x', Items.STICK, 'y', parent);
+        JsonDataGenerator.RecipeGenerator.addShapedRecipe(new ItemStack(fenceGate), "xyx", "xyx", 'x', "forge:rods/wooden", 'y', parent);
         JsonDataGenerator.LootTableGenerator.basicBlockLootTable(fenceGate.getRegistryName().getPath());
     }
 
@@ -166,7 +175,7 @@ public class JsonAssetsGenerator
             {
                 Map<String, Object> model = new HashMap();
                 String name2 = i == 2 ? parentName : name + SLAB_SUFFIX[i];
-                model.put("model", (i == 2 ? "minecraft" : VanillaBoom.MOD_ID) + ":block/" + name2);
+                model.put("model", VanillaBoom.MOD_ID + ":block/" + name2);
                 type.put("type=" + SLAB_TYPE[i], model);
             }
 
@@ -351,7 +360,7 @@ public class JsonAssetsGenerator
 
                 for (int k = 0; k < STAIR_SIDE.length; k++)
                 {
-                    textures.put(STAIR_SIDE[k], "minecraft" + ":block/" + parentName);
+                    textures.put(STAIR_SIDE[k], "vanillaboom" + ":block/" + parentName);
                 }
 
                 json.put("textures", textures);
@@ -369,7 +378,7 @@ public class JsonAssetsGenerator
 
                 for (int j = 0; j < STAIR_SIDE.length; j++)
                 {
-                    textures.put(STAIR_SIDE[j], "minecraft" + ":block/" + parentName);
+                    textures.put(STAIR_SIDE[j], "vanillaboom" + ":block/" + parentName);
                 }
 
                 json.put("textures", textures);
@@ -407,7 +416,7 @@ public class JsonAssetsGenerator
                 Map<String, Object> json = new HashMap();
                 Map<String, Object> textures = new HashMap();
                 json.put("parent", "block/" + (i == 2 ? "" : "template_") + "wall_" + WALL_MODELS[i]);
-                textures.put("wall", "minecraft" + ":block/" + parentName);
+                textures.put("wall", "vanillaboom" + ":block/" + parentName);
                 json.put("textures", textures);
                 writeFile(json, BLOCK_MODEL_DIR, name + "_" + WALL_MODELS[i]);
             }
@@ -422,7 +431,7 @@ public class JsonAssetsGenerator
                 Map<String, Object> json = new HashMap();
                 Map<String, Object> textures = new HashMap();
                 json.put("parent", "block/fence_" + FENCE_MODELS[i]);
-                textures.put("texture", "minecraft" + ":block/" + parentName);
+                textures.put("texture", "vanillaboom" + ":block/" + parentName);
                 json.put("textures", textures);
                 writeFile(json, BLOCK_MODEL_DIR, name + "_" + FENCE_MODELS[i]);
             }
@@ -437,7 +446,7 @@ public class JsonAssetsGenerator
                 Map<String, Object> json = new HashMap();
                 Map<String, Object> textures = new HashMap();
                 json.put("parent", "block/template_fence_gate" + FENCE_GATE_MODELS[i]);
-                textures.put("texture", "minecraft" + ":block/" + parentName);
+                textures.put("texture", "vanillaboom" + ":block/" + parentName);
                 json.put("textures", textures);
                 writeFile(json, BLOCK_MODEL_DIR, name + FENCE_GATE_MODELS[i]);
             }
