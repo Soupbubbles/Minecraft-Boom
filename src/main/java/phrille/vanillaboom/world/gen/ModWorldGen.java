@@ -38,17 +38,17 @@ public class ModWorldGen
             {
                 String biomeName = event.getName().getPath();
 
-                if (biomeName.equals("crimson_forest"))
+                if (biomeName.equals("crimson_forest") || biomeName.equals("warped_forest"))
                 {
-                    generation.withFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, getFeature(ModConfiguredFeatures.RED_NETHER_BRICK_WELL));
+                    generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.RED_NETHER_BRICK_WELL));
                 }
-                else if (biomeName.equals("basalt_deltas"))
+                else if (biomeName.equals("soul_sand_valley"))
                 {
-                    generation.withFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, getFeature(ModConfiguredFeatures.BLACKSTONE_WELL));
+                    generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.BLACKSTONE_WELL));
                 }
-                else
+                else if (!biomeName.equals("basalt_deltas"))
                 {
-                    generation.withFeature(GenerationStage.Decoration.SURFACE_STRUCTURES, getFeature(ModConfiguredFeatures.NETHER_BRICK_WELL));
+                    generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.NETHER_BRICK_WELL));
                 }
             }
         }
