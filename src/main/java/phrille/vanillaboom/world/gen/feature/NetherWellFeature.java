@@ -66,7 +66,7 @@ public class NetherWellFeature extends Feature<NetherWellConfig>
                 }
             }
 
-            System.out.println("Nether Well generated at: X: " + pos.getX() + ", Y: " + pos.getY() + ", Z: " + pos.getZ());
+            //System.out.println("Nether Well generated at: X: " + pos.getX() + ", Y: " + pos.getY() + ", Z: " + pos.getZ());
 
             for (int y = -1; y <= 0; ++y)
             {

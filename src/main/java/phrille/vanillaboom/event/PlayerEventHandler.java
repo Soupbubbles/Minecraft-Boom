@@ -23,6 +23,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import phrille.vanillaboom.config.VanillaBoomConfig;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.util.Utils;
 
@@ -44,7 +45,7 @@ public class PlayerEventHandler
 
         if (!stack.isEmpty())
         {
-            if (stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART)
+            if (VanillaBoomConfig.blazePowderAsBonemeal && stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART)
             {
                 int i = state.get(NetherWartBlock.AGE).intValue();
 

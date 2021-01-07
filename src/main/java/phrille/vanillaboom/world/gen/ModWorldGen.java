@@ -20,6 +20,7 @@ import phrille.vanillaboom.init.ModConfiguredFeatures;
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class ModWorldGen
 {
+
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void addFeaturesToBiomes(BiomeLoadingEvent event)
     {
@@ -53,7 +54,7 @@ public class ModWorldGen
             }
         }
     }
-
+    
     private static ConfiguredFeature<?, ?> getFeature(RegistryKey<ConfiguredFeature<?, ?>> key)
     {
         return WorldGenRegistries.CONFIGURED_FEATURE.getOrThrow(key);
