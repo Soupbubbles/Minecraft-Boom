@@ -30,31 +30,41 @@ public class ModWorldGen
 
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.OVERWORLD))
         {
+            generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, getFeature(ModConfiguredFeatures.ORE_PERIDOTITE));
             generation.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, getFeature(ModConfiguredFeatures.ROSE_PATCHES));
         }
 
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.NETHER))
         {
-            if (event.getName() != null)
-            {
-                String biomeName = event.getName().getPath();
+            generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.ORE_INFERNAL_ROCK));
 
-                if (biomeName.equals("crimson_forest") || biomeName.equals("warped_forest"))
+            if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.FOREST))
+            {
+                generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.RED_NETHER_BRICK_WELL));
+            }
+            else
+            {
+                if (event.getName() != null)
                 {
-                    generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.RED_NETHER_BRICK_WELL));
+                    String biomeName = event.getName().getPath();
+
+                    if (biomeName.equals("soul_sand_valley"))
+                    {
+                        generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.BLACKSTONE_WELL));
+                    }
+                    else if (!biomeName.equals("basalt_deltas"))
+                    {
+                        generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.NETHER_BRICK_WELL));
+                    }
                 }
-                else if (biomeName.equals("soul_sand_valley"))
+                else 
                 {
-                    generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.BLACKSTONE_WELL));
-                }
-                else if (!biomeName.equals("basalt_deltas"))
-                {
-                    generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.NETHER_BRICK_WELL));
+                    VanillaBoom.LOGGER.warn("A biome name returned as null, this could lead to problems with world generation");
                 }
             }
         }
     }
-    
+
     private static ConfiguredFeature<?, ?> getFeature(RegistryKey<ConfiguredFeature<?, ?>> key)
     {
         return WorldGenRegistries.CONFIGURED_FEATURE.getOrThrow(key);

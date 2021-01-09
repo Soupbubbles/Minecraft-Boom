@@ -81,6 +81,10 @@
     "vanillaboom:red_concrete_slab",
     "vanillaboom:black_concrete_slab",
     "vanillaboom:cracked_red_nether_brick_slab",
-    "vanillaboom:chiseled_red_nether_brick_slab"
+    "vanillaboom:chiseled_red_nether_brick_slab",
+    "vanillaboom:peridotite_slab",
+    "vanillaboom:polished_peridotite_slab",
+    "vanillaboom:infernal_rock_slab",
+    "vanillaboom:chiseled_purpur_block_slab"
   ]
 }

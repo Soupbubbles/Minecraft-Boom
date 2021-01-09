@@ -26,30 +26,38 @@ public class Names
     public static final String RED_TERRACOTTA_BRICKS = "red_terracotta_bricks";
     public static final String BLACK_TERRACOTTA_BRICKS = "black_terracotta_bricks";
 
+    //Rocks
+    public static final String PERIDOTITE  = "peridotite";
+    public static final String INFERNAL_ROCK  = "infernal_rock";
+
     //Gravel
     public static final String FINE_GRAVEL = "fine_gravel";
     public static final String GRAVEL_STONE = "gravel_stone";
     public static final String FINE_GRAVEL_STONE = "fine_gravel_stone";
     public static final String GRAVEL_BRICKS = "gravel_bricks";
-
+    
     //Polished
+    public static final String POLISHED_PERIDOTITE  = "polished_peridotite";
     public static final String POLISHED_PRISMARINE = "polished_prismarine";
     public static final String POLISHED_DARK_PRISMARINE = "polished_dark_prismarine";
     public static final String POLISHED_END_STONE = "polished_end_stone";
     public static final String POLISHED_NETHERRACK = "polished_netherrack";
-    public static final String CHISELED_OBSIDIAN = "chiseled_obsidian";
     
     public static final String CRACKED_RED_NETHER_BRICKS = "cracked_red_nether_bricks";
     public static final String CHISELED_RED_NETHER_BRICKS = "chiseled_red_nether_bricks";
+    public static final String CHISELED_PURPUR_BLOCK = "chiseled_purpur_block";
+    public static final String CHISELED_OBSIDIAN = "chiseled_obsidian";
     
     //Pillar
     public static final String GRANITE_PILLAR = "granite_pillar";
     public static final String DIORITE_PILLAR = "diorite_pillar";
     public static final String ANDESITE_PILLAR = "andesite_pillar";
+    public static final String PERIDOTITE_PILLAR = "peridotite_pillar";
     public static final String PRISMARINE_PILLAR = "prismarine_pillar";
     public static final String DARK_PRISMARINE_PILLAR = "dark_prismarine_pillar";
     public static final String END_STONE_PILLAR = "end_stone_pillar";
     public static final String NETHERRACK_PILLAR = "netherrack_pillar";
+    public static final String RED_NETHER_PILLAR = "red_nether_pillar";
     public static final String OBSIDIAN_PILLAR = "obsidian_pillar";
 
     //Wood Variations

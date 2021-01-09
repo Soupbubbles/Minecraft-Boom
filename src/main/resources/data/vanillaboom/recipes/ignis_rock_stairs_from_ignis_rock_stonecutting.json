@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "vanillaboom:ignis_rock"
+  },
+  "result": "vanillaboom:ignis_rock_stairs",
+  "count": 1
+}

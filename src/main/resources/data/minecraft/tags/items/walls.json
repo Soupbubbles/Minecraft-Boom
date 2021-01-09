@@ -95,6 +95,10 @@
     "vanillaboom:prismarine_brick_wall",
     "vanillaboom:dark_prismarine_wall",
     "vanillaboom:cracked_red_nether_brick_wall",
-    "vanillaboom:chiseled_red_nether_brick_wall"
+    "vanillaboom:chiseled_red_nether_brick_wall",
+    "vanillaboom:peridotite_wall",
+    "vanillaboom:polished_peridotite_wall",
+    "vanillaboom:infernal_rock_wall",
+    "vanillaboom:chiseled_purpur_block_wall"
   ]
 }

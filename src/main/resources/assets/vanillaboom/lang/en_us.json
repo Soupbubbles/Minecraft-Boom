@@ -29,27 +29,34 @@
     "block.vanillaboom.red_terracotta_bricks": "Red Terracotta Bricks",
     "block.vanillaboom.black_terracotta_bricks": "Black Terracotta Bricks",
     
+    "block.vanillaboom.peridotite": "Peridotite",
+    "block.vanillaboom.infernal_rock": "Infernal Rock",
+            
     "block.vanillaboom.fine_gravel": "Fine Gravel",
     "block.vanillaboom.gravel_stone": "Gravel Stone",
     "block.vanillaboom.fine_gravel_stone": "Fine Gravel Stone",
     "block.vanillaboom.gravel_bricks": "Gravel Bricks",
     
+    "block.vanillaboom.polished_peridotite": "Polished Peridotite",
     "block.vanillaboom.polished_prismarine": "Polished Prismarine",
     "block.vanillaboom.polished_dark_prismarine": "Polished Dark Prismarine",
     "block.vanillaboom.polished_end_stone": "Polished End Stone",
     "block.vanillaboom.polished_netherrack": "Polished Netherrack",
-    "block.vanillaboom.chiseled_obsidian": "Chiseled Obsidian",
-  
+
     "block.vanillaboom.cracked_red_nether_bricks": "Cracked Red Nether Bricks",
     "block.vanillaboom.chiseled_red_nether_bricks": "Chiseled Red Nether Bricks",
-    
+    "block.vanillaboom.chiseled_purpur_block": "Chiseled Purpur Block",
+    "block.vanillaboom.chiseled_obsidian": "Chiseled Obsidian",
+        
     "block.vanillaboom.granite_pillar": "Granite Pillar",
     "block.vanillaboom.diorite_pillar": "Diorite Pillar",
     "block.vanillaboom.andesite_pillar": "Andesite Pillar",
+    "block.vanillaboom.peridotite_pillar": "Peridotite Pillar",
     "block.vanillaboom.prismarine_pillar": "Prismarine Pillar",
     "block.vanillaboom.dark_prismarine_pillar": "Dark Prismarine Pillar",
     "block.vanillaboom.end_stone_pillar": "End Stone Pillar",
     "block.vanillaboom.netherrack_pillar": "Netherrack Pillar",
+    "block.vanillaboom.red_nether_pillar": "Red Nether Pillar",
     "block.vanillaboom.obsidian_pillar": "Obsidian Pillar",
     
     "block.vanillaboom.spruce_bookshelf": "Spruce Bookshelf",
@@ -162,7 +169,11 @@
     "block.vanillaboom.chiseled_obsidian_stairs": "Chiseled Obsidian Stairs",
     "block.vanillaboom.cracked_red_nether_brick_stairs": "Cracked Red Nether Brick Stairs",
     "block.vanillaboom.chiseled_red_nether_brick_stairs": "Chiseled Red Nether Brick Stairs",
-        
+    "block.vanillaboom.peridotite_stairs": "Peridotite Stairs",
+    "block.vanillaboom.polished_peridotite_stairs": "Polished Peridotite Stairs",
+    "block.vanillaboom.infernal_rock_stairs": "Infernal Rock Stairs",
+    "block.vanillaboom.chiseled_purpur_block_stairs": "Chiseled Purpur Block Stairs",
+            
     "block.vanillaboom.cobblestone_brick_slab": "Cobblestone Brick Slab",
     "block.vanillaboom.mossy_cobblestone_brick_slab": "Mossy Cobblestone Brick Slab",
     "block.vanillaboom.magma_brick_slab": "Magma Brick Slab",
@@ -195,7 +206,11 @@
     "block.vanillaboom.chiseled_obsidian_slab": "Chiseled Obsidian Slab",
     "block.vanillaboom.cracked_red_nether_brick_slab": "Cracked Red Nether Brick Slab",
     "block.vanillaboom.chiseled_red_nether_brick_slab": "Chiseled Red Nether Brick Slab",    
-    
+    "block.vanillaboom.peridotite_slab": "Peridotite Slab",
+    "block.vanillaboom.polished_peridotite_slab": "Polished Peridotite Slab",
+    "block.vanillaboom.infernal_rock_slab": "Infernal Rock Slab",
+    "block.vanillaboom.chiseled_purpur_block_slab": "Chiseled Purpur Block Slab",
+        
     "block.vanillaboom.cobblestone_brick_wall": "Cobblestone Brick Wall",
     "block.vanillaboom.mossy_cobblestone_brick_wall": "Mossy Cobblestone Brick Wall",
     "block.vanillaboom.magma_brick_wall": "Magma Brick Wall",
@@ -227,7 +242,11 @@
     "block.vanillaboom.polished_netherrack_wall": "Polished Netherrack Wall",
     "block.vanillaboom.chiseled_obsidian_wall": "Chiseled Obsidian Wall",
     "block.vanillaboom.cracked_red_nether_brick_wall": "Cracked Red Nether Brick Wall",
-    "block.vanillaboom.chiseled_red_nether_brick_wall": "Chiseled Red Nether Brick Wall",
+    "block.vanillaboom.chiseled_red_nether_brick_wall": "Chiseled Red Nether Brick Wall",    
+    "block.vanillaboom.peridotite_wall": "Peridotite Wall",
+    "block.vanillaboom.polished_peridotite_wall": "Polished Peridotite Wall",
+    "block.vanillaboom.infernal_rock_wall": "Infernal Rock Wall",
+    "block.vanillaboom.chiseled_purpur_block_wall": "Chiseled Purpur Block Wall",
         
     "block.vanillaboom.cracked_stone_brick_stairs": "Cracked Stone Brick Stairs",
     "block.vanillaboom.chiseled_stone_brick_stairs": "Chiseled Stone Brick Stairs",

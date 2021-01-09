@@ -84,6 +84,10 @@
     "vanillaboom:cut_red_sandstone_stairs",
     "vanillaboom:smooth_stone_stairs",
     "vanillaboom:cracked_red_nether_brick_stairs",
-    "vanillaboom:chiseled_red_nether_brick_stairs"
+    "vanillaboom:chiseled_red_nether_brick_stairs",
+    "vanillaboom:peridotite_stairs",
+    "vanillaboom:polished_peridotite_stairs",
+    "vanillaboom:infernal_rock_stairs",
+    "vanillaboom:chiseled_purpur_block_stairs"
   ]
 }

@@ -12,6 +12,8 @@ import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.Feature;
 import net.minecraft.world.gen.feature.FeatureSpreadConfig;
 import net.minecraft.world.gen.feature.Features;
+import net.minecraft.world.gen.feature.OreFeatureConfig;
+import net.minecraft.world.gen.placement.NoPlacementConfig;
 import net.minecraft.world.gen.placement.Placement;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -23,7 +25,12 @@ import phrille.vanillaboom.world.gen.feature.NetherWellConfig;
 
 public class ModConfiguredFeatures
 {
+    //OverWorld
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_PERIDOTITE = key("ore_peridotite");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ROSE_PATCHES = key("rose_patches");
+    
+    //Nether
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_INFERNAL_ROCK = key("ore_infernal_rock");
     public static final RegistryKey<ConfiguredFeature<?, ?>> NETHER_BRICK_WELL = key("nether_brick_well");
     public static final RegistryKey<ConfiguredFeature<?, ?>> RED_NETHER_BRICK_WELL = key("red_nether_brick_well");
     public static final RegistryKey<ConfiguredFeature<?, ?>> BLACKSTONE_WELL = key("blackstone_well");
@@ -39,8 +46,12 @@ public class ModConfiguredFeatures
         @SubscribeEvent(priority = EventPriority.LOW)
         public static void register(final RegistryEvent.Register<Feature<?>> event)
         {
+            //OverWorld
+            register(ORE_PERIDOTITE, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.BASE_STONE_OVERWORLD, ModBlocks.PERIDOTITE.getDefaultState(), 33)).range(80).square().func_242731_b(10));
             register(ROSE_PATCHES, Feature.FLOWER.withConfiguration((new BlockClusterFeatureConfig.Builder(new SimpleBlockStateProvider(ModBlocks.ROSE.getDefaultState()), SimpleBlockPlacer.PLACER)).tries(32).build()).withPlacement(Features.Placements.VEGETATION_PLACEMENT).withPlacement(Features.Placements.HEIGHTMAP_PLACEMENT));
-
+            
+            //Nether
+            register(ORE_INFERNAL_ROCK, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, ModBlocks.INFERNAL_ROCK.getDefaultState(), 33)).withPlacement(Placement.MAGMA.configure(NoPlacementConfig.INSTANCE)).square().func_242731_b(4));
             register(NETHER_BRICK_WELL, ModFeatures.NETHER_WELL.get().withConfiguration(new NetherWellConfig(Blocks.NETHER_BRICKS.getDefaultState(), Blocks.CHISELED_NETHER_BRICKS.getDefaultState(), Blocks.NETHER_BRICK_STAIRS.getDefaultState(), Blocks.NETHER_BRICK_SLAB.getDefaultState(), Blocks.NETHER_BRICK_WALL.getDefaultState(), Blocks.CRACKED_NETHER_BRICKS.getDefaultState(), ModBlocks.CRACKED_NETHER_BRICK_STAIRS.getDefaultState(), ModBlocks.CRACKED_NETHER_BRICK_SLAB.getDefaultState())).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(1))).chance(50));
             register(RED_NETHER_BRICK_WELL, ModFeatures.NETHER_WELL.get().withConfiguration(new NetherWellConfig(Blocks.RED_NETHER_BRICKS.getDefaultState(), ModBlocks.CHISELED_RED_NETHER_BRICKS.getDefaultState(), Blocks.RED_NETHER_BRICK_STAIRS.getDefaultState(), Blocks.RED_NETHER_BRICK_SLAB.getDefaultState(), Blocks.RED_NETHER_BRICK_WALL.getDefaultState(), ModBlocks.CRACKED_RED_NETHER_BRICKS.getDefaultState(), ModBlocks.CRACKED_RED_NETHER_BRICK_STAIRS.getDefaultState(), ModBlocks.CRACKED_RED_NETHER_BRICK_SLAB.getDefaultState())).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(1))).chance(50));
             register(BLACKSTONE_WELL, ModFeatures.NETHER_WELL.get().withConfiguration(new NetherWellConfig(Blocks.POLISHED_BLACKSTONE_BRICKS.getDefaultState(), Blocks.CHISELED_POLISHED_BLACKSTONE.getDefaultState(), Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS.getDefaultState(), Blocks.POLISHED_BLACKSTONE_BRICK_SLAB.getDefaultState(), Blocks.POLISHED_BLACKSTONE_BRICK_WALL.getDefaultState(), Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS.getDefaultState(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_STAIRS.getDefaultState(), ModBlocks.CRACKED_POLISHED_BLACKSTONE_BRICK_SLAB.getDefaultState())).withPlacement(Placement.COUNT_MULTILAYER.configure(new FeatureSpreadConfig(1))).chance(50));

@@ -65,6 +65,10 @@ public class ModBlocks
     public static final Block RED_TERRACOTTA_BRICKS = Utils._null();
     public static final Block BLACK_TERRACOTTA_BRICKS = Utils._null();
 
+    //Rocks
+    public static final Block PERIDOTITE = Utils._null();
+    public static final Block INFERNAL_ROCK = Utils._null();
+
     //Gravel
     public static final Block FINE_GRAVEL = Utils._null();
     public static final Block GRAVEL_STONE = Utils._null();
@@ -72,23 +76,28 @@ public class ModBlocks
     public static final Block GRAVEL_BRICKS = Utils._null();
 
     //Polished
+    public static final Block POLISHED_PERIDOTITE = Utils._null();
     public static final Block POLISHED_PRISMARINE = Utils._null();
     public static final Block POLISHED_DARK_PRISMARINE = Utils._null();
     public static final Block POLISHED_END_STONE = Utils._null();
     public static final Block POLISHED_NETHERRACK = Utils._null();
-    public static final Block CHISELED_OBSIDIAN = Utils._null();
 
+    //Chiseled and cracked
     public static final Block CRACKED_RED_NETHER_BRICKS = Utils._null();
     public static final Block CHISELED_RED_NETHER_BRICKS = Utils._null();
+    public static final Block CHISELED_PURPUR_BLOCK = Utils._null();
+    public static final Block CHISELED_OBSIDIAN = Utils._null();
 
     //Pillars
     public static final Block GRANITE_PILLAR = Utils._null();
     public static final Block DIORITE_PILLAR = Utils._null();
     public static final Block ANDESITE_PILLAR = Utils._null();
+    public static final Block PERIDOTITE_PILLAR = Utils._null();
     public static final Block PRISMARINE_PILLAR = Utils._null();
     public static final Block DARK_PRISMARINE_PILLAR = Utils._null();
     public static final Block END_STONE_PILLAR = Utils._null();
     public static final Block NETHERRACK_PILLAR = Utils._null();
+    public static final Block RED_NETHER_PILLAR = Utils._null();
     public static final Block OBSIDIAN_PILLAR = Utils._null();
 
     //Wood Variations
@@ -197,16 +206,20 @@ public class ModBlocks
     public static final Block GREEN_TERRACOTTA_BRICK_STAIRS = Utils._null();
     public static final Block RED_TERRACOTTA_BRICK_STAIRS = Utils._null();
     public static final Block BLACK_TERRACOTTA_BRICK_STAIRS = Utils._null();
+    public static final Block PERIDOTITE_STAIRS = Utils._null();
+    public static final Block INFERNAL_ROCK_STAIRS = Utils._null();
     public static final Block GRAVEL_STONE_STAIRS = Utils._null();
     public static final Block FINE_GRAVEL_STONE_STAIRS = Utils._null();
     public static final Block GRAVEL_BRICK_STAIRS = Utils._null();
+    public static final Block POLISHED_PERIDOTITE_STAIRS = Utils._null();
     public static final Block POLISHED_PRISMARINE_STAIRS = Utils._null();
     public static final Block POLISHED_DARK_PRISMARINE_STAIRS = Utils._null();
     public static final Block POLISHED_END_STONE_STAIRS = Utils._null();
     public static final Block POLISHED_NETHERRACK_STAIRS = Utils._null();
-    public static final Block CHISELED_OBSIDIAN_STAIRS = Utils._null();
     public static final Block CRACKED_RED_NETHER_BRICK_STAIRS = Utils._null();
     public static final Block CHISELED_RED_NETHER_BRICK_STAIRS = Utils._null();
+    public static final Block CHISELED_PURPUR_BLOCK_STAIRS = Utils._null();
+    public static final Block CHISELED_OBSIDIAN_STAIRS = Utils._null();
 
     //Vanilla Stairs
     public static final Block CRACKED_STONE_BRICK_STAIRS = Utils._null();
@@ -301,16 +314,21 @@ public class ModBlocks
     public static final Block GREEN_TERRACOTTA_BRICK_SLAB = Utils._null();
     public static final Block RED_TERRACOTTA_BRICK_SLAB = Utils._null();
     public static final Block BLACK_TERRACOTTA_BRICK_SLAB = Utils._null();
+    public static final Block PERIDOTITE_SLAB = Utils._null();
+    public static final Block INFERNAL_ROCK_SLAB = Utils._null();
     public static final Block GRAVEL_STONE_SLAB = Utils._null();
     public static final Block FINE_GRAVEL_STONE_SLAB = Utils._null();
     public static final Block GRAVEL_BRICK_SLAB = Utils._null();
+    public static final Block POLISHED_PERIDOTITE_SLAB = Utils._null();
     public static final Block POLISHED_PRISMARINE_SLAB = Utils._null();
     public static final Block POLISHED_DARK_PRISMARINE_SLAB = Utils._null();
     public static final Block POLISHED_END_STONE_SLAB = Utils._null();
     public static final Block POLISHED_NETHERRACK_SLAB = Utils._null();
-    public static final Block CHISELED_OBSIDIAN_SLAB = Utils._null();
     public static final Block CRACKED_RED_NETHER_BRICK_SLAB = Utils._null();
     public static final Block CHISELED_RED_NETHER_BRICK_SLAB = Utils._null();
+    public static final Block CHISELED_PURPUR_BLOCK_SLAB = Utils._null();
+    public static final Block CHISELED_OBSIDIAN_SLAB = Utils._null();
+
 
     //Vanilla Slabs
     public static final Block CRACKED_STONE_BRICK_SLAB = Utils._null();
@@ -402,16 +420,21 @@ public class ModBlocks
     public static final Block GREEN_TERRACOTTA_BRICK_WALL = Utils._null();
     public static final Block RED_TERRACOTTA_BRICK_WALL = Utils._null();
     public static final Block BLACK_TERRACOTTA_BRICK_WALL = Utils._null();
+    public static final Block PERIDOTITE_WALL = Utils._null();
+    public static final Block INFERNAL_ROCK_WALL = Utils._null();
     public static final Block GRAVEL_STONE_WALL = Utils._null();
     public static final Block FINE_GRAVEL_STONE_WALL = Utils._null();
     public static final Block GRAVEL_BRICK_WALL = Utils._null();
+    public static final Block POLISHED_PERIDOTITE_WALL = Utils._null();
     public static final Block POLISHED_PRISMARINE_WALL = Utils._null();
     public static final Block POLISHED_DARK_PRISMARINE_WALL = Utils._null();
     public static final Block POLISHED_END_STONE_WALL = Utils._null();
     public static final Block POLISHED_NETHERRACK_WALL = Utils._null();
-    public static final Block CHISELED_OBSIDIAN_WALL = Utils._null();
+    public static final Block CHISELED_PURPUR_BLOCK_WALL = Utils._null();
     public static final Block CRACKED_RED_NETHER_BRICK_WALL = Utils._null();
     public static final Block CHISELED_RED_NETHER_BRICK_WALL = Utils._null();
+    public static final Block CHISELED_OBSIDIAN_WALL = Utils._null();
+
 
     //Vanilla Walls
     public static final Block CRACKED_STONE_BRICK_WALL = Utils._null();
@@ -547,6 +570,10 @@ public class ModBlocks
             createSpecialBlock(registry, Properties.from(Blocks.RED_TERRACOTTA), Names.RED_TERRACOTTA_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.BLACK_TERRACOTTA), Names.BLACK_TERRACOTTA_BRICKS);
 
+            //Rocks
+            createSpecialBlock(registry, Properties.from(Blocks.ANDESITE), Names.PERIDOTITE);
+            createSpecialBlock(registry, Properties.from(Blocks.NETHERRACK), Names.INFERNAL_ROCK);
+
             //Gravel
             registry.register(setup(new FallingBlock(Properties.from(Blocks.GRAVEL)), Names.FINE_GRAVEL));
             createSpecialBlock(registry, Properties.from(Blocks.STONE), Names.GRAVEL_STONE);
@@ -554,23 +581,28 @@ public class ModBlocks
             createSpecialBlock(registry, Properties.from(Blocks.STONE_BRICKS), Names.GRAVEL_BRICKS);
 
             //Polished
+            createSpecialBlock(registry, Properties.from(Blocks.POLISHED_ANDESITE), Names.POLISHED_PERIDOTITE);
             createSpecialBlock(registry, Properties.from(Blocks.PRISMARINE), Names.POLISHED_PRISMARINE);
             createSpecialBlock(registry, Properties.from(Blocks.DARK_PRISMARINE), Names.POLISHED_DARK_PRISMARINE);
             createSpecialBlock(registry, Properties.from(Blocks.END_STONE), Names.POLISHED_END_STONE);
             createSpecialBlock(registry, Properties.from(Blocks.NETHERRACK), Names.POLISHED_NETHERRACK);
-            createSpecialBlock(registry, Properties.from(Blocks.OBSIDIAN), Names.CHISELED_OBSIDIAN);
 
+            //Chiseled and cracked
+            createSpecialBlock(registry, Properties.from(Blocks.PURPUR_BLOCK), Names.CHISELED_PURPUR_BLOCK);
             createSpecialBlock(registry, Properties.from(Blocks.RED_NETHER_BRICKS), Names.CRACKED_RED_NETHER_BRICKS);
             createSpecialBlock(registry, Properties.from(Blocks.RED_NETHER_BRICKS), Names.CHISELED_RED_NETHER_BRICKS);
+            createSpecialBlock(registry, Properties.from(Blocks.OBSIDIAN), Names.CHISELED_OBSIDIAN);
 
             //Pillars
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.GRANITE)), Names.GRANITE_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.DIORITE)), Names.DIORITE_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.ANDESITE)), Names.ANDESITE_PILLAR));
+            registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.ANDESITE)), Names.PERIDOTITE_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.PRISMARINE)), Names.PRISMARINE_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.DARK_PRISMARINE)), Names.DARK_PRISMARINE_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.END_STONE)), Names.END_STONE_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.NETHERRACK)), Names.NETHERRACK_PILLAR));
+            registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.RED_NETHER_BRICKS)), Names.RED_NETHER_PILLAR));
             registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.OBSIDIAN)), Names.OBSIDIAN_PILLAR));
 
             //Wood Variations
