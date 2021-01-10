@@ -31,6 +31,7 @@ public class ModWorldGen
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.OVERWORLD))
         {
             generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, getFeature(ModConfiguredFeatures.ORE_PERIDOTITE));
+            generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, getFeature(ModConfiguredFeatures.ORE_FINE_GRAVEL));
             generation.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, getFeature(ModConfiguredFeatures.ROSE_PATCHES));
         }
 

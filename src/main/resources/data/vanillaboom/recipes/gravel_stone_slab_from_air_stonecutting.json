@@ -1,8 +1,0 @@
-{
-  "type": "minecraft:stonecutting",
-  "ingredient": {
-    "item": "minecraft:air"
-  },
-  "result": "vanillaboom:gravel_stone_slab",
-  "count": 2
-}

@@ -6,12 +6,11 @@ import net.minecraft.block.DirectionalBlock;
 import net.minecraft.block.NetherWartBlock;
 import net.minecraft.block.PistonBlock;
 import net.minecraft.block.PistonHeadBlock;
-import net.minecraft.block.StairsBlock;
-import net.minecraft.block.pattern.BlockStateMatcher;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.ShovelItem;
+import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.state.properties.PistonType;
 import net.minecraft.util.Direction;
@@ -24,6 +23,7 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import phrille.vanillaboom.config.VanillaBoomConfig;
+import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.util.Utils;
 
@@ -38,7 +38,7 @@ public class PlayerEventHandler
         BlockState state = world.getBlockState(pos);
         ItemStack stack = event.getItemStack();
 
-        if (event.isCanceled())
+        if (event.isCanceled() || world.isRemote)
         {
             return;
         }
@@ -53,13 +53,27 @@ public class PlayerEventHandler
                 {
                     state = state.with(NetherWartBlock.AGE, Integer.valueOf(i + 1));
                     world.setBlockState(pos, state, 2);
-                    spawnGrowParticles(world, pos, 10);
+                    spawnGrowParticles(ParticleTypes.FLAME, world, pos, 10);
 
                     if (!event.getPlayer().abilities.isCreativeMode)
                     {
                         stack.shrink(1);
                     }
                 }
+            }
+            else if (stack.getItem() == ModItems.WITHER_BONE && state.getBlock() == ModBlocks.ROSE)
+            {
+                if (world.rand.nextInt(4) == 0) 
+                {
+                    world.setBlockState(pos, Blocks.WITHER_ROSE.getDefaultState(), 2);
+
+                    if (!event.getPlayer().abilities.isCreativeMode)
+                    {
+                        stack.shrink(1);
+                    }
+                }
+                
+                spawnGrowParticles(ParticleTypes.SMOKE, world, pos, 10);
             }
             else if (stack.getItem() instanceof ShovelItem && event.getPlayer().isCrouching())
             {
@@ -111,7 +125,7 @@ public class PlayerEventHandler
     }
 
     @OnlyIn(Dist.CLIENT)
-    public static void spawnGrowParticles(World world, BlockPos pos, int amount)
+    public static void spawnGrowParticles(BasicParticleType particle, World world, BlockPos pos, int amount)
     {
         if (amount == 0)
         {
@@ -128,7 +142,8 @@ public class PlayerEventHandler
                 double d0 = world.rand.nextGaussian() * 0.02D;
                 double d1 = world.rand.nextGaussian() * 0.02D;
                 double d2 = world.rand.nextGaussian() * 0.02D;
-                world.addParticle(ParticleTypes.FLAME, (double) ((float) pos.getX() + world.rand.nextFloat()), (double) pos.getY() + (double) world.rand.nextFloat() * height, (double) ((float) pos.getZ() + world.rand.nextFloat()), d0, d1, d2);
+
+                world.addParticle(particle, (double) ((float) pos.getX() + world.rand.nextFloat()), (double) pos.getY() + (double) world.rand.nextFloat() * height, (double) ((float) pos.getZ() + world.rand.nextFloat()), d0, d1, d2);
             }
         }
     }
