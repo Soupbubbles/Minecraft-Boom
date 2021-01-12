@@ -10,6 +10,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import phrille.vanillaboom.VanillaBoom;
 
 public class Utils
@@ -60,16 +61,17 @@ public class Utils
             Class partypes[] = new Class[2];
             partypes[0] = Float.TYPE;
             partypes[1] = IItemProvider.class;
-            Method method = clazz.getDeclaredMethod("registerCompostable", partypes);
+            Method method = ObfuscationReflectionHelper.findMethod(clazz, "func_220290_a", partypes);
             method.setAccessible(true);
             Object arglist[] = new Object[2];
             arglist[0] = chance;
             arglist[1] = item;
             Object retobj = method.invoke(null, arglist);
+            
         }
         catch (Throwable e)
         {
-            VanillaBoom.LOGGER.error("Could not add " + item.asItem().getRegistryName().toString() + " to registerCompostable");
+            VanillaBoom.LOGGER.error("Could not add " + item.asItem().getRegistryName().toString() + " to func_220290_a (registerCompostable)");
             e.printStackTrace();
         }
     }

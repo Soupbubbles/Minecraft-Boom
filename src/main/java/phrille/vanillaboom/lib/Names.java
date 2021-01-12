@@ -30,7 +30,8 @@ public class Names
     public static final String PERIDOTITE  = "peridotite";
     public static final String INFERNAL_ROCK  = "infernal_rock";
 
-    //Gravel
+    //Sand and Gravel
+    public static final String BONE_SAND  = "bone_sand";
     public static final String FINE_GRAVEL = "fine_gravel";
     public static final String GRAVEL_STONE = "gravel_stone";
     public static final String FINE_GRAVEL_STONE = "fine_gravel_stone";

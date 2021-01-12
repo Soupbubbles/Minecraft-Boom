@@ -2,21 +2,26 @@ package phrille.vanillaboom.block;
 
 import java.util.Random;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.FallingBlock;
 import net.minecraft.block.FireBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.ArrowEntity;
 import net.minecraft.item.FlintAndSteelItem;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.Explosion;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.Explosion.Mode;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -48,6 +53,18 @@ public class GunpowderBlock extends FallingBlock
     }
 
     @Override
+    public boolean isFlammable(BlockState state, IBlockReader world, BlockPos pos, Direction face)
+    {
+        return true;
+    }
+    
+    @Override
+    public void catchFire(BlockState state, World world, BlockPos pos, @Nullable Direction face, @Nullable LivingEntity igniter)
+    {
+        explode(world, pos, igniter);
+    }
+
+    @Override
     public void randomTick(BlockState state, ServerWorld world, BlockPos pos, Random rand)
     {
         super.randomTick(state, world, pos, rand);
@@ -69,7 +86,7 @@ public class GunpowderBlock extends FallingBlock
             flag = true;
         }
 
-        if (flag && rand.nextFloat() > 0.9)
+        if (flag && rand.nextFloat() > 0.8)
         {
             explode(world, pos, null);
         }

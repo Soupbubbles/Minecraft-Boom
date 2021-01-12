@@ -15,6 +15,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.config.VanillaBoomConfig;
 import phrille.vanillaboom.init.ModConfiguredFeatures;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
@@ -27,21 +28,21 @@ public class ModWorldGen
         BiomeGenerationSettingsBuilder generation = event.getGeneration();
 
         RegistryKey<Biome> biomeRegistryKey = RegistryKey.getOrCreateKey(ForgeRegistries.Keys.BIOMES, Objects.requireNonNull(event.getName(), "Biome registry name was null"));
-
+        
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.OVERWORLD))
         {
-            generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, getFeature(ModConfiguredFeatures.ORE_PERIDOTITE));
-            generation.withFeature(GenerationStage.Decoration.UNDERGROUND_ORES, getFeature(ModConfiguredFeatures.ORE_FINE_GRAVEL));
-            generation.withFeature(GenerationStage.Decoration.VEGETAL_DECORATION, getFeature(ModConfiguredFeatures.ROSE_PATCHES));
+            generate(generation, GenerationStage.Decoration.UNDERGROUND_ORES, ModConfiguredFeatures.ORE_PERIDOTITE, VanillaBoomConfig.peridotiteGenEnabled);
+            generate(generation, GenerationStage.Decoration.UNDERGROUND_ORES, ModConfiguredFeatures.ORE_FINE_GRAVEL, VanillaBoomConfig.fineGravelGenEnabled);
+            generate(generation, GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.ROSE_PATCHES, VanillaBoomConfig.roseGenEnabled);
         }
 
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.NETHER))
         {
-            generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.ORE_INFERNAL_ROCK));
+            generate(generation, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_INFERNAL_ROCK, VanillaBoomConfig.infernalRockGenEnabled);
 
             if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.FOREST))
             {
-                generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.RED_NETHER_BRICK_WELL));
+                generate(generation, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.RED_NETHER_BRICK_WELL, VanillaBoomConfig.netherWellGenEnabled);
             }
             else
             {
@@ -51,18 +52,26 @@ public class ModWorldGen
 
                     if (biomeName.equals("soul_sand_valley"))
                     {
-                        generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.BLACKSTONE_WELL));
+                        generate(generation, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.BLACKSTONE_WELL, VanillaBoomConfig.netherWellGenEnabled);
                     }
                     else if (!biomeName.equals("basalt_deltas"))
                     {
-                        generation.withFeature(GenerationStage.Decoration.UNDERGROUND_DECORATION, getFeature(ModConfiguredFeatures.NETHER_BRICK_WELL));
+                        generate(generation, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.NETHER_BRICK_WELL, VanillaBoomConfig.netherWellGenEnabled);
                     }
                 }
-                else 
+                else
                 {
                     VanillaBoom.LOGGER.warn("A biome name returned as null, this could lead to problems with world generation");
                 }
             }
+        }
+    }
+
+    public static void generate(BiomeGenerationSettingsBuilder generation, GenerationStage.Decoration decorationStage, RegistryKey<ConfiguredFeature<?, ?>> key, boolean config)
+    {
+        if (config)
+        {
+            generation.withFeature(decorationStage, getFeature(key));
         }
     }
 

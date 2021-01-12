@@ -69,7 +69,8 @@ public class ModBlocks
     public static final Block PERIDOTITE = Utils._null();
     public static final Block INFERNAL_ROCK = Utils._null();
 
-    //Gravel
+    //Sand and Gravel
+    public static final Block BONE_SAND = Utils._null();
     public static final Block FINE_GRAVEL = Utils._null();
     public static final Block GRAVEL_STONE = Utils._null();
     public static final Block FINE_GRAVEL_STONE = Utils._null();
@@ -574,7 +575,8 @@ public class ModBlocks
             createSpecialBlock(registry, Properties.from(Blocks.ANDESITE), Names.PERIDOTITE);
             createSpecialBlock(registry, Properties.from(Blocks.NETHERRACK), Names.INFERNAL_ROCK);
 
-            //Gravel
+            //Sand and Gravel
+            registry.register(setup(new FallingBlock(Properties.create(Material.SAND, MaterialColor.SNOW).hardnessAndResistance(0.5F, 0.0F).sound(SoundType.SOUL_SAND)), Names.BONE_SAND));
             registry.register(setup(new FallingBlock(Properties.from(Blocks.GRAVEL)), Names.FINE_GRAVEL));
             createSpecialBlock(registry, Properties.from(Blocks.STONE), Names.GRAVEL_STONE);
             createSpecialBlock(registry, Properties.from(Blocks.STONE), Names.FINE_GRAVEL_STONE);

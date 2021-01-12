@@ -17,17 +17,16 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.config.VanillaBoomConfig;
 import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.util.Utils;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class PlayerEventHandler
 {
     @SubscribeEvent
@@ -61,9 +60,9 @@ public class PlayerEventHandler
                     }
                 }
             }
-            else if (stack.getItem() == ModItems.WITHER_BONE && state.getBlock() == ModBlocks.ROSE)
+            else if (VanillaBoomConfig.growWitherRoses && stack.getItem() == ModItems.WITHER_BONE && state.getBlock() == ModBlocks.ROSE)
             {
-                if (world.rand.nextInt(4) == 0) 
+                if (world.rand.nextInt(4) == 0)
                 {
                     world.setBlockState(pos, Blocks.WITHER_ROSE.getDefaultState(), 2);
 
@@ -72,14 +71,14 @@ public class PlayerEventHandler
                         stack.shrink(1);
                     }
                 }
-                
+
                 spawnGrowParticles(ParticleTypes.SMOKE, world, pos, 10);
             }
-            else if (stack.getItem() instanceof ShovelItem && event.getPlayer().isCrouching())
+            else if (VanillaBoomConfig.removeSlimeBallPistons && stack.getItem() instanceof ShovelItem && event.getPlayer().isCrouching())
             {
                 if (state.getBlock() == Blocks.STICKY_PISTON)
                 {
-                    Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, state, stack, event.getPlayer(), event.getHand()).getDirectionVec()), Items.SLIME_BALL);
+                    Utils.spawnEntityItem(world, pos.offset(updatePiston(world, pos, state, stack, event.getPlayer(), event.getHand())), Items.SLIME_BALL);
                 }
                 else if (state.getBlock() == Blocks.PISTON_HEAD)
                 {
@@ -89,7 +88,8 @@ public class PlayerEventHandler
 
                     if (type == PistonType.STICKY)
                     {
-                        Utils.spawnEntityItem(world, pos.add(updatePiston(world, pos, world.getBlockState(pos), stack, event.getPlayer(), event.getHand()).getDirectionVec()), Items.SLIME_BALL);
+                        Direction direction = updatePiston(world, pos, world.getBlockState(pos), stack, event.getPlayer(), event.getHand());
+                        Utils.spawnEntityItem(world, pos.offset(direction).offset(direction), Items.SLIME_BALL);
                     }
                 }
             }
@@ -124,8 +124,7 @@ public class PlayerEventHandler
         return null;
     }
 
-    @OnlyIn(Dist.CLIENT)
-    public static void spawnGrowParticles(BasicParticleType particle, World world, BlockPos pos, int amount)
+    private static void spawnGrowParticles(BasicParticleType particle, World world, BlockPos pos, int amount)
     {
         if (amount == 0)
         {

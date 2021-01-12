@@ -33,13 +33,7 @@ public class JsonAssetsGenerator
 
     public static void init()
     {
-        addBlockWithVariantFiles(ModBlocks.PERIDOTITE, ModBlocks.PERIDOTITE_STAIRS, ModBlocks.PERIDOTITE_SLAB, ModBlocks.PERIDOTITE_WALL);
-        addBlockWithVariantFiles(ModBlocks.INFERNAL_ROCK, ModBlocks.INFERNAL_ROCK_STAIRS, ModBlocks.INFERNAL_ROCK_SLAB, ModBlocks.INFERNAL_ROCK_WALL);
-        addBlockWithVariantFiles(ModBlocks.POLISHED_PERIDOTITE, ModBlocks.POLISHED_PERIDOTITE_STAIRS, ModBlocks.POLISHED_PERIDOTITE_SLAB, ModBlocks.POLISHED_PERIDOTITE_WALL);
-        addBlockWithVariantFiles(ModBlocks.CHISELED_PURPUR_BLOCK, ModBlocks.CHISELED_PURPUR_BLOCK_STAIRS, ModBlocks.CHISELED_PURPUR_BLOCK_SLAB, ModBlocks.CHISELED_PURPUR_BLOCK_WALL);
-
-        addBasicBlockFiles(ModBlocks.PERIDOTITE_PILLAR);
-        addBasicBlockFiles(ModBlocks.RED_NETHER_PILLAR);
+        addBasicBlockFiles(ModBlocks.BONE_SAND);
     }
 
     //Block with stairs, slab and wall

@@ -25,11 +25,11 @@ displayName="Vanilla Boom" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification <here>
 updateJSONURL="http://myurl.me/" #optional
 # A URL for the "homepage" for this mod, displayed in the mod UI
-displayURL="https://www.curseforge.com/minecraft/mc-mods/minecraft-boom" #optional
+displayURL="https://www.curseforge.com/minecraft/mc-mods/vanilla-boom" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
 logoFile="vanillaboom_logo.png" #optional
 # A text field displayed in the mod UI
-credits="Thanks to RatavierCreations for initial textures and idea." #optional
+credits="Phrille as mod author and maintainer. Special thanks to RatavierCreations." #optional
 # A text field displayed in the mod UI
 authors="Phrille" #optional
 # The description text for the mod (multi line!) (#mandatory)

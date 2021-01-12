@@ -5,10 +5,11 @@ import net.minecraft.item.Items;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class FurnaceFuelEventHandler
 {
     //Vanilla
