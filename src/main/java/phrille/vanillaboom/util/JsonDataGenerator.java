@@ -15,7 +15,9 @@ import com.google.gson.GsonBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 
 public class JsonDataGenerator
@@ -26,6 +28,10 @@ public class JsonDataGenerator
 
     public static void init()
     {
+        RecipeGenerator.addShapedRecipe(new ItemStack(ModBlocks.BONE_SAND), "xx", "xx", 'x', Items.BONE_MEAL);
+        RecipeGenerator.addShapedRecipe(new ItemStack(ModBlocks.WITHER_BONE_SAND), "xx", "xx", 'x', ModItems.WITHER_BONE_MEAL);
+        RecipeGenerator.addShapelessRecipe(new ItemStack(Items.BONE_MEAL, 4), ModBlocks.BONE_SAND);
+        RecipeGenerator.addShapelessRecipe(new ItemStack(ModItems.WITHER_BONE_MEAL, 4), ModBlocks.WITHER_BONE_SAND);
     }
 
     private static void addPaintingRecipe(Item painting, String dye1, String dye2, Object special, String size)

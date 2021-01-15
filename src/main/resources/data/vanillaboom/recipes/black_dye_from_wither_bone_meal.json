@@ -1,11 +1,10 @@
 {
   "result": {
-    "item": "minecraft:black_dye",
-    "count": 3
+    "item": "minecraft:black_dye"
   },
   "ingredients": [
     {
-      "tag": "forge:wither_bones"
+      "item": "vanillaboom:wither_bone_meal"
     }
   ],
   "type": "minecraft:crafting_shapeless"

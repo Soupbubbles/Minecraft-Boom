@@ -20,32 +20,42 @@ public class FurnaceFuelEventHandler
     public static final int BLAZE_POWDER_BLOCK = 10800;
     public static final int WITHER_BONE_BLOCK = 9000;
     public static final int WITHER_BONE = 1000;
+    public static final int WITHER_BONE_MEAL = 333;
     public static final int PINECONE = 300;
 
     @SubscribeEvent
     public void onFuelBurnTime(FurnaceFuelBurnTimeEvent event)
     {
+        if (event.getItemStack().isEmpty()) 
+        {
+            return;
+        }
+        
         Item item = event.getItemStack().getItem();
 
         if (item == Items.BLAZE_POWDER)
         {
             event.setBurnTime(BLAZE_POWDER);
         }
-        else if (item == Item.getItemFromBlock(ModBlocks.CHARCOAL_BLOCK))
+        else if (item == ModBlocks.CHARCOAL_BLOCK.asItem())
         {
             event.setBurnTime(CHARCOAL_BLOCK);
         }
-        else if (item == Item.getItemFromBlock(ModBlocks.BLAZE_POWDER_BLOCK))
+        else if (item == ModBlocks.BLAZE_POWDER_BLOCK.asItem())
         {
             event.setBurnTime(BLAZE_POWDER_BLOCK);
         }
-        else if (item == Item.getItemFromBlock(ModBlocks.WITHER_BONE_BLOCK))
+        else if (item == ModBlocks.WITHER_BONE_BLOCK.asItem())
         {
             event.setBurnTime(WITHER_BONE_BLOCK);
         }
         else if (item == ModItems.WITHER_BONE)
         {
             event.setBurnTime(WITHER_BONE);
+        }
+        else if (item == ModItems.WITHER_BONE_MEAL)
+        {
+            event.setBurnTime(WITHER_BONE_MEAL);
         }
         else if (item == ModItems.PINECONE)
         {

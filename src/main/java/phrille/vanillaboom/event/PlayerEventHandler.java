@@ -37,14 +37,14 @@ public class PlayerEventHandler
         BlockState state = world.getBlockState(pos);
         ItemStack stack = event.getItemStack();
 
-        if (event.isCanceled() || world.isRemote)
+        if (event.isCanceled())
         {
             return;
         }
 
         if (!stack.isEmpty())
         {
-            if (VanillaBoomConfig.blazePowderAsBonemeal && stack.getItem() == Items.BLAZE_POWDER && state.getBlock() == Blocks.NETHER_WART)
+            if (VanillaBoomConfig.blazePowderAsBonemeal && (stack.getItem() == Items.BLAZE_POWDER || stack.getItem() == ModItems.WITHER_BONE_MEAL) && state.getBlock() == Blocks.NETHER_WART)
             {
                 int i = state.get(NetherWartBlock.AGE).intValue();
 
@@ -52,7 +52,7 @@ public class PlayerEventHandler
                 {
                     state = state.with(NetherWartBlock.AGE, Integer.valueOf(i + 1));
                     world.setBlockState(pos, state, 2);
-                    spawnGrowParticles(ParticleTypes.FLAME, world, pos, 10);
+                    spawnGrowParticles(stack.getItem() == Items.BLAZE_POWDER ? ParticleTypes.FLAME : ParticleTypes.SMOKE, world, pos, 10);
 
                     if (!event.getPlayer().abilities.isCreativeMode)
                     {
@@ -60,7 +60,7 @@ public class PlayerEventHandler
                     }
                 }
             }
-            else if (VanillaBoomConfig.growWitherRoses && stack.getItem() == ModItems.WITHER_BONE && state.getBlock() == ModBlocks.ROSE)
+            else if (VanillaBoomConfig.growWitherRoses && stack.getItem() == ModItems.WITHER_BONE_MEAL && state.getBlock() == ModBlocks.ROSE)
             {
                 if (world.rand.nextInt(4) == 0)
                 {

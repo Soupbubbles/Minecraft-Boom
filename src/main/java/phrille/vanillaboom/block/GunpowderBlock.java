@@ -25,12 +25,13 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.Explosion.Mode;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.ToolType;
 
 public class GunpowderBlock extends FallingBlock
 {
     public GunpowderBlock()
     {
-        super(Properties.from(Blocks.GRAVEL).sound(SoundType.SAND).tickRandomly());
+        super(Properties.from(Blocks.GRAVEL).sound(SoundType.SAND).harvestTool(ToolType.SHOVEL).tickRandomly());
     }
 
     @Override

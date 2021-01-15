@@ -35,6 +35,7 @@ public class ModItems
 {
     public static final Item MAGMA_BRICK = Utils._null();
     public static final Item WITHER_BONE = Utils._null();
+    public static final Item WITHER_BONE_MEAL = Utils._null();
     public static final Item PINECONE = Utils._null();
     public static final Item POLAR_BEAR_FUR = Utils._null();
     public static final Item RAW_POLAR_BEAR_MEAT = Utils._null();
@@ -90,6 +91,7 @@ public class ModItems
 
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.MAGMA_BRICK));
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WITHER_BONE));
+            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WITHER_BONE_MEAL));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PINECONE));
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_FUR));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.RAW_POLAR_BEAR_MEAT).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.RAW_POLAR_BEAR_MEAT));

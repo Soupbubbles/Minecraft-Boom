@@ -32,6 +32,7 @@ public class Names
 
     //Sand and Gravel
     public static final String BONE_SAND  = "bone_sand";
+    public static final String WITHER_BONE_SAND  = "wither_bone_sand";
     public static final String FINE_GRAVEL = "fine_gravel";
     public static final String GRAVEL_STONE = "gravel_stone";
     public static final String FINE_GRAVEL_STONE = "fine_gravel_stone";
@@ -184,15 +185,12 @@ public class Names
     public static final String ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
     public static final String PINECONE = "pinecone";
     public static final String WITHER_BONE = "wither_bone";
+    public static final String WITHER_BONE_MEAL = "wither_bone_meal";
     public static final String PUMPKIN_SLICE = "pumpkin_slice";
     public static final String POLAR_BEAR_FUR = "polar_bear_fur";
     public static final String RAW_POLAR_BEAR_MEAT = "raw_polar_bear_meat";
     public static final String POLAR_BEAR_STEAK = "polar_bear_steak";
     public static final String PRISMARINE_ARROW = "prismarine_arrow";
-    public static final String WHEAT_ON_A_STICK = "wheat_on_a_stick";
-    public static final String POPPED_CHORUS_GRENADE = "popped_chorus_grenade";
-    public static final String TELESCOPE = "telescope";
-    public static final String LEVITATION_DUST = "levitation_dust";
     public static final String COOKED_EGG = "cooked_egg";
     public static final String DROWNED_FLESH = "drowned_flesh";
 

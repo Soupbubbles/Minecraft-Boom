@@ -32,6 +32,7 @@
     "block.vanillaboom.peridotite": "Peridotite",
     "block.vanillaboom.infernal_rock": "Infernal Rock",
     "block.vanillaboom.bone_sand": "Bone Sand",
+    "block.vanillaboom.wither_bone_sand": "Wither Bone Sand",
             
     "block.vanillaboom.fine_gravel": "Fine Gravel",
     "block.vanillaboom.gravel_stone": "Gravel Stone",
@@ -486,6 +487,7 @@
      
     "item.vanillaboom.magma_brick": "Magma Brick",
     "item.vanillaboom.wither_bone": "Wither Bone",
+    "item.vanillaboom.wither_bone_meal": "Wither Bone Meal",
     "item.vanillaboom.pinecone": "Pinecone",
     "item.vanillaboom.polar_bear_fur": "Polar Bear Fur",
     "item.vanillaboom.raw_polar_bear_meat": "Raw Polar Bear Meat",
@@ -494,7 +496,6 @@
     "item.vanillaboom.cooked_egg": "Cooked Egg",
     "item.vanillaboom.drowned_flesh": "Drowned Flesh",
     "item.vanillaboom.prismarine_arrow": "Prismarine Arrow",
-    "item.vanillaboom.rice": "Rice",
     
     "item.vanillaboom.canvas": "Canvas",
     "item.vanillaboom.small_painting": "Small Painting",

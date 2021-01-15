@@ -22,6 +22,7 @@ import net.minecraft.item.DyeColor;
 import net.minecraft.potion.Effect;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -71,6 +72,7 @@ public class ModBlocks
 
     //Sand and Gravel
     public static final Block BONE_SAND = Utils._null();
+    public static final Block WITHER_BONE_SAND = Utils._null();
     public static final Block FINE_GRAVEL = Utils._null();
     public static final Block GRAVEL_STONE = Utils._null();
     public static final Block FINE_GRAVEL_STONE = Utils._null();
@@ -576,8 +578,9 @@ public class ModBlocks
             createSpecialBlock(registry, Properties.from(Blocks.NETHERRACK), Names.INFERNAL_ROCK);
 
             //Sand and Gravel
-            registry.register(setup(new FallingBlock(Properties.create(Material.SAND, MaterialColor.SNOW).hardnessAndResistance(0.5F, 0.0F).sound(SoundType.SOUL_SAND)), Names.BONE_SAND));
-            registry.register(setup(new FallingBlock(Properties.from(Blocks.GRAVEL)), Names.FINE_GRAVEL));
+            registry.register(setup(new FallingBlock(Properties.create(Material.SAND, MaterialColor.SNOW).hardnessAndResistance(0.5F, 0.0F).sound(SoundType.SOUL_SAND).harvestTool(ToolType.SHOVEL)), Names.BONE_SAND));
+            registry.register(setup(new FallingBlock(Properties.create(Material.SAND, MaterialColor.BLACK).hardnessAndResistance(0.5F, 0.0F).sound(SoundType.SOUL_SAND).harvestTool(ToolType.SHOVEL)), Names.WITHER_BONE_SAND));
+            registry.register(setup(new FallingBlock(Properties.from(Blocks.GRAVEL).harvestTool(ToolType.SHOVEL)), Names.FINE_GRAVEL));
             createSpecialBlock(registry, Properties.from(Blocks.STONE), Names.GRAVEL_STONE);
             createSpecialBlock(registry, Properties.from(Blocks.STONE), Names.FINE_GRAVEL_STONE);
             createSpecialBlock(registry, Properties.from(Blocks.STONE_BRICKS), Names.GRAVEL_BRICKS);
@@ -618,10 +621,10 @@ public class ModBlocks
 
             //Storage Blocks
             registry.register(setup(new Block(Properties.from(Blocks.COAL_BLOCK)), Names.CHARCOAL_BLOCK));
-            registry.register(setup(new FallingBlock(Properties.create(Material.SAND, MaterialColor.SNOW).hardnessAndResistance(0.5F, 0.0F).sound(SoundType.SAND)), Names.SUGAR_BLOCK));
+            registry.register(setup(new FallingBlock(Properties.create(Material.SAND, MaterialColor.SNOW).hardnessAndResistance(0.5F, 0.0F).sound(SoundType.SAND).harvestTool(ToolType.SHOVEL)), Names.SUGAR_BLOCK));
             registry.register(setup(new RotatedPillarBlock(Properties.create(Material.PLANTS, MaterialColor.GRASS).hardnessAndResistance(0.5F, 0.0F)), Names.SUGAR_CANE_BLOCK));
             registry.register(setup(new GunpowderBlock(), Names.GUNPOWDER_BLOCK));
-            registry.register(setup(new FallingBlock(Properties.from(Blocks.SAND).sound(SoundType.SNOW)), Names.BLAZE_POWDER_BLOCK));
+            registry.register(setup(new FallingBlock(Properties.from(Blocks.SAND).sound(SoundType.SNOW).harvestTool(ToolType.SHOVEL)), Names.BLAZE_POWDER_BLOCK));
             registry.register(setup(new SlimeBlock(Properties.from(Blocks.SLIME_BLOCK)), Names.MAGMA_CREAM_BLOCK));
             registry.register(setup(new Block(Properties.create(Material.GLASS, MaterialColor.CYAN).hardnessAndResistance(0.3F, 0.5F).sound(SoundType.GLASS).setLightLevel((lightValue) ->
             {
