@@ -21,6 +21,7 @@ import net.minecraft.world.GameRules;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.IEntityAdditionalSpawnData;
 import net.minecraftforge.fml.network.NetworkHooks;
+import net.minecraftforge.registries.ForgeRegistry;
 import phrille.vanillaboom.init.ModEntities;
 import phrille.vanillaboom.init.ModItems;
 

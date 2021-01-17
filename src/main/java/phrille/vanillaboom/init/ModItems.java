@@ -198,6 +198,6 @@ public class ModItems
         public static final Food POLAR_BEAR_STEAK = new Food.Builder().hunger(8).saturation(12.8F).meat().build();
         public static final Food PUMPKIN_SLICE = new Food.Builder().hunger(2).saturation(1.2F).build();
         public static final Food COOKED_EGG = new Food.Builder().hunger(6).saturation(2.8F).build();
-        public static final Food DROWNED_FLESH = new Food.Builder().hunger(4).saturation(0.1F).effect(new EffectInstance(Effects.HUNGER, 600, 0), 0.8F).effect(new EffectInstance(Effects.WATER_BREATHING, 600, 0), 0.5F).meat().build();
+        public static final Food DROWNED_FLESH = new Food.Builder().hunger(4).saturation(0.1F).effect(() -> new EffectInstance(Effects.HUNGER, 600, 0), 0.8F).effect(() -> new EffectInstance(Effects.WATER_BREATHING, 600, 0), 0.5F).meat().build();
     }
 }

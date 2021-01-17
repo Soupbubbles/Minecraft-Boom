@@ -34,11 +34,13 @@ public class JsonDataGenerator
         RecipeGenerator.addShapelessRecipe(new ItemStack(ModItems.WITHER_BONE_MEAL, 4), ModBlocks.WITHER_BONE_SAND);
     }
 
+    /*
     private static void addPaintingRecipe(Item painting, String dye1, String dye2, Object special, String size)
     {
         addPaintingRecipe(painting, dye1, dye2, special, size, 1);
     }
-
+    */
+    
     private static void addPaintingRecipe(Item painting, String dye1, String dye2, Object special, String size, int count)
     {
         Item p = size.equals("s") ? ModItems.SMALL_PAINTING : size.equals("h") ? ModItems.HORIZONTAL_PAINTING : size.equals("v") ? ModItems.VERTICAL_PAINTING : size.equals("m") ? ModItems.MEDIUM_PAINTING : (size.equals("l") ? ModItems.LARGE_PAINTING : ModItems.LARGE_HORIZONTAL_PAINTING);

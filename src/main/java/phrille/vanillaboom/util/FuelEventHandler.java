@@ -1,16 +1,17 @@
-package phrille.vanillaboom.event;
+package phrille.vanillaboom.util;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 
-@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
-public class FurnaceFuelEventHandler
+@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+public class FuelEventHandler
 {
     //Vanilla
     public static final int BLAZE_POWDER = 1200;

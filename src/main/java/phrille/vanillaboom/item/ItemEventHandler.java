@@ -1,4 +1,4 @@
-package phrille.vanillaboom.event;
+package phrille.vanillaboom.item;
 
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
@@ -20,14 +20,15 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.config.VanillaBoomConfig;
 import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.util.Utils;
 
-@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
-public class PlayerEventHandler
+@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+public class ItemEventHandler
 {
     @SubscribeEvent
     public static void onRightClickBlock(PlayerInteractEvent.RightClickBlock event)
@@ -132,9 +133,11 @@ public class PlayerEventHandler
         }
 
         BlockState state = world.getBlockState(pos);
-        double height = state.isAir(world, pos) ? 1.0f : state.getShape(world, pos).getEnd(Direction.Axis.Y);
+        
+        boolean isAir = state.getBlock().isAir(state, world, pos);
+        double height = isAir ? 1.0f : state.getShape(world, pos).getEnd(Direction.Axis.Y);
 
-        if (!state.isAir())
+        if (!isAir)
         {
             for (int i = 0; i < amount; ++i)
             {

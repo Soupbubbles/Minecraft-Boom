@@ -13,9 +13,7 @@ import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.Blocks;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.init.ModBlocks;
 
