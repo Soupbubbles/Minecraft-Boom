@@ -27,7 +27,7 @@ import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.util.Utils;
 
-@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class ItemEventHandler
 {
     @SubscribeEvent

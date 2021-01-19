@@ -10,7 +10,7 @@ import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 
-@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, bus = EventBusSubscriber.Bus.MOD)
+@Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class FuelEventHandler
 {
     //Vanilla

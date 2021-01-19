@@ -1,4 +1,4 @@
-package phrille.vanillaboom.util;
+package phrille.vanillaboom.temp;
 
 import java.io.File;
 import java.io.FileWriter;

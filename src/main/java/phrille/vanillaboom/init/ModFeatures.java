@@ -17,7 +17,7 @@ public class ModFeatures
 
     public static final RegistryObject<NetherWellFeature> NETHER_WELL = FEATURES.register("nether_well", () -> new NetherWellFeature(NetherWellConfig.CODEC));
 
-    public static void initialise(final IEventBus modEventBus)
+    public static void initialise(IEventBus modEventBus)
     {
         if (isInitialised)
         {

@@ -17,8 +17,9 @@ import phrille.vanillaboom.config.ConfigHandler;
 import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModFeatures;
 import phrille.vanillaboom.init.ModItems;
-import phrille.vanillaboom.util.JsonAssetsGenerator;
-import phrille.vanillaboom.util.JsonDataGenerator;
+import phrille.vanillaboom.temp.JsonAssetsGenerator;
+import phrille.vanillaboom.temp.JsonDataGenerator;
+import phrille.vanillaboom.util.LootTableHandler;
 import phrille.vanillaboom.util.Utils;
 
 @Mod(VanillaBoom.MOD_ID)
@@ -38,7 +39,8 @@ public class VanillaBoom
         modEventBus.addListener(this::processIMC);
 
         ModFeatures.initialise(modEventBus);
-
+        LootTableHandler.initialise(modEventBus);
+        
         //modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHandler.CLIENT_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHandler.COMMON_SPEC);
     }
