@@ -6,8 +6,8 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.world.gen.feature.NetherWellConfig;
-import phrille.vanillaboom.world.gen.feature.NetherWellFeature;
+import phrille.vanillaboom.world.feature.NetherWellConfig;
+import phrille.vanillaboom.world.feature.NetherWellFeature;
 
 public class ModFeatures
 {

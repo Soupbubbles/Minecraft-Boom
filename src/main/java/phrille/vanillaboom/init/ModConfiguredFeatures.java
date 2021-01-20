@@ -21,7 +21,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.world.gen.feature.NetherWellConfig;
+import phrille.vanillaboom.world.feature.NetherWellConfig;
 
 public class ModConfiguredFeatures
 {

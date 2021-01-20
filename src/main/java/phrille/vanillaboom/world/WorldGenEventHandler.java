@@ -1,4 +1,4 @@
-package phrille.vanillaboom.world.gen;
+package phrille.vanillaboom.world;
 
 import java.util.HashMap;
 import java.util.Map;

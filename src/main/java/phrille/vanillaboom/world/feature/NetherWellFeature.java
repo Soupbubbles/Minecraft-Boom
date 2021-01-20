@@ -1,4 +1,4 @@
-package phrille.vanillaboom.world.gen.feature;
+package phrille.vanillaboom.world.feature;
 
 import java.util.Random;
 
