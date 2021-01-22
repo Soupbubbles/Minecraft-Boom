@@ -27,7 +27,7 @@ import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.VanillaBoomTab;
 import phrille.vanillaboom.item.PaintingItem;
 import phrille.vanillaboom.item.PrismarineArrowItem;
-import phrille.vanillaboom.lib.Names;
+import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
 
 @ObjectHolder(VanillaBoom.MOD_ID)

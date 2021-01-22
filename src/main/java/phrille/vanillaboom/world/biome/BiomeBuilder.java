@@ -24,9 +24,6 @@ public class BiomeBuilder
 {
     public static Biome buildGraveyardBiome()
     {
-        double d0 = 0.7D;
-        double d1 = 0.15D;
-        
         MobSpawnInfo mobspawninfo = (new MobSpawnInfo.Builder())
                 .withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.SKELETON, 20, 5, 5))
                 .withSpawner(EntityClassification.MONSTER, new MobSpawnInfo.Spawners(EntityType.GHAST, 50, 4, 4))

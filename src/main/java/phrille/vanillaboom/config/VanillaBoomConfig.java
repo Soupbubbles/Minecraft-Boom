@@ -5,7 +5,7 @@ import net.minecraftforge.fml.config.ModConfig;
 public class VanillaBoomConfig
 {
     //General
-    public static boolean blazePowderAsBonemeal;
+    public static boolean growNetherWarts;
     public static boolean growWitherRoses;
     public static boolean removeSlimeBallPistons;
 
@@ -24,7 +24,7 @@ public class VanillaBoomConfig
 
     public static void bakeCommon(ModConfig config)
     {
-        blazePowderAsBonemeal = ConfigHandler.COMMON.blazePowderAsBonemeal.get();
+        growNetherWarts = ConfigHandler.COMMON.growNetherWarts.get();
         growWitherRoses = ConfigHandler.COMMON.growWitherRoses.get();
         removeSlimeBallPistons = ConfigHandler.COMMON.removeSlimeBallPistons.get();
 

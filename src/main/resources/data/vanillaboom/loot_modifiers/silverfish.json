@@ -1,18 +1,17 @@
 {
   "type": "vanillaboom:silverfish",
   "conditions": 
-  [
+  [    
     {
-      "condition": "minecraft:killed_by_player"
-    },
-    
-    {
-        "condition": "minecraft:entity_properties",
-        "predicate": {
-          "type": "minecraft:silverfish"
-        },
-        "entity": "this"
+      "condition": "minecraft:entity_properties",
+      "predicate": {
+        "type": "minecraft:silverfish"
+      },
+      "entity": "this"
     }
   ],
-   "dropItem": "minecraft:iron_nugget"
+  "table": "vanillaboom:vanilla/entities/silverfish",
+  "overwrites":
+  [
+  ]
 }

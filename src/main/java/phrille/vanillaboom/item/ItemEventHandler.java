@@ -20,7 +20,6 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.config.VanillaBoomConfig;
 import phrille.vanillaboom.init.ModBlocks;
@@ -37,15 +36,16 @@ public class ItemEventHandler
         BlockPos pos = event.getPos();
         BlockState state = world.getBlockState(pos);
         ItemStack stack = event.getItemStack();
+        PlayerEntity player = event.getPlayer();
 
-        if (event.isCanceled())
+        if (event.isCanceled() || stack.isEmpty())
         {
             return;
         }
 
-        if (!stack.isEmpty())
+        if ((stack.getItem() == Items.BLAZE_POWDER || stack.getItem() == ModItems.WITHER_BONE_MEAL))
         {
-            if (VanillaBoomConfig.blazePowderAsBonemeal && (stack.getItem() == Items.BLAZE_POWDER || stack.getItem() == ModItems.WITHER_BONE_MEAL) && state.getBlock() == Blocks.NETHER_WART)
+            if (VanillaBoomConfig.growNetherWarts && state.getBlock() == Blocks.NETHER_WART)
             {
                 int i = state.get(NetherWartBlock.AGE).intValue();
 
@@ -53,45 +53,35 @@ public class ItemEventHandler
                 {
                     state = state.with(NetherWartBlock.AGE, Integer.valueOf(i + 1));
                     world.setBlockState(pos, state, 2);
-                    spawnGrowParticles(stack.getItem() == Items.BLAZE_POWDER ? ParticleTypes.FLAME : ParticleTypes.SMOKE, world, pos, 10);
-
-                    if (!event.getPlayer().abilities.isCreativeMode)
-                    {
-                        stack.shrink(1);
-                    }
+                    success(player, world, pos, stack, stack.getItem() == Items.BLAZE_POWDER ? ParticleTypes.FLAME : ParticleTypes.SMOKE);
                 }
             }
-            else if (VanillaBoomConfig.growWitherRoses && stack.getItem() == ModItems.WITHER_BONE_MEAL && state.getBlock() == ModBlocks.ROSE)
+            else if (VanillaBoomConfig.growWitherRoses && state.getBlock() == ModBlocks.ROSE && stack.getItem() != Items.BLAZE_POWDER)
             {
                 if (world.rand.nextInt(4) == 0)
                 {
                     world.setBlockState(pos, Blocks.WITHER_ROSE.getDefaultState(), 2);
-
-                    if (!event.getPlayer().abilities.isCreativeMode)
-                    {
-                        stack.shrink(1);
-                    }
                 }
 
-                spawnGrowParticles(ParticleTypes.SMOKE, world, pos, 10);
+                success(player, world, pos, stack, ParticleTypes.SMOKE);
             }
-            else if (VanillaBoomConfig.removeSlimeBallPistons && stack.getItem() instanceof ShovelItem && event.getPlayer().isCrouching())
+        }
+        else if (VanillaBoomConfig.removeSlimeBallPistons && stack.getItem() instanceof ShovelItem && player.isCrouching())
+        {
+            if (state.getBlock() == Blocks.STICKY_PISTON)
             {
-                if (state.getBlock() == Blocks.STICKY_PISTON)
-                {
-                    Utils.spawnEntityItem(world, pos.offset(updatePiston(world, pos, state, stack, event.getPlayer(), event.getHand())), Items.SLIME_BALL);
-                }
-                else if (state.getBlock() == Blocks.PISTON_HEAD)
-                {
-                    Direction facing = (Direction) state.get(DirectionalBlock.FACING);
-                    PistonType type = (PistonType) state.get(PistonHeadBlock.TYPE);
-                    pos = pos.add(facing.getOpposite().getDirectionVec());
+                Utils.spawnEntityItem(world, pos.offset(updatePiston(world, pos, state, stack, player, event.getHand())), Items.SLIME_BALL);
+            }
+            else if (state.getBlock() == Blocks.PISTON_HEAD)
+            {
+                Direction facing = (Direction) state.get(DirectionalBlock.FACING);
+                PistonType type = (PistonType) state.get(PistonHeadBlock.TYPE);
+                pos = pos.add(facing.getOpposite().getDirectionVec());
 
-                    if (type == PistonType.STICKY)
-                    {
-                        Direction direction = updatePiston(world, pos, world.getBlockState(pos), stack, event.getPlayer(), event.getHand());
-                        Utils.spawnEntityItem(world, pos.offset(direction).offset(direction), Items.SLIME_BALL);
-                    }
+                if (type == PistonType.STICKY)
+                {
+                    Direction direction = updatePiston(world, pos, world.getBlockState(pos), stack, player, event.getHand());
+                    Utils.spawnEntityItem(world, pos.offset(direction).offset(direction), Items.SLIME_BALL);
                 }
             }
         }
@@ -125,6 +115,16 @@ public class ItemEventHandler
         return null;
     }
 
+    private static void success(PlayerEntity player, World world, BlockPos pos, ItemStack stack, BasicParticleType particle)
+    {
+        spawnGrowParticles(particle, world, pos, 10);
+
+        if (!player.abilities.isCreativeMode)
+        {
+            stack.shrink(1);
+        }
+    }
+
     private static void spawnGrowParticles(BasicParticleType particle, World world, BlockPos pos, int amount)
     {
         if (amount == 0)
@@ -133,7 +133,7 @@ public class ItemEventHandler
         }
 
         BlockState state = world.getBlockState(pos);
-        
+
         boolean isAir = state.getBlock().isAir(state, world, pos);
         double height = isAir ? 1.0f : state.getShape(world, pos).getEnd(Direction.Axis.Y);
 

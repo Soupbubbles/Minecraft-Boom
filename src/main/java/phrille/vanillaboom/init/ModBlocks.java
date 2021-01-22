@@ -36,7 +36,7 @@ import phrille.vanillaboom.block.GunpowderBlock;
 import phrille.vanillaboom.block.ModSlabBlock;
 import phrille.vanillaboom.block.ModStairBlock;
 import phrille.vanillaboom.block.ModWallBlock;
-import phrille.vanillaboom.lib.Names;
+import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
 
 @ObjectHolder(VanillaBoom.MOD_ID)

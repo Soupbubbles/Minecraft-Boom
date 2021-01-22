@@ -1,4 +1,4 @@
-package phrille.vanillaboom.lib;
+package phrille.vanillaboom.util;
 
 public class Names
 {
