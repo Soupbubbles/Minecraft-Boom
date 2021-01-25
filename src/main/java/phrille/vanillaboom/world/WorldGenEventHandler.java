@@ -12,6 +12,7 @@ import net.minecraft.world.gen.FlatChunkGenerator;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
 import net.minecraft.world.gen.feature.structure.Structure;
+import net.minecraft.world.gen.settings.DimensionStructuresSettings;
 import net.minecraft.world.gen.settings.StructureSeparationSettings;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.BiomeDictionary;
@@ -24,11 +25,12 @@ import net.minecraftforge.registries.ForgeRegistries;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.config.VanillaBoomConfig;
 import phrille.vanillaboom.init.ModConfiguredFeatures;
+import phrille.vanillaboom.init.ModConfiguredStructures;
+import phrille.vanillaboom.init.ModStructures;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class WorldGenEventHandler
 {
-
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void addFeaturesToBiomes(BiomeLoadingEvent event)
     {
@@ -44,14 +46,13 @@ public class WorldGenEventHandler
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.NETHER))
         {
             generate(event, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_INFERNAL_ROCK, VanillaBoomConfig.infernalRockGenEnabled);
+            generate(event, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_BONE_SAND, VanillaBoomConfig.infernalRockGenEnabled);
+            
+            event.getGeneration().getStructures().add(() -> ModConfiguredStructures.NETHER_WELL);
         }
     }
 
-    /**
-     * Add later when the structures have been implemented
-     */
-    
-    //@SubscribeEvent(priority = EventPriority.NORMAL)
+    @SubscribeEvent(priority = EventPriority.NORMAL)
     public static void addDimensionalSpacing(WorldEvent.Load event)
     {
         if (event.getWorld() instanceof ServerWorld)
@@ -64,8 +65,8 @@ public class WorldGenEventHandler
             }
 
             Map<Structure<?>, StructureSeparationSettings> tempMap = new HashMap<>(serverWorld.getChunkProvider().generator.func_235957_b_().func_236195_a_());
-            //tempMap.put(ModStructures.NETHER_WELL.get(), DimensionStructuresSettings.field_236191_b_.get(ModStructures.NETHER_WELL.get()));
-            //serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap;
+            tempMap.put(ModStructures.NETHER_WELL.get(), DimensionStructuresSettings.field_236191_b_.get(ModStructures.NETHER_WELL.get()));
+            serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap;
         }
     }
 

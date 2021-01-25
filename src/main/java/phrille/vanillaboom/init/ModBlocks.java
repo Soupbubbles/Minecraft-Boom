@@ -849,7 +849,7 @@ public class ModBlocks
         {
             Block flower = new FlowerBlock(effect, effectDuration, Properties.from(Blocks.POPPY));
             registry.register(setup(flower, name));
-            registry.register(setup(new FlowerPotBlock(flower, Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F)), "potted_" + name));
+            registry.register(setup(new FlowerPotBlock(() -> (FlowerPotBlock) Blocks.FLOWER_POT, () -> flower, Block.Properties.create(Material.MISCELLANEOUS).hardnessAndResistance(0.0F)), "potted_" + name));
         }
 
         public static <T extends IForgeRegistryEntry<T>> T setup(T entry, String name)
