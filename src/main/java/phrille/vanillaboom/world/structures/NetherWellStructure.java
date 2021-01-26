@@ -47,13 +47,6 @@ public class NetherWellStructure extends Structure<NoFeatureConfig>
         return GenerationStage.Decoration.UNDERGROUND_DECORATION;
     }
 
-    @Override
-    protected boolean func_230363_a_(ChunkGenerator chunkGenerator, BiomeProvider biomeSource, long seed, SharedSeedRandom chunkRandom, int chunkX, int chunkZ, Biome biome, ChunkPos chunkPos, NoFeatureConfig featureConfig)
-    {
-
-        return true;
-    }
-
     public static class Start extends StructureStart<NoFeatureConfig>
     {
         private static final int MAX_HEIGHT = 100;
@@ -87,8 +80,6 @@ public class NetherWellStructure extends Structure<NoFeatureConfig>
                 JigsawManager.func_242837_a(dynamicRegistryManager, new VillageConfig(() -> dynamicRegistryManager.getRegistry(Registry.JIGSAW_POOL_KEY).getOrDefault(new ResourceLocation(VanillaBoom.MOD_ID, "nether_well/nether_well_pool")), 1), AbstractVillagePiece::new, chunkGenerator, templateManagerIn, new BlockPos(x, y, z), components, rand, false, false);
                 components.forEach(piece -> piece.getBoundingBox().minY += 1);
                 recalculateStructureSize();
-
-                VanillaBoom.LOGGER.log(Level.DEBUG, "Nether Well at " + components.get(0).getBoundingBox().minX + " " + components.get(0).getBoundingBox().minY + " " + components.get(0).getBoundingBox().minZ);
             }
         }
 

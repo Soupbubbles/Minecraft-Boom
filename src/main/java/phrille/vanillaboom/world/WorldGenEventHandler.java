@@ -5,9 +5,11 @@ import java.util.Map;
 import java.util.Objects;
 
 import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
+import net.minecraft.world.biome.Biomes;
 import net.minecraft.world.gen.FlatChunkGenerator;
 import net.minecraft.world.gen.GenerationStage;
 import net.minecraft.world.gen.feature.ConfiguredFeature;
@@ -34,8 +36,9 @@ public class WorldGenEventHandler
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void addFeaturesToBiomes(BiomeLoadingEvent event)
     {
-        RegistryKey<Biome> biomeRegistryKey = RegistryKey.getOrCreateKey(ForgeRegistries.Keys.BIOMES, Objects.requireNonNull(event.getName(), "Biome registry name was null"));
-
+        ResourceLocation biomeName = Objects.requireNonNull(event.getName(), "Biome registry name was null");
+        RegistryKey<Biome> biomeRegistryKey = RegistryKey.getOrCreateKey(ForgeRegistries.Keys.BIOMES, biomeName);
+        
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.OVERWORLD))
         {
             generate(event, GenerationStage.Decoration.UNDERGROUND_ORES, ModConfiguredFeatures.ORE_PERIDOTITE, VanillaBoomConfig.peridotiteGenEnabled);
@@ -46,9 +49,12 @@ public class WorldGenEventHandler
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.NETHER))
         {
             generate(event, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_INFERNAL_ROCK, VanillaBoomConfig.infernalRockGenEnabled);
-            generate(event, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_BONE_SAND, VanillaBoomConfig.infernalRockGenEnabled);
+            generate(event, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_BONE_SAND, VanillaBoomConfig.boneSandGenEnabled);
             
-            event.getGeneration().getStructures().add(() -> ModConfiguredStructures.NETHER_WELL);
+            if (VanillaBoomConfig.netherWellGenEnabled && !biomeName.getPath().equals(Biomes.BASALT_DELTAS.getRegistryName().getPath())) 
+            {
+                event.getGeneration().getStructures().add(() -> ModConfiguredStructures.NETHER_WELL);
+            }
         }
     }
 

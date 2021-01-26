@@ -16,6 +16,7 @@ public class VanillaBoomConfig
     
     //Worldgen Nether
     public static boolean infernalRockGenEnabled;
+    public static boolean boneSandGenEnabled;
     public static boolean netherWellGenEnabled;
     
     public static void bakeClient(ModConfig config)
@@ -33,6 +34,7 @@ public class VanillaBoomConfig
         roseGenEnabled = ConfigHandler.COMMON.roseGenEnabled.get();
         
         infernalRockGenEnabled = ConfigHandler.COMMON.infernalRockGenEnabled.get();
+        boneSandGenEnabled = ConfigHandler.COMMON.boneSandGenEnabled.get();
         netherWellGenEnabled = ConfigHandler.COMMON.netherWellGenEnabled.get();
     }
 }

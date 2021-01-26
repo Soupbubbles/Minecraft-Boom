@@ -31,7 +31,6 @@ public class JsonAssetsGenerator
 
     public static void init()
     {
-        addBasicBlockFiles(ModBlocks.BONE_SAND);
     }
 
     //Block with stairs, slab and wall

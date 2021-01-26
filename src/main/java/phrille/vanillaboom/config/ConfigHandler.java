@@ -42,6 +42,7 @@ public final class ConfigHandler
 
         //Worldgen Nether
         public final ForgeConfigSpec.BooleanValue infernalRockGenEnabled;
+        public final ForgeConfigSpec.BooleanValue boneSandGenEnabled;
         public final ForgeConfigSpec.BooleanValue netherWellGenEnabled;
 
         public Common(ForgeConfigSpec.Builder builder)
@@ -63,6 +64,7 @@ public final class ConfigHandler
             roseGenEnabled = builder.comment("Set this to false to stop Roses being generated in the Overworld.").define("rose_gen", true);
 
             infernalRockGenEnabled = builder.comment("Set this to false to stop Infernal Rock being generated in the Nether.").define("infernal_rock_gen", true);
+            boneSandGenEnabled = builder.comment("Set this to false to stop Bone Sand being generated in the Nether.").define("bone_sand_gen", true);
             netherWellGenEnabled = builder.comment("Set this to false to stop Nether Wells being generated in the Nether.").define("nether_well_gen", true);
 
             builder.pop();

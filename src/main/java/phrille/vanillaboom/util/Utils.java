@@ -1,5 +1,6 @@
 package phrille.vanillaboom.util;
 
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
 import javax.annotation.Nonnull;
@@ -11,7 +12,6 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
-import phrille.vanillaboom.VanillaBoom;
 
 public class Utils
 {
@@ -30,7 +30,7 @@ public class Utils
     {
         return name.replace("bricks", "brick") + "_slab";
     }
-    
+
     public static final String getWallName(String name)
     {
         return name.replace("bricks", "brick") + "_wall";
@@ -49,13 +49,9 @@ public class Utils
         }
     }
 
-    /**
-     * Method for adding items to be used in the Minecraft Composter
-     * Uses reflection to get access to registerCompostable
-     */
     public static void addCompostMaterial(float chance, IItemProvider item)
     {
-        try 
+        try
         {
             Class clazz = Class.forName("net.minecraft.block.ComposterBlock");
             Class partypes[] = new Class[2];
@@ -67,12 +63,11 @@ public class Utils
             arglist[0] = chance;
             arglist[1] = item;
             Object retobj = method.invoke(null, arglist);
-            
+
         }
-        catch (Throwable e)
+        catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
         {
-            VanillaBoom.LOGGER.error("Could not add " + item.asItem().getRegistryName().toString() + " to func_220290_a (registerCompostable)");
-            e.printStackTrace();
+            throw new RuntimeException("Could not add " + item.asItem().getRegistryName().toString() + " to func_220290_a (registerCompostable)", e);
         }
     }
 }

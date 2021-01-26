@@ -35,7 +35,7 @@ public class ModStructures
 
     public static void setupStructures()
     {
-        setupMapSpacingAndLand(NETHER_WELL.get(), new StructureSeparationSettings(8, 2, 847633048), true);
+        setupMapSpacingAndLand(NETHER_WELL.get(), new StructureSeparationSettings(6, 2, 847633048), true);
     }
 
     public static <F extends Structure<?>> void setupMapSpacingAndLand(F structure, StructureSeparationSettings structureSeparationSettings, boolean transformSurroundingLand)

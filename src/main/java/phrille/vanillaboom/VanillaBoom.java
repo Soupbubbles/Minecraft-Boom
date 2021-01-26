@@ -22,6 +22,7 @@ import phrille.vanillaboom.init.ModConfiguredStructures;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.init.ModStructures;
 import phrille.vanillaboom.loot.LootTableHandler;
+import phrille.vanillaboom.loot.ModLootTables;
 import phrille.vanillaboom.temp.JsonAssetsGenerator;
 import phrille.vanillaboom.temp.JsonDataGenerator;
 import phrille.vanillaboom.util.Names;
@@ -61,6 +62,7 @@ public class VanillaBoom
 
         event.enqueueWork(() ->
         {
+            ModLootTables.registerLootTables();
             ModStructures.setupStructures();
             ModConfiguredStructures.registerConfiguredStructures();
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(new ResourceLocation(MOD_ID, Names.ROSE), () -> ModBlocks.POTTED_ROSE);
