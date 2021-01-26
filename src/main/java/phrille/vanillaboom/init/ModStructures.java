@@ -14,6 +14,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.world.structures.GraveStructure;
 import phrille.vanillaboom.world.structures.NetherWellStructure;
 
 public class ModStructures
@@ -22,6 +23,7 @@ public class ModStructures
     public static final DeferredRegister<Structure<?>> STRUCTURES = DeferredRegister.create(ForgeRegistries.STRUCTURE_FEATURES, VanillaBoom.MOD_ID);
 
     public static final RegistryObject<Structure<NoFeatureConfig>> NETHER_WELL = registerStructure("nether_well", () -> (new NetherWellStructure(NoFeatureConfig.field_236558_a_)));
+    public static final RegistryObject<Structure<NoFeatureConfig>> GRAVE = registerStructure("grave", () -> (new GraveStructure(NoFeatureConfig.field_236558_a_)));
 
     public static void init(IEventBus modEventBus)
     {
@@ -36,6 +38,7 @@ public class ModStructures
     public static void setupStructures()
     {
         setupMapSpacingAndLand(NETHER_WELL.get(), new StructureSeparationSettings(6, 2, 847633048), true);
+        setupMapSpacingAndLand(GRAVE.get(), new StructureSeparationSettings(5, 3, 847633049), true);
     }
 
     public static <F extends Structure<?>> void setupMapSpacingAndLand(F structure, StructureSeparationSettings structureSeparationSettings, boolean transformSurroundingLand)

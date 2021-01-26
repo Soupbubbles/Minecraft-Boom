@@ -50,10 +50,16 @@ public class WorldGenEventHandler
         {
             generate(event, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_INFERNAL_ROCK, VanillaBoomConfig.infernalRockGenEnabled);
             generate(event, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_BONE_SAND, VanillaBoomConfig.boneSandGenEnabled);
-            
-            if (VanillaBoomConfig.netherWellGenEnabled && !biomeName.getPath().equals(Biomes.BASALT_DELTAS.getRegistryName().getPath())) 
+            generate(event, GenerationStage.Decoration.UNDERGROUND_DECORATION, ModConfiguredFeatures.ORE_WITHER_BONE_SAND, VanillaBoomConfig.witherBoneSandGenEnabled);
+
+            if (VanillaBoomConfig.netherWellGenEnabled && !biomeName.getPath().equals("basalt_deltas")) 
             {
                 event.getGeneration().getStructures().add(() -> ModConfiguredStructures.NETHER_WELL);
+            }
+            
+            if (VanillaBoomConfig.graveGenEnabled && biomeName.getPath().equals("soul_sand_valley")) 
+            {
+                event.getGeneration().getStructures().add(() -> ModConfiguredStructures.GRAVE);
             }
         }
     }
@@ -72,6 +78,7 @@ public class WorldGenEventHandler
 
             Map<Structure<?>, StructureSeparationSettings> tempMap = new HashMap<>(serverWorld.getChunkProvider().generator.func_235957_b_().func_236195_a_());
             tempMap.put(ModStructures.NETHER_WELL.get(), DimensionStructuresSettings.field_236191_b_.get(ModStructures.NETHER_WELL.get()));
+            tempMap.put(ModStructures.GRAVE.get(), DimensionStructuresSettings.field_236191_b_.get(ModStructures.GRAVE.get()));
             serverWorld.getChunkProvider().generator.func_235957_b_().field_236193_d_ = tempMap;
         }
     }

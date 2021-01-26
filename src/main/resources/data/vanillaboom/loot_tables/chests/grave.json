@@ -10,18 +10,33 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 5,
+          "weight": 15,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 2.0,
+                "max": 6.0,
                 "type": "minecraft:uniform"
               }
             }
           ],
-          "name": "minecraft:diamond"
+          "name": "minecraft:blaze_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 15,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 6.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "minecraft:nether_wart"
         },
         {
           "type": "minecraft:item",
@@ -85,27 +100,17 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 20,
+          "weight": 5,
           "name": "minecraft:saddle"
         },
         {
           "type": "minecraft:item",
-          "weight": 15,
+          "weight": 10,
           "name": "minecraft:iron_horse_armor"
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
-          "name": "minecraft:golden_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
           "weight": 5,
-          "name": "minecraft:diamond_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 20,
           "functions": [
             {
               "function": "minecraft:enchant_randomly"
@@ -166,6 +171,21 @@
             }
           ],
           "name": "vanillaboom:bone_sand"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 6.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "vanillaboom:wither_bone_sand"
         }
       ]
     }

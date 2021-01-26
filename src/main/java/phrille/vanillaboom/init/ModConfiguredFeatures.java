@@ -33,6 +33,7 @@ public class ModConfiguredFeatures
     //Nether
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_INFERNAL_ROCK = key("ore_infernal_rock");
     public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_BONE_SAND = key("ore_bone_sand");
+    public static final RegistryKey<ConfiguredFeature<?, ?>> ORE_WITHER_BONE_SAND = key("ore_wither_bone_sand");
 
     public static final RuleTest SOUL_SOIL_FILLER = new BlockMatchRuleTest(Blocks.SOUL_SOIL);
 
@@ -55,6 +56,7 @@ public class ModConfiguredFeatures
             //Nether
             register(ORE_INFERNAL_ROCK, Feature.ORE.withConfiguration(new OreFeatureConfig(OreFeatureConfig.FillerBlockType.NETHERRACK, ModBlocks.INFERNAL_ROCK.getDefaultState(), 33)).withPlacement(Placement.MAGMA.configure(NoPlacementConfig.INSTANCE)).square().func_242731_b(4));
             register(ORE_BONE_SAND, Feature.ORE.withConfiguration(new OreFeatureConfig(SOUL_SOIL_FILLER, ModBlocks.BONE_SAND.getDefaultState(), 26)).withPlacement(Features.Placements.NETHER_SPRING_ORE_PLACEMENT).square().func_242731_b(16));
+            register(ORE_WITHER_BONE_SAND, Feature.ORE.withConfiguration(new OreFeatureConfig(SOUL_SOIL_FILLER, ModBlocks.WITHER_BONE_SAND.getDefaultState(), 12)).withPlacement(Features.Placements.NETHER_SPRING_ORE_PLACEMENT).square().func_242731_b(10));
         }
 
         private static void register(final RegistryKey<ConfiguredFeature<?, ?>> key, final ConfiguredFeature<?, ?> configuredFeature)
