@@ -12,9 +12,15 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleTypes;
+import net.minecraft.potion.PotionUtils;
+import net.minecraft.potion.Potions;
 import net.minecraft.state.properties.PistonType;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.Direction;
+import net.minecraft.util.DrinkHelper;
 import net.minecraft.util.Hand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
@@ -85,6 +91,19 @@ public class ItemEventHandler
                 }
             }
         }
+        else if (VanillaBoomConfig.fillWaterBottleHydroRock && stack.getItem() == Items.GLASS_BOTTLE && state.getBlock() == ModBlocks.HYDRO_ROCK)
+        {
+            world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+            player.addStat(Stats.ITEM_USED.get(stack.getItem()));
+
+            if (!world.isRemote)
+            {
+                DrinkHelper.fill(stack, player, PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.WATER));
+            }
+
+            BlockPos upPos = pos.offset(Direction.UP);
+            spawnGrowParticles(ParticleTypes.BUBBLE_POP, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.2F);
+        }
     }
 
     private static Direction updatePiston(World world, BlockPos pos, BlockState state, ItemStack stack, PlayerEntity player, Hand hand)
@@ -109,6 +128,8 @@ public class ItemEventHandler
                 });
             }
 
+            world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ENTITY_CHICKEN_EGG, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+
             return facing;
         }
 
@@ -117,7 +138,9 @@ public class ItemEventHandler
 
     private static void success(PlayerEntity player, World world, BlockPos pos, ItemStack stack, BasicParticleType particle)
     {
-        spawnGrowParticles(particle, world, pos, 10);
+        BlockState state = world.getBlockState(pos);
+
+        spawnGrowParticles(particle, world, pos, 10, state.getBlock().isAir(state, world, pos), 1.0F);
 
         if (!player.abilities.isCreativeMode)
         {
@@ -125,19 +148,14 @@ public class ItemEventHandler
         }
     }
 
-    private static void spawnGrowParticles(BasicParticleType particle, World world, BlockPos pos, int amount)
+    private static void spawnGrowParticles(BasicParticleType particle, World world, BlockPos pos, int amount, boolean condition, float height)
     {
         if (amount == 0)
         {
             amount = 15;
         }
 
-        BlockState state = world.getBlockState(pos);
-
-        boolean isAir = state.getBlock().isAir(state, world, pos);
-        double height = isAir ? 1.0f : state.getShape(world, pos).getEnd(Direction.Axis.Y);
-
-        if (!isAir)
+        if (!condition)
         {
             for (int i = 0; i < amount; ++i)
             {

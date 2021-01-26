@@ -30,6 +30,7 @@
     "block.vanillaboom.black_terracotta_bricks": "Black Terracotta Bricks",
     
     "block.vanillaboom.peridotite": "Peridotite",
+    "block.vanillaboom.hydro_rock": "Hydro Rock",
     "block.vanillaboom.infernal_rock": "Infernal Rock",
     "block.vanillaboom.bone_sand": "Bone Sand",
     "block.vanillaboom.wither_bone_sand": "Wither Bone Sand",
@@ -173,6 +174,7 @@
     "block.vanillaboom.chiseled_red_nether_brick_stairs": "Chiseled Red Nether Brick Stairs",
     "block.vanillaboom.peridotite_stairs": "Peridotite Stairs",
     "block.vanillaboom.polished_peridotite_stairs": "Polished Peridotite Stairs",
+    "block.vanillaboom.hydro_rock_stairs": "Hydro Rock Stairs",
     "block.vanillaboom.infernal_rock_stairs": "Infernal Rock Stairs",
     "block.vanillaboom.chiseled_purpur_block_stairs": "Chiseled Purpur Block Stairs",
             
@@ -211,6 +213,7 @@
     "block.vanillaboom.peridotite_slab": "Peridotite Slab",
     "block.vanillaboom.polished_peridotite_slab": "Polished Peridotite Slab",
     "block.vanillaboom.infernal_rock_slab": "Infernal Rock Slab",
+    "block.vanillaboom.hydro_rock_slab": "Hydro Rock Slab",
     "block.vanillaboom.chiseled_purpur_block_slab": "Chiseled Purpur Block Slab",
         
     "block.vanillaboom.cobblestone_brick_wall": "Cobblestone Brick Wall",
@@ -247,6 +250,7 @@
     "block.vanillaboom.chiseled_red_nether_brick_wall": "Chiseled Red Nether Brick Wall",    
     "block.vanillaboom.peridotite_wall": "Peridotite Wall",
     "block.vanillaboom.polished_peridotite_wall": "Polished Peridotite Wall",
+    "block.vanillaboom.hydro_rock_wall": "Hydro Rock Wall",
     "block.vanillaboom.infernal_rock_wall": "Infernal Rock Wall",
     "block.vanillaboom.chiseled_purpur_block_wall": "Chiseled Purpur Block Wall",
         

@@ -28,6 +28,7 @@ public class Names
 
     //Rocks
     public static final String PERIDOTITE  = "peridotite";
+    public static final String HYDRO_ROCK  = "hydro_rock";
     public static final String INFERNAL_ROCK  = "infernal_rock";
 
     //Sand and Gravel

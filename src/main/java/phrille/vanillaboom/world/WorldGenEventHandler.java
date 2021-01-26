@@ -44,6 +44,11 @@ public class WorldGenEventHandler
             generate(event, GenerationStage.Decoration.UNDERGROUND_ORES, ModConfiguredFeatures.ORE_PERIDOTITE, VanillaBoomConfig.peridotiteGenEnabled);
             generate(event, GenerationStage.Decoration.UNDERGROUND_ORES, ModConfiguredFeatures.ORE_FINE_GRAVEL, VanillaBoomConfig.fineGravelGenEnabled);
             generate(event, GenerationStage.Decoration.VEGETAL_DECORATION, ModConfiguredFeatures.ROSE_PATCHES, VanillaBoomConfig.roseGenEnabled);
+            
+            if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.OCEAN)) 
+            {
+                generate(event, GenerationStage.Decoration.UNDERGROUND_ORES, ModConfiguredFeatures.DISK_HYDRO_ROCK, VanillaBoomConfig.hydroRockGenEnabled);
+            }
         }
 
         if (BiomeDictionary.hasType(biomeRegistryKey, BiomeDictionary.Type.NETHER))

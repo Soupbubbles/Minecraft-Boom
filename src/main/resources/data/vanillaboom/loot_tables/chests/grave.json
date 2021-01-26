@@ -16,12 +16,27 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 6.0,
+                "max": 5.0,
                 "type": "minecraft:uniform"
               }
             }
           ],
           "name": "minecraft:blaze_powder"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 3.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "vanillaboom:magma_brick"
         },
         {
           "type": "minecraft:item",
@@ -100,17 +115,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 5,
-          "name": "minecraft:saddle"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 10,
-          "name": "minecraft:iron_horse_armor"
-        },
-        {
-          "type": "minecraft:item",
-          "weight": 5,
+          "weight": 1,
           "functions": [
             {
               "function": "minecraft:enchant_randomly"
@@ -144,19 +149,34 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 10,
+          "weight": 5,
           "functions": [
             {
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 8.0,
+                "max": 4.0,
+                "type": "minecraft:uniform"
+              }
+            }
+          ],
+          "name": "minecraft:soul_sand"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 5,
+          "functions": [
+            {
+              "function": "minecraft:set_count",
+              "count": {
+                "min": 1.0,
+                "max": 6.0,
                 "type": "minecraft:uniform"
               }
             }
           ],
           "name": "minecraft:rotten_flesh"
-        },
+        },        
         {
           "type": "minecraft:item",
           "weight": 10,
@@ -165,7 +185,7 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 8.0,
+                "max": 7.0,
                 "type": "minecraft:uniform"
               }
             }
@@ -180,7 +200,7 @@
               "function": "minecraft:set_count",
               "count": {
                 "min": 1.0,
-                "max": 6.0,
+                "max": 4.0,
                 "type": "minecraft:uniform"
               }
             }

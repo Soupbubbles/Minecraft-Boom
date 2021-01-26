@@ -8,10 +8,12 @@ public class VanillaBoomConfig
     public static boolean growNetherWarts;
     public static boolean growWitherRoses;
     public static boolean removeSlimeBallPistons;
+    public static boolean fillWaterBottleHydroRock;
 
     //Worldgen Overworld
     public static boolean peridotiteGenEnabled;
     public static boolean fineGravelGenEnabled;
+    public static boolean hydroRockGenEnabled;
     public static boolean roseGenEnabled;
     
     //Worldgen Nether
@@ -30,9 +32,11 @@ public class VanillaBoomConfig
         growNetherWarts = ConfigHandler.COMMON.growNetherWarts.get();
         growWitherRoses = ConfigHandler.COMMON.growWitherRoses.get();
         removeSlimeBallPistons = ConfigHandler.COMMON.removeSlimeBallPistons.get();
+        fillWaterBottleHydroRock = ConfigHandler.COMMON.fillWaterBottleHydroRock.get();
 
         peridotiteGenEnabled = ConfigHandler.COMMON.peridotiteGenEnabled.get();
         fineGravelGenEnabled = ConfigHandler.COMMON.fineGravelGenEnabled.get();
+        hydroRockGenEnabled = ConfigHandler.COMMON.hydroRockGenEnabled.get();
         roseGenEnabled = ConfigHandler.COMMON.roseGenEnabled.get();
         
         infernalRockGenEnabled = ConfigHandler.COMMON.infernalRockGenEnabled.get();

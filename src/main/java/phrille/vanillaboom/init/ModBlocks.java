@@ -33,6 +33,7 @@ import net.minecraftforge.registries.ObjectHolder;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.block.BookshelfBlock;
 import phrille.vanillaboom.block.GunpowderBlock;
+import phrille.vanillaboom.block.HydroRockBlock;
 import phrille.vanillaboom.block.ModSlabBlock;
 import phrille.vanillaboom.block.ModStairBlock;
 import phrille.vanillaboom.block.ModWallBlock;
@@ -68,6 +69,7 @@ public class ModBlocks
 
     //Rocks
     public static final Block PERIDOTITE = Utils._null();
+    public static final Block HYDRO_ROCK = Utils._null();
     public static final Block INFERNAL_ROCK = Utils._null();
 
     //Sand and Gravel
@@ -210,6 +212,7 @@ public class ModBlocks
     public static final Block RED_TERRACOTTA_BRICK_STAIRS = Utils._null();
     public static final Block BLACK_TERRACOTTA_BRICK_STAIRS = Utils._null();
     public static final Block PERIDOTITE_STAIRS = Utils._null();
+    public static final Block HYDRO_ROCK_STAIRS = Utils._null();
     public static final Block INFERNAL_ROCK_STAIRS = Utils._null();
     public static final Block GRAVEL_STONE_STAIRS = Utils._null();
     public static final Block FINE_GRAVEL_STONE_STAIRS = Utils._null();
@@ -318,6 +321,7 @@ public class ModBlocks
     public static final Block RED_TERRACOTTA_BRICK_SLAB = Utils._null();
     public static final Block BLACK_TERRACOTTA_BRICK_SLAB = Utils._null();
     public static final Block PERIDOTITE_SLAB = Utils._null();
+    public static final Block HYDRO_ROCK_SLAB = Utils._null();
     public static final Block INFERNAL_ROCK_SLAB = Utils._null();
     public static final Block GRAVEL_STONE_SLAB = Utils._null();
     public static final Block FINE_GRAVEL_STONE_SLAB = Utils._null();
@@ -424,6 +428,7 @@ public class ModBlocks
     public static final Block RED_TERRACOTTA_BRICK_WALL = Utils._null();
     public static final Block BLACK_TERRACOTTA_BRICK_WALL = Utils._null();
     public static final Block PERIDOTITE_WALL = Utils._null();
+    public static final Block HYDRO_ROCK_WALL = Utils._null();
     public static final Block INFERNAL_ROCK_WALL = Utils._null();
     public static final Block GRAVEL_STONE_WALL = Utils._null();
     public static final Block FINE_GRAVEL_STONE_WALL = Utils._null();
@@ -575,6 +580,7 @@ public class ModBlocks
 
             //Rocks
             createSpecialBlock(registry, Properties.from(Blocks.ANDESITE), Names.PERIDOTITE);
+            createSpecialBlock(registry, new HydroRockBlock(), Names.HYDRO_ROCK);
             createSpecialBlock(registry, Properties.from(Blocks.NETHERRACK), Names.INFERNAL_ROCK);
 
             //Sand and Gravel
