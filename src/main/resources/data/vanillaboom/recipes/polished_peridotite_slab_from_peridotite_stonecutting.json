@@ -1,7 +1,7 @@
 {
   "type": "minecraft:stonecutting",
   "ingredient": {
-    "item": "vanillaboom:peridotite"
+    "item": "vanillaboom:polished_peridotite"
   },
   "result": "vanillaboom:polished_peridotite_slab",
   "count": 2

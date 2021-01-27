@@ -3,6 +3,6 @@
   "ingredient": {
     "item": "vanillaboom:peridotite"
   },
-  "result": "vanillaboom:polished_peridotite_slab",
-  "count": 2
+  "result": "vanillaboom:peridotite_pillar",
+  "count": 1
 }

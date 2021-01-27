@@ -20,8 +20,14 @@ public class VanillaBoomConfig
     public static boolean infernalRockGenEnabled;
     public static boolean boneSandGenEnabled;
     public static boolean witherBoneSandGenEnabled;
+    
     public static boolean netherWellGenEnabled;
+    public static int netherWellMinChunk;
+    public static int netherWellMaxChunk;
+
     public static boolean graveGenEnabled;
+    public static int gravelMinChunk;
+    public static int graveMaxChunk;
 
     public static void bakeClient(ModConfig config)
     {
@@ -42,7 +48,13 @@ public class VanillaBoomConfig
         infernalRockGenEnabled = ConfigHandler.COMMON.infernalRockGenEnabled.get();
         boneSandGenEnabled = ConfigHandler.COMMON.boneSandGenEnabled.get();
         witherBoneSandGenEnabled = ConfigHandler.COMMON.witherBoneSandGenEnabled.get();
+        
         netherWellGenEnabled = ConfigHandler.COMMON.netherWellGenEnabled.get();
+        netherWellMinChunk = ConfigHandler.COMMON.netherWellMinChunk.get();
+        netherWellMaxChunk = ConfigHandler.COMMON.netherWellMaxChunk.get();
+
         graveGenEnabled = ConfigHandler.COMMON.graveGenEnabled.get();
+        gravelMinChunk = ConfigHandler.COMMON.gravelMinChunk.get();
+        graveMaxChunk = ConfigHandler.COMMON.graveMaxChunk.get();
     }
 }
