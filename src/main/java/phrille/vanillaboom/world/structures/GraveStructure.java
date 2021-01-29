@@ -22,7 +22,6 @@ import net.minecraft.world.gen.feature.structure.StructureStart;
 import net.minecraft.world.gen.feature.structure.VillageConfig;
 import net.minecraft.world.gen.feature.template.TemplateManager;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.init.ModBlocks;
 
 public class GraveStructure extends Structure<NoFeatureConfig>
 {

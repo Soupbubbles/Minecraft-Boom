@@ -15,9 +15,7 @@ import com.google.gson.GsonBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModItems;
 
 public class JsonDataGenerator

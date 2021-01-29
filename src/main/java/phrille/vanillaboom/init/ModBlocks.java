@@ -34,6 +34,7 @@ import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.block.BookshelfBlock;
 import phrille.vanillaboom.block.GunpowderBlock;
 import phrille.vanillaboom.block.HydroRockBlock;
+import phrille.vanillaboom.block.InfernalRockBlock;
 import phrille.vanillaboom.block.ModSlabBlock;
 import phrille.vanillaboom.block.ModStairBlock;
 import phrille.vanillaboom.block.ModWallBlock;
@@ -336,7 +337,6 @@ public class ModBlocks
     public static final Block CHISELED_PURPUR_BLOCK_SLAB = Utils._null();
     public static final Block CHISELED_OBSIDIAN_SLAB = Utils._null();
 
-
     //Vanilla Slabs
     public static final Block CRACKED_STONE_BRICK_SLAB = Utils._null();
     public static final Block CHISELED_STONE_BRICK_SLAB = Utils._null();
@@ -442,7 +442,6 @@ public class ModBlocks
     public static final Block CRACKED_RED_NETHER_BRICK_WALL = Utils._null();
     public static final Block CHISELED_RED_NETHER_BRICK_WALL = Utils._null();
     public static final Block CHISELED_OBSIDIAN_WALL = Utils._null();
-
 
     //Vanilla Walls
     public static final Block CRACKED_STONE_BRICK_WALL = Utils._null();
@@ -581,7 +580,7 @@ public class ModBlocks
             //Rocks
             createSpecialBlock(registry, Properties.from(Blocks.ANDESITE), Names.PERIDOTITE);
             createSpecialBlock(registry, new HydroRockBlock(), Names.HYDRO_ROCK);
-            createSpecialBlock(registry, Properties.from(Blocks.NETHERRACK), Names.INFERNAL_ROCK);
+            createSpecialBlock(registry, new InfernalRockBlock(), Names.INFERNAL_ROCK);
 
             //Sand and Gravel
             registry.register(setup(new FallingBlock(Properties.create(Material.SAND, MaterialColor.SNOW).hardnessAndResistance(0.5F, 0.0F).sound(SoundType.SOUL_SAND).harvestTool(ToolType.SHOVEL)), Names.BONE_SAND));

@@ -10,17 +10,17 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-public class HydroRockBlock extends Block
+public class InfernalRockBlock extends Block
 {
-    public HydroRockBlock()
+    public InfernalRockBlock()
     {
-        super(Properties.from(Blocks.PRISMARINE));
+        super(Properties.from(Blocks.NETHERRACK));
     }
 
     @Override
     public void animateTick(BlockState state, World world, BlockPos pos, Random rand)
     {
-        if (rand.nextInt(2) == 0)
+        if (rand.nextInt(4) == 0)
         {
             Direction direction = Direction.getRandomDirection(rand);
 
@@ -36,14 +36,7 @@ public class HydroRockBlock extends Block
                     double d2 = direction.getYOffset() == 0 ? rand.nextDouble() : 0.5D + (double) direction.getYOffset() * 0.6D;
                     double d3 = direction.getZOffset() == 0 ? rand.nextDouble() : 0.5D + (double) direction.getZOffset() * 0.6D;
 
-                    if (world.getDimensionType().isUltrawarm() && direction != Direction.DOWN)
-                    {
-                        world.addParticle(ParticleTypes.SMOKE, (double) pos.getX() + d1, (double) pos.getY() + d2, (double) pos.getZ() + d3, 0.0D, 0.0D, 0.0D);
-                    }
-                    else
-                    {
-                        world.addParticle(ParticleTypes.DRIPPING_WATER, (double) pos.getX() + d1, (double) pos.getY() + d2, (double) pos.getZ() + d3, 0.0D, 0.0D, 0.0D);
-                    }
+                    world.addParticle(ParticleTypes.DRIPPING_LAVA, (double) pos.getX() + d1, (double) pos.getY() + d2, (double) pos.getZ() + d3, 0.0D, 0.0D, 0.0D);
                 }
             }
         }

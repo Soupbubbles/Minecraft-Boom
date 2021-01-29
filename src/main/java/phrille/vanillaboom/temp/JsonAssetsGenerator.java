@@ -15,7 +15,6 @@ import com.google.gson.GsonBuilder;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.init.ModBlocks;
 
 public class JsonAssetsGenerator
 {

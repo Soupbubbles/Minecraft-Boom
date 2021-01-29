@@ -77,14 +77,12 @@ public class PaintingItem extends Item
         }
     }
 
-    @OnlyIn(Dist.CLIENT)
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag)
     {
         tooltip.add(getPaintingDescription().mergeStyle(TextFormatting.BLUE));
     }
 
-    @OnlyIn(Dist.CLIENT)
     public IFormattableTextComponent getPaintingDescription()
     {
         return new TranslationTextComponent(getTranslationKey() + ".desc");

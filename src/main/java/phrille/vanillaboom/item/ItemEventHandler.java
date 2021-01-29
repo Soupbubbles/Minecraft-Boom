@@ -93,16 +93,25 @@ public class ItemEventHandler
         }
         else if (VanillaBoomConfig.fillWaterBottleHydroRock && stack.getItem() == Items.GLASS_BOTTLE && state.getBlock() == ModBlocks.HYDRO_ROCK)
         {
-            world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
-            player.addStat(Stats.ITEM_USED.get(stack.getItem()));
-
-            if (!world.isRemote)
-            {
-                DrinkHelper.fill(stack, player, PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.WATER));
-            }
-
             BlockPos upPos = pos.offset(Direction.UP);
-            spawnGrowParticles(ParticleTypes.BUBBLE_POP, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.2F);
+
+            if (!world.getDimensionType().isUltrawarm() || player.abilities.isCreativeMode) 
+            {
+                world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+                player.addStat(Stats.ITEM_USED.get(stack.getItem()));
+
+                if (!world.isRemote)
+                {
+                    DrinkHelper.fill(stack, player, PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.WATER));
+                }
+
+                spawnGrowParticles(ParticleTypes.SPLASH, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.05F);
+            }
+            else 
+            {
+                world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.NEUTRAL, 1.0F, 1.0F);
+                spawnGrowParticles(ParticleTypes.SMOKE, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.4F);
+            }
         }
     }
 

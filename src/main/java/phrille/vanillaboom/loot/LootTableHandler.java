@@ -34,6 +34,7 @@ public class LootTableHandler
     private static final RegistryObject<LootTableDropModifier.Serializer> POLAR_BEAR = GLM.register("polar_bear", LootTableDropModifier.Serializer::new);
     private static final RegistryObject<LootTableDropModifier.Serializer> SPRUCE_LEAVES = GLM.register("spruce_leaves", LootTableDropModifier.Serializer::new);
     private static final RegistryObject<LootTableDropModifier.Serializer> PUMPKIN = GLM.register("pumpkin", LootTableDropModifier.Serializer::new);
+    private static final RegistryObject<LootTableDropModifier.Serializer> FISHING = GLM.register("fishing", LootTableDropModifier.Serializer::new);
 
     public static void init(IEventBus modEventBus)
     {
@@ -42,8 +43,8 @@ public class LootTableHandler
 
     public static class LootTableDropModifier extends LootModifier
     {
-        private final TableLootEntry table;
-        private final Item[] overwriteItems;
+        protected final TableLootEntry table;
+        protected final Item[] overwriteItems;
 
         public LootTableDropModifier(ILootCondition[] conditions, TableLootEntry lootTable, Item... overwrite)
         {
@@ -60,7 +61,7 @@ public class LootTableHandler
             {
                 generatedLoot = generatedLoot.stream().filter(stack -> stack.getItem() != item).collect(Collectors.toList());
             }
-            
+
             table.func_216154_a(generatedLoot::add, context);
 
             return generatedLoot;
@@ -86,7 +87,7 @@ public class LootTableHandler
                         items[i] = ForgeRegistries.ITEMS.getValue(new ResourceLocation(JSONUtils.getString(obj, "item")));
                     }
                 }
-                
+
                 return new LootTableDropModifier(lootConditions, table, items);
             }
 
@@ -95,7 +96,7 @@ public class LootTableHandler
             {
                 JsonObject json = makeConditions(instance.conditions);
                 JsonArray overwrites = new JsonArray();
-                
+
                 for (int i = 0; i < instance.overwriteItems.length; i++)
                 {
                     JsonObject obj = new JsonObject();
@@ -105,7 +106,7 @@ public class LootTableHandler
 
                 json.addProperty("table", instance.table.table.toString());
                 json.add("overwrites", overwrites);
-                
+
                 return json;
             }
         }
