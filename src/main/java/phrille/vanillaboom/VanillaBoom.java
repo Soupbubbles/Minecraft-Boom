@@ -39,14 +39,13 @@ public class VanillaBoom
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         modEventBus.addListener(this::setup);
-        modEventBus.addListener(this::clientSetup);
         modEventBus.addListener(this::enqueueIMC);
         modEventBus.addListener(this::processIMC);
 
         ModStructures.init(modEventBus);
         LootTableHandler.init(modEventBus);
         
-        //modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHandler.CLIENT_SPEC);
+        modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHandler.CLIENT_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHandler.COMMON_SPEC);
     }
 
@@ -65,11 +64,6 @@ public class VanillaBoom
             ModConfiguredStructures.registerConfiguredStructures();
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(new ResourceLocation(MOD_ID, Names.ROSE), () -> ModBlocks.POTTED_ROSE);
         });
-    }
-
-    private void clientSetup(FMLClientSetupEvent event)
-    {
-        ModRenderers.setRenderLayers();
     }
 
     private void enqueueIMC(InterModEnqueueEvent event)

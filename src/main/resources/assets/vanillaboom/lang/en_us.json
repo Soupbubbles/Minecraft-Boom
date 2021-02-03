@@ -501,6 +501,18 @@
     "item.vanillaboom.drowned_flesh": "Drowned Flesh",
     "item.vanillaboom.prismarine_arrow": "Prismarine Arrow",
     
+    "item.vanillaboom.tuna": "Tuna",
+    "item.vanillaboom.cooked_tuna": "Cooked Tuna",
+    "item.vanillaboom.perch": "Perch",
+    "item.vanillaboom.cooked_perch": "Cooked Perch",
+    "item.vanillaboom.pike": "Pike",
+    "item.vanillaboom.cooked_pike": "Cooked Pike",
+    "item.vanillaboom.eel": "Eel",
+    "item.vanillaboom.sunfish": "Sunfish",
+    "item.vanillaboom.moonfish": "Moonfish",
+    "item.vanillaboom.ender_fish": "Ender Fish",
+    "item.vanillaboom.wither_fish": "Wither Fish",
+                
     "item.vanillaboom.canvas": "Canvas",
     "item.vanillaboom.small_painting": "Small Painting",
     "item.vanillaboom.horizontal_painting": "Horizontal Painting",

@@ -22,6 +22,7 @@ public class ModRenderers
     {
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.PRISMARINE_ARROW, renderManager -> new PrismarineArrowRenderer(renderManager, new ResourceLocation(VanillaBoom.MOD_ID, "textures/entity/prismarine_arrow.png")));
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.CUSTOM_PAINTING, renderManager -> new PaintingRenderer(renderManager));
+        setRenderLayers();
     }
 
     public static void setRenderLayers()

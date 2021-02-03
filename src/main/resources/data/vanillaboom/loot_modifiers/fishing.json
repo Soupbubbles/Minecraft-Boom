@@ -26,5 +26,17 @@
   "table": "vanillaboom:vanilla/gameplay/fish",
   "overwrites":
   [
+    {
+      "item": "minecraft:cod"
+    },
+    {
+      "item": "minecraft:salmon"
+    },
+    {
+      "item": "minecraft:tropical_fish"
+    },
+    {
+      "item": "minecraft:pufferfish"
+    }
   ]
 }
