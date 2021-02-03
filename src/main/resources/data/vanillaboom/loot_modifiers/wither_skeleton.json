@@ -10,7 +10,7 @@
       "entity": "this"
     }
   ],
-  "table": "vanillaboom:vanilla/entities/wither_skeleton",
+  "table": "vanillaboom:entities/wither_skeleton",
   "overwrites":
   [
     {

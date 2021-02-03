@@ -31,34 +31,30 @@ public class RenderEventHandler
 
         if (VanillaBoomConfig.addFoodTooltips && !stack.isEmpty() && (stack.getItem().isFood() || stack.getItem() == Items.CAKE))
         {
-            Minecraft mc = Minecraft.getInstance();
-            mc.getTextureManager().bindTexture(new ResourceLocation("textures/gui/icons.png"));
+            Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("textures/gui/icons.png"));
 
             int uOffset = 16;
             int vOffset = 27;
             int uWidth = 9;
             int vHeight = 9;
-            int x1 = event.getX() - 1;
-            int y1 = event.getY() + 11 * (event.getLines().size() - 1);
+            int x = event.getX() - 1;
+            int y = event.getY() + 11 * (event.getLines().size() - 1);
             int healing = stack.getItem() == Items.CAKE ? 14 : stack.getItem().getFood().getHealing();
             int k = healing - healing / 2;
 
             for (int i = 0; i < k; i++)
             {
-                blit(event.getMatrixStack(), x1 + 8 * i, y1, uOffset, vOffset, uWidth, vHeight);
-            }
+                blit(event.getMatrixStack(), x + 8 * i, y, uOffset, vOffset, uWidth, vHeight);
 
-            for (int i = 0; i < k; i++)
-            {
                 if (i == k - 1)
                 {
                     int j = healing % 2 == 0 ? 0 : 9;
 
-                    blit(event.getMatrixStack(), x1 + 8 * i, y1, uOffset + 36 + j, vOffset, uWidth, vHeight);
+                    blit(event.getMatrixStack(), x + 8 * i, y, uOffset + 36 + j, vOffset, uWidth, vHeight);
                 }
                 else
                 {
-                    blit(event.getMatrixStack(), x1 + 8 * i, y1, uOffset + 36, vOffset, uWidth, vHeight);
+                    blit(event.getMatrixStack(), x + 8 * i, y, uOffset + 36, vOffset, uWidth, vHeight);
                 }
             }
         }

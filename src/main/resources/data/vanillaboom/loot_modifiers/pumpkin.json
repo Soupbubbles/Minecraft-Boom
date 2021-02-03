@@ -6,7 +6,7 @@
       "block":"minecraft:pumpkin"
     }
   ],
-  "table": "vanillaboom:vanilla/blocks/pumpkin",
+  "table": "vanillaboom:blocks/pumpkin",
   "overwrites":
   [
     {

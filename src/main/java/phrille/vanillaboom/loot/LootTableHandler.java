@@ -35,7 +35,7 @@ public class LootTableHandler
     private static final RegistryObject<LootTableDropModifier.Serializer> POLAR_BEAR = GLM.register("polar_bear", LootTableDropModifier.Serializer::new);
     private static final RegistryObject<LootTableDropModifier.Serializer> SPRUCE_LEAVES = GLM.register("spruce_leaves", LootTableDropModifier.Serializer::new);
     private static final RegistryObject<LootTableDropModifier.Serializer> PUMPKIN = GLM.register("pumpkin", LootTableDropModifier.Serializer::new);
-    private static final RegistryObject<LootTableDropModifier.Serializer> FISHING = GLM.register("fishing", LootTableDropModifier.Serializer::new);
+    private static final RegistryObject<LootTableDropModifier.Serializer> FISH = GLM.register("fish", LootTableDropModifier.Serializer::new);
 
     public static void init(IEventBus modEventBus)
     {

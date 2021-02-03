@@ -10,7 +10,7 @@
       "entity": "this"
     }
   ],
-  "table": "vanillaboom:vanilla/entities/drowned",
+  "table": "vanillaboom:entities/drowned",
   "overwrites":
   [
     {
