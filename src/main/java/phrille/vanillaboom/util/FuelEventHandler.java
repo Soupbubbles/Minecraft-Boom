@@ -15,7 +15,7 @@ public class FuelEventHandler
     //Vanilla
     public static final int BLAZE_POWDER = 1200;
 
-    //VanillaBoom
+    //Vanilla Boom
     public static final int CHARCOAL_BLOCK = 16000;
     public static final int BLAZE_POWDER_BLOCK = 10800;
     public static final int WITHER_BONE_BLOCK = 9000;

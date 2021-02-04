@@ -1,15 +1,16 @@
 package phrille.vanillaboom.init;
 
 import net.minecraft.block.Block;
-import net.minecraft.block.CropsBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerPotBlock;
+import net.minecraft.block.IGrowable;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.entity.item.PaintingType;
 import net.minecraft.item.BlockItem;
+import net.minecraft.item.BlockNamedItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
@@ -38,14 +39,17 @@ public class ModItems
     public static final Item MAGMA_BRICK = Utils._null();
     public static final Item WITHER_BONE = Utils._null();
     public static final Item WITHER_BONE_MEAL = Utils._null();
-    public static final Item PINECONE = Utils._null();
+    public static final Item PRISMARINE_ARROW = Utils._null();
     public static final Item POLAR_BEAR_FUR = Utils._null();
     public static final Item RAW_POLAR_BEAR_MEAT = Utils._null();
     public static final Item POLAR_BEAR_STEAK = Utils._null();
     public static final Item PUMPKIN_SLICE = Utils._null();
     public static final Item COOKED_EGG = Utils._null();
     public static final Item DROWNED_FLESH = Utils._null();
-    public static final Item PRISMARINE_ARROW = Utils._null();
+    public static final Item PINECONE = Utils._null();
+    public static final Item CHOCOLATE = Utils._null();
+    public static final Item TOMATO = Utils._null();
+    public static final Item TOMATO_SEEDS = Utils._null();
 
     public static final Item TUNA = Utils._null();
     public static final Item COOKED_TUNA = Utils._null();
@@ -105,15 +109,19 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.MAGMA_BRICK));
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WITHER_BONE));
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WITHER_BONE_MEAL));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PINECONE));
+            registerItem(registry, setup(new PrismarineArrowItem(), Names.PRISMARINE_ARROW));
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_FUR));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.RAW_POLAR_BEAR_MEAT).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.RAW_POLAR_BEAR_MEAT));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_STEAK));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PUMPKIN_SLICE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PUMPKIN_SLICE));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EGG).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.COOKED_EGG));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.DROWNED_FLESH));
-            registerItem(registry, setup(new PrismarineArrowItem(), Names.PRISMARINE_ARROW));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PINECONE));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.CHOCOLATE).group(VanillaBoomTab.VANILLABOOM_TAB)), "chocolate"));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TOMATO).group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato"));
+            registerItem(registry, setup(new BlockNamedItem(ModBlocks.TOMATO_PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato_seeds"));
 
+            //TODO: Fix fish foods
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "perch"));
@@ -191,7 +199,7 @@ public class ModItems
                     continue;
                 }
 
-                boolean notAdd = block instanceof FlowerPotBlock || block instanceof CropsBlock;
+                boolean notAdd = block instanceof FlowerPotBlock || block instanceof IGrowable;
 
                 if (!notAdd)
                 {
@@ -217,12 +225,14 @@ public class ModItems
 
     public static class ModFoods
     {
-        public static final Food PINECONE = new Food.Builder().hunger(3).saturation(0.5F).build();
         public static final Food RAW_POLAR_BEAR_MEAT = new Food.Builder().hunger(3).saturation(1.8F).meat().build();
         public static final Food POLAR_BEAR_STEAK = new Food.Builder().hunger(8).saturation(12.8F).meat().build();
         public static final Food PUMPKIN_SLICE = new Food.Builder().hunger(2).saturation(1.2F).build();
-        public static final Food COOKED_EGG = new Food.Builder().hunger(6).saturation(2.8F).build();
+        public static final Food COOKED_EGG = new Food.Builder().hunger(6).saturation(3.8F).build();
         public static final Food DROWNED_FLESH = new Food.Builder().hunger(4).saturation(0.1F).effect(() -> new EffectInstance(Effects.HUNGER, 600, 0), 0.8F).effect(() -> new EffectInstance(Effects.WATER_BREATHING, 600, 0), 0.5F).meat().build();
+        public static final Food PINECONE = new Food.Builder().hunger(3).saturation(0.5F).build();
+        public static final Food CHOCOLATE = new Food.Builder().hunger(5).saturation(2.2F).build();
+        public static final Food TOMATO = new Food.Builder().hunger(4).saturation(1.6F).build();
 
         public static final Food TUNA = new Food.Builder().hunger(3).saturation(0.6F).build();
         public static final Food COOKED_TUNA = new Food.Builder().hunger(7).saturation(10.2F).build();

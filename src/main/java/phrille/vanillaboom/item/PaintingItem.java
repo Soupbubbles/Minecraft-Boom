@@ -80,12 +80,7 @@ public class PaintingItem extends Item
     @Override
     public void addInformation(ItemStack stack, @Nullable World world, List<ITextComponent> tooltip, ITooltipFlag flag)
     {
-        tooltip.add(getPaintingDescription().mergeStyle(TextFormatting.BLUE));
-    }
-
-    public IFormattableTextComponent getPaintingDescription()
-    {
-        return new TranslationTextComponent(getTranslationKey() + ".desc");
+        tooltip.add(new TranslationTextComponent(getTranslationKey() + ".desc").mergeStyle(TextFormatting.BLUE));
     }
 
     protected boolean canPlace(PlayerEntity player, Direction direction, ItemStack stack, BlockPos pos)
