@@ -23,6 +23,7 @@ import net.minecraftforge.common.loot.GlobalLootModifierSerializer;
 import net.minecraftforge.common.loot.LootModifier;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import phrille.vanillaboom.VanillaBoom;
@@ -44,11 +45,14 @@ public class LootTableHandler
         GLM.register(modEventBus);
     }
 
-    public static class FishLootModifier extends LootTableDropModifier
+    public static class FishLootModifier extends LootModifier
     {
-        public FishLootModifier(ILootCondition[] conditions, TableLootEntry lootTable, Item[] overwrite)
+        protected final TableLootEntry table;
+
+        public FishLootModifier(ILootCondition[] conditions, TableLootEntry lootTable)
         {
-            super(conditions, lootTable, overwrite);
+            super(conditions);
+            table = lootTable;
         }
         
         @Nonnull
@@ -57,21 +61,42 @@ public class LootTableHandler
         {
             try
             {
-                Field field = context.getClass().getField("lootTables"); //Just for testing purposes, change to obfuscated name later
-                field.setAccessible(true);
+                Field field = ObfuscationReflectionHelper.findField(context.getClass(), "lootTables"); //Just for testing purposes, change to obfuscated name later
                 Set<LootTable> set = (Set<LootTable>) field.get(context);
                 
                 if (set.size() == 1) 
                 {
-                    return super.doApply(generatedLoot, context); //Adds my table to the list
+                    table.func_216154_a(generatedLoot::add, context);
+                    return generatedLoot;
                 }
             }
-            catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException e)
+            catch (IllegalArgumentException | IllegalAccessException e)
             {
                 throw new RuntimeException("Could not add access lootTables", e);
             }
             
             return generatedLoot;
+        }
+        
+        public static class Serializer extends GlobalLootModifierSerializer<FishLootModifier>
+        {
+            @Override
+            public FishLootModifier read(ResourceLocation location, JsonObject object, ILootCondition[] lootConditions)
+            {
+                String resLoc = JSONUtils.getString(object, "table");
+                TableLootEntry table = (TableLootEntry) TableLootEntry.builder(new ResourceLocation(resLoc)).build();
+
+                return new FishLootModifier(lootConditions, table);
+            }
+
+            @Override
+            public JsonObject write(FishLootModifier instance)
+            {
+                JsonObject json = makeConditions(instance.conditions);
+                json.addProperty("table", instance.table.table.toString());
+
+                return json;
+            }
         }
     }
     

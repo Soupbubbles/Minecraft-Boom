@@ -29,12 +29,12 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.VanillaBoomTab;
 import phrille.vanillaboom.item.EntitySpawnItem;
 import phrille.vanillaboom.item.PaintingItem;
 import phrille.vanillaboom.item.PrismarineArrowItem;
 import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
+import phrille.vanillaboom.util.VanillaBoomTab;
 
 @ObjectHolder(VanillaBoom.MOD_ID)
 public class ModItems

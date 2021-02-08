@@ -1,4 +1,4 @@
-package phrille.vanillaboom;
+package phrille.vanillaboom.util;
 
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -13,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.init.ModBlocks;
 
 public class VanillaBoomTab extends ItemGroup

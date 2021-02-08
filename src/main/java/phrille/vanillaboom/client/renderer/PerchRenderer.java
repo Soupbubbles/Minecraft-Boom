@@ -14,7 +14,6 @@ import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.client.model.PerchModel;
 import phrille.vanillaboom.entity.PerchEntity;
 
-@OnlyIn(Dist.CLIENT)
 public class PerchRenderer extends MobRenderer<PerchEntity, PerchModel<PerchEntity>>
 {
     private static final ResourceLocation TEXTURE = new ResourceLocation(VanillaBoom.MOD_ID, "textures/entity/perch.png");

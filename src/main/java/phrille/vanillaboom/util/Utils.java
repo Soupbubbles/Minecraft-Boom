@@ -58,7 +58,6 @@ public class Utils
             partypes[0] = Float.TYPE;
             partypes[1] = IItemProvider.class;
             Method method = ObfuscationReflectionHelper.findMethod(clazz, "func_220290_a", partypes);
-            method.setAccessible(true);
             Object arglist[] = new Object[2];
             arglist[0] = chance;
             arglist[1] = item;
