@@ -1,7 +1,8 @@
 package phrille.vanillaboom.loot;
 
-import java.util.ArrayList;
+import java.lang.reflect.Field;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 import javax.annotation.Nonnull;
@@ -13,6 +14,7 @@ import com.google.gson.JsonObject;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.loot.LootContext;
+import net.minecraft.loot.LootTable;
 import net.minecraft.loot.TableLootEntry;
 import net.minecraft.loot.conditions.ILootCondition;
 import net.minecraft.util.JSONUtils;
@@ -35,13 +37,44 @@ public class LootTableHandler
     private static final RegistryObject<LootTableDropModifier.Serializer> POLAR_BEAR = GLM.register("polar_bear", LootTableDropModifier.Serializer::new);
     private static final RegistryObject<LootTableDropModifier.Serializer> SPRUCE_LEAVES = GLM.register("spruce_leaves", LootTableDropModifier.Serializer::new);
     private static final RegistryObject<LootTableDropModifier.Serializer> PUMPKIN = GLM.register("pumpkin", LootTableDropModifier.Serializer::new);
-    private static final RegistryObject<LootTableDropModifier.Serializer> FISH = GLM.register("fish", LootTableDropModifier.Serializer::new);
+    private static final RegistryObject<FishLootModifier.Serializer> FISH = GLM.register("fish", FishLootModifier.Serializer::new);
 
     public static void init(IEventBus modEventBus)
     {
         GLM.register(modEventBus);
     }
 
+    public static class FishLootModifier extends LootTableDropModifier
+    {
+        public FishLootModifier(ILootCondition[] conditions, TableLootEntry lootTable, Item[] overwrite)
+        {
+            super(conditions, lootTable, overwrite);
+        }
+        
+        @Nonnull
+        @Override
+        protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context)
+        {
+            try
+            {
+                Field field = context.getClass().getField("lootTables"); //Just for testing purposes, change to obfuscated name later
+                field.setAccessible(true);
+                Set<LootTable> set = (Set<LootTable>) field.get(context);
+                
+                if (set.size() == 1) 
+                {
+                    return super.doApply(generatedLoot, context); //Adds my table to the list
+                }
+            }
+            catch (NoSuchFieldException | IllegalArgumentException | IllegalAccessException e)
+            {
+                throw new RuntimeException("Could not add access lootTables", e);
+            }
+            
+            return generatedLoot;
+        }
+    }
+    
     public static class LootTableDropModifier extends LootModifier
     {
         protected final TableLootEntry table;
@@ -64,7 +97,7 @@ public class LootTableHandler
             }
 
             table.func_216154_a(generatedLoot::add, context);
-
+            
             return generatedLoot;
         }
 

@@ -45,7 +45,7 @@ public class PaintingItem extends Item
         PlayerEntity playerentity = context.getPlayer();
         ItemStack itemstack = context.getItem();
 
-        if (!canBePlaced && paintingType != null && playerentity != null && !canPlace(playerentity, direction, itemstack, blockpos1))
+        if (!canBePlaced || paintingType == null || (playerentity != null && !canPlace(playerentity, direction, itemstack, blockpos1)))
         {
             return ActionResultType.FAIL;
         }

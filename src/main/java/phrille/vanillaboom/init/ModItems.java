@@ -9,8 +9,10 @@ import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
 import net.minecraft.entity.item.PaintingType;
+import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.BlockNamedItem;
+import net.minecraft.item.FishBucketItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
@@ -28,6 +30,7 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.VanillaBoomTab;
+import phrille.vanillaboom.item.EntitySpawnItem;
 import phrille.vanillaboom.item.PaintingItem;
 import phrille.vanillaboom.item.PrismarineArrowItem;
 import phrille.vanillaboom.util.Names;
@@ -53,15 +56,24 @@ public class ModItems
 
     public static final Item TUNA = Utils._null();
     public static final Item COOKED_TUNA = Utils._null();
+
     public static final Item PERCH = Utils._null();
     public static final Item COOKED_PERCH = Utils._null();
+    public static final Item PERCH_BUCKET = Utils._null();
+    public static final Item PERCH_SPAWN_EGG = Utils._null();
+
     public static final Item PIKE = Utils._null();
+
     public static final Item EEL = Utils._null();
+
     public static final Item SUNFISH = Utils._null();
+
     public static final Item MOONFISH = Utils._null();
+
     public static final Item ENDER_FISH = Utils._null();
+
     public static final Item WITHER_FISH = Utils._null();
-    
+
     public static final Item CANVAS = Utils._null();
     public static final Item SMALL_PAINTING = Utils._null();
     public static final Item HORIZONTAL_PAINTING = Utils._null();
@@ -124,15 +136,24 @@ public class ModItems
             //TODO: Fix fish foods
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_tuna"));
+
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "perch"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_perch"));
+            registerItem(registry, setup(new FishBucketItem(() -> ModEntities.PERCH, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "perch_bucket"));
+            registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.PERCH, 0x464614, 0xFD5100, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "perch_spawn_egg"));
+
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PIKE).group(VanillaBoomTab.VANILLABOOM_TAB)), "pike"));
+
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.EEL).group(VanillaBoomTab.VANILLABOOM_TAB)), "eel"));
+
             registerItem(registry, setup(new SimpleFoiledItem(new Item.Properties().rarity(Rarity.UNCOMMON).food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "sunfish"));
+
             registerItem(registry, setup(new SimpleFoiledItem(new Item.Properties().rarity(Rarity.RARE).food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "moonfish"));
+
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "ender_fish"));
+
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "wither_fish"));
-            
+
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.CANVAS));
             registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SMALL_PAINTING));
             registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.HORIZONTAL_PAINTING));
@@ -225,21 +246,21 @@ public class ModItems
 
     public static class ModFoods
     {
-        public static final Food RAW_POLAR_BEAR_MEAT = new Food.Builder().hunger(3).saturation(1.8F).meat().build();
-        public static final Food POLAR_BEAR_STEAK = new Food.Builder().hunger(8).saturation(12.8F).meat().build();
-        public static final Food PUMPKIN_SLICE = new Food.Builder().hunger(2).saturation(1.2F).build();
-        public static final Food COOKED_EGG = new Food.Builder().hunger(6).saturation(3.8F).build();
+        public static final Food RAW_POLAR_BEAR_MEAT = new Food.Builder().hunger(3).saturation(0.3F).meat().build();
+        public static final Food POLAR_BEAR_STEAK = new Food.Builder().hunger(8).saturation(0.8F).meat().build();
+        public static final Food PUMPKIN_SLICE = new Food.Builder().hunger(2).saturation(0.3F).build();
+        public static final Food COOKED_EGG = new Food.Builder().hunger(6).saturation(0.6F).build();
         public static final Food DROWNED_FLESH = new Food.Builder().hunger(4).saturation(0.1F).effect(() -> new EffectInstance(Effects.HUNGER, 600, 0), 0.8F).effect(() -> new EffectInstance(Effects.WATER_BREATHING, 600, 0), 0.5F).meat().build();
-        public static final Food PINECONE = new Food.Builder().hunger(3).saturation(0.5F).build();
-        public static final Food CHOCOLATE = new Food.Builder().hunger(5).saturation(2.2F).build();
-        public static final Food TOMATO = new Food.Builder().hunger(4).saturation(1.6F).build();
+        public static final Food PINECONE = new Food.Builder().hunger(3).saturation(0.2F).build();
+        public static final Food CHOCOLATE = new Food.Builder().hunger(5).saturation(0.3F).build();
+        public static final Food TOMATO = new Food.Builder().hunger(4).saturation(0.2F).build();
 
-        public static final Food TUNA = new Food.Builder().hunger(3).saturation(0.6F).build();
-        public static final Food COOKED_TUNA = new Food.Builder().hunger(7).saturation(10.2F).build();
-        public static final Food PERCH = new Food.Builder().hunger(2).saturation(0.4F).build();
-        public static final Food COOKED_PERCH = new Food.Builder().hunger(6).saturation(9.6F).build();
-        public static final Food PIKE = new Food.Builder().hunger(2).saturation(0.5F).build();
-        public static final Food COOKED_PIKE = new Food.Builder().hunger(7).saturation(9.8F).build();
-        public static final Food EEL = new Food.Builder().hunger(2).saturation(0.3F).build();
+        public static final Food TUNA = new Food.Builder().hunger(3).saturation(0.1F).build();
+        public static final Food COOKED_TUNA = new Food.Builder().hunger(7).saturation(0.6F).build();
+        public static final Food PERCH = new Food.Builder().hunger(2).saturation(0.1F).build();
+        public static final Food COOKED_PERCH = new Food.Builder().hunger(6).saturation(0.6F).build();
+        public static final Food PIKE = new Food.Builder().hunger(2).saturation(0.1F).build();
+        public static final Food COOKED_PIKE = new Food.Builder().hunger(7).saturation(0.6F).build();
+        public static final Food EEL = new Food.Builder().hunger(2).saturation(0.1F).build();
     }
 }

@@ -1,6 +1,5 @@
 package phrille.vanillaboom.init;
 
-import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.AbstractBlock.Properties;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -704,7 +703,6 @@ public class ModBlocks
             createFlower(registry, Effects.HASTE, 10, Names.ROSE);
             registry.register(setup(new TomatoPlantBlock((Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.CROP))), "tomato_plant"));
 
-            
             //Vanilla Stairs, Slabs and Walls
             addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true, true);
             addVanillaVariants(registry, Blocks.CHISELED_STONE_BRICKS, true, true, true);
@@ -872,5 +870,10 @@ public class ModBlocks
             entry.setRegistryName(registryName);
             return entry;
         }
+    }
+
+    public static void registerFlowerPots()
+    {
+        ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(new ResourceLocation(VanillaBoom.MOD_ID, Names.ROSE), () -> ModBlocks.POTTED_ROSE);
     }
 }

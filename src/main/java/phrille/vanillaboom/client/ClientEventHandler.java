@@ -1,4 +1,4 @@
-package phrille.vanillaboom.client.renderer;
+package phrille.vanillaboom.client;
 
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -20,7 +20,7 @@ import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.config.VanillaBoomConfig;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, value = Dist.CLIENT)
-public class RenderEventHandler
+public class ClientEventHandler
 {
     private static final int BLIT_OFFSET = 1;
 

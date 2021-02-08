@@ -3,28 +3,23 @@ package phrille.vanillaboom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import net.minecraft.block.Blocks;
-import net.minecraft.block.FlowerPotBlock;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import phrille.vanillaboom.client.renderer.ModRenderers;
 import phrille.vanillaboom.config.ConfigHandler;
 import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModConfiguredStructures;
+import phrille.vanillaboom.init.ModEntities;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.init.ModStructures;
 import phrille.vanillaboom.loot.LootTableHandler;
 import phrille.vanillaboom.temp.JsonAssetsGenerator;
 import phrille.vanillaboom.temp.JsonDataGenerator;
-import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
 
 @Mod(VanillaBoom.MOD_ID)
@@ -44,7 +39,7 @@ public class VanillaBoom
 
         ModStructures.init(modEventBus);
         LootTableHandler.init(modEventBus);
-        
+
         modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHandler.CLIENT_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHandler.COMMON_SPEC);
     }
@@ -62,7 +57,8 @@ public class VanillaBoom
         {
             ModStructures.setupStructures();
             ModConfiguredStructures.registerConfiguredStructures();
-            ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(new ResourceLocation(MOD_ID, Names.ROSE), () -> ModBlocks.POTTED_ROSE);
+            ModBlocks.registerFlowerPots();
+            ModEntities.registerAttributes();
         });
     }
 
