@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 
 import javax.annotation.Nonnull;
 
+import com.google.common.collect.Lists;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -48,12 +49,14 @@ public class LootTableHandler
     public static class FishLootModifier extends LootModifier
     {
         protected final TableLootEntry table;
+        protected final float chance;
         private static final Field LOOT_FIELD = ObfuscationReflectionHelper.findField(LootContext.class, "field_186504_g");
 
-        public FishLootModifier(ILootCondition[] conditions, TableLootEntry lootTable)
+        public FishLootModifier(ILootCondition[] conditions, TableLootEntry lootTable, float replaceChance)
         {
             super(conditions);
             table = lootTable;
+            chance = replaceChance;
         }
 
         @Nonnull
@@ -64,18 +67,22 @@ public class LootTableHandler
             {
                 Set<LootTable> set = (Set<LootTable>) LOOT_FIELD.get(context);
 
-                if (set.isEmpty())
+                if (set.isEmpty() && context.getRandom().nextFloat() <= chance)
                 {
-                    table.func_216154_a(generatedLoot::add, context);
+                    List<ItemStack> loot = Lists.newArrayList();
+                    table.func_216154_a(loot::add, context);
+                    
+                    return loot;
+                }
+                else 
+                {
                     return generatedLoot;
                 }
             }
             catch (IllegalArgumentException | IllegalAccessException e)
             {
-                throw new RuntimeException("Could not add access lootTables", e);
+                throw new RuntimeException("Could not access lootTables", e);
             }
-
-            return generatedLoot;
         }
 
         public static class Serializer extends GlobalLootModifierSerializer<FishLootModifier>
@@ -85,8 +92,9 @@ public class LootTableHandler
             {
                 String resLoc = JSONUtils.getString(object, "table");
                 TableLootEntry table = (TableLootEntry) TableLootEntry.builder(new ResourceLocation(resLoc)).build();
-
-                return new FishLootModifier(lootConditions, table);
+                float chance = JSONUtils.getFloat(object, "chance");
+                
+                return new FishLootModifier(lootConditions, table, chance);
             }
 
             @Override
@@ -94,6 +102,7 @@ public class LootTableHandler
             {
                 JsonObject json = makeConditions(instance.conditions);
                 json.addProperty("table", instance.table.table.toString());
+                json.addProperty("chance", instance.chance);
 
                 return json;
             }

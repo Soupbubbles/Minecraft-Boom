@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.MobEntity;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
+import net.minecraft.entity.passive.fish.AbstractFishEntity;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.network.IPacket;
@@ -52,8 +53,8 @@ public class PerchEntity extends AbstractGroupFishEntity
         return SoundEvents.ENTITY_COD_FLOP;
     }
 
-    public static AttributeModifierMap.MutableAttribute setCustomAttributes()
+    public static AttributeModifierMap.MutableAttribute getAttributes()
     {
-        return MobEntity.func_233666_p_().createMutableAttribute(Attributes.MOVEMENT_SPEED, (double) 0.5F).createMutableAttribute(Attributes.MAX_HEALTH, 20.0D).createMutableAttribute(Attributes.ATTACK_DAMAGE, 5.0D);
+        return AbstractFishEntity.func_234176_m_();
     }
 }

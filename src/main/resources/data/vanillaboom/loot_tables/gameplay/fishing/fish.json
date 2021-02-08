@@ -6,7 +6,7 @@
       "entries": [
         {
           "type": "minecraft:item",
-          "weight": 10000,
+          "weight": 30,
           "name": "vanillaboom:tuna"
         },
         {

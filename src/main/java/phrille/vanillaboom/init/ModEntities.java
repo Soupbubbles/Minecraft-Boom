@@ -51,7 +51,7 @@ public class ModEntities
 
     public static void registerAttributes()
     {
-        GlobalEntityTypeAttributes.put(ModEntities.PERCH, PerchEntity.setCustomAttributes().create());
+        GlobalEntityTypeAttributes.put(ModEntities.PERCH, PerchEntity.getAttributes().create());
         //EntitySpawnPlacementRegistry.register(PERCH, EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, PerchEntity::func_223363_b);
     }
 }
