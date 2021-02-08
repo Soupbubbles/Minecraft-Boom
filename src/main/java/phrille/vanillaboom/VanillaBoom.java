@@ -52,6 +52,8 @@ public class VanillaBoom
         Utils.addCompostMaterial(0.35F, ModItems.PINECONE);
         Utils.addCompostMaterial(0.5F, ModItems.PUMPKIN_SLICE);
         Utils.addCompostMaterial(0.65F, ModBlocks.ROSE);
+        Utils.addCompostMaterial(0.6F, ModItems.TOMATO);
+        Utils.addCompostMaterial(0.3F, ModItems.TOMATO_SEEDS);
 
         event.enqueueWork(() ->
         {

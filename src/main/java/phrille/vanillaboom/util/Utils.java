@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 
 import javax.annotation.Nonnull;
 
+import net.minecraft.block.ComposterBlock;
 import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -53,18 +54,17 @@ public class Utils
     {
         try
         {
-            Class clazz = Class.forName("net.minecraft.block.ComposterBlock");
             Class partypes[] = new Class[2];
             partypes[0] = Float.TYPE;
             partypes[1] = IItemProvider.class;
-            Method method = ObfuscationReflectionHelper.findMethod(clazz, "func_220290_a", partypes);
+            Method method = ObfuscationReflectionHelper.findMethod(ComposterBlock.class, "func_220290_a", partypes);
             Object arglist[] = new Object[2];
             arglist[0] = chance;
             arglist[1] = item;
             Object retobj = method.invoke(null, arglist);
 
         }
-        catch (ClassNotFoundException | IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+        catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
         {
             throw new RuntimeException("Could not add " + item.asItem().getRegistryName().toString() + " to func_220290_a (registerCompostable)", e);
         }

@@ -1,5 +1,7 @@
 package phrille.vanillaboom.init;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.Block;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
@@ -8,6 +10,7 @@ import net.minecraft.block.IGrowable;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.StairsBlock;
 import net.minecraft.block.WallBlock;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.PaintingType;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.BlockItem;
@@ -137,10 +140,7 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_tuna"));
 
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "perch"));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_perch"));
-            registerItem(registry, setup(new FishBucketItem(() -> ModEntities.PERCH, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "perch_bucket"));
-            registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.PERCH, 0x464614, 0xFD5100, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "perch_spawn_egg"));
+            registerFish(registry, "perch",  ModEntities.PERCH, 0x464614, 0xFD5100, ModFoods.PERCH, ModFoods.COOKED_PERCH);
 
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PIKE).group(VanillaBoomTab.VANILLABOOM_TAB)), "pike"));
 
@@ -188,6 +188,23 @@ public class ModItems
             registerItem(registry, setup(new PaintingItem(PaintingType.BURNING_SKULL, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.BURNING_SKULL_PAINTING));
             registerItem(registry, setup(new PaintingItem(PaintingType.SKELETON, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SKELETON_PAINTING));
             registerItem(registry, setup(new PaintingItem(PaintingType.DONKEY_KONG, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.DONKEY_KONG_PAINTING));
+        }
+
+        private static void registerFish(IForgeRegistry<Item> registry, String name, EntityType type, int primaryColor, int secondaryColor, Food food)
+        {
+            registerFish(registry, name, type, primaryColor, secondaryColor, food, null);
+        }
+
+        private static void registerFish(IForgeRegistry<Item> registry, String name, EntityType type, int primaryColor, int secondaryColor, Food food, @Nullable Food cookedFood)
+        {
+            registerItem(registry, setup(new Item(new Item.Properties().food(food).group(VanillaBoomTab.VANILLABOOM_TAB)), name));
+            registerItem(registry, setup(new FishBucketItem(() -> type, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), name + "_bucket"));
+            registerItem(registry, setup(new EntitySpawnItem(() -> type, primaryColor, secondaryColor, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), name + "_spawn_egg"));
+
+            if (cookedFood != null)
+            {
+                registerItem(registry, setup(new Item(new Item.Properties().food(cookedFood).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_" + name));
+            }
         }
 
         private static void registerItem(IForgeRegistry<Item> registry, Item item)

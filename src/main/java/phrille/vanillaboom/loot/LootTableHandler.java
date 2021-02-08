@@ -48,23 +48,23 @@ public class LootTableHandler
     public static class FishLootModifier extends LootModifier
     {
         protected final TableLootEntry table;
+        private static final Field LOOT_FIELD = ObfuscationReflectionHelper.findField(LootContext.class, "field_186504_g");
 
         public FishLootModifier(ILootCondition[] conditions, TableLootEntry lootTable)
         {
             super(conditions);
             table = lootTable;
         }
-        
+
         @Nonnull
         @Override
         protected List<ItemStack> doApply(List<ItemStack> generatedLoot, LootContext context)
         {
             try
             {
-                Field field = ObfuscationReflectionHelper.findField(context.getClass(), "lootTables"); //Just for testing purposes, change to obfuscated name later
-                Set<LootTable> set = (Set<LootTable>) field.get(context);
-                
-                if (set.size() == 1) 
+                Set<LootTable> set = (Set<LootTable>) LOOT_FIELD.get(context);
+
+                if (set.isEmpty())
                 {
                     table.func_216154_a(generatedLoot::add, context);
                     return generatedLoot;
@@ -74,10 +74,10 @@ public class LootTableHandler
             {
                 throw new RuntimeException("Could not add access lootTables", e);
             }
-            
+
             return generatedLoot;
         }
-        
+
         public static class Serializer extends GlobalLootModifierSerializer<FishLootModifier>
         {
             @Override
@@ -99,7 +99,7 @@ public class LootTableHandler
             }
         }
     }
-    
+
     public static class LootTableDropModifier extends LootModifier
     {
         protected final TableLootEntry table;
@@ -122,7 +122,7 @@ public class LootTableHandler
             }
 
             table.func_216154_a(generatedLoot::add, context);
-            
+
             return generatedLoot;
         }
 
