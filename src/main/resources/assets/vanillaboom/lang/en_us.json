@@ -514,7 +514,11 @@
     
     "item.vanillaboom.pike": "Pike",
     "item.vanillaboom.cooked_pike": "Cooked Pike",
+    
     "item.vanillaboom.eel": "Eel",
+    "item.vanillaboom.eel_bucket": "Bucket of Eel",
+    "item.vanillaboom.eel_spawn_egg": "Eel Spawn Egg",
+        
     "item.vanillaboom.sunfish": "Sunfish",
     "item.vanillaboom.moonfish": "Moonfish",
     "item.vanillaboom.ender_fish": "Ender Fish",

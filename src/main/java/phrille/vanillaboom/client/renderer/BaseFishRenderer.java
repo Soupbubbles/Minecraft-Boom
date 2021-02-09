@@ -4,35 +4,36 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.entity.passive.fish.CodEntity;
+import net.minecraft.client.renderer.entity.model.SegmentedModel;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.client.model.PerchModel;
-import phrille.vanillaboom.entity.PerchEntity;
+import phrille.vanillaboom.entity.BaseFishEntity;
 
-public class PerchRenderer extends MobRenderer<PerchEntity, PerchModel<PerchEntity>>
+public class BaseFishRenderer extends MobRenderer<BaseFishEntity, SegmentedModel<BaseFishEntity>>
 {
-    private static final ResourceLocation TEXTURE = new ResourceLocation(VanillaBoom.MOD_ID, "textures/entity/perch.png");
+    private final ResourceLocation texture;
 
-    public PerchRenderer(EntityRendererManager renderManagerIn)
+    public BaseFishRenderer(EntityRendererManager renderManager, SegmentedModel<BaseFishEntity> model, String name)
     {
-        super(renderManagerIn, new PerchModel<>(), 0.3F);
+        super(renderManager, model, 0.3F);
+        texture = new ResourceLocation(VanillaBoom.MOD_ID, "textures/entity/" + name + ".png");
     }
 
-    public ResourceLocation getEntityTexture(PerchEntity entity)
+    @Override
+    public ResourceLocation getEntityTexture(BaseFishEntity entity)
     {
-        return TEXTURE;
+        return texture;
     }
 
-    protected void applyRotations(PerchEntity entityLiving, MatrixStack matrixStackIn, float ageInTicks, float rotationYaw, float partialTicks)
+    @Override
+    protected void applyRotations(BaseFishEntity entityLiving, MatrixStack matrixStackIn, float ageInTicks, float rotationYaw, float partialTicks)
     {
         super.applyRotations(entityLiving, matrixStackIn, ageInTicks, rotationYaw, partialTicks);
         float f = 4.3F * MathHelper.sin(0.6F * ageInTicks);
         matrixStackIn.rotate(Vector3f.YP.rotationDegrees(f));
+
         if (!entityLiving.isInWater())
         {
             matrixStackIn.translate((double) 0.1F, (double) 0.1F, (double) -0.1F);

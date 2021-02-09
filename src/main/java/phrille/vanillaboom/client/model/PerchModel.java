@@ -54,11 +54,11 @@ public class PerchModel<T extends Entity> extends SegmentedModel<T>
     }
 
     @Override
-    public void setRotationAngles(T entityIn, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
+    public void setRotationAngles(T entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch)
     {
         float f = 1.0F;
 
-        if (!entityIn.isInWater())
+        if (!entity.isInWater())
         {
             f = 1.5F;
         }
