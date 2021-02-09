@@ -37,7 +37,7 @@ public class ModEntities
             event.getRegistry().register(build(Names.CUSTOM_PAINTING, EntityType.Builder.<CustomPaintingEntity>create(CustomPaintingEntity::new, EntityClassification.MISC).setCustomClientFactory((spawnEntity, world) -> new CustomPaintingEntity(CUSTOM_PAINTING, world)).size(0.5F, 0.5F)));
 
             event.getRegistry().register(build("perch", EntityType.Builder.<PerchEntity>create(PerchEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new PerchEntity(PERCH, world)).size(0.5F, 0.3F).trackingRange(4)));
-            event.getRegistry().register(build("eel", EntityType.Builder.<EelEntity>create(EelEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new EelEntity(EEL, world)).size(0.5F, 0.3F).trackingRange(4)));
+            event.getRegistry().register(build("eel", EntityType.Builder.<EelEntity>create(EelEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new EelEntity(EEL, world)).size(0.9F, 0.2F).trackingRange(4)));
         }
 
         private static <T extends Entity> EntityType<T> build(String name, EntityType.Builder<T> builder)

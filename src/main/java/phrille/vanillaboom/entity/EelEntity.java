@@ -4,6 +4,7 @@ import net.minecraft.entity.EntityType;
 import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
+import phrille.vanillaboom.entity.BaseFishEntity.FishSize;
 import phrille.vanillaboom.init.ModEntities;
 import phrille.vanillaboom.init.ModItems;
 
@@ -24,5 +25,11 @@ public class EelEntity extends BaseFishEntity
     protected EntityType<?> getEntityType()
     {
         return ModEntities.EEL;
+    }
+    
+    @Override
+    public FishSize getFishSize() 
+    {
+        return FishSize.EEL;
     }
 }

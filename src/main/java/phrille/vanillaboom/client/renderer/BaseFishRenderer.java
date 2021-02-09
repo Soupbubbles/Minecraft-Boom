@@ -28,15 +28,18 @@ public class BaseFishRenderer extends MobRenderer<BaseFishEntity, SegmentedModel
     }
 
     @Override
-    protected void applyRotations(BaseFishEntity entityLiving, MatrixStack matrixStackIn, float ageInTicks, float rotationYaw, float partialTicks)
+    protected void applyRotations(BaseFishEntity fishEntity, MatrixStack matrixStackIn, float ageInTicks, float rotationYaw, float partialTicks)
     {
-        super.applyRotations(entityLiving, matrixStackIn, ageInTicks, rotationYaw, partialTicks);
+        super.applyRotations(fishEntity, matrixStackIn, ageInTicks, rotationYaw, partialTicks);
         float f = 4.3F * MathHelper.sin(0.6F * ageInTicks);
-        matrixStackIn.rotate(Vector3f.YP.rotationDegrees(f));
+        float f1 = fishEntity.getFishSize() == BaseFishEntity.FishSize.MEDIUM ? 0.1F : fishEntity.getFishSize() == BaseFishEntity.FishSize.LARGE ? 0.4F : fishEntity.getFishSize() == BaseFishEntity.FishSize.EEL ? 0.55F : 0.0F;
 
-        if (!entityLiving.isInWater())
+        matrixStackIn.rotate(Vector3f.YP.rotationDegrees(f));
+        matrixStackIn.translate((double) 0.0F, (double) 0.0F, (double) -f1);
+
+        if (!fishEntity.isInWater())
         {
-            matrixStackIn.translate((double) 0.1F, (double) 0.1F, (double) -0.1F);
+            matrixStackIn.translate((double) 0.1F, (double) 0.1F, (double) 0.0F);
             matrixStackIn.rotate(Vector3f.ZP.rotationDegrees(90.0F));
         }
     }

@@ -17,6 +17,7 @@ import phrille.vanillaboom.init.ModConfiguredStructures;
 import phrille.vanillaboom.init.ModEntities;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.init.ModStructures;
+import phrille.vanillaboom.loot.LootConditionTypes;
 import phrille.vanillaboom.loot.LootTableHandler;
 import phrille.vanillaboom.temp.JsonAssetsGenerator;
 import phrille.vanillaboom.temp.JsonDataGenerator;
@@ -61,6 +62,7 @@ public class VanillaBoom
             ModConfiguredStructures.registerConfiguredStructures();
             ModBlocks.registerFlowerPots();
             ModEntities.registerAttributes();
+            LootConditionTypes.registerLootConditions();
         });
     }
 

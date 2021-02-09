@@ -13,6 +13,82 @@
           "type": "minecraft:item",
           "weight": 30,
           "name": "vanillaboom:perch"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "vanillaboom:pike"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 30,
+          "name": "vanillaboom:eel"
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 300,
+          "name": "vanillaboom:swamp_dweller",
+          "conditions": [
+            {
+              "condition": "minecraft:alternative",
+              "terms": [
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:swamp"
+                  }
+                },
+                {
+                  "condition": "minecraft:location_check",
+                  "predicate": {
+                    "biome": "minecraft:swamp_hill"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 100,
+          "name": "vanillaboom:sunfish",
+          "conditions": [
+            {
+              "condition": "minecraft:weather_check",
+              "raining": false
+            },
+            {
+              "condition": "minecraft:weather_check",
+              "thundering": false
+            },
+            {
+              "condition": "minecraft:time_check",
+              "value": {
+                "min": 1000,
+                "max": 12000
+              },
+              "period": 24000
+            }
+          ]
+        },
+        {
+          "type": "minecraft:item",
+          "weight": 200,
+          "name": "vanillaboom:moonfish",
+          "conditions": [
+            {
+              "condition": "vanillaboom:moon_phase_check",
+              "moon_phase": 1.0
+            },
+            {
+              "condition": "minecraft:time_check",
+              "value": {
+                "min": 17000,
+                "max": 19000
+              },
+              "period": 24000
+            }
+          ]
         }
       ]
     }
