@@ -3,4 +3,8 @@ Vanilla Boom is a mod that aims to expand the vanilla experience. All things tha
 
 Download link: https://www.curseforge.com/minecraft/mc-mods/vanilla-boom
 
+<<<<<<< HEAD
 Vanilla Boom Discord: https://discord.gg/n5a4aVx4
+=======
+Vanilla Boom Discord: https://discord.gg/n5a4aVx4
+>>>>>>> upstream/master
