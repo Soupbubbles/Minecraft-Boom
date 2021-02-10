@@ -27,7 +27,7 @@ public class EelModel<T extends Entity> extends SegmentedModel<T>
         textureHeight = 32;
 
         head = new ModelRenderer(this, 12, 0);
-        head.setRotationPoint(0.0F, 21.5F, -1.0F);
+        head.setRotationPoint(0.0F, 22.0F, -1.0F);
         head.addBox(-1.0F, -1.0F, -4.0F, 2.0F, 2.0F, 3.0F, 0.0F, 0.0F, 0.0F);
 
         finFront = new ModelRenderer(this, 0, 4);

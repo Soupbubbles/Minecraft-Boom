@@ -75,12 +75,16 @@ public class ModItems
     public static final Item WITHER_FISH = Utils._null();
 
     //Fish Buckets
+    public static final Item TUNA_BUCKET = Utils._null();
     public static final Item PERCH_BUCKET = Utils._null();
     public static final Item EEL_BUCKET = Utils._null();
+    public static final Item SWAMP_DWELLER_BUCKET = Utils._null();
 
     //Spawn Eggs
+    public static final Item TUNA_SPAWN_EGG = Utils._null();
     public static final Item PERCH_SPAWN_EGG = Utils._null();
     public static final Item EEL_SPAWN_EGG = Utils._null();
+    public static final Item SWAMP_DWELLER_SPAWN_EGG = Utils._null();
 
     public static final Item CANVAS = Utils._null();
     public static final Item SMALL_PAINTING = Utils._null();
@@ -141,7 +145,11 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TOMATO).group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato"));
             registerItem(registry, setup(new BlockNamedItem(ModBlocks.TOMATO_PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato_seeds"));
 
-            //TODO: Fix fish foods
+            /* TODO: 
+             * Fix fish foods
+             * Add tags to fish items
+             * Add furnace, smoker and campfire recipes
+             */     
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "perch"));
@@ -159,11 +167,15 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "ender_fish"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "wither_fish"));
 
+            registerItem(registry, setup(new FishBucketItem(() -> ModEntities.TUNA, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna_bucket"));
             registerItem(registry, setup(new FishBucketItem(() -> ModEntities.PERCH, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "perch_bucket"));
             registerItem(registry, setup(new FishBucketItem(() -> ModEntities.EEL, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "eel_bucket"));
+            registerItem(registry, setup(new FishBucketItem(() -> ModEntities.SWAMP_DWELLER, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "swamp_dweller_bucket"));
 
+            registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.TUNA, 0x33495E, 0x8D8C9F, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna_spawn_egg"));
             registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.PERCH, 0x464614, 0xFD5100, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "perch_spawn_egg"));
             registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.EEL, 0x443522, 0xCABBA3, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "eel_spawn_egg"));
+            registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.SWAMP_DWELLER, 0x7E9160, 0x31441C, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "swamp_dweller_spawn_egg"));
 
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.CANVAS));
             registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SMALL_PAINTING));

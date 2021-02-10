@@ -50,7 +50,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 100,
+          "weight": 5,
           "name": "vanillaboom:sunfish",
           "conditions": [
             {
@@ -73,7 +73,7 @@
         },
         {
           "type": "minecraft:item",
-          "weight": 200,
+          "weight": 100,
           "name": "vanillaboom:moonfish",
           "conditions": [
             {

@@ -6,9 +6,9 @@ import net.minecraft.world.World;
 import phrille.vanillaboom.init.ModEntities;
 import phrille.vanillaboom.init.ModItems;
 
-public class EelEntity extends BaseFishEntity
+public class TunaEntity extends BaseFishEntity
 {
-    public EelEntity(EntityType<? extends BaseFishEntity> type, World world)
+    public TunaEntity(EntityType<? extends BaseFishEntity> type, World world)
     {
         super(type, world);
     }
@@ -16,12 +16,12 @@ public class EelEntity extends BaseFishEntity
     @Override
     protected ItemStack getBucketItem()
     {
-        return new ItemStack(ModItems.EEL_BUCKET);
+        return new ItemStack(ModItems.TUNA_BUCKET);
     }
 
     @Override
     protected EntityType<?> getEntityType()
     {
-        return ModEntities.EEL;
+        return ModEntities.TUNA;
     }
 }

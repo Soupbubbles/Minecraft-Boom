@@ -11,8 +11,9 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.client.model.EelModel;
 import phrille.vanillaboom.client.model.PerchModel;
+import phrille.vanillaboom.client.model.SwampDwellerModel;
+import phrille.vanillaboom.client.model.TunaModel;
 import phrille.vanillaboom.init.ModBlocks;
 import phrille.vanillaboom.init.ModEntities;
 
@@ -24,8 +25,11 @@ public class ModRenderers
     {
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.PRISMARINE_ARROW, renderManager -> new PrismarineArrowRenderer(renderManager, new ResourceLocation(VanillaBoom.MOD_ID, "textures/entity/prismarine_arrow.png")));
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.CUSTOM_PAINTING, renderManager -> new PaintingRenderer(renderManager));
+
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.TUNA, renderManager -> new LargeFishRenderer(renderManager, new TunaModel(), "tuna"));
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.PERCH, renderManager -> new BaseFishRenderer(renderManager, new PerchModel(), "perch"));
-        RenderingRegistry.registerEntityRenderingHandler(ModEntities.EEL, renderManager -> new BaseFishRenderer(renderManager, new EelModel(), "eel"));
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.EEL, renderManager -> new EelRenderer(renderManager));
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.SWAMP_DWELLER, renderManager -> new BaseFishRenderer(renderManager, new SwampDwellerModel(), "swamp_dweller"));
 
         setRenderLayers();
     }

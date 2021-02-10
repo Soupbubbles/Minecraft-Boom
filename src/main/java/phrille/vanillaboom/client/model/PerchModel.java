@@ -9,13 +9,13 @@ import net.minecraft.util.math.MathHelper;
 
 public class PerchModel<T extends Entity> extends SegmentedModel<T>
 {
-    protected final ModelRenderer body;
-    protected final ModelRenderer finTop;
-    protected final ModelRenderer head;
-    protected final ModelRenderer headFront;
-    protected final ModelRenderer finRight;
-    protected final ModelRenderer finLeft;
-    protected final ModelRenderer tail;
+    protected ModelRenderer body;
+    protected ModelRenderer finTop;
+    protected ModelRenderer head;
+    protected ModelRenderer headFront;
+    protected ModelRenderer finRight;
+    protected ModelRenderer finLeft;
+    protected ModelRenderer tail;
 
     public PerchModel()
     {

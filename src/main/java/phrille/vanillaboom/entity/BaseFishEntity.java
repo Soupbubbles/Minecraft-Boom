@@ -58,21 +58,8 @@ public abstract class BaseFishEntity extends AbstractGroupFishEntity
         return !(getMotion().x == 0.0F && getMotion().z == 0.0F && getMotion().y == 0.0F);
     }
     
-    public FishSize getFishSize() 
-    {
-        return FishSize.MEDIUM;
-    }
-
     public static AttributeModifierMap.MutableAttribute getAttributes()
     {
         return AbstractFishEntity.func_234176_m_();
-    }
-    
-    public static enum FishSize
-    {
-        SMALL,
-        MEDIUM,
-        LARGE,
-        EEL;
     }
 }

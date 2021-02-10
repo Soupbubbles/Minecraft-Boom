@@ -11,10 +11,13 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.entity.BaseFishEntity;
 import phrille.vanillaboom.entity.CustomPaintingEntity;
 import phrille.vanillaboom.entity.EelEntity;
 import phrille.vanillaboom.entity.PerchEntity;
 import phrille.vanillaboom.entity.PrismarineArrowEntity;
+import phrille.vanillaboom.entity.SwampDwellerEntity;
+import phrille.vanillaboom.entity.TunaEntity;
 import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
 
@@ -24,8 +27,10 @@ public class ModEntities
     public static final EntityType<PrismarineArrowEntity> PRISMARINE_ARROW = Utils._null();
     public static final EntityType<CustomPaintingEntity> CUSTOM_PAINTING = Utils._null();
 
+    public static final EntityType<EelEntity> TUNA = Utils._null();
     public static final EntityType<PerchEntity> PERCH = Utils._null();
     public static final EntityType<EelEntity> EEL = Utils._null();
+    public static final EntityType<EelEntity> SWAMP_DWELLER = Utils._null();
 
     @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, bus = Bus.MOD)
     public static class RegistrationHandler
@@ -36,8 +41,10 @@ public class ModEntities
             event.getRegistry().register(build(Names.PRISMARINE_ARROW, EntityType.Builder.<PrismarineArrowEntity>create(PrismarineArrowEntity::new, EntityClassification.MISC).setCustomClientFactory((spawnEntity, world) -> new PrismarineArrowEntity(PRISMARINE_ARROW, world)).size(0.5F, 0.5F)));
             event.getRegistry().register(build(Names.CUSTOM_PAINTING, EntityType.Builder.<CustomPaintingEntity>create(CustomPaintingEntity::new, EntityClassification.MISC).setCustomClientFactory((spawnEntity, world) -> new CustomPaintingEntity(CUSTOM_PAINTING, world)).size(0.5F, 0.5F)));
 
+            event.getRegistry().register(build("tuna", EntityType.Builder.<TunaEntity>create(TunaEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new TunaEntity(TUNA, world)).size(0.6F, 0.6F).trackingRange(4)));
             event.getRegistry().register(build("perch", EntityType.Builder.<PerchEntity>create(PerchEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new PerchEntity(PERCH, world)).size(0.5F, 0.3F).trackingRange(4)));
-            event.getRegistry().register(build("eel", EntityType.Builder.<EelEntity>create(EelEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new EelEntity(EEL, world)).size(0.9F, 0.2F).trackingRange(4)));
+            event.getRegistry().register(build("eel", EntityType.Builder.<EelEntity>create(EelEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new EelEntity(EEL, world)).size(0.8F, 0.2F).trackingRange(4)));
+            event.getRegistry().register(build("swamp_dweller", EntityType.Builder.<SwampDwellerEntity>create(SwampDwellerEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new SwampDwellerEntity(SWAMP_DWELLER, world)).size(0.5F, 0.3F).trackingRange(4)));
         }
 
         private static <T extends Entity> EntityType<T> build(String name, EntityType.Builder<T> builder)
@@ -52,8 +59,11 @@ public class ModEntities
 
     public static void registerAttributes()
     {
-        GlobalEntityTypeAttributes.put(ModEntities.PERCH, PerchEntity.getAttributes().create());
-        GlobalEntityTypeAttributes.put(ModEntities.EEL, PerchEntity.getAttributes().create());
+        GlobalEntityTypeAttributes.put(ModEntities.TUNA, BaseFishEntity.getAttributes().create());
+        GlobalEntityTypeAttributes.put(ModEntities.PERCH, BaseFishEntity.getAttributes().create());
+        GlobalEntityTypeAttributes.put(ModEntities.EEL, BaseFishEntity.getAttributes().create());
+        GlobalEntityTypeAttributes.put(ModEntities.SWAMP_DWELLER, BaseFishEntity.getAttributes().create());
+
         //EntitySpawnPlacementRegistry.register(PERCH, EntitySpawnPlacementRegistry.PlacementType.IN_WATER, Heightmap.Type.MOTION_BLOCKING_NO_LEAVES, PerchEntity::func_223363_b);
     }
 }
