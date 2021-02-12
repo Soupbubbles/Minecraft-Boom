@@ -137,6 +137,7 @@
     "block.vanillaboom.red_stained_soul_glass_pane": "Red Stained Soul Glass Pane",
     "block.vanillaboom.black_stained_soul_glass_pane": "Black Stained Soul Glass Pane",
     
+    "block.vanillaboom.rain_detector": "Rain Detector",
     "block.vanillaboom.gold_bars": "Gold Bars",
     "block.vanillaboom.rose": "Rose",
     
@@ -501,6 +502,9 @@
     "item.vanillaboom.drowned_flesh": "Drowned Flesh",
     "item.vanillaboom.pinecone": "Pinecone",
     "item.vanillaboom.chocolate": "Chocolate",
+    "item.vanillaboom.chocolate_cake": "Chocolate Cake",
+    "item.vanillaboom.berry_cake": "Berry Cake",
+    "item.vanillaboom.carrot_cake": "Carrot Cake",
     "item.vanillaboom.tomato": "Tomato",
     "item.vanillaboom.tomato_seeds": "Tomato Seeds",
         
@@ -530,7 +534,13 @@
     "item.vanillaboom.swamp_dweller_spawn_egg": "Swamp Dweller Spawn Egg",
         
     "item.vanillaboom.sunfish": "Sunfish",
+    "item.vanillaboom.sunfish_bucket": "Bucket of Sunfish",
+    "item.vanillaboom.sunfish_spawn_egg": "Sunfish Spawn Egg",
+    
     "item.vanillaboom.moonfish": "Moonfish",
+    "item.vanillaboom.moonfish_bucket": "Bucket of Moonfish",
+    "item.vanillaboom.moonfish_spawn_egg": "Moonfish Spawn Egg",    
+    
     "item.vanillaboom.ender_fish": "Ender Fish",
     "item.vanillaboom.wither_fish": "Wither Fish",
                 

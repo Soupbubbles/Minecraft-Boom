@@ -3,6 +3,7 @@ package phrille.vanillaboom.init;
 import net.minecraft.block.AbstractBlock.Properties;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.CakeBlock;
 import net.minecraft.block.FallingBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
@@ -38,6 +39,7 @@ import phrille.vanillaboom.block.InfernalRockBlock;
 import phrille.vanillaboom.block.ModSlabBlock;
 import phrille.vanillaboom.block.ModStairBlock;
 import phrille.vanillaboom.block.ModWallBlock;
+import phrille.vanillaboom.block.RainDetectorBlock;
 import phrille.vanillaboom.block.TomatoPlantBlock;
 import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
@@ -186,10 +188,14 @@ public class ModBlocks
     public static final Block BLACK_STAINED_SOUL_GLASS_PANE = Utils._null();
 
     //Misc
+    public static final Block RAIN_DETECTOR = Utils._null();
     public static final Block GOLD_BARS = Utils._null();
     public static final Block ROSE = Utils._null();
     public static final Block POTTED_ROSE = Utils._null();
     public static final Block TOMATO_PLANT = Utils._null();
+    public static final Block CHOCOLATE_CAKE = Utils._null();
+    public static final Block BERRY_CAKE = Utils._null();
+    public static final Block CARROT_CAKE = Utils._null();
 
     //VanillaBoom Stairs
     public static final Block COBBLESTONE_BRICK_STAIRS = Utils._null();
@@ -692,6 +698,7 @@ public class ModBlocks
             registry.register(setup(new StainedGlassPaneBlock(DyeColor.BLACK, Properties.from(Blocks.BLACK_STAINED_GLASS_PANE)), Names.BLACK_STAINED_SOUL_GLASS_PANE));
 
             //Misc
+            registry.register(setup(new RainDetectorBlock(Properties.from(Blocks.DAYLIGHT_DETECTOR)), "rain_detector"));
             registry.register(setup(new PaneBlock(Properties.from(Blocks.IRON_BARS)), Names.GOLD_BARS));
             registry.register(setup(new LadderBlock(Properties.from(Blocks.LADDER)), Names.SPRUCE_LADDER));
             registry.register(setup(new LadderBlock(Properties.from(Blocks.LADDER)), Names.BIRCH_LADDER));
@@ -702,6 +709,9 @@ public class ModBlocks
             registry.register(setup(new LadderBlock(Properties.from(Blocks.LADDER)), Names.WARPED_LADDER));
             createFlower(registry, Effects.HASTE, 10, Names.ROSE);
             registry.register(setup(new TomatoPlantBlock((Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.CROP))), "tomato_plant"));
+            registry.register(setup(new CakeBlock(Properties.from(Blocks.CAKE)), "chocolate_cake"));
+            registry.register(setup(new CakeBlock(Properties.from(Blocks.CAKE)), "berry_cake"));
+            registry.register(setup(new CakeBlock(Properties.from(Blocks.CAKE)), "carrot_cake"));
 
             //Vanilla Stairs, Slabs and Walls
             addVanillaVariants(registry, Blocks.CRACKED_STONE_BRICKS, true, true, true);

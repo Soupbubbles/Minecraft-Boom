@@ -9,7 +9,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3f;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.entity.BaseFishEntity;
+import phrille.vanillaboom.entity.fish.BaseFishEntity;
 
 public class BaseFishRenderer extends MobRenderer<BaseFishEntity, SegmentedModel<BaseFishEntity>>
 {

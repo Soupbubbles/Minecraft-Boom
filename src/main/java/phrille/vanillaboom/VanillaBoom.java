@@ -3,6 +3,10 @@ package phrille.vanillaboom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import net.minecraft.block.ComposterBlock;
+import net.minecraft.item.Item;
+import net.minecraft.item.SpawnEggItem;
+import net.minecraft.util.IItemProvider;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +21,7 @@ import phrille.vanillaboom.init.ModConfiguredStructures;
 import phrille.vanillaboom.init.ModEntities;
 import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.init.ModStructures;
+import phrille.vanillaboom.init.ModTileEntities;
 import phrille.vanillaboom.loot.LootConditionTypes;
 import phrille.vanillaboom.loot.LootTableHandler;
 import phrille.vanillaboom.temp.JsonAssetsGenerator;
@@ -40,6 +45,7 @@ public class VanillaBoom
 
         ModStructures.init(modEventBus);
         LootTableHandler.init(modEventBus);
+        ModTileEntities.init(modEventBus);
 
         modLoadingContext.registerConfig(ModConfig.Type.CLIENT, ConfigHandler.CLIENT_SPEC);
         modLoadingContext.registerConfig(ModConfig.Type.COMMON, ConfigHandler.COMMON_SPEC);
@@ -50,12 +56,6 @@ public class VanillaBoom
         JsonAssetsGenerator.init();
         JsonDataGenerator.init();
 
-        Utils.addCompostMaterial(0.35F, ModItems.PINECONE);
-        Utils.addCompostMaterial(0.5F, ModItems.PUMPKIN_SLICE);
-        Utils.addCompostMaterial(0.65F, ModBlocks.ROSE);
-        Utils.addCompostMaterial(0.6F, ModItems.TOMATO);
-        Utils.addCompostMaterial(0.3F, ModItems.TOMATO_SEEDS);
-
         event.enqueueWork(() ->
         {
             ModStructures.setupStructures();
@@ -63,7 +63,33 @@ public class VanillaBoom
             ModBlocks.registerFlowerPots();
             ModEntities.registerAttributes();
             LootConditionTypes.registerLootConditions();
+
+            addSpawnEgg(ModItems.PERCH_SPAWN_EGG);
+            addSpawnEgg(ModItems.EEL_SPAWN_EGG);
+            addSpawnEgg(ModItems.PIKE_SPAWN_EGG);
+            addSpawnEgg(ModItems.TUNA_SPAWN_EGG);
+            addSpawnEgg(ModItems.SWAMP_DWELLER_SPAWN_EGG);
+            Utils.addSpawnEggs();
+            
+            addCompostMaterial(0.35F, ModItems.PINECONE);
+            addCompostMaterial(0.5F, ModItems.PUMPKIN_SLICE);
+            addCompostMaterial(0.65F, ModBlocks.ROSE);
+            addCompostMaterial(0.6F, ModItems.TOMATO);
+            addCompostMaterial(0.3F, ModItems.TOMATO_SEEDS);
         });
+    }
+
+    private static void addSpawnEgg(Item item)
+    {
+        if (item instanceof SpawnEggItem)
+        {
+            Utils.EGG_MAP.put(((SpawnEggItem) item).getType(null), (SpawnEggItem) item);
+        }
+    }
+
+    private static void addCompostMaterial(float chance, IItemProvider item)
+    {
+        ComposterBlock.CHANCES.put(item, chance);
     }
 
     private void enqueueIMC(InterModEnqueueEvent event)

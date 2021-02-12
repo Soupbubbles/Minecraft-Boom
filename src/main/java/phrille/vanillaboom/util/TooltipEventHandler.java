@@ -17,9 +17,9 @@ public class TooltipEventHandler
     {
         ItemStack stack = event.getItemStack();
 
-        if (VanillaBoomConfig.addFoodTooltips && !stack.isEmpty() && (stack.isFood() || stack.getItem() == Items.CAKE))
+        if (VanillaBoomConfig.addFoodTooltips && !stack.isEmpty() && Utils.isFood(stack.getItem()))
         {
-            int healing = stack.getItem() == Items.CAKE ? 14 : stack.getItem().getFood().getHealing();
+            int healing = Utils.isCake(stack.getItem()) ? 14 : stack.getItem().getFood().getHealing();
             String s = "";
 
             for (int i = 0; i < healing - healing / 2; i++)

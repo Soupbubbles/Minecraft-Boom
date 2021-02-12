@@ -1,6 +1,7 @@
 package phrille.vanillaboom.init;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.CakeBlock;
 import net.minecraft.block.FenceBlock;
 import net.minecraft.block.FenceGateBlock;
 import net.minecraft.block.FlowerPotBlock;
@@ -44,17 +45,24 @@ public class ModItems
     public static final Item WITHER_BONE_MEAL = Utils._null();
     public static final Item PRISMARINE_ARROW = Utils._null();
     public static final Item POLAR_BEAR_FUR = Utils._null();
-    public static final Item RAW_POLAR_BEAR_MEAT = Utils._null();
-    public static final Item POLAR_BEAR_STEAK = Utils._null();
-    public static final Item PUMPKIN_SLICE = Utils._null();
-    public static final Item COOKED_EGG = Utils._null();
-    public static final Item DROWNED_FLESH = Utils._null();
-    public static final Item PINECONE = Utils._null();
-    public static final Item CHOCOLATE = Utils._null();
-    public static final Item TOMATO = Utils._null();
     public static final Item TOMATO_SEEDS = Utils._null();
 
-    //Regular Fish
+    //Food
+    public static final Item PINECONE = Utils._null();
+    public static final Item PUMPKIN_SLICE = Utils._null();
+    public static final Item TOMATO = Utils._null();
+    public static final Item COOKED_EGG = Utils._null();
+    public static final Item DROWNED_FLESH = Utils._null();
+
+    public static final Item CHOCOLATE = Utils._null();
+    public static final Item CHOCOLATE_CAKE = Utils._null();
+    public static final Item BERRY_CAKE = Utils._null();
+    public static final Item CARROT_CAKE = Utils._null();
+
+    public static final Item RAW_POLAR_BEAR_MEAT = Utils._null();
+    public static final Item POLAR_BEAR_STEAK = Utils._null();
+    
+    //Fish
     public static final Item TUNA = Utils._null();
     public static final Item COOKED_TUNA = Utils._null();
     public static final Item PERCH = Utils._null();
@@ -63,12 +71,8 @@ public class ModItems
     public static final Item COOKED_PIKE = Utils._null();
     public static final Item EEL = Utils._null();
     public static final Item COOKED_EEL = Utils._null();
-
-    //Biome Specific Fish
     public static final Item SWAMP_DWELLER = Utils._null();
     public static final Item COOKED_SWAMP_DWELLER = Utils._null();
-
-    //Special Fish
     public static final Item SUNFISH = Utils._null();
     public static final Item MOONFISH = Utils._null();
     public static final Item ENDER_FISH = Utils._null();
@@ -77,12 +81,14 @@ public class ModItems
     //Fish Buckets
     public static final Item TUNA_BUCKET = Utils._null();
     public static final Item PERCH_BUCKET = Utils._null();
+    public static final Item PIKE_BUCKET = Utils._null();
     public static final Item EEL_BUCKET = Utils._null();
     public static final Item SWAMP_DWELLER_BUCKET = Utils._null();
 
     //Spawn Eggs
     public static final Item TUNA_SPAWN_EGG = Utils._null();
     public static final Item PERCH_SPAWN_EGG = Utils._null();
+    public static final Item PIKE_SPAWN_EGG = Utils._null();
     public static final Item EEL_SPAWN_EGG = Utils._null();
     public static final Item SWAMP_DWELLER_SPAWN_EGG = Utils._null();
 
@@ -135,21 +141,31 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WITHER_BONE_MEAL));
             registerItem(registry, setup(new PrismarineArrowItem(), Names.PRISMARINE_ARROW));
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_FUR));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.RAW_POLAR_BEAR_MEAT).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.RAW_POLAR_BEAR_MEAT));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_STEAK));
+            registerItem(registry, setup(new BlockNamedItem(ModBlocks.TOMATO_PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato_seeds"));
+            
+            //Foods
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PINECONE));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PUMPKIN_SLICE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PUMPKIN_SLICE));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TOMATO).group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato"));
+
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EGG).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.COOKED_EGG));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.DROWNED_FLESH));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PINECONE));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.CHOCOLATE).group(VanillaBoomTab.VANILLABOOM_TAB)), "chocolate"));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TOMATO).group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato"));
-            registerItem(registry, setup(new BlockNamedItem(ModBlocks.TOMATO_PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato_seeds"));
 
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.CHOCOLATE).group(VanillaBoomTab.VANILLABOOM_TAB)), "chocolate"));
+            registerItem(registry, setup(new BlockNamedItem(ModBlocks.CHOCOLATE_CAKE, new Item.Properties().maxStackSize(1).group(VanillaBoomTab.VANILLABOOM_TAB)), "chocolate_cake"));
+            registerItem(registry, setup(new BlockNamedItem(ModBlocks.BERRY_CAKE, new Item.Properties().maxStackSize(1).group(VanillaBoomTab.VANILLABOOM_TAB)), "berry_cake"));
+            registerItem(registry, setup(new BlockNamedItem(ModBlocks.CARROT_CAKE, new Item.Properties().maxStackSize(1).group(VanillaBoomTab.VANILLABOOM_TAB)), "carrot_cake"));
+
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.RAW_POLAR_BEAR_MEAT).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.RAW_POLAR_BEAR_MEAT));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_STEAK));
+            
             /* TODO: 
              * Fix fish foods
              * Add tags to fish items
              * Add furnace, smoker and campfire recipes
              */     
+            
+            //Fish
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "perch"));
@@ -158,25 +174,28 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_PIKE).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_pike"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.EEL).group(VanillaBoomTab.VANILLABOOM_TAB)), "eel"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EEL).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_eel"));
-
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "swamp_dweller"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_swamp_dweller"));
-
             registerItem(registry, setup(new SimpleFoiledItem(new Item.Properties().food(ModFoods.PERCH).rarity(Rarity.UNCOMMON).group(VanillaBoomTab.VANILLABOOM_TAB)), "sunfish"));
             registerItem(registry, setup(new SimpleFoiledItem(new Item.Properties().food(ModFoods.PERCH).rarity(Rarity.RARE).group(VanillaBoomTab.VANILLABOOM_TAB)), "moonfish"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "ender_fish"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PERCH).group(VanillaBoomTab.VANILLABOOM_TAB)), "wither_fish"));
 
+            //Fish Buckets
             registerItem(registry, setup(new FishBucketItem(() -> ModEntities.TUNA, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna_bucket"));
             registerItem(registry, setup(new FishBucketItem(() -> ModEntities.PERCH, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "perch_bucket"));
+            registerItem(registry, setup(new FishBucketItem(() -> ModEntities.PIKE, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "pike_bucket"));
             registerItem(registry, setup(new FishBucketItem(() -> ModEntities.EEL, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "eel_bucket"));
             registerItem(registry, setup(new FishBucketItem(() -> ModEntities.SWAMP_DWELLER, () -> Fluids.WATER, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "swamp_dweller_bucket"));
 
+            //Spawn Eggs
             registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.TUNA, 0x33495E, 0x8D8C9F, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna_spawn_egg"));
             registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.PERCH, 0x464614, 0xFD5100, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "perch_spawn_egg"));
+            registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.PIKE, 0x4C462A, 0x9FA069, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "pike_spawn_egg"));
             registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.EEL, 0x443522, 0xCABBA3, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "eel_spawn_egg"));
             registerItem(registry, setup(new EntitySpawnItem(() -> ModEntities.SWAMP_DWELLER, 0x7E9160, 0x31441C, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "swamp_dweller_spawn_egg"));
 
+            //Paintings
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.CANVAS));
             registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.SMALL_PAINTING));
             registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.HORIZONTAL_PAINTING));
@@ -184,7 +203,6 @@ public class ModItems
             registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.MEDIUM_PAINTING));
             registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.LARGE_HORIZONTAL_PAINTING));
             registerItem(registry, setup(new PaintingItem(null, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.LARGE_PAINTING));
-
             registerItem(registry, setup(new PaintingItem(PaintingType.KEBAB, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.KEBAB_PAINTING));
             registerItem(registry, setup(new PaintingItem(PaintingType.AZTEC, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.AZTEC_PAINTING));
             registerItem(registry, setup(new PaintingItem(PaintingType.ALBAN, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB), true), Names.ALBAN_PAINTING));
@@ -243,7 +261,7 @@ public class ModItems
                     continue;
                 }
 
-                boolean notAdd = block instanceof FlowerPotBlock || block instanceof IGrowable;
+                boolean notAdd = block instanceof FlowerPotBlock || block instanceof IGrowable || block instanceof CakeBlock;
 
                 if (!notAdd)
                 {

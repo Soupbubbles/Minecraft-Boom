@@ -1,4 +1,4 @@
-package phrille.vanillaboom.entity;
+package phrille.vanillaboom.entity.fish;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;

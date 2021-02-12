@@ -1,4 +1,4 @@
-package phrille.vanillaboom.entity;
+package phrille.vanillaboom.entity.fish;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
@@ -6,9 +6,9 @@ import net.minecraft.world.World;
 import phrille.vanillaboom.init.ModEntities;
 import phrille.vanillaboom.init.ModItems;
 
-public class TunaEntity extends BaseFishEntity
+public class PikeEntity extends BaseFishEntity
 {
-    public TunaEntity(EntityType<? extends BaseFishEntity> type, World world)
+    public PikeEntity(EntityType<? extends BaseFishEntity> type, World world)
     {
         super(type, world);
     }
@@ -16,12 +16,12 @@ public class TunaEntity extends BaseFishEntity
     @Override
     protected ItemStack getBucketItem()
     {
-        return new ItemStack(ModItems.TUNA_BUCKET);
+        return new ItemStack(ModItems.PIKE_BUCKET);
     }
 
     @Override
     protected EntityType<?> getEntityType()
     {
-        return ModEntities.TUNA;
+        return ModEntities.PIKE;
     }
 }

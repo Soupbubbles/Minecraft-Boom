@@ -6,7 +6,7 @@ import net.minecraft.client.renderer.entity.model.SegmentedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.MathHelper;
-import phrille.vanillaboom.entity.BaseFishEntity;
+import phrille.vanillaboom.entity.fish.BaseFishEntity;
 
 public class EelModel<T extends Entity> extends SegmentedModel<T>
 {

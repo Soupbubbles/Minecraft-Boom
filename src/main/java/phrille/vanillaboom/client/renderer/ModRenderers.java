@@ -3,6 +3,7 @@ package phrille.vanillaboom.client.renderer;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.renderer.entity.PaintingRenderer;
+import net.minecraft.client.renderer.entity.model.SalmonModel;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -28,6 +29,7 @@ public class ModRenderers
 
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.TUNA, renderManager -> new LargeFishRenderer(renderManager, new TunaModel(), "tuna"));
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.PERCH, renderManager -> new BaseFishRenderer(renderManager, new PerchModel(), "perch"));
+        RenderingRegistry.registerEntityRenderingHandler(ModEntities.PIKE, renderManager -> new LargeFishRenderer(renderManager, new SalmonModel(), "pike"));
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.EEL, renderManager -> new EelRenderer(renderManager));
         RenderingRegistry.registerEntityRenderingHandler(ModEntities.SWAMP_DWELLER, renderManager -> new BaseFishRenderer(renderManager, new SwampDwellerModel(), "swamp_dweller"));
 

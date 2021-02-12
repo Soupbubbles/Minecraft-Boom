@@ -18,6 +18,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.config.VanillaBoomConfig;
+import phrille.vanillaboom.util.Utils;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, value = Dist.CLIENT)
 public class ClientEventHandler
@@ -29,7 +30,7 @@ public class ClientEventHandler
     {
         ItemStack stack = event.getStack();
 
-        if (VanillaBoomConfig.addFoodTooltips && !stack.isEmpty() && (stack.getItem().isFood() || stack.getItem() == Items.CAKE))
+        if (VanillaBoomConfig.addFoodTooltips && !stack.isEmpty() && Utils.isFood(stack.getItem()))
         {
             Minecraft.getInstance().getTextureManager().bindTexture(new ResourceLocation("textures/gui/icons.png"));
 
@@ -39,7 +40,7 @@ public class ClientEventHandler
             int vHeight = 9;
             int x = event.getX() - 1;
             int y = event.getY() + 11 * (event.getLines().size() - 1);
-            int healing = stack.getItem() == Items.CAKE ? 14 : stack.getItem().getFood().getHealing();
+            int healing = Utils.isCake(stack.getItem()) ? 14 : stack.getItem().getFood().getHealing();
             int k = healing - healing / 2;
 
             for (int i = 0; i < k; i++)

@@ -1,15 +1,14 @@
-package phrille.vanillaboom.entity;
+package phrille.vanillaboom.entity.fish;
 
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.passive.fish.AbstractGroupFishEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 import phrille.vanillaboom.init.ModEntities;
 import phrille.vanillaboom.init.ModItems;
 
-public class PerchEntity extends BaseFishEntity
+public class EelEntity extends BaseFishEntity
 {
-    public PerchEntity(EntityType<? extends BaseFishEntity> type, World world)
+    public EelEntity(EntityType<? extends BaseFishEntity> type, World world)
     {
         super(type, world);
     }
@@ -17,12 +16,12 @@ public class PerchEntity extends BaseFishEntity
     @Override
     protected ItemStack getBucketItem()
     {
-        return new ItemStack(ModItems.PERCH_BUCKET);
+        return new ItemStack(ModItems.EEL_BUCKET);
     }
 
     @Override
     protected EntityType<?> getEntityType()
     {
-        return ModEntities.PERCH;
+        return ModEntities.EEL;
     }
 }

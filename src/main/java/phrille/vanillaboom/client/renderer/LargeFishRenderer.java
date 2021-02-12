@@ -4,7 +4,7 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.model.SegmentedModel;
-import phrille.vanillaboom.entity.BaseFishEntity;
+import phrille.vanillaboom.entity.fish.BaseFishEntity;
 
 public class LargeFishRenderer extends BaseFishRenderer
 {

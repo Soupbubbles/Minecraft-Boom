@@ -1,15 +1,19 @@
 package phrille.vanillaboom.util;
 
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
+import java.util.Map;
+import java.util.Objects;
 
 import javax.annotation.Nonnull;
 
-import net.minecraft.block.ComposterBlock;
+import com.google.common.collect.Maps;
+
+import net.minecraft.block.CakeBlock;
+import net.minecraft.entity.EntityType;
 import net.minecraft.entity.item.ItemEntity;
+import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.IItemProvider;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
@@ -50,23 +54,29 @@ public class Utils
         }
     }
 
-    public static void addCompostMaterial(float chance, IItemProvider item)
+    public static boolean isCake(Item item)
+    {
+        return item instanceof BlockItem && ((BlockItem) item).getBlock() instanceof CakeBlock;
+    }
+
+    public static boolean isFood(Item item)
+    {
+        return item.isFood() || isCake(item);
+    }
+
+    public static final Map<EntityType<?>, SpawnEggItem> EGG_MAP = Maps.newHashMap();
+
+    public static void addSpawnEggs()
     {
         try
         {
-            Class partypes[] = new Class[2];
-            partypes[0] = Float.TYPE;
-            partypes[1] = IItemProvider.class;
-            Method method = ObfuscationReflectionHelper.findMethod(ComposterBlock.class, "func_220290_a", partypes);
-            Object arglist[] = new Object[2];
-            arglist[0] = chance;
-            arglist[1] = item;
-            Object retobj = method.invoke(null, arglist);
-
+            Map<EntityType<?>, SpawnEggItem> map = (Map<EntityType<?>, SpawnEggItem>) ObfuscationReflectionHelper.findField(SpawnEggItem.class, "field_195987_b").get(null);
+            map.keySet().removeIf(Objects::isNull);
+            map.putAll(EGG_MAP);
         }
-        catch (IllegalAccessException | IllegalArgumentException | InvocationTargetException e)
+        catch (IllegalAccessException | IllegalArgumentException e)
         {
-            throw new RuntimeException("Could not add " + item.asItem().getRegistryName().toString() + " to func_220290_a (registerCompostable)", e);
+            throw new RuntimeException("Failed to spawn eggs to map", e);
         }
     }
 }
