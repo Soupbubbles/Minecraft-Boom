@@ -1,4 +1,4 @@
-package phrille.vanillaboom.init;
+package phrille.vanillaboom.entity;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityClassification;
@@ -11,8 +11,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.entity.CustomPaintingEntity;
-import phrille.vanillaboom.entity.PrismarineArrowEntity;
 import phrille.vanillaboom.entity.fish.BaseFishEntity;
 import phrille.vanillaboom.entity.fish.EelEntity;
 import phrille.vanillaboom.entity.fish.PerchEntity;

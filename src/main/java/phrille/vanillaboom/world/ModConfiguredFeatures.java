@@ -1,4 +1,4 @@
-package phrille.vanillaboom.init;
+package phrille.vanillaboom.world;
 
 import com.google.common.collect.ImmutableList;
 
@@ -26,6 +26,7 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.block.ModBlocks;
 
 public class ModConfiguredFeatures
 {

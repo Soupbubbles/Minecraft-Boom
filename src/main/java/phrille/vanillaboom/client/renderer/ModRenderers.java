@@ -12,11 +12,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber.Bus;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.block.ModBlocks;
 import phrille.vanillaboom.client.model.PerchModel;
 import phrille.vanillaboom.client.model.SwampDwellerModel;
 import phrille.vanillaboom.client.model.TunaModel;
-import phrille.vanillaboom.init.ModBlocks;
-import phrille.vanillaboom.init.ModEntities;
+import phrille.vanillaboom.entity.ModEntities;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID, value = Dist.CLIENT, bus = Bus.MOD)
 public class ModRenderers

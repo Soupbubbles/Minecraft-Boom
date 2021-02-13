@@ -17,7 +17,7 @@ import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import phrille.vanillaboom.init.ModItems;
+import phrille.vanillaboom.item.ModItems;
 
 public class TomatoPlantBlock extends CropsBlock
 {

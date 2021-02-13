@@ -13,6 +13,7 @@ import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.Items;
 import net.minecraft.item.SpawnEggItem;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -65,16 +66,17 @@ public class Utils
     }
 
     public static final Map<EntityType<?>, SpawnEggItem> EGG_MAP = Maps.newHashMap();
-
+    
+    
     public static void addSpawnEggs()
     {
         try
         {
-            Map<EntityType<?>, SpawnEggItem> map = (Map<EntityType<?>, SpawnEggItem>) ObfuscationReflectionHelper.findField(SpawnEggItem.class, "field_195987_b").get(null);
+            Map<EntityType<?>, SpawnEggItem> map = (Map<EntityType<?>, SpawnEggItem>) ObfuscationReflectionHelper.getPrivateValue(SpawnEggItem.class, null, "field_195987_b");
             map.keySet().removeIf(Objects::isNull);
             map.putAll(EGG_MAP);
         }
-        catch (IllegalAccessException | IllegalArgumentException e)
+        catch (IllegalArgumentException e)
         {
             throw new RuntimeException("Failed to spawn eggs to map", e);
         }

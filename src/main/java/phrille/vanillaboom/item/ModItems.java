@@ -1,4 +1,4 @@
-package phrille.vanillaboom.init;
+package phrille.vanillaboom.item;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.CakeBlock;
@@ -30,9 +30,8 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.item.EntitySpawnItem;
-import phrille.vanillaboom.item.PaintingItem;
-import phrille.vanillaboom.item.PrismarineArrowItem;
+import phrille.vanillaboom.block.ModBlocks;
+import phrille.vanillaboom.entity.ModEntities;
 import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
 import phrille.vanillaboom.util.VanillaBoomTab;
@@ -40,6 +39,7 @@ import phrille.vanillaboom.util.VanillaBoomTab;
 @ObjectHolder(VanillaBoom.MOD_ID)
 public class ModItems
 {
+    //Misc
     public static final Item MAGMA_BRICK = Utils._null();
     public static final Item WITHER_BONE = Utils._null();
     public static final Item WITHER_BONE_MEAL = Utils._null();
@@ -53,12 +53,14 @@ public class ModItems
     public static final Item TOMATO = Utils._null();
     public static final Item COOKED_EGG = Utils._null();
     public static final Item DROWNED_FLESH = Utils._null();
-
+    public static final Item MELON_POPSICLE = Utils._null();
     public static final Item CHOCOLATE = Utils._null();
     public static final Item CHOCOLATE_CAKE = Utils._null();
     public static final Item BERRY_CAKE = Utils._null();
     public static final Item CARROT_CAKE = Utils._null();
-
+    public static final Item APPLE_PIE = Utils._null();
+    public static final Item BERRY_PIE = Utils._null();
+    public static final Item MONSTER_PIE = Utils._null();
     public static final Item RAW_POLAR_BEAR_MEAT = Utils._null();
     public static final Item POLAR_BEAR_STEAK = Utils._null();
     
@@ -92,6 +94,7 @@ public class ModItems
     public static final Item EEL_SPAWN_EGG = Utils._null();
     public static final Item SWAMP_DWELLER_SPAWN_EGG = Utils._null();
 
+    //Painting Items
     public static final Item CANVAS = Utils._null();
     public static final Item SMALL_PAINTING = Utils._null();
     public static final Item HORIZONTAL_PAINTING = Utils._null();
@@ -99,7 +102,6 @@ public class ModItems
     public static final Item MEDIUM_PAINTING = Utils._null();
     public static final Item LARGE_HORIZONTAL_PAINTING = Utils._null();
     public static final Item LARGE_PAINTING = Utils._null();
-
     public static final Item KEBAB_PAINTING = Utils._null();
     public static final Item AZTEC_PAINTING = Utils._null();
     public static final Item ALBAN_PAINTING = Utils._null();
@@ -147,15 +149,16 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PINECONE));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PUMPKIN_SLICE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PUMPKIN_SLICE));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TOMATO).group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato"));
-
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EGG).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.COOKED_EGG));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.DROWNED_FLESH));
-
+            registerItem(registry, setup(new IceCreamItem(new Item.Properties().food(ModFoods.MELON_POPSICLE).group(VanillaBoomTab.VANILLABOOM_TAB)), "melon_popsicle"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.CHOCOLATE).group(VanillaBoomTab.VANILLABOOM_TAB)), "chocolate"));
             registerItem(registry, setup(new BlockNamedItem(ModBlocks.CHOCOLATE_CAKE, new Item.Properties().maxStackSize(1).group(VanillaBoomTab.VANILLABOOM_TAB)), "chocolate_cake"));
             registerItem(registry, setup(new BlockNamedItem(ModBlocks.BERRY_CAKE, new Item.Properties().maxStackSize(1).group(VanillaBoomTab.VANILLABOOM_TAB)), "berry_cake"));
             registerItem(registry, setup(new BlockNamedItem(ModBlocks.CARROT_CAKE, new Item.Properties().maxStackSize(1).group(VanillaBoomTab.VANILLABOOM_TAB)), "carrot_cake"));
-
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.APPLE_PIE).group(VanillaBoomTab.VANILLABOOM_TAB)), "apple_pie"));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.BERRY_PIE).group(VanillaBoomTab.VANILLABOOM_TAB)), "berry_pie"));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.MONSTER_PIE).group(VanillaBoomTab.VANILLABOOM_TAB)), "monster_pie"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.RAW_POLAR_BEAR_MEAT).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.RAW_POLAR_BEAR_MEAT));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_STEAK));
             
@@ -289,12 +292,16 @@ public class ModItems
     {
         public static final Food RAW_POLAR_BEAR_MEAT = new Food.Builder().hunger(3).saturation(0.3F).meat().build();
         public static final Food POLAR_BEAR_STEAK = new Food.Builder().hunger(8).saturation(0.8F).meat().build();
-        public static final Food PUMPKIN_SLICE = new Food.Builder().hunger(2).saturation(0.3F).build();
+        public static final Food PUMPKIN_SLICE = new Food.Builder().hunger(2).saturation(0.3F).fastToEat().build();
         public static final Food COOKED_EGG = new Food.Builder().hunger(6).saturation(0.6F).build();
         public static final Food DROWNED_FLESH = new Food.Builder().hunger(4).saturation(0.1F).effect(() -> new EffectInstance(Effects.HUNGER, 600, 0), 0.8F).effect(() -> new EffectInstance(Effects.WATER_BREATHING, 600, 0), 0.5F).meat().build();
-        public static final Food PINECONE = new Food.Builder().hunger(3).saturation(0.2F).build();
+        public static final Food MELON_POPSICLE = new Food.Builder().hunger(3).saturation(0.3F).fastToEat().build();
+        public static final Food PINECONE = new Food.Builder().hunger(3).saturation(0.2F).fastToEat().build();
         public static final Food CHOCOLATE = new Food.Builder().hunger(5).saturation(0.3F).build();
         public static final Food TOMATO = new Food.Builder().hunger(4).saturation(0.2F).build();
+        public static final Food APPLE_PIE = new Food.Builder().hunger(8).saturation(0.3F).build();
+        public static final Food BERRY_PIE = new Food.Builder().hunger(8).saturation(0.3F).build();
+        public static final Food MONSTER_PIE = new Food.Builder().hunger(10).saturation(0.2F).effect(() -> new EffectInstance(Effects.HUNGER, 600, 0), 1.0F).meat().build();
 
         public static final Food TUNA = new Food.Builder().hunger(3).saturation(0.1F).build();
         public static final Food COOKED_TUNA = new Food.Builder().hunger(7).saturation(0.6F).build();

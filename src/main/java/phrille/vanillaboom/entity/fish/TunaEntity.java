@@ -3,8 +3,8 @@ package phrille.vanillaboom.entity.fish;
 import net.minecraft.entity.EntityType;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
-import phrille.vanillaboom.init.ModEntities;
-import phrille.vanillaboom.init.ModItems;
+import phrille.vanillaboom.entity.ModEntities;
+import phrille.vanillaboom.item.ModItems;
 
 public class TunaEntity extends BaseFishEntity
 {

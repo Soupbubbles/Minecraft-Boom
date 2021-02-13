@@ -1,5 +1,7 @@
 package phrille.vanillaboom;
 
+import java.util.Objects;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -15,18 +17,18 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModEnqueueEvent;
 import net.minecraftforge.fml.event.lifecycle.InterModProcessEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import phrille.vanillaboom.block.ModBlocks;
 import phrille.vanillaboom.config.ConfigHandler;
-import phrille.vanillaboom.init.ModBlocks;
-import phrille.vanillaboom.init.ModConfiguredStructures;
-import phrille.vanillaboom.init.ModEntities;
-import phrille.vanillaboom.init.ModItems;
-import phrille.vanillaboom.init.ModStructures;
-import phrille.vanillaboom.init.ModTileEntities;
+import phrille.vanillaboom.entity.ModEntities;
+import phrille.vanillaboom.item.ModItems;
 import phrille.vanillaboom.loot.LootConditionTypes;
 import phrille.vanillaboom.loot.LootTableHandler;
 import phrille.vanillaboom.temp.JsonAssetsGenerator;
 import phrille.vanillaboom.temp.JsonDataGenerator;
+import phrille.vanillaboom.tileentity.ModTileEntities;
 import phrille.vanillaboom.util.Utils;
+import phrille.vanillaboom.world.ModConfiguredStructures;
+import phrille.vanillaboom.world.structures.ModStructures;
 
 @Mod(VanillaBoom.MOD_ID)
 public class VanillaBoom

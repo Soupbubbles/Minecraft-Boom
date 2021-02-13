@@ -6,8 +6,8 @@ import net.minecraftforge.event.furnace.FurnaceFuelBurnTimeEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.init.ModBlocks;
-import phrille.vanillaboom.init.ModItems;
+import phrille.vanillaboom.block.ModBlocks;
+import phrille.vanillaboom.item.ModItems;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class FuelEventHandler

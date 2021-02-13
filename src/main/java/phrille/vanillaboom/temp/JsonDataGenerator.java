@@ -16,7 +16,7 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.init.ModItems;
+import phrille.vanillaboom.item.ModItems;
 
 public class JsonDataGenerator
 {

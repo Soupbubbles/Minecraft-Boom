@@ -1,4 +1,4 @@
-package phrille.vanillaboom.init;
+package phrille.vanillaboom.world.structures;
 
 import java.util.function.Supplier;
 
@@ -15,8 +15,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.config.VanillaBoomConfig;
-import phrille.vanillaboom.world.structures.GraveStructure;
-import phrille.vanillaboom.world.structures.NetherWellStructure;
 
 public class ModStructures
 {

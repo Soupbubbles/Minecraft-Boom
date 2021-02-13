@@ -1,4 +1,4 @@
-package phrille.vanillaboom.init;
+package phrille.vanillaboom.world;
 
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -7,6 +7,7 @@ import net.minecraft.world.gen.FlatGenerationSettings;
 import net.minecraft.world.gen.feature.IFeatureConfig;
 import net.minecraft.world.gen.feature.StructureFeature;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.world.structures.ModStructures;
 
 public class ModConfiguredStructures
 {

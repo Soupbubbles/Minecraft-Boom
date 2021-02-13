@@ -1,4 +1,4 @@
-package phrille.vanillaboom.init;
+package phrille.vanillaboom.block;
 
 import net.minecraft.block.AbstractBlock.Properties;
 import net.minecraft.block.Block;
@@ -32,15 +32,6 @@ import net.minecraftforge.registries.IForgeRegistry;
 import net.minecraftforge.registries.IForgeRegistryEntry;
 import net.minecraftforge.registries.ObjectHolder;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.block.BookshelfBlock;
-import phrille.vanillaboom.block.GunpowderBlock;
-import phrille.vanillaboom.block.HydroRockBlock;
-import phrille.vanillaboom.block.InfernalRockBlock;
-import phrille.vanillaboom.block.ModSlabBlock;
-import phrille.vanillaboom.block.ModStairBlock;
-import phrille.vanillaboom.block.ModWallBlock;
-import phrille.vanillaboom.block.RainDetectorBlock;
-import phrille.vanillaboom.block.TomatoPlantBlock;
 import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
 

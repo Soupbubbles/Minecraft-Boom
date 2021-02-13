@@ -11,8 +11,7 @@ import net.minecraft.util.math.EntityRayTraceResult;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkHooks;
-import phrille.vanillaboom.init.ModEntities;
-import phrille.vanillaboom.init.ModItems;
+import phrille.vanillaboom.item.ModItems;
 
 public class PrismarineArrowEntity extends ArrowEntity
 {

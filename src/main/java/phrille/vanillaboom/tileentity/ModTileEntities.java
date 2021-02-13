@@ -1,4 +1,4 @@
-package phrille.vanillaboom.init;
+package phrille.vanillaboom.tileentity;
 
 import java.util.function.Supplier;
 
@@ -10,7 +10,7 @@ import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.tileentity.RainDetectorTileEntity;
+import phrille.vanillaboom.block.ModBlocks;
 
 public class ModTileEntities
 {

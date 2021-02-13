@@ -7,7 +7,6 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import phrille.vanillaboom.block.RainDetectorBlock;
-import phrille.vanillaboom.init.ModTileEntities;
 
 public class RainDetectorTileEntity extends TileEntity implements ITickableTileEntity
 {

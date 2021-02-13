@@ -25,9 +25,7 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.ForgeRegistries;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.config.VanillaBoomConfig;
-import phrille.vanillaboom.init.ModConfiguredFeatures;
-import phrille.vanillaboom.init.ModConfiguredStructures;
-import phrille.vanillaboom.init.ModStructures;
+import phrille.vanillaboom.world.structures.ModStructures;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class WorldGenEventHandler

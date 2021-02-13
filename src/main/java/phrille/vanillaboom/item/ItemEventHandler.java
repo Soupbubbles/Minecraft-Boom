@@ -27,9 +27,8 @@ import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import phrille.vanillaboom.VanillaBoom;
+import phrille.vanillaboom.block.ModBlocks;
 import phrille.vanillaboom.config.VanillaBoomConfig;
-import phrille.vanillaboom.init.ModBlocks;
-import phrille.vanillaboom.init.ModItems;
 import phrille.vanillaboom.util.Utils;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)

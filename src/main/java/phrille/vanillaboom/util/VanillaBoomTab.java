@@ -14,7 +14,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import phrille.vanillaboom.VanillaBoom;
-import phrille.vanillaboom.init.ModBlocks;
+import phrille.vanillaboom.block.ModBlocks;
 
 public class VanillaBoomTab extends ItemGroup
 {
