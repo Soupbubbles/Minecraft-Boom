@@ -1,0 +1,19 @@
+{
+  "replace": false,
+  "values": [
+    "vanillaboom:perch",
+    "vanillaboom:tuna",
+    "vanillaboom:eel",
+    "vanillaboom:pike",
+    "vanillaboom:swamp_dweller",
+    "vanillaboom:sunfish",
+    "vanillaboom:moonfish",
+    "vanillaboom:ender_fish",
+    "vanillaboom:wither_fish",
+    "vanillaboom:cooked_perch",
+    "vanillaboom:cooked_tuna",
+    "vanillaboom:cooked_eel",
+    "vanillaboom:cooked_pike",
+    "vanillaboom:cooked_swamp_dweller"
+  ]
+}

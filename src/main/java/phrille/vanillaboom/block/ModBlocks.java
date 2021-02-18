@@ -120,6 +120,7 @@ public class ModBlocks
     public static final Block CHARCOAL_BLOCK = Utils._null();
     public static final Block SUGAR_BLOCK = Utils._null();
     public static final Block SUGAR_CANE_BLOCK = Utils._null();
+    public static final Block BAMBOO_BLOCK = Utils._null();
     public static final Block GUNPOWDER_BLOCK = Utils._null();
     public static final Block BLAZE_POWDER_BLOCK = Utils._null();
     public static final Block MAGMA_CREAM_BLOCK = Utils._null();
@@ -627,6 +628,7 @@ public class ModBlocks
             registry.register(setup(new Block(Properties.from(Blocks.COAL_BLOCK)), Names.CHARCOAL_BLOCK));
             registry.register(setup(new FallingBlock(Properties.create(Material.SAND, MaterialColor.SNOW).hardnessAndResistance(0.5F, 0.0F).sound(SoundType.SAND).harvestTool(ToolType.SHOVEL)), Names.SUGAR_BLOCK));
             registry.register(setup(new RotatedPillarBlock(Properties.create(Material.PLANTS, MaterialColor.GRASS).hardnessAndResistance(0.5F, 0.0F)), Names.SUGAR_CANE_BLOCK));
+            registry.register(setup(new RotatedPillarBlock(Properties.from(Blocks.BAMBOO)), "bamboo_block"));
             registry.register(setup(new GunpowderBlock(), Names.GUNPOWDER_BLOCK));
             registry.register(setup(new FallingBlock(Properties.from(Blocks.SAND).sound(SoundType.SNOW).harvestTool(ToolType.SHOVEL)), Names.BLAZE_POWDER_BLOCK));
             registry.register(setup(new SlimeBlock(Properties.from(Blocks.SLIME_BLOCK)), Names.MAGMA_CREAM_BLOCK));

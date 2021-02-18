@@ -18,6 +18,7 @@ import net.minecraft.item.Food;
 import net.minecraft.item.Item;
 import net.minecraft.item.Rarity;
 import net.minecraft.item.SimpleFoiledItem;
+import net.minecraft.item.SoupItem;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.ResourceLocation;
@@ -63,7 +64,10 @@ public class ModItems
     public static final Item MONSTER_PIE = Utils._null();
     public static final Item RAW_POLAR_BEAR_MEAT = Utils._null();
     public static final Item POLAR_BEAR_STEAK = Utils._null();
-    
+    public static final Item POTATO_SOUP = Utils._null();
+    public static final Item MEAT_SOUP = Utils._null();
+    public static final Item FISH_SOUP = Utils._null();
+
     //Fish
     public static final Item TUNA = Utils._null();
     public static final Item COOKED_TUNA = Utils._null();
@@ -138,19 +142,27 @@ public class ModItems
             IForgeRegistry<Item> registry = event.getRegistry();
             registerItemBlocks(registry);
 
-            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.MAGMA_BRICK));
-            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WITHER_BONE));
-            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.WITHER_BONE_MEAL));
-            registerItem(registry, setup(new PrismarineArrowItem(), Names.PRISMARINE_ARROW));
-            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_FUR));
+            //Misc
+            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "magma_brick"));
+            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "wither_bone"));
+            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "wither_bone_meal"));
+            registerItem(registry, setup(new PrismarineArrowItem(), "prismarine_arrow"));
+            registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "polar_bear_fur"));
             registerItem(registry, setup(new BlockNamedItem(ModBlocks.TOMATO_PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato_seeds"));
+
+            /* TODO: 
+             * Fix fish foods - effects and amount
+             * Add tags to fish items
+             * Add furnace, smoker and campfire recipes
+             * Pie and popsicle recipe
+             */     
             
             //Foods
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PINECONE));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PUMPKIN_SLICE).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.PUMPKIN_SLICE));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PINECONE).group(VanillaBoomTab.VANILLABOOM_TAB)), "pinecone"));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.PUMPKIN_SLICE).group(VanillaBoomTab.VANILLABOOM_TAB)), "pumpkin_slice"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TOMATO).group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato"));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EGG).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.COOKED_EGG));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.DROWNED_FLESH));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_EGG).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_egg"));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.DROWNED_FLESH).group(VanillaBoomTab.VANILLABOOM_TAB)), "drowned_flesh"));
             registerItem(registry, setup(new IceCreamItem(new Item.Properties().food(ModFoods.MELON_POPSICLE).group(VanillaBoomTab.VANILLABOOM_TAB)), "melon_popsicle"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.CHOCOLATE).group(VanillaBoomTab.VANILLABOOM_TAB)), "chocolate"));
             registerItem(registry, setup(new BlockNamedItem(ModBlocks.CHOCOLATE_CAKE, new Item.Properties().maxStackSize(1).group(VanillaBoomTab.VANILLABOOM_TAB)), "chocolate_cake"));
@@ -159,15 +171,12 @@ public class ModItems
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.APPLE_PIE).group(VanillaBoomTab.VANILLABOOM_TAB)), "apple_pie"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.BERRY_PIE).group(VanillaBoomTab.VANILLABOOM_TAB)), "berry_pie"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.MONSTER_PIE).group(VanillaBoomTab.VANILLABOOM_TAB)), "monster_pie"));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.RAW_POLAR_BEAR_MEAT).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.RAW_POLAR_BEAR_MEAT));
-            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), Names.POLAR_BEAR_STEAK));
-            
-            /* TODO: 
-             * Fix fish foods
-             * Add tags to fish items
-             * Add furnace, smoker and campfire recipes
-             */     
-            
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.RAW_POLAR_BEAR_MEAT).group(VanillaBoomTab.VANILLABOOM_TAB)), "raw_polar_bear_meat"));
+            registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), "polar_bear_steak"));
+            registerItem(registry, setup(new SoupItem(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), "potato_soup"));
+            registerItem(registry, setup(new SoupItem(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), "meat_soup"));
+            registerItem(registry, setup(new SoupItem(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), "fish_soup"));
+
             //Fish
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna"));
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.COOKED_TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "cooked_tuna"));
@@ -276,12 +285,12 @@ public class ModItems
             }
         }
 
-        public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final String name)
+        public static <T extends IForgeRegistryEntry<T>> T setup(T entry, String name)
         {
             return setup(entry, new ResourceLocation(VanillaBoom.MOD_ID, name));
         }
 
-        public static <T extends IForgeRegistryEntry<T>> T setup(final T entry, final ResourceLocation registryName)
+        public static <T extends IForgeRegistryEntry<T>> T setup(T entry, ResourceLocation registryName)
         {
             entry.setRegistryName(registryName);
             return entry;

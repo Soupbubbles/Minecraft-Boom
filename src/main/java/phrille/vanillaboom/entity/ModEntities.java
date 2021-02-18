@@ -17,7 +17,6 @@ import phrille.vanillaboom.entity.fish.PerchEntity;
 import phrille.vanillaboom.entity.fish.PikeEntity;
 import phrille.vanillaboom.entity.fish.SwampDwellerEntity;
 import phrille.vanillaboom.entity.fish.TunaEntity;
-import phrille.vanillaboom.util.Names;
 import phrille.vanillaboom.util.Utils;
 
 @ObjectHolder(VanillaBoom.MOD_ID)
@@ -38,8 +37,8 @@ public class ModEntities
         @SubscribeEvent
         public static void registerEntities(RegistryEvent.Register<EntityType<?>> event)
         {
-            event.getRegistry().register(build(Names.PRISMARINE_ARROW, EntityType.Builder.<PrismarineArrowEntity>create(PrismarineArrowEntity::new, EntityClassification.MISC).setCustomClientFactory((spawnEntity, world) -> new PrismarineArrowEntity(PRISMARINE_ARROW, world)).size(0.5F, 0.5F)));
-            event.getRegistry().register(build(Names.CUSTOM_PAINTING, EntityType.Builder.<CustomPaintingEntity>create(CustomPaintingEntity::new, EntityClassification.MISC).setCustomClientFactory((spawnEntity, world) -> new CustomPaintingEntity(CUSTOM_PAINTING, world)).size(0.5F, 0.5F)));
+            event.getRegistry().register(build("prismarine_arrow", EntityType.Builder.<PrismarineArrowEntity>create(PrismarineArrowEntity::new, EntityClassification.MISC).setCustomClientFactory((spawnEntity, world) -> new PrismarineArrowEntity(PRISMARINE_ARROW, world)).size(0.5F, 0.5F)));
+            event.getRegistry().register(build("custom_painting", EntityType.Builder.<CustomPaintingEntity>create(CustomPaintingEntity::new, EntityClassification.MISC).setCustomClientFactory((spawnEntity, world) -> new CustomPaintingEntity(CUSTOM_PAINTING, world)).size(0.5F, 0.5F)));
 
             event.getRegistry().register(build("tuna", EntityType.Builder.<TunaEntity>create(TunaEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new TunaEntity(TUNA, world)).size(0.6F, 0.6F).trackingRange(4)));
             event.getRegistry().register(build("perch", EntityType.Builder.<PerchEntity>create(PerchEntity::new, EntityClassification.WATER_AMBIENT).setCustomClientFactory((spawnEntity, world) -> new PerchEntity(PERCH, world)).size(0.5F, 0.3F).trackingRange(4)));

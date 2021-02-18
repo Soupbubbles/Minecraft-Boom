@@ -182,19 +182,6 @@ public class Names
 
     public static final String ROSE = "rose";
 
-    public static final String MAGMA_BRICK = "magma_brick";
-    public static final String ELDER_GUARDIAN_SPIKE = "elder_guardian_spike";
-    public static final String PINECONE = "pinecone";
-    public static final String WITHER_BONE = "wither_bone";
-    public static final String WITHER_BONE_MEAL = "wither_bone_meal";
-    public static final String PUMPKIN_SLICE = "pumpkin_slice";
-    public static final String POLAR_BEAR_FUR = "polar_bear_fur";
-    public static final String RAW_POLAR_BEAR_MEAT = "raw_polar_bear_meat";
-    public static final String POLAR_BEAR_STEAK = "polar_bear_steak";
-    public static final String PRISMARINE_ARROW = "prismarine_arrow";
-    public static final String COOKED_EGG = "cooked_egg";
-    public static final String DROWNED_FLESH = "drowned_flesh";
-
     public static final String CANVAS = "canvas";
     public static final String SMALL_PAINTING = "small_painting";
     public static final String HORIZONTAL_PAINTING = "horizontal_painting";
@@ -203,7 +190,6 @@ public class Names
     public static final String LARGE_HORIZONTAL_PAINTING = "large_horizontal_painting";
     public static final String LARGE_PAINTING = "large_painting";
 
-    public static final String CUSTOM_PAINTING = "custom_painting";
     public static final String KEBAB_PAINTING = "kebab_painting";
     public static final String AZTEC_PAINTING = "aztec_painting";
     public static final String ALBAN_PAINTING = "alban_painting";

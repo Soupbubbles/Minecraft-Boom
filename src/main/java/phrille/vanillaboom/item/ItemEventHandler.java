@@ -1,5 +1,6 @@
 package phrille.vanillaboom.item;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.block.DirectionalBlock;
@@ -29,7 +30,6 @@ import net.minecraftforge.fml.common.Mod;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.block.ModBlocks;
 import phrille.vanillaboom.config.VanillaBoomConfig;
-import phrille.vanillaboom.util.Utils;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class ItemEventHandler
@@ -75,7 +75,7 @@ public class ItemEventHandler
         {
             if (state.getBlock() == Blocks.STICKY_PISTON)
             {
-                Utils.spawnEntityItem(world, pos.offset(updatePiston(world, pos, state, stack, player, event.getHand())), Items.SLIME_BALL);
+                Block.spawnAsEntity(world, pos.offset(updatePiston(world, pos, state, stack, player, event.getHand())), new ItemStack(Items.SLIME_BALL));
             }
             else if (state.getBlock() == Blocks.PISTON_HEAD)
             {
@@ -86,7 +86,7 @@ public class ItemEventHandler
                 if (type == PistonType.STICKY)
                 {
                     Direction direction = updatePiston(world, pos, world.getBlockState(pos), stack, player, event.getHand());
-                    Utils.spawnEntityItem(world, pos.offset(direction).offset(direction), Items.SLIME_BALL);
+                    Block.spawnAsEntity(world, pos.offset(direction).offset(direction), new ItemStack(Items.SLIME_BALL));
                 }
             }
         }
@@ -94,7 +94,7 @@ public class ItemEventHandler
         {
             BlockPos upPos = pos.offset(Direction.UP);
 
-            if (!world.getDimensionType().isUltrawarm() || player.abilities.isCreativeMode) 
+            if (!world.getDimensionType().isUltrawarm() || player.abilities.isCreativeMode)
             {
                 world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
                 player.addStat(Stats.ITEM_USED.get(stack.getItem()));
@@ -106,7 +106,7 @@ public class ItemEventHandler
 
                 spawnGrowParticles(ParticleTypes.SPLASH, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.05F);
             }
-            else 
+            else
             {
                 world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.NEUTRAL, 1.0F, 1.0F);
                 spawnGrowParticles(ParticleTypes.SMOKE, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.4F);
