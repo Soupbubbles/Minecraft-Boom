@@ -9,12 +9,10 @@ import com.google.common.collect.Maps;
 
 import net.minecraft.block.CakeBlock;
 import net.minecraft.entity.EntityType;
-import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.item.SpawnEggItem;
+import net.minecraft.particles.BasicParticleType;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.ObfuscationReflectionHelper;
@@ -51,6 +49,26 @@ public class Utils
     public static boolean isFood(Item item)
     {
         return item.isFood() || isCake(item);
+    }
+
+    public static void spawnParticles(BasicParticleType particle, World world, BlockPos pos, int amount, boolean condition, float height)
+    {
+        if (amount == 0)
+        {
+            amount = 15;
+        }
+
+        if (!condition)
+        {
+            for (int i = 0; i < amount; ++i)
+            {
+                double d0 = world.rand.nextGaussian() * 0.02D;
+                double d1 = world.rand.nextGaussian() * 0.02D;
+                double d2 = world.rand.nextGaussian() * 0.02D;
+
+                world.addParticle(particle, (double) ((float) pos.getX() + world.rand.nextFloat()), (double) pos.getY() + (double) world.rand.nextFloat() * height, (double) ((float) pos.getZ() + world.rand.nextFloat()), d0, d1, d2);
+            }
+        }
     }
 
     public static final Map<EntityType<?>, SpawnEggItem> EGG_MAP = Maps.newHashMap();

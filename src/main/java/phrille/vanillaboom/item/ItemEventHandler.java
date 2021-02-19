@@ -13,12 +13,8 @@ import net.minecraft.item.Items;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.particles.BasicParticleType;
 import net.minecraft.particles.ParticleTypes;
-import net.minecraft.potion.PotionUtils;
-import net.minecraft.potion.Potions;
 import net.minecraft.state.properties.PistonType;
-import net.minecraft.stats.Stats;
 import net.minecraft.util.Direction;
-import net.minecraft.util.DrinkHelper;
 import net.minecraft.util.Hand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvents;
@@ -30,6 +26,7 @@ import net.minecraftforge.fml.common.Mod;
 import phrille.vanillaboom.VanillaBoom;
 import phrille.vanillaboom.block.ModBlocks;
 import phrille.vanillaboom.config.VanillaBoomConfig;
+import phrille.vanillaboom.util.Utils;
 
 @Mod.EventBusSubscriber(modid = VanillaBoom.MOD_ID)
 public class ItemEventHandler
@@ -90,28 +87,6 @@ public class ItemEventHandler
                 }
             }
         }
-        else if (VanillaBoomConfig.fillWaterBottleHydroRock && stack.getItem() == Items.GLASS_BOTTLE && state.getBlock() == ModBlocks.HYDRO_ROCK)
-        {
-            BlockPos upPos = pos.offset(Direction.UP);
-
-            if (!world.getDimensionType().isUltrawarm() || player.abilities.isCreativeMode)
-            {
-                world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.NEUTRAL, 1.0F, 1.0F);
-                player.addStat(Stats.ITEM_USED.get(stack.getItem()));
-
-                if (!world.isRemote)
-                {
-                    DrinkHelper.fill(stack, player, PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.WATER));
-                }
-
-                spawnGrowParticles(ParticleTypes.SPLASH, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.05F);
-            }
-            else
-            {
-                world.playSound(player, player.getPosX(), player.getPosY(), player.getPosZ(), SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.NEUTRAL, 1.0F, 1.0F);
-                spawnGrowParticles(ParticleTypes.SMOKE, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.4F);
-            }
-        }
     }
 
     private static Direction updatePiston(World world, BlockPos pos, BlockState state, ItemStack stack, PlayerEntity player, Hand hand)
@@ -148,7 +123,7 @@ public class ItemEventHandler
     {
         BlockState state = world.getBlockState(pos);
 
-        spawnGrowParticles(particle, world, pos, 10, state.getBlock().isAir(state, world, pos), 1.0F);
+        Utils.spawnParticles(particle, world, pos, 10, state.getBlock().isAir(state, world, pos), 1.0F);
 
         if (!player.abilities.isCreativeMode)
         {
@@ -156,23 +131,4 @@ public class ItemEventHandler
         }
     }
 
-    private static void spawnGrowParticles(BasicParticleType particle, World world, BlockPos pos, int amount, boolean condition, float height)
-    {
-        if (amount == 0)
-        {
-            amount = 15;
-        }
-
-        if (!condition)
-        {
-            for (int i = 0; i < amount; ++i)
-            {
-                double d0 = world.rand.nextGaussian() * 0.02D;
-                double d1 = world.rand.nextGaussian() * 0.02D;
-                double d2 = world.rand.nextGaussian() * 0.02D;
-
-                world.addParticle(particle, (double) ((float) pos.getX() + world.rand.nextFloat()), (double) pos.getY() + (double) world.rand.nextFloat() * height, (double) ((float) pos.getZ() + world.rand.nextFloat()), d0, d1, d2);
-            }
-        }
-    }
 }
