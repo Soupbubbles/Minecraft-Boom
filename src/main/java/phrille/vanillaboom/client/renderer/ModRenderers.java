@@ -84,5 +84,6 @@ public class ModRenderers
         RenderTypeLookup.setRenderLayer(ModBlocks.ROSE, RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.POTTED_ROSE, RenderType.getCutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.TOMATO_PLANT, RenderType.getCutout());
+        RenderTypeLookup.setRenderLayer(ModBlocks.RICE_PLANT, RenderType.getCutout());
     }
 }

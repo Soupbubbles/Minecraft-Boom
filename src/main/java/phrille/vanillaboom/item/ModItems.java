@@ -47,6 +47,7 @@ public class ModItems
     public static final Item PRISMARINE_ARROW = Utils._null();
     public static final Item POLAR_BEAR_FUR = Utils._null();
     public static final Item TOMATO_SEEDS = Utils._null();
+    public static final Item RICE_SEEDS = Utils._null();
 
     //Food
     public static final Item PINECONE = Utils._null();
@@ -67,6 +68,7 @@ public class ModItems
     public static final Item POTATO_SOUP = Utils._null();
     public static final Item MEAT_SOUP = Utils._null();
     public static final Item FISH_SOUP = Utils._null();
+    public static final Item RICE_BOWL = Utils._null();
 
     //Fish
     public static final Item TUNA = Utils._null();
@@ -149,6 +151,7 @@ public class ModItems
             registerItem(registry, setup(new PrismarineArrowItem(), "prismarine_arrow"));
             registerItem(registry, setup(new Item(new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "polar_bear_fur"));
             registerItem(registry, setup(new BlockNamedItem(ModBlocks.TOMATO_PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "tomato_seeds"));
+            registerItem(registry, setup(new BlockNamedItem(ModBlocks.RICE_PLANT, new Item.Properties().group(VanillaBoomTab.VANILLABOOM_TAB)), "rice_seeds"));
 
             /* TODO: 
              * Fix fish foods - effects and amount
@@ -176,6 +179,7 @@ public class ModItems
             registerItem(registry, setup(new SoupItem(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), "potato_soup"));
             registerItem(registry, setup(new SoupItem(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), "meat_soup"));
             registerItem(registry, setup(new SoupItem(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), "fish_soup"));
+            registerItem(registry, setup(new SoupItem(new Item.Properties().food(ModFoods.POLAR_BEAR_STEAK).group(VanillaBoomTab.VANILLABOOM_TAB)), "rice_bowl"));
 
             //Fish
             registerItem(registry, setup(new Item(new Item.Properties().food(ModFoods.TUNA).group(VanillaBoomTab.VANILLABOOM_TAB)), "tuna"));

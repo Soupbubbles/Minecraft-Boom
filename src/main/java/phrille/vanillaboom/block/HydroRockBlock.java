@@ -12,6 +12,7 @@ import net.minecraft.item.Items;
 import net.minecraft.particles.ParticleTypes;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.potion.Potions;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.Hand;
@@ -42,31 +43,32 @@ public class HydroRockBlock extends Block
             {
                 if (!world.isRemote)
                 {
+                    ItemStack bottleStack = PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.WATER);
+                    player.addStat(Stats.ITEM_USED.get(stack.getItem()));
+
                     if (!player.abilities.isCreativeMode)
                     {
-                        ItemStack bottleStack = PotionUtils.addPotionToItemStack(new ItemStack(Items.POTION), Potions.WATER);
-                        //player.addStat(Stats.);
                         stack.shrink(1);
+                    }
 
-                        if (stack.isEmpty())
-                        {
-                            player.setHeldItem(hand, bottleStack);
-                        }
-                        else if (!player.inventory.addItemStackToInventory(bottleStack))
-                        {
-                            player.dropItem(bottleStack, false);
-                        }
-                        else if (player instanceof ServerPlayerEntity)
-                        {
-                            ((ServerPlayerEntity) player).sendContainerToPlayer(player.container);
-                        }
+                    if (stack.isEmpty())
+                    {
+                        player.setHeldItem(hand, bottleStack);
+                    }
+                    else if (!player.inventory.addItemStackToInventory(bottleStack))
+                    {
+                        player.dropItem(bottleStack, false);
+                    }
+                    else if (player instanceof ServerPlayerEntity)
+                    {
+                        ((ServerPlayerEntity) player).sendContainerToPlayer(player.container);
                     }
 
                     world.playSound((PlayerEntity) null, pos, SoundEvents.ITEM_BOTTLE_FILL, SoundCategory.BLOCKS, 1.0F, 1.0F);
                 }
 
                 Utils.spawnParticles(ParticleTypes.SPLASH, world, upPos, 8, world.getBlockState(upPos).isOpaqueCube(world, upPos), 0.05F);
-                
+
                 return ActionResultType.func_233537_a_(world.isRemote);
             }
             else

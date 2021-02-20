@@ -35,12 +35,12 @@ public class TomatoPlantBlock extends CropsBlock
     }
 
     @Override
-    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand handIn, BlockRayTraceResult hit)
+    public ActionResultType onBlockActivated(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockRayTraceResult hit)
     {
         int i = state.get(AGE);
-        boolean flag = i == 7;
+        boolean flag = i == getMaxAge();
 
-        if (!flag && player.getHeldItem(handIn).getItem() == Items.BONE_MEAL)
+        if (!flag && player.getHeldItem(hand).getItem() == Items.BONE_MEAL)
         {
             return ActionResultType.PASS;
         }
@@ -53,7 +53,7 @@ public class TomatoPlantBlock extends CropsBlock
         }
         else
         {
-            return super.onBlockActivated(state, world, pos, player, handIn, hit);
+            return super.onBlockActivated(state, world, pos, player, hand, hit);
         }
     }
 

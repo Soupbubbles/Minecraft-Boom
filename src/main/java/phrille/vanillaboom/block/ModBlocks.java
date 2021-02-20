@@ -185,6 +185,7 @@ public class ModBlocks
     public static final Block ROSE = Utils._null();
     public static final Block POTTED_ROSE = Utils._null();
     public static final Block TOMATO_PLANT = Utils._null();
+    public static final Block RICE_PLANT = Utils._null();
     public static final Block CHOCOLATE_CAKE = Utils._null();
     public static final Block BERRY_CAKE = Utils._null();
     public static final Block CARROT_CAKE = Utils._null();
@@ -702,6 +703,7 @@ public class ModBlocks
             registry.register(setup(new LadderBlock(Properties.from(Blocks.LADDER)), Names.WARPED_LADDER));
             createFlower(registry, Effects.HASTE, 10, Names.ROSE);
             registry.register(setup(new TomatoPlantBlock((Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.CROP))), "tomato_plant"));
+            registry.register(setup(new RicePlantBlock((Properties.create(Material.PLANTS).doesNotBlockMovement().tickRandomly().zeroHardnessAndResistance().sound(SoundType.CROP))), "rice_plant"));
             registry.register(setup(new CakeBlock(Properties.from(Blocks.CAKE)), "chocolate_cake"));
             registry.register(setup(new CakeBlock(Properties.from(Blocks.CAKE)), "berry_cake"));
             registry.register(setup(new CakeBlock(Properties.from(Blocks.CAKE)), "carrot_cake"));
